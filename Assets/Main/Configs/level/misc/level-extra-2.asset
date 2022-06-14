@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6431b8620f37d47b82487733922667, type: 3}
+  m_Name: level-extra-2
+  m_EditorClassIdentifier: 
+  id: cp-e-2
+  enemyLevel: 75
+  needUnlock: 1
+  unlockPrice:
+    n: 15
+    id: Diamond
+  levelType: 3
+  firstPassReward:
+  - n: 8000
+    id: Gold
+  - n: 7
+    id: Ring
+  - n: 1
+    id: Unlock_ca_Detonate
+  waves:
+  - {fileID: 11400000, guid: 2ddc9929dab0dbe418d6731d7b8d8c78, type: 2}
+  - {fileID: 11400000, guid: 4b35e05e8b7640c488afa648c1988577, type: 2}
+  - {fileID: 11400000, guid: 42e34519665efeb4cab00a50b755800c, type: 2}
+  - {fileID: 11400000, guid: 0d412dc141f7188469d27a39bcd1c1a1, type: 2}
+  - {fileID: 11400000, guid: 385768d1ad7416d48a3a2fbb0b99b316, type: 2}
+  - {fileID: 11400000, guid: fa035952467d48d4eabc8310c7383967, type: 2}
+  mapViewData:
+    nodeViewType: 0
+    offsetX: -255
+    offsetY: 250
+    curveFactor: 0.1
+    displayMinPassedLevelIndex: 16
+  raidData:
+    reward:
+    - n: 3000
+      id: Gold
+    - n: 3
+      id: Amethyst
+    - n: 2
+      id: ChestGold
+    - n: 1
+      id: ChestDiamond
+  disableNextLevel: 0
+  waveEnemyLevelAdd: 4

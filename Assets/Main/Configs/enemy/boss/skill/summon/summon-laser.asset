@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2ade40d5cf8fd34bab92b39dd14e096, type: 3}
+  m_Name: summon-laser
+  m_EditorClassIdentifier: 
+  duration: 4
+  id: summon laser
+  desc: 
+  isTimedSkill: 1
+  damageRatio: 1
+  hpRatio: 0
+  exclusiveGroupId: 5
+  attackPosId: 2
+  interval: 0.5
+  attackCountMax: 4
+  paramFloat1: 0
+  paramBool1: 1
+  paramString1: Laser
+  paramInt1: 0
+  attackMode: 3

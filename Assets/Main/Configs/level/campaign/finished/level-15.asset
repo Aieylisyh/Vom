@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6431b8620f37d47b82487733922667, type: 3}
+  m_Name: level-15
+  m_EditorClassIdentifier: 
+  id: cp15
+  enemyLevel: 40
+  needUnlock: 0
+  unlockPrice:
+    n: 0
+    id: 
+  levelType: 0
+  firstPassReward:
+  - n: 4800
+    id: Gold
+  - n: 1
+    id: Ruby
+  - n: 5
+    id: Diamond
+  - n: 0
+    id: Diamond
+  waves:
+  - {fileID: 11400000, guid: 3bb18e87803146e4cb20f3dce4c836ab, type: 2}
+  - {fileID: 11400000, guid: abc1df51879916a4ababf029c4f014d4, type: 2}
+  - {fileID: 11400000, guid: d6f8223f41fe49c4eadc7fa56015111a, type: 2}
+  - {fileID: 11400000, guid: 027606d2059f04843be21cbf4f39ec4e, type: 2}
+  - {fileID: 11400000, guid: b2844b51805544f41810f6246b95f599, type: 2}
+  - {fileID: 11400000, guid: cc7a54471ae9b4f419a54b1eb4cf29d5, type: 2}
+  mapViewData:
+    nodeViewType: 0
+    offsetX: -295
+    offsetY: -275
+    curveFactor: -0.15
+    displayMinPassedLevelIndex: 14
+  raidData:
+    reward:
+    - n: 1800
+      id: Gold
+    - n: 16
+      id: Purse
+    - n: 4
+      id: ChestGold
+    - n: 1
+      id: ChestDiamond
+  disableNextLevel: 1
+  waveEnemyLevelAdd: 4

@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77ec64bf9fd47a4294d02903bc4fb54, type: 3}
+  m_Name: mat Shop Config
+  m_EditorClassIdentifier: 
+  commodityCfgs:
+  - items:
+    - commodity: {fileID: 11400000, guid: dd1d82848115a204cb4288fb2e86007c, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 59fa1569f6d28a94b8c9e4c4b15c5bd4, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 575715e131c3df242b97b5fd834b3bcc, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: fd2ec63793d21cd4cbff4a75a125e383, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 42e34be82186a3947b390bae959250cc, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: a3159fdef9a055d4e9e0904b3feb2ee7, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: 1532d60d33be99c4294315d5d7cdd479, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: deee1df4074ea8d4f86979cd926237fa, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 5637a8ece94f3f14daa44bbc4fc8cd3f, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: 7ab8404fe4aee9444bbb922148889d5f, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 8c7c9fd17fe49f341beff7a0cac7424d, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 9dbc17a2357345d43b3a4d7c059df259, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: 5c3f2d1d30d0c6f4dae24aa515dd7ec2, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    - commodity: {fileID: 11400000, guid: 94fd8c1388a48d94891d30e3713ffcd4, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+    rule: 2

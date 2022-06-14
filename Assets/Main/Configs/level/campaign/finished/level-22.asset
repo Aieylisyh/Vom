@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6431b8620f37d47b82487733922667, type: 3}
+  m_Name: level-22
+  m_EditorClassIdentifier: 
+  id: cp22
+  enemyLevel: 120
+  needUnlock: 0
+  unlockPrice:
+    n: 0
+    id: 
+  levelType: 0
+  firstPassReward:
+  - n: 9600
+    id: Gold
+  - n: 1
+    id: Crown
+  - n: 5
+    id: Diamond
+  - n: 0
+    id: Diamond
+  waves:
+  - {fileID: 11400000, guid: b9ecd364aaa7051468235bd5e0a9fc71, type: 2}
+  - {fileID: 11400000, guid: e966f829939aad2419cd1425e95d3914, type: 2}
+  - {fileID: 11400000, guid: 703a10463b5a6aa42923810738259f71, type: 2}
+  - {fileID: 11400000, guid: 0c4ad35b64acd124086b4b4a648743e1, type: 2}
+  - {fileID: 11400000, guid: d35a8074848041c42a685717c0e445d9, type: 2}
+  - {fileID: 11400000, guid: 5dd79dfab2b6f5841a9fef6c6c011c18, type: 2}
+  - {fileID: 11400000, guid: 50acc2a1d92d51649aae80c26c871504, type: 2}
+  mapViewData:
+    nodeViewType: 0
+    offsetX: -290
+    offsetY: -500
+    curveFactor: -0.15
+    displayMinPassedLevelIndex: 21
+  raidData:
+    reward:
+    - n: 3200
+      id: Gold
+    - n: 30
+      id: Purse
+    - n: 14
+      id: ChestGold
+    - n: 3
+      id: ChestDiamond
+  disableNextLevel: 1
+  waveEnemyLevelAdd: 7

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6431b8620f37d47b82487733922667, type: 3}
+  m_Name: level-2
+  m_EditorClassIdentifier: 
+  id: cp2
+  enemyLevel: 1
+  needUnlock: 0
+  unlockPrice:
+    n: 0
+    id: 
+  levelType: 0
+  firstPassReward:
+  - n: 240
+    id: Gold
+  - n: 10
+    id: VolcanicRock
+  - n: 1
+    id: Diamond
+  - n: 0
+    id: Diamond
+  waves:
+  - {fileID: 11400000, guid: 4b9fef8c0250a7942b8080961dbe0f8f, type: 2}
+  - {fileID: 11400000, guid: f8c9ea40ad68a164f80356b06d302da8, type: 2}
+  - {fileID: 11400000, guid: d8174e7a6d5f29444a279a6eb3654e5d, type: 2}
+  - {fileID: 11400000, guid: f12dc2c70c3e78342b1d3409cdad2a99, type: 2}
+  mapViewData:
+    nodeViewType: 0
+    offsetX: -195
+    offsetY: 450
+    curveFactor: -0.12
+    displayMinPassedLevelIndex: 1
+  raidData:
+    reward:
+    - n: 450
+      id: Gold
+    - n: 4
+      id: Purse
+    - n: 0
+      id: ChestGold
+    - n: 0
+      id: ChestDiamond
+  disableNextLevel: 1
+  waveEnemyLevelAdd: 1

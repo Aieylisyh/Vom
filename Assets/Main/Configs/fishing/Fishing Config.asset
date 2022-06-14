@@ -1,0 +1,131 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dde9fa393dbaa2448dbcc3700cb300d, type: 3}
+  m_Name: Fishing Config
+  m_EditorClassIdentifier: 
+  defaultFish:
+  - Fish1
+  - Fish2
+  accReturnSecond: 0
+  rftPrototypes:
+  - {fileID: 11400000, guid: e934a88e56fa7a64e96136d1794eb635, type: 2}
+  - {fileID: 11400000, guid: 25d9e23ce83e6404495df77f493bb2cc, type: 2}
+  - {fileID: 11400000, guid: 58f1fc10b101acd46a2578887ddf407b, type: 2}
+  - {fileID: 11400000, guid: 91065e2a832859f489b040c893fe28c5, type: 2}
+  - {fileID: 11400000, guid: 1f275de1b33a9de42b71b97b35f2b2fa, type: 2}
+  defaultRftPrototype: {fileID: 11400000, guid: 28c271b250706044988f9680f56dff1e, type: 2}
+  noAccTimeSec: 10
+  freeAccTimeSec: 60
+  accTimeSecPerDiamond: 600
+  fishPickWeight: d4030000c2010000dc000000640000002400000002000000
+  fishToPick:
+  - Fish1
+  - Fish2
+  - Fish3
+  - Fish4
+  - Fish5
+  - Fish6
+  boatLevelData:
+    maxLevel: 20
+    rftDurationAddPercent:
+      Pow3Weight: 0
+      Pow2Weight: 0.625
+      Pow1Weight: 12.5
+      Pow0Weight: 0
+    rftAmount:
+      Pow3Weight: 0
+      Pow2Weight: 1.25
+      Pow1Weight: 16
+      Pow0Weight: 25
+    goldCost:
+      Pow3Weight: 35
+      Pow2Weight: 50
+      Pow1Weight: 250
+      Pow0Weight: 150
+  abilityUnlocks:
+  - price:
+    - n: 30
+      id: TurtleRock
+    - n: 30
+      id: VolcanicRock
+    - n: 30
+      id: Metal
+    ability: {fileID: 11400000, guid: 377e5c0949f652346a47825a29a5e4fb, type: 2}
+    boatLevelRequire: 3
+  - price:
+    - n: 1
+      id: Amethyst
+    - n: 1
+      id: Ruby
+    - n: 1
+      id: Emerald
+    ability: {fileID: 11400000, guid: 9d050411fc4c83248b63fbd462cb3d91, type: 2}
+    boatLevelRequire: 6
+  - price:
+    - n: 600
+      id: TurtleRock
+    - n: 6
+      id: Emerald
+    ability: {fileID: 11400000, guid: 88362fe6ac0249b409a9a3062e976a7c, type: 2}
+    boatLevelRequire: 9
+  - price:
+    - n: 700
+      id: VolcanicRock
+    - n: 7
+      id: Amethyst
+    ability: {fileID: 11400000, guid: 9424cc97b5e037c44a0c9b344cde787b, type: 2}
+    boatLevelRequire: 12
+  - price:
+    - n: 800
+      id: Metal
+    - n: 8
+      id: Ruby
+    ability: {fileID: 11400000, guid: c6da3b6285ca18c48ad8dfb9e4320ce2, type: 2}
+    boatLevelRequire: 15
+  - price:
+    - n: 7
+      id: Medal
+    ability: {fileID: 11400000, guid: e31747a4f3fd7f940ac77c203fa32718, type: 2}
+    boatLevelRequire: 18
+  - price:
+    - n: 10
+      id: Emerald
+    - n: 10
+      id: Amethyst
+    - n: 10
+      id: Ruby
+    - n: 7
+      id: Medal
+    ability: {fileID: 11400000, guid: 4fcaaaa546adaef4db4b712baa235386, type: 2}
+    boatLevelRequire: 20
+  extraPickWeight: 0.98
+  extraItems:
+  - n: 1
+    id: tokens
+  - n: 1
+    id: tokens
+  - n: 1
+    id: fishingChests
+  - n: 1
+    id: fishingChests
+  - n: 1
+    id: fishingChests
+  - n: 1
+    id: fishingBooks
+  - n: 1
+    id: fishingBooks
+  - n: 1
+    id: fishingTreasures
+  adAccData:
+    countPerSession: 1
+    lowCostCap: 5
+    highCostCap: 25

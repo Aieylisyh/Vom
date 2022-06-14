@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f77ec64bf9fd47a4294d02903bc4fb54, type: 3}
+  m_Name: vip Shop Config
+  m_EditorClassIdentifier: 
+  commodityCfgs:
+  - items:
+    - commodity: {fileID: 11400000, guid: 219b9ffff675365439e3f087b90d53ab, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 1
+      restockable: 0
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: befbc9c921b9451448ee53fae2b16886, type: 2}
+      isPayment: 0
+      hasAd: 1
+      isFree: 0
+      restockable: 0
+      disablePostBuyRefresh: 0
+    rule: 4
+  - items:
+    - commodity: {fileID: 11400000, guid: 368afc14cf87e1441a74cf7ba212389e, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: 03d9ea2a1f5293a41a3785ee38e3d571, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: 27797a055d24080499bc4cf326ee57e2, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: 818be05a9e87b974d8b783a75d5be832, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: f86a0e8b21a15fa40b08fb757ac0fd4d, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: 98311a510cc6bb7409eb49a9fb669341, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: e4394db02feec8847b62885308bc6755, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: ba044d0a16120ec4aa12c7488fc8dc1d, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: 69695272a3b3f644786cc3b04c74a59b, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: 7ed81c9d3fd815c4ca4e92aac0504403, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    rule: 2
+  - items:
+    - commodity: {fileID: 11400000, guid: 693d2f2a66535e2469a65a119b469518, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: d59835aeffcb9284a9b33d69f0b4b225, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    - commodity: {fileID: 11400000, guid: e7715badb9fe83c4bb90eff7a62a40cc, type: 2}
+      isPayment: 0
+      hasAd: 0
+      isFree: 0
+      restockable: 1
+      disablePostBuyRefresh: 0
+    rule: 2

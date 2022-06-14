@@ -1,0 +1,113 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12ddc0402de0d724eae29af9007f5fb0, type: 3}
+  m_Name: levelConfig
+  m_EditorClassIdentifier: 
+  campaignPrefix: cp
+  score3StarRatio: 0.96
+  score2StarRatio: 0.78
+  dailyChanceFullFillPrices:
+  - n: 100
+    id: Gold
+  - n: 250
+    id: Gold
+  - n: 1000
+    id: Gold
+  - n: 1
+    id: Diamond
+  - n: 3
+    id: Diamond
+  - n: 5
+    id: Diamond
+  - n: 7
+    id: Diamond
+  - n: 9
+    id: Diamond
+  - n: 10
+    id: Diamond
+  raidRewardBonusPercent1Star: 0
+  raidRewardBonusPercent2Star: 50
+  raidRewardBonusPercent3Star: 100
+  campaignLevelPlayLimit: 3
+  raidDiamondPrices: 0000000000000000020000000400000006000000080000000a0000000c0000000f00000014000000
+  otherLevels:
+  - {fileID: 11400000, guid: c35bbbfa86ec6da40aef2253a34a9c29, type: 2}
+  - {fileID: 11400000, guid: f0af0cd6a81b0964383187168f4b46dd, type: 2}
+  - {fileID: 11400000, guid: 1d3937cbc34df0847be6360f619ada89, type: 2}
+  campaignLevels:
+  - {fileID: 11400000, guid: 1e6ce008841753246a874df3d456185a, type: 2}
+  - {fileID: 11400000, guid: b7843a73cb2903a49b90f2222503fb10, type: 2}
+  - {fileID: 11400000, guid: 64636f5e918f1394cbce2e5a30f04e78, type: 2}
+  - {fileID: 11400000, guid: 88826347cca4fad44b98536a8158d26f, type: 2}
+  - {fileID: 11400000, guid: 807ee8965af0a6147afe2c97e0c27a4a, type: 2}
+  - {fileID: 11400000, guid: a1b1e209281c4a2408f95d5edaf700fd, type: 2}
+  - {fileID: 11400000, guid: bdb5d11dcf2ce85478c9eb0061fd4546, type: 2}
+  - {fileID: 11400000, guid: a06a5ffa3a023894a890cbe8d5639fdc, type: 2}
+  - {fileID: 11400000, guid: ff1d61997c878e246b92cc648112f356, type: 2}
+  - {fileID: 11400000, guid: e2c9baeae4be5dc46b3e0b1506c1f48c, type: 2}
+  - {fileID: 11400000, guid: aa697daa098174e409a7311c7e01fe2c, type: 2}
+  - {fileID: 11400000, guid: b85003394dd61bf4dbf0f4a47e3a7841, type: 2}
+  - {fileID: 11400000, guid: 5c7f24dc0817c5b4896277857529b8eb, type: 2}
+  - {fileID: 11400000, guid: 67e6a9fe735993049a2f38f2b2b994ef, type: 2}
+  - {fileID: 11400000, guid: 22524daad6960ce4497d69ff1279ce53, type: 2}
+  - {fileID: 11400000, guid: d67e7a3f41fbd194e80e74398fdbd29b, type: 2}
+  - {fileID: 11400000, guid: f29b84b576971ec42b97f34023ff5488, type: 2}
+  - {fileID: 11400000, guid: 737254b2223bc9b4eb0f6437ad4e41e5, type: 2}
+  - {fileID: 11400000, guid: 97b2c64ae89ae174db08529d007fec94, type: 2}
+  - {fileID: 11400000, guid: bb413d8150b98ac4583a1340f2852e9b, type: 2}
+  - {fileID: 11400000, guid: aab32e8b0f14e55418d1142ebd6be9d4, type: 2}
+  - {fileID: 11400000, guid: c565b30d694640c44811f1ae4d000fbf, type: 2}
+  - {fileID: 11400000, guid: d3afb0707786fb74384e1cbddff4115a, type: 2}
+  - {fileID: 11400000, guid: 520627109afcbfa4d8cc9591ddfa63d2, type: 2}
+  - {fileID: 11400000, guid: 486cc26b2605fbc46bb5a28c6b333e74, type: 2}
+  defaultLevelEvents:
+  - evt: init
+    time: 0
+    floatParam: []
+    stringParam: []
+    boolParam: 
+  - evt: scene
+    time: 0.1
+    floatParam: []
+    stringParam: []
+    boolParam: 
+  idleRewardCountPerMinute:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.2
+    Pow0Weight: 0.8
+  idleRewards:
+  - n: 1
+    id: idleItem
+  - n: 25
+    id: Gold
+  - n: 10
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  - n: 5
+    id: Gold
+  maxIdleHours: 4

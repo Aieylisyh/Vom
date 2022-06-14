@@ -1,0 +1,171 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f13be2b15dfb9ed448801c31fa4bd144, type: 3}
+  m_Name: Speical Item Config
+  m_EditorClassIdentifier: 
+  salaryGoldByPlayerLevel:
+    Pow3Weight: 1
+    Pow2Weight: 22
+    Pow1Weight: 500
+    Pow0Weight: 1700
+  WeekdayData:
+  - calm:
+      dayTitle: WD1_C
+      dayContent: luck_0_1
+      rewards:
+      - n: 8
+        id: Fish1
+      - n: 8
+        id: Fish2
+      - n: 8
+        id: Fish3
+    pleasant:
+      dayTitle: WD1_P
+      dayContent: luck_1_1
+      rewards:
+      - n: 5
+        id: ChestGold
+    wonderful:
+      dayTitle: WD1_W
+      dayContent: luck_2_1
+      rewards:
+      - n: 3
+        id: Diamond
+      - n: 3
+        id: ChestDiamond
+  - calm:
+      dayTitle: WD2_C
+      dayContent: luck_0_2
+      rewards:
+      - n: 1
+        id: Diamond
+    pleasant:
+      dayTitle: WD2_P
+      dayContent: luck_1_2
+      rewards:
+      - n: 3
+        id: Diamond
+    wonderful:
+      dayTitle: WD2_W
+      dayContent: luck_2_2
+      rewards:
+      - n: 6
+        id: Diamond
+  - calm:
+      dayTitle: WD3_C
+      dayContent: luck_0_1
+      rewards:
+      - n: 333
+        id: Gold
+      - n: 33
+        id: Fish3
+    pleasant:
+      dayTitle: WD3_P
+      dayContent: luck_1_1
+      rewards:
+      - n: 555
+        id: Gold
+      - n: 5
+        id: Fish4
+    wonderful:
+      dayTitle: WD3_W
+      dayContent: luck_2_1
+      rewards:
+      - n: 1234
+        id: Gold
+      - n: 5
+        id: Fish5
+  - calm:
+      dayTitle: WD4_C
+      dayContent: luck_0_2
+      rewards:
+      - n: 400
+        id: Gold
+    pleasant:
+      dayTitle: WD4_P
+      dayContent: luck_1_2
+      rewards:
+      - n: 2
+        id: FlagGold
+    wonderful:
+      dayTitle: WD4_W
+      dayContent: luck_2_2
+      rewards:
+      - n: 2
+        id: FlagExp
+      - n: 2
+        id: FlagGold
+  - calm:
+      dayTitle: WD5_C
+      dayContent: luck_0_1
+      rewards:
+      - n: 5
+        id: Purse
+    pleasant:
+      dayTitle: WD5_P
+      dayContent: luck_1_1
+      rewards:
+      - n: 2
+        id: Ruby
+    wonderful:
+      dayTitle: WD5_W
+      dayContent: luck_2_1
+      rewards:
+      - n: 2
+        id: Ruby
+      - n: 2
+        id: Diamond
+  - calm:
+      dayTitle: WD6_C
+      dayContent: luck_0_2
+      rewards:
+      - n: 1
+        id: KingOfWeed_1
+    pleasant:
+      dayTitle: WD6_P
+      dayContent: luck_1_2
+      rewards:
+      - n: 2
+        id: Emerald
+    wonderful:
+      dayTitle: WD6_W
+      dayContent: luck_2_2
+      rewards:
+      - n: 2
+        id: Emerald
+      - n: 2
+        id: Diamond
+  - calm:
+      dayTitle: WD7_C
+      dayContent: luck_0_1
+      rewards:
+      - n: 1
+        id: KingOfWeed_0
+    pleasant:
+      dayTitle: WD7_P
+      dayContent: luck_1_1
+      rewards:
+      - n: 2
+        id: Amethyst
+    wonderful:
+      dayTitle: WD7_W
+      dayContent: luck_2_1
+      rewards:
+      - n: 2
+        id: Amethyst
+      - n: 2
+        id: Diamond
+  noteIdPrefix: Note_
+  noteIdMax: 16
+  calmSoundId: clover c
+  pleasantSoundId: clover p
+  wonderfulSoundId: clover w

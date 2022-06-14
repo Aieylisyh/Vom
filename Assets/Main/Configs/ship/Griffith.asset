@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde6e230200161e4f811ff893d7e7b25, type: 3}
+  m_Name: Griffith
+  m_EditorClassIdentifier: 
+  id: Griffith
+  levelMax: 120
+  price:
+    n: 5
+    id: Diamond
+  levelupGoldCost:
+    Pow3Weight: 0.16
+    Pow2Weight: -1
+    Pow1Weight: 11
+    Pow0Weight: 80
+  hp:
+    Pow3Weight: 0
+    Pow2Weight: 0.16
+    Pow1Weight: 6.4
+    Pow0Weight: 450
+  speed:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.01
+    Pow0Weight: 2.6
+  torDmg:
+    Pow3Weight: 0
+    Pow2Weight: 0.05
+    Pow1Weight: 1.51
+    Pow0Weight: 100
+  bombDmg:
+    Pow3Weight: 0
+    Pow2Weight: 0.07
+    Pow1Weight: 1.25
+    Pow0Weight: 100
+  reg:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.5
+    Pow0Weight: 15
+  vita:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.25
+    Pow0Weight: 10
+  armor:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 18
+  armor_hotWeapon:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 1
+  armor_laser:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  armor_ghost:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_hotWeapon:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_laser:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_ghost:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  abilityUnlocks:
+  - price:
+    - n: 50
+      id: Metal
+    - n: 1
+      id: Ruby
+    ability: {fileID: 11400000, guid: ada3014bf7365ee4c9ca85f2860a42d3, type: 2}
+    shipLevelRequire: 10
+  - price:
+    - n: 150
+      id: Metal
+    - n: 1
+      id: Ruby
+    ability: {fileID: 11400000, guid: a1f8599652ed7354a98241a45ee2b521, type: 2}
+    shipLevelRequire: 20
+  - price:
+    - n: 300
+      id: Metal
+    - n: 3
+      id: Ruby
+    ability: {fileID: 11400000, guid: 937217ba575eb234484a55f33500f6c8, type: 2}
+    shipLevelRequire: 40
+  - price:
+    - n: 750
+      id: Metal
+    - n: 1
+      id: Medal
+    ability: {fileID: 11400000, guid: 6bc1d9196646da349887fede4dbafb0c, type: 2}
+    shipLevelRequire: 60
+  - price:
+    - n: 1500
+      id: Metal
+    - n: 7
+      id: Ruby
+    ability: {fileID: 11400000, guid: ec1a00fedfa613e4a86ae7248ceb42aa, type: 2}
+    shipLevelRequire: 80
+  - price:
+    - n: 3
+      id: Medal
+    - n: 12
+      id: Ruby
+    ability: {fileID: 11400000, guid: 8da554c8f714f1944b3783aaec199a8e, type: 2}
+    shipLevelRequire: 100
+  - price:
+    - n: 12
+      id: Medal
+    - n: 18
+      id: Ruby
+    ability: {fileID: 11400000, guid: 1de458074dce25b44b51e86e5e72209a, type: 2}
+    shipLevelRequire: 120

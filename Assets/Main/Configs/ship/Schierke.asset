@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde6e230200161e4f811ff893d7e7b25, type: 3}
+  m_Name: Schierke
+  m_EditorClassIdentifier: 
+  id: Schierke
+  levelMax: 120
+  price:
+    n: 5
+    id: Diamond
+  levelupGoldCost:
+    Pow3Weight: 0.16
+    Pow2Weight: -1
+    Pow1Weight: 11
+    Pow0Weight: 80
+  hp:
+    Pow3Weight: 0
+    Pow2Weight: 0.16
+    Pow1Weight: 6.4
+    Pow0Weight: 380
+  speed:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 2.3
+  torDmg:
+    Pow3Weight: 0
+    Pow2Weight: 0.05
+    Pow1Weight: 2.15
+    Pow0Weight: 140
+  bombDmg:
+    Pow3Weight: 0
+    Pow2Weight: 0.07
+    Pow1Weight: 1.6
+    Pow0Weight: 160
+  reg:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.5
+    Pow0Weight: 18
+  vita:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.25
+    Pow0Weight: 10
+  armor:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 6
+  armor_hotWeapon:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  armor_laser:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  armor_ghost:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_hotWeapon:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_laser:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_ghost:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  abilityUnlocks:
+  - price:
+    - n: 50
+      id: VolcanicRock
+    - n: 1
+      id: Amethyst
+    ability: {fileID: 11400000, guid: 978f84d4025c58d49a7b5bd51424389d, type: 2}
+    shipLevelRequire: 10
+  - price:
+    - n: 150
+      id: VolcanicRock
+    - n: 1
+      id: Amethyst
+    ability: {fileID: 11400000, guid: 2f96dbd51cb7a844ea9f30357824dd47, type: 2}
+    shipLevelRequire: 20
+  - price:
+    - n: 300
+      id: VolcanicRock
+    - n: 3
+      id: Amethyst
+    ability: {fileID: 11400000, guid: e1c87671b2b030d449db805e674d056c, type: 2}
+    shipLevelRequire: 40
+  - price:
+    - n: 750
+      id: VolcanicRock
+    - n: 1
+      id: Medal
+    ability: {fileID: 11400000, guid: b616bb7648b51d4469a662ec5383e1e3, type: 2}
+    shipLevelRequire: 60
+  - price:
+    - n: 1500
+      id: VolcanicRock
+    - n: 7
+      id: Amethyst
+    ability: {fileID: 11400000, guid: b4829f637a083fd4c83f00b22b9aadcf, type: 2}
+    shipLevelRequire: 80
+  - price:
+    - n: 3
+      id: Medal
+    - n: 12
+      id: Amethyst
+    ability: {fileID: 11400000, guid: 1eac32ab12edeb34dbca899c85e4d952, type: 2}
+    shipLevelRequire: 100
+  - price:
+    - n: 12
+      id: Medal
+    - n: 18
+      id: Amethyst
+    ability: {fileID: 11400000, guid: 0d08d794678c77c4990379ddce1ee3b2, type: 2}
+    shipLevelRequire: 120

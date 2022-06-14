@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47b1a5249464a94789a1988bde2e906, type: 3}
+  m_Name: wave-lv16-7
+  m_EditorClassIdentifier: 
+  events: []
+  enemies:
+  - right: 0
+    enemyType: 14
+    height: 7.32
+    delay: 1
+  - right: 0
+    enemyType: 14
+    height: 9.89
+    delay: 1
+  - right: 0
+    enemyType: 14
+    height: 12
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 10.42
+    delay: 0
+  - right: 0
+    enemyType: 17
+    height: 4
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 4
+    delay: 0
+  - right: 0
+    enemyType: 17
+    height: 5.33
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 4
+    delay: 0
+  - right: 0
+    enemyType: 17
+    height: 6.54
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 4
+    delay: 0
+  - right: 0
+    enemyType: 17
+    height: 8.34
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 6.01
+    delay: 0
+  - right: 0
+    enemyType: 17
+    height: 10.42
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 8.87
+    delay: 0
+  - right: 0
+    enemyType: 16
+    height: 9.98
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 11.16
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 11.16
+    delay: 1
+  - right: 0
+    enemyType: 16
+    height: 12
+    delay: 1
+  disableCab: 0
+  enemyLevelExtraOffset: 0

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a6431b8620f37d47b82487733922667, type: 3}
+  m_Name: level-6
+  m_EditorClassIdentifier: 
+  id: cp6
+  enemyLevel: 7
+  needUnlock: 0
+  unlockPrice:
+    n: 0
+    id: 
+  levelType: 0
+  firstPassReward:
+  - n: 1000
+    id: Gold
+  - n: 25
+    id: Metal
+  - n: 2
+    id: Diamond
+  - n: 1
+    id: Unlock_ca_Speed
+  waves:
+  - {fileID: 11400000, guid: d92f4489e61dacb489dcc12beccef559, type: 2}
+  - {fileID: 11400000, guid: ca2be24de3ef2c14894a401de9ae6263, type: 2}
+  - {fileID: 11400000, guid: 4c2e7b9a6841b414686c24ed4bde7d08, type: 2}
+  - {fileID: 11400000, guid: da31a31bf1c41b9469a598fcef104425, type: 2}
+  - {fileID: 11400000, guid: e2221ca22963c644f882acb36e48e5fb, type: 2}
+  mapViewData:
+    nodeViewType: 0
+    offsetX: 130
+    offsetY: 250
+    curveFactor: -0.15
+    displayMinPassedLevelIndex: 5
+  raidData:
+    reward:
+    - n: 650
+      id: Gold
+    - n: 6
+      id: Purse
+    - n: 1
+      id: ChestGold
+    - n: 0
+      id: ChestDiamond
+  disableNextLevel: 1
+  waveEnemyLevelAdd: 2

@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47b1a5249464a94789a1988bde2e906, type: 3}
+  m_Name: wave-lv25-3
+  m_EditorClassIdentifier: 
+  events: []
+  enemies:
+  - right: 1
+    enemyType: 18
+    height: 4
+    delay: 1
+  - right: 1
+    enemyType: 18
+    height: 5.6
+    delay: 3
+  - right: 0
+    enemyType: 5
+    height: 7.38
+    delay: 3
+  - right: 0
+    enemyType: 5
+    height: 8.71
+    delay: 1
+  - right: 0
+    enemyType: 5
+    height: 10.28
+    delay: 1
+  - right: 0
+    enemyType: 5
+    height: 12
+    delay: 1
+  - right: 0
+    enemyType: 4
+    height: 4
+    delay: 1
+  - right: 1
+    enemyType: 4
+    height: 4.94
+    delay: 0.25
+  - right: 0
+    enemyType: 4
+    height: 5.86
+    delay: 0.25
+  - right: 1
+    enemyType: 4
+    height: 6.87
+    delay: 0.25
+  disableCab: 0
+  enemyLevelExtraOffset: 30

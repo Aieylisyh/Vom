@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d1444740bfb14742aa14d8bccaaea18, type: 3}
+  m_Name: Micro
+  m_EditorClassIdentifier: 
+  id: Micro
+  Category:
+    isMechanical: 1
+    tier: 0
+  speed: 4
+  attack: 80
+  hp: 160
+  levelupData:
+    dropBoost: 2.67
+    attackBoost: 9
+    hpBoost: 16
+  dropData:
+    score: 45
+    exp: 45
+    dropItems:
+    - chance: 1
+      item:
+        n: 60
+        id: Gold
+      amountNotAffectByRatio: 0
+    - chance: 1
+      item:
+        n: 1
+        id: mats
+      amountNotAffectByRatio: 0
+    - chance: 0.5
+      item:
+        n: 1
+        id: 
+      amountNotAffectByRatio: 0
+    - chance: 0.07
+      item:
+        n: 1
+        id: Emerald
+      amountNotAffectByRatio: 0
+    - chance: 0.06
+      item:
+        n: 1
+        id: tokens
+      amountNotAffectByRatio: 1

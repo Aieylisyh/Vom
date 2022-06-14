@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fde6e230200161e4f811ff893d7e7b25, type: 3}
+  m_Name: Puck
+  m_EditorClassIdentifier: 
+  id: Puck
+  levelMax: 120
+  price:
+    n: 0
+    id: 
+  levelupGoldCost:
+    Pow3Weight: 0.16
+    Pow2Weight: -1
+    Pow1Weight: 11
+    Pow0Weight: 80
+  hp:
+    Pow3Weight: 0
+    Pow2Weight: 0.16
+    Pow1Weight: 8.25
+    Pow0Weight: 625
+  speed:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 3.12
+  torDmg:
+    Pow3Weight: 0
+    Pow2Weight: 0.05
+    Pow1Weight: 1.45
+    Pow0Weight: 115
+  bombDmg:
+    Pow3Weight: 0
+    Pow2Weight: 0.07
+    Pow1Weight: 1.23
+    Pow0Weight: 98
+  reg:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.5
+    Pow0Weight: 23
+  vita:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0.25
+    Pow0Weight: 10
+  armor:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  armor_hotWeapon:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  armor_laser:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  armor_ghost:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_hotWeapon:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_laser:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  dmgReduce_ghost:
+    Pow3Weight: 0
+    Pow2Weight: 0
+    Pow1Weight: 0
+    Pow0Weight: 0
+  abilityUnlocks:
+  - price:
+    - n: 50
+      id: TurtleRock
+    - n: 1
+      id: Emerald
+    ability: {fileID: 11400000, guid: 9515b8bca1ccd874895ddcbad847d5d1, type: 2}
+    shipLevelRequire: 10
+  - price:
+    - n: 150
+      id: TurtleRock
+    - n: 1
+      id: Emerald
+    ability: {fileID: 11400000, guid: a4ee9d0325f659c43877b25b3c9a262d, type: 2}
+    shipLevelRequire: 20
+  - price:
+    - n: 300
+      id: TurtleRock
+    - n: 3
+      id: Emerald
+    ability: {fileID: 11400000, guid: ae1a8dfb04019004ba5b1144c0ae7d8e, type: 2}
+    shipLevelRequire: 40
+  - price:
+    - n: 750
+      id: TurtleRock
+    - n: 1
+      id: Medal
+    ability: {fileID: 11400000, guid: 56e28e2b828b0c748922a4bf75858b69, type: 2}
+    shipLevelRequire: 60
+  - price:
+    - n: 1500
+      id: TurtleRock
+    - n: 7
+      id: Emerald
+    ability: {fileID: 11400000, guid: 66a1ecad8b771a548b63bb47b93fdcd8, type: 2}
+    shipLevelRequire: 80
+  - price:
+    - n: 3
+      id: Medal
+    - n: 12
+      id: Emerald
+    ability: {fileID: 11400000, guid: e965cfdcf2de97646bb2de2587d01ed1, type: 2}
+    shipLevelRequire: 100
+  - price:
+    - n: 12
+      id: Medal
+    - n: 18
+      id: Emerald
+    ability: {fileID: 11400000, guid: 7dda29509ffb4284fa0bbbc597e474c6, type: 2}
+    shipLevelRequire: 120

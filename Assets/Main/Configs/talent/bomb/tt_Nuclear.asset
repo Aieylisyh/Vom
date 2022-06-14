@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6aae0997c7fe53f458147088c5d58d10, type: 3}
+  m_Name: tt_Nuclear
+  m_EditorClassIdentifier: 
+  id: tt_Nuclear
+  baseTalents:
+  - tt_MultiExp
+  - tt_Expand
+  hasIntValue: 1
+  stringValue: 
+  sp: {fileID: 21300000, guid: 5e7e55a6f825e3f4bb1cfb8f1caefd60, type: 3}
+  levels:
+  - intValue: 3
+  category: 1
+  uiIndex: 8

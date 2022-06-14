@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed3884ca1f55714b9e063b3dfb74558, type: 3}
+  m_Name: Shops Config
+  m_EditorClassIdentifier: 
+  normal: {fileID: 11400000, guid: 70dee0e4c8eb13e49845b5a737e33819, type: 2}
+  mat: {fileID: 11400000, guid: 2eb7965c5997fb348b39b498f9c1d574, type: 2}
+  payment: {fileID: 11400000, guid: 3ae23d982f67085468d7f6adf627afe9, type: 2}
+  exchange: {fileID: 11400000, guid: 138da33c4009b4947b242639a6344f4c, type: 2}
+  vip: {fileID: 11400000, guid: ca66fbd7df05f9b43ba29ab797bf40dd, type: 2}
+  restockData:
+    commodity: {fileID: 11400000, guid: b41f240a649be7e488fa7a48168f4016, type: 2}
+    isPayment: 0
+    hasAd: 0
+    isFree: 0
+    restockable: 0
