@@ -1,0 +1,208 @@
+fileFormatVersion: 2
+guid: a667881fb7dfefe45ab16354fc721714
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Beast_Tail_01
+    100002: Beast_Tail_02
+    100004: Beast_Tail_03
+    100006: CTR_Beast_Tail1
+    100008: CTR_Beast_Tail2
+    100010: CTR_Beast_Tail3
+    100012: CTR_Hero_body1
+    100014: CTR_Hero_Body2
+    100016: CTR_Hero_EarL
+    100018: CTR_Hero_EarR
+    100020: CTR_Hero_Eyes
+    100022: CTR_Hero_HandL
+    100024: CTR_Hero_HandR
+    100026: CTR_Hero_Head
+    100028: CTR_Hero_Nose
+    100030: CTR_Hero_ROOT
+    100032: CTR_Hero_WeaponR
+    100034: CTR_Hero_WeaponR_MB
+    100036: CTR_Hero_Wobble
+    100038: Hero_Body1
+    100040: Hero_Body1_null
+    100042: Hero_Body2_null
+    100044: Hero_EarL
+    100046: Hero_EarR
+    100048: Hero_HandL
+    100050: Hero_HandL 1
+    100052: Hero_HandR
+    100054: Hero_handR
+    100056: Hero_Head
+    100058: Hero_Head_null
+    100060: Hero_Head_Wobble
+    100062: Hero_Nose
+    100064: Hero_ROOT_null
+    100066: Hero_WeaponR
+    100068: Hero_WeaponR_MB
+    100070: Hrero_Body2
+    100072: LadyMaria_Body
+    100074: MOrbitalKnight
+    100076: //RootNode
+    100078: Point001
+    100080: Shield
+    400000: Beast_Tail_01
+    400002: Beast_Tail_02
+    400004: Beast_Tail_03
+    400006: CTR_Beast_Tail1
+    400008: CTR_Beast_Tail2
+    400010: CTR_Beast_Tail3
+    400012: CTR_Hero_body1
+    400014: CTR_Hero_Body2
+    400016: CTR_Hero_EarL
+    400018: CTR_Hero_EarR
+    400020: CTR_Hero_Eyes
+    400022: CTR_Hero_HandL
+    400024: CTR_Hero_HandR
+    400026: CTR_Hero_Head
+    400028: CTR_Hero_Nose
+    400030: CTR_Hero_ROOT
+    400032: CTR_Hero_WeaponR
+    400034: CTR_Hero_WeaponR_MB
+    400036: CTR_Hero_Wobble
+    400038: Hero_Body1
+    400040: Hero_Body1_null
+    400042: Hero_Body2_null
+    400044: Hero_EarL
+    400046: Hero_EarR
+    400048: Hero_HandL
+    400050: Hero_HandL 1
+    400052: Hero_HandR
+    400054: Hero_handR
+    400056: Hero_Head
+    400058: Hero_Head_null
+    400060: Hero_Head_Wobble
+    400062: Hero_Nose
+    400064: Hero_ROOT_null
+    400066: Hero_WeaponR
+    400068: Hero_WeaponR_MB
+    400070: Hrero_Body2
+    400072: LadyMaria_Body
+    400074: MOrbitalKnight
+    400076: //RootNode
+    400078: Point001
+    400080: Shield
+    2300000: Shield
+    3300000: Shield
+    4300000: Shield
+    4300002: MOrbitalKnight
+    7400000: wushuang
+    9500000: //RootNode
+    13700000: MOrbitalKnight
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: CTR_Hero_ROOT
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: wushuang
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 100
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,972 @@
+fileFormatVersion: 2
+guid: 404a58b64eb35443bb9deb5b25418bcf
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: CTR_Hero_ROOT
+  - first:
+      1: 100004
+    second: Hero_Body1
+  - first:
+      1: 100006
+    second: Hero_Body2_null
+  - first:
+      1: 100008
+    second: Hero_EarL
+  - first:
+      1: 100010
+    second: Hero_EarR
+  - first:
+      1: 100012
+    second: Hero_Eyes
+  - first:
+      1: 100014
+    second: Hero_HandL
+  - first:
+      1: 100016
+    second: Hero_HandR
+  - first:
+      1: 100018
+    second: Hero_handR
+  - first:
+      1: 100020
+    second: Hero_Head
+  - first:
+      1: 100022
+    second: Hero_Head_null
+  - first:
+      1: 100024
+    second: Hero_Head_Wobble
+  - first:
+      1: 100026
+    second: Hero_Nose
+  - first:
+      1: 100028
+    second: Hero_ROOT_null
+  - first:
+      1: 100030
+    second: Hero_WeaponR
+  - first:
+      1: 100032
+    second: Hero_WeaponR_MB
+  - first:
+      1: 100034
+    second: Hrero_Body2
+  - first:
+      1: 100036
+    second: MOrbitalKnight
+  - first:
+      1: 100038
+    second: Point001
+  - first:
+      1: 100040
+    second: CTR_Hero_body1
+  - first:
+      1: 100042
+    second: CTR_Hero_Body2
+  - first:
+      1: 100044
+    second: CTR_Hero_EarL
+  - first:
+      1: 100046
+    second: CTR_Hero_EarR
+  - first:
+      1: 100048
+    second: CTR_Hero_Eyes
+  - first:
+      1: 100050
+    second: CTR_Hero_HandL
+  - first:
+      1: 100052
+    second: CTR_Hero_HandR
+  - first:
+      1: 100054
+    second: CTR_Hero_Head
+  - first:
+      1: 100056
+    second: CTR_Hero_Nose
+  - first:
+      1: 100058
+    second: CTR_Hero_WeaponR
+  - first:
+      1: 100060
+    second: CTR_Hero_WeaponR_MB
+  - first:
+      1: 100062
+    second: CTR_Hero_Wobble
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: CTR_Hero_ROOT
+  - first:
+      4: 400004
+    second: Hero_Body1
+  - first:
+      4: 400006
+    second: Hero_Body2_null
+  - first:
+      4: 400008
+    second: Hero_EarL
+  - first:
+      4: 400010
+    second: Hero_EarR
+  - first:
+      4: 400012
+    second: Hero_Eyes
+  - first:
+      4: 400014
+    second: Hero_HandL
+  - first:
+      4: 400016
+    second: Hero_HandR
+  - first:
+      4: 400018
+    second: Hero_handR
+  - first:
+      4: 400020
+    second: Hero_Head
+  - first:
+      4: 400022
+    second: Hero_Head_null
+  - first:
+      4: 400024
+    second: Hero_Head_Wobble
+  - first:
+      4: 400026
+    second: Hero_Nose
+  - first:
+      4: 400028
+    second: Hero_ROOT_null
+  - first:
+      4: 400030
+    second: Hero_WeaponR
+  - first:
+      4: 400032
+    second: Hero_WeaponR_MB
+  - first:
+      4: 400034
+    second: Hrero_Body2
+  - first:
+      4: 400036
+    second: MOrbitalKnight
+  - first:
+      4: 400038
+    second: Point001
+  - first:
+      4: 400040
+    second: CTR_Hero_body1
+  - first:
+      4: 400042
+    second: CTR_Hero_Body2
+  - first:
+      4: 400044
+    second: CTR_Hero_EarL
+  - first:
+      4: 400046
+    second: CTR_Hero_EarR
+  - first:
+      4: 400048
+    second: CTR_Hero_Eyes
+  - first:
+      4: 400050
+    second: CTR_Hero_HandL
+  - first:
+      4: 400052
+    second: CTR_Hero_HandR
+  - first:
+      4: 400054
+    second: CTR_Hero_Head
+  - first:
+      4: 400056
+    second: CTR_Hero_Nose
+  - first:
+      4: 400058
+    second: CTR_Hero_WeaponR
+  - first:
+      4: 400060
+    second: CTR_Hero_WeaponR_MB
+  - first:
+      4: 400062
+    second: CTR_Hero_Wobble
+  - first:
+      23: 2300000
+    second: //RootNode
+  - first:
+      23: 2300002
+    second: MOrbitalKnight
+  - first:
+      33: 3300000
+    second: //RootNode
+  - first:
+      33: 3300002
+    second: MOrbitalKnight
+  - first:
+      43: 4300000
+    second: OrbitalKnight
+  - first:
+      43: 4300002
+    second: MOrbitalKnight
+  - first:
+      74: 7400000
+    second: Hero_GachaJump
+  - first:
+      74: 7400002
+    second: Hero_Walk1
+  - first:
+      74: 7400004
+    second: Hero_Walk2
+  - first:
+      74: 7400006
+    second: Hero_AttackStart_v1
+  - first:
+      74: 7400008
+    second: Hero_AttackIdle_v1
+  - first:
+      74: 7400010
+    second: Hero_AttackStart_v2
+  - first:
+      74: 7400012
+    second: Hero_AttackIdle_v2
+  - first:
+      74: 7400014
+    second: Hero_AttackHit
+  - first:
+      74: 7400016
+    second: Hero_Die-Crash
+  - first:
+      74: 7400018
+    second: Hero_Die-Fall
+  - first:
+      74: 7400020
+    second: Hero_Die-Killed
+  - first:
+      74: 7400022
+    second: Hero_Die-Drown
+  - first:
+      74: 7400024
+    second: Hero_Idle1
+  - first:
+      74: 7400026
+    second: Hero_sleep
+  - first:
+      74: 7400028
+    second: Hero_Idle3
+  - first:
+      74: 7400030
+    second: Hero_JumpToReady
+  - first:
+      74: 7400032
+    second: Hero_Ready
+  - first:
+      74: 7400034
+    second: Hero_AttackIdle_v3
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      111: 11100000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: MOrbitalKnight
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Hero_Walk1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 10
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.04619526
+        functionName: Moved
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5484959
+        functionName: Moved
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Walk2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 55
+      lastFrame: 95
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.021578873
+        functionName: Moved
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.5050505
+        functionName: Moved
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_AttackStart_v1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 100
+      lastFrame: 110
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_AttackIdle_v1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 110
+      lastFrame: 150
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_AttackStart_v2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 155
+      lastFrame: 165
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_AttackIdle_v2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 165
+      lastFrame: 205
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_AttackHit
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 205
+      lastFrame: 225
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.25113884
+        functionName: Attacked
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Die-Crash
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 230
+      lastFrame: 253
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: DiedFromCrash
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Die-Killed
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 260
+      lastFrame: 285
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: DiedFromEnemy
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Die-Fall
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 290
+      lastFrame: 313
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: DiedFromFalling
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Die-Drown
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 315
+      lastFrame: 366
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0
+        functionName: DiedFromDrowning
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Idle1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 371
+      lastFrame: 430
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_sleep
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 440
+      lastFrame: 500
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Idle3
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 510
+      lastFrame: 567
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_JumpToReady
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 571
+      lastFrame: 599
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.5016835
+        functionName: Spawned
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_Ready
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 600
+      lastFrame: 650
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_AttackIdle_v3
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 660
+      lastFrame: 700
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hero_GachaJump
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 840
+      lastFrame: 870
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: CTR_Hero_ROOT
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
