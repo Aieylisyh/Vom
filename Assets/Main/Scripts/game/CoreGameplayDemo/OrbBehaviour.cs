@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using game;
 
 public class OrbBehaviour : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class OrbBehaviour : MonoBehaviour
     public GameObject dieVFX;
     public float releaseHeightOffsetRatioByDistance;
     private float _releaseHeightOffset;
+
+    public RotateAlignMove rotateAlignMove;
 
     public void SetOrbital(float deg, Transform center)
     {
@@ -62,6 +65,7 @@ public class OrbBehaviour : MonoBehaviour
         transform.position = orbitalCenter.position + orbitalOffset +
             Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius +
                 Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius;
+
     }
 
     public void Die(bool silent)
@@ -88,7 +92,9 @@ public class OrbBehaviour : MonoBehaviour
         if (_isOrbital)
         {
             orbitalDegree += Time.deltaTime * rotateDegreeSpeed;
+            var oldPos = transform.position;
             SyncOrbitalPos();
+            rotateAlignMove.Rotate(transform.position - oldPos);
         }
         else
         {
@@ -96,11 +102,16 @@ public class OrbBehaviour : MonoBehaviour
             _releaseTempPos += _releaseDir.normalized * releaseSpeed * Time.deltaTime;
 
             var acv = releaseCurveAc.Evaluate(_expectedReleaseTimer / _expectedReleaseTime);
-            transform.position = _releaseTempPos + acv * _releaseHeightOffset * Vector3.up;
+            var newPos = _releaseTempPos + acv * _releaseHeightOffset * Vector3.up;
+            var dir = newPos - transform.position;
+            transform.position = newPos;
+
             //stop rotate immidiately and go a curve not staight line!
             //if the target moves, will not follow so just do the collision test!
 
             _expectedReleaseTimer += Time.deltaTime;
+
+            rotateAlignMove.Rotate(dir);
         }
     }
 }
