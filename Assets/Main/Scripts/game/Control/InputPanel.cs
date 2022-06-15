@@ -15,11 +15,6 @@ namespace game
         private float _timestampTap;
         public float canvasScale { get; private set; }
 
-        private Vector2 _delta;
-        private Vector2 _dragStartPos;
-        public bool IsDraging { get; private set; }
-        private Vector2 startPos;
-
         protected InputPanel()
         {
             //Debug.Log("InputPanel");
@@ -32,29 +27,12 @@ namespace game
             canvasScale = canvasTrans.localScale.x;
         }
 
-        public Vector2 GetDelta()
-        {
-            //if (!IsDraging)
-            //{
-            //    return Vector2.zero;
-            //}
-            return _delta;
-        }
-
-        public bool DragRangeValid()
-        {
-            return _delta.magnitude > ignoreDeltaMagnitude;
-        }
-
         public void OnDrag(PointerEventData eventData)
         {
             if (!GameFlowService.instance.IsGameplayControlEnabled())
                 return;
 
-            IsDraging = true;
-            _delta += eventData.delta;
-            Debug.Log(_delta);
-            //OnMoved
+            PlayerMoveBehaviour.instance.UpdateDrag(eventData.position);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -64,13 +42,7 @@ namespace game
                 return;
             //Debug.Log("OnPointerDown");
             _timestampTap = Time.unscaledTime;
-            _delta = Vector2.zero;
-            _dragStartPos = eventData.position;
-        }
-
-        public Vector2 GetStartPos()
-        {
-            return _dragStartPos;
+            PlayerMoveBehaviour.instance.StartDrag(eventData.position);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -93,9 +65,7 @@ namespace game
             if (!GameFlowService.instance.IsGameplayControlEnabled())
                 return;
 
-            IsDraging = false;
-            _delta = Vector2.zero;
-
+            PlayerMoveBehaviour.instance.EndDrag();
         }
 
         public void OnPointerClick(PointerEventData eventData)

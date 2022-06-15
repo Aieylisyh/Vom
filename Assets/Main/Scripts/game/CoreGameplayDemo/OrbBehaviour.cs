@@ -9,7 +9,7 @@ public class OrbBehaviour : MonoBehaviour
     public float orbitalRadius;
     public Vector3 orbitalOffset;
 
-    public Transform orbitalCenter { get; private set; }
+    public Transform orbitalHost { get; private set; }
     public float orbitalDegree { get; private set; }
     private bool _isOrbital;
 
@@ -32,7 +32,7 @@ public class OrbBehaviour : MonoBehaviour
 
     public void SetOrbital(float deg, Transform center)
     {
-        orbitalCenter = center;
+        orbitalHost = center;
         orbitalDegree = deg;
         releaseTrait.enabled = false;
         _isOrbital = true;
@@ -62,10 +62,9 @@ public class OrbBehaviour : MonoBehaviour
 
     void SyncOrbitalPos()
     {
-        transform.position = orbitalCenter.position + orbitalOffset +
+        transform.position = orbitalHost.position + orbitalOffset +
             Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius +
                 Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius;
-
     }
 
     public void Die(bool silent)
@@ -94,7 +93,7 @@ public class OrbBehaviour : MonoBehaviour
             orbitalDegree += Time.deltaTime * rotateDegreeSpeed;
             var oldPos = transform.position;
             SyncOrbitalPos();
-            rotateAlignMove.Rotate(transform.position - oldPos);
+            //rotateAlignMove.Rotate(transform.position - oldPos);
         }
         else
         {

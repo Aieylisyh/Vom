@@ -17,9 +17,10 @@ namespace game
 
         void MovePlayerShip()
         {
-            Vector2 delta = InputPanel.instance.GetDelta();
-            float x = delta.x;
+            //  Vector2 delta = InputPanel.instance.GetDelta();
+            //  float x = delta.x;
             // float y = delta.y;
+            float x = 0;
 
             if (x > MoveInputThreshold)
             {

@@ -28,7 +28,10 @@ namespace game
         {
             if (!View.gameObject.activeSelf)
             {
-                var pos = InputPanel.instance.GetStartPos();
+                // var pos = InputPanel.instance.GetStartPos();
+                var pos = Vector2.zero;
+
+
                 //Debug.Log(pos);
                 //Debug.Log(pos + "  " + pos / canvasTrans.localScale.x);
                 //Debug.Log(Screen.height);
