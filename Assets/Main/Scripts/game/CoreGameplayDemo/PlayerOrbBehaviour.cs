@@ -2,55 +2,58 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PlayerOrbBehaviour : MonoBehaviour
+namespace vom
 {
-    public static PlayerOrbBehaviour instance { get; private set; }
-    public Transform spawnSpace;
-
-    public GameObject fireball;
-    private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
-
-    private void Awake()
+    public class PlayerOrbBehaviour : MonoBehaviour
     {
-        instance = this;
-    }
+        public static PlayerOrbBehaviour instance { get; private set; }
+        public Transform spawnSpace;
 
-    public void TestFireBalls()
-    {
-        SpawnOrb(fireball, 0);
-        SpawnOrb(fireball, 120);
-        SpawnOrb(fireball, 240);
-    }
+        public GameObject fireball;
+        private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
 
-    public void TestArcane()
-    {
-
-    }
-
-    void SpawnOrb(GameObject prefab, float degree)
-    {
-        GameObject orbGo = Instantiate(prefab, spawnSpace);
-        orbGo.SetActive(true);
-        var orb = orbGo.GetComponent<OrbBehaviour>();
-        orb.SetOrbital(degree, vom.PlayerBehaviour.instance.transform);
-        _orbs.Add(orb);
-    }
-
-    void Clear()
-    {
-        if (_orbs.Count > 0)
+        private void Awake()
         {
-            Destroy(_orbs[0].gameObject);
-            _orbs.RemoveAt(0);
+            instance = this;
         }
-    }
 
-    public void ReleaseFirst(GameObject target)
-    {
-        if (_orbs.Count > 0)
+        public void TestFireBalls()
         {
-            _orbs[0].SetRelease(target.transform);
-            _orbs.RemoveAt(0);
+            SpawnOrb(fireball, 0);
+            SpawnOrb(fireball, 120);
+            SpawnOrb(fireball, 240);
+        }
+
+        public void TestArcane()
+        {
+
+        }
+
+        void SpawnOrb(GameObject prefab, float degree)
+        {
+            GameObject orbGo = Instantiate(prefab, spawnSpace);
+            orbGo.SetActive(true);
+            var orb = orbGo.GetComponent<OrbBehaviour>();
+            orb.SetOrbital(degree, vom.PlayerBehaviour.instance.transform);
+            _orbs.Add(orb);
+        }
+
+        void Clear()
+        {
+            if (_orbs.Count > 0)
+            {
+                Destroy(_orbs[0].gameObject);
+                _orbs.RemoveAt(0);
+            }
+        }
+
+        public void ReleaseFirst(GameObject target)
+        {
+            if (_orbs.Count > 0)
+            {
+                _orbs[0].SetRelease(target.transform);
+                _orbs.RemoveAt(0);
+            }
         }
     }
 }

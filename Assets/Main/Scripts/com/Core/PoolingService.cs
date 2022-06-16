@@ -44,7 +44,8 @@ namespace com
             var pi = go.GetComponent<PoolingInstance>();
             if (pi == null)
             {
-                Debug.LogError("Recycle PoolingInstance null!");
+                Debug.LogWarning("Recycle PoolingInstance null!");
+                Destroy(go);
                 return;
             }
             id = pi.id;

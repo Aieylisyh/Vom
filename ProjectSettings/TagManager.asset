@@ -9,13 +9,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Blocker
   - Water
   - UI
-  - shiplight
+  - 
   - postProcessing
-  - ship
-  - shipUi
+  - Player
+  - Enemy
   - 
   - 
   - 

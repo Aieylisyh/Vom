@@ -13,16 +13,16 @@ public class SceneInputSystem : MonoBehaviour
 
     public void InputPanelDown(PointerEventData eventData)
     {
-        Debug.Log("InputPanelDown");
+        //Debug.Log("InputPanelDown");
     }
 
     public void InputPanelRelease(PointerEventData eventData)
     {
-        Debug.Log("InputPanelRelease");
+        //Debug.Log("InputPanelRelease");
     }
 
     public void InputPanelClick(PointerEventData eventData)
     {
-        Debug.Log("InputPanelClick");
+        //Debug.Log("InputPanelClick");
     }
 }

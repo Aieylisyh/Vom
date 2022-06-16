@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class AnimationEventResolver : MonoBehaviour
+namespace vom
 {
-    public void Moved()
+    public class AnimationEventResolver : MonoBehaviour
     {
-        Debug.LogWarning("Moved");
+        public void Moved()
+        {
+            Debug.LogWarning("AnimationEventResolver " + "Moved");
+        }
     }
 }

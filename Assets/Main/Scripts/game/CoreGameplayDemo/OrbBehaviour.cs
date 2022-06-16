@@ -2,115 +2,118 @@
 using System.Collections;
 using game;
 
-public class OrbBehaviour : MonoBehaviour
+namespace vom
 {
-    public float rotateDegreeSpeed;
-    public float releaseSpeed;
-    public float orbitalRadius;
-    public Vector3 orbitalOffset;
-
-    public Transform orbitalHost { get; private set; }
-    public float orbitalDegree { get; private set; }
-    private bool _isOrbital;
-
-    public Transform releaseTarget { get; private set; }
-    public TrailRenderer releaseTrait;
-    public ParticleSystem releasingPs;
-    public AnimationCurve releaseCurveAc;//not the height. but the height delta(induct)
-    private float _expectedReleaseTime;
-    private float _expectedReleaseTimer;
-    private Vector3 _releaseDir;
-    private Vector3 _releaseTempPos;
-
-    public string releasingSound;
-
-    public GameObject dieVFX;
-    public float releaseHeightOffsetRatioByDistance;
-    private float _releaseHeightOffset;
-
-    public RotateAlignMove rotateAlignMove;
-
-    public void SetOrbital(float deg, Transform center)
+    public class OrbBehaviour : MonoBehaviour
     {
-        orbitalHost = center;
-        orbitalDegree = deg;
-        releaseTrait.enabled = false;
-        _isOrbital = true;
-    }
+        public float rotateDegreeSpeed;
+        public float releaseSpeed;
+        public float orbitalRadius;
+        public Vector3 orbitalOffset;
 
-    public void SetRelease(Transform target)
-    {
-        //ReleaseFromOrbital
-        releaseTarget = target;
-        releaseTrait.enabled = true;
-        _isOrbital = false;
+        public Transform orbitalHost { get; private set; }
+        public float orbitalDegree { get; private set; }
+        private bool _isOrbital;
 
-        releasingPs.Play();
-        com.SoundService.instance.Play(releasingSound);
+        public Transform releaseTarget { get; private set; }
+        public TrailRenderer releaseTrait;
+        public ParticleSystem releasingPs;
+        public AnimationCurve releaseCurveAc;//not the height. but the height delta(induct)
+        private float _expectedReleaseTime;
+        private float _expectedReleaseTimer;
+        private Vector3 _releaseDir;
+        private Vector3 _releaseTempPos;
 
-        _releaseTempPos = transform.position;
-        _releaseDir = target.position - _releaseTempPos;
-        //var dirNoY = dir;
-        //dirNoY.y = 0;
-        //var distNoY = dirNoY.magnitude;
-        // _releaseHeightOffset = distNoY * releaseHeightOffsetRatioByDistance;
-        var dist = _releaseDir.magnitude;
-        _releaseHeightOffset = dist * releaseHeightOffsetRatioByDistance;
-        _expectedReleaseTime = dist / releaseSpeed;
-        _expectedReleaseTimer = 0;
-    }
+        public string releasingSound;
 
-    void SyncOrbitalPos()
-    {
-        transform.position = orbitalHost.position + orbitalOffset +
-            Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius +
-                Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius;
-    }
+        public GameObject dieVFX;
+        public float releaseHeightOffsetRatioByDistance;
+        private float _releaseHeightOffset;
 
-    public void Die(bool silent)
-    {
-        if (silent)
+        public RotateAlignMove rotateAlignMove;
+
+        public void SetOrbital(float deg, Transform center)
         {
-            Destroy(gameObject);
+            orbitalHost = center;
+            orbitalDegree = deg;
+            releaseTrait.enabled = false;
+            _isOrbital = true;
         }
-        else
+
+        public void SetRelease(Transform target)
         {
-            var vfx = Instantiate(dieVFX, transform.position, Quaternion.identity, this.transform.parent);
-            vfx.SetActive(true);
-            Destroy(gameObject);
+            //ReleaseFromOrbital
+            releaseTarget = target;
+            releaseTrait.enabled = true;
+            _isOrbital = false;
+
+            releasingPs.Play();
+            com.SoundService.instance.Play(releasingSound);
+
+            _releaseTempPos = transform.position;
+            _releaseDir = target.position - _releaseTempPos;
+            //var dirNoY = dir;
+            //dirNoY.y = 0;
+            //var distNoY = dirNoY.magnitude;
+            // _releaseHeightOffset = distNoY * releaseHeightOffsetRatioByDistance;
+            var dist = _releaseDir.magnitude;
+            _releaseHeightOffset = dist * releaseHeightOffsetRatioByDistance;
+            _expectedReleaseTime = dist / releaseSpeed;
+            _expectedReleaseTimer = 0;
         }
-    }
 
-    void Update()
-    {
-        Move();
-    }
-
-    void Move()
-    {
-        if (_isOrbital)
+        void SyncOrbitalPos()
         {
-            orbitalDegree += Time.deltaTime * rotateDegreeSpeed;
-            var oldPos = transform.position;
-            SyncOrbitalPos();
-            //rotateAlignMove.Rotate(transform.position - oldPos);
+            transform.position = orbitalHost.position + orbitalOffset +
+                Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius +
+                    Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree) * orbitalRadius;
         }
-        else
+
+        public void Die(bool silent)
         {
+            if (silent)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                var vfx = Instantiate(dieVFX, transform.position, Quaternion.identity, this.transform.parent);
+                vfx.SetActive(true);
+                Destroy(gameObject);
+            }
+        }
 
-            _releaseTempPos += _releaseDir.normalized * releaseSpeed * Time.deltaTime;
+        void Update()
+        {
+            Move();
+        }
 
-            var acv = releaseCurveAc.Evaluate(_expectedReleaseTimer / _expectedReleaseTime);
-            var newPos = _releaseTempPos + acv * _releaseHeightOffset * Vector3.up;
-            var dir = newPos - transform.position;
-            transform.position = newPos;
+        void Move()
+        {
+            if (_isOrbital)
+            {
+                orbitalDegree += Time.deltaTime * rotateDegreeSpeed;
+                var oldPos = transform.position;
+                SyncOrbitalPos();
+                //rotateAlignMove.Rotate(transform.position - oldPos);
+            }
+            else
+            {
 
-            //stop rotate immidiately and go a curve not staight line!
-            //if the target moves, will not follow so just do the collision test!
+                _releaseTempPos += _releaseDir.normalized * releaseSpeed * Time.deltaTime;
 
-            _expectedReleaseTimer += Time.deltaTime;
+                var acv = releaseCurveAc.Evaluate(_expectedReleaseTimer / _expectedReleaseTime);
+                var newPos = _releaseTempPos + acv * _releaseHeightOffset * Vector3.up;
+                var dir = newPos - transform.position;
+                transform.position = newPos;
 
-            rotateAlignMove.Rotate(dir);
+                //stop rotate immidiately and go a curve not staight line!
+                //if the target moves, will not follow so just do the collision test!
+
+                _expectedReleaseTimer += Time.deltaTime;
+
+                rotateAlignMove.Rotate(dir);
+            }
         }
     }
 }
