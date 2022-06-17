@@ -32,6 +32,28 @@ namespace vom
 
         public RotateAlignMove rotateAlignMove;
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (_isOrbital)
+                return;
+
+            if (other.gameObject.layer == 3)
+            {
+                Debug.Log("hit block " + other.gameObject);
+                Die(false);
+            }
+            else
+            {
+                var ene = other.GetComponent<EnemyBehaviour>();
+                if (ene != null)
+                {
+                    Debug.Log("hit ene" + other.gameObject);
+                    //TODO deal damage
+                    Die(false);
+                }
+            }
+        }
+
         public void SetOrbital(float deg, Transform center)
         {
             orbitalHost = center;

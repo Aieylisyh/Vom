@@ -14,7 +14,7 @@ namespace vom
             UpdateEnemies();
         }
 
-        public void UpdateEnemies()
+        public void UpdateEnemies_nonBlockedFirst()
         {
             var enemies = EnemySystem.instance.enemies;
 
@@ -33,10 +33,7 @@ namespace vom
                     continue;
                 }
                 var res = Physics.Raycast(pos, dir, out hitInfo, searchRange, 1 << maskToInclude);
-                if (res)
-                {
-                    Debug.Log("ene " + e.gameObject + " blocked by " + hitInfo.collider.gameObject);
-                }
+                if (res) { Debug.Log("ene " + e.gameObject + " blocked by " + hitInfo.collider.gameObject); }
                 else
                 {
                     var dist = dir.magnitude;
@@ -49,12 +46,43 @@ namespace vom
             }
 
             //mask https://blog.csdn.net/yongshuangzhao/article/details/102877973
-            if (nearestNonBlockedEnemy!=null)
+            if (nearestNonBlockedEnemy != null)
             {
                 Debug.Log("target is " + nearestNonBlockedEnemy.gameObject);
                 PlayerOrbBehaviour.instance.ReleaseFirst(nearestNonBlockedEnemy.gameObject);
             }
         }
 
+        public void UpdateEnemies()
+        {
+            var enemies = EnemySystem.instance.enemies;
+
+            var pos = transform.position;
+            var minDist = float.MaxValue;
+            EnemyBehaviour nearestEnemy = null;
+
+            foreach (var e in enemies)
+            {
+                var dir = e.transform.position - pos;
+                if (dir.magnitude > searchRange)
+                {
+                    //Debug.Log("ene " + e.gameObject + " too far");
+                    continue;
+                }
+
+                var dist = dir.magnitude;
+                if (dist < minDist)
+                {
+                    minDist = dist;
+                    nearestEnemy = e;
+                }
+            }
+
+            if (nearestEnemy != null)
+            {
+                //Debug.Log("target is " + nearestEnemy.gameObject);
+                PlayerOrbBehaviour.instance.ReleaseFirst(nearestEnemy.gameObject);
+            }
+        }
     }
 }
