@@ -33,7 +33,7 @@ namespace game
             if (!GameFlowService.instance.IsGameplayControlEnabled())
                 return;
 
-            PlayerMoveBehaviour.instance.UpdateDrag(eventData.position);
+            PlayerBehaviour.instance.move.UpdateDrag(eventData.position);
         }
 
         public void OnPointerDown(PointerEventData eventData)
@@ -43,7 +43,7 @@ namespace game
                 return;
             //Debug.Log("OnPointerDown");
             _timestampTap = Time.unscaledTime;
-            PlayerMoveBehaviour.instance.StartDrag(eventData.position);
+            PlayerBehaviour.instance.move.StartDrag(eventData.position);
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -66,7 +66,7 @@ namespace game
             if (!GameFlowService.instance.IsGameplayControlEnabled())
                 return;
 
-            PlayerMoveBehaviour.instance.EndDrag();
+            PlayerBehaviour.instance.move.EndDrag();
         }
 
         public void OnPointerClick(PointerEventData eventData)
