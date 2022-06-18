@@ -83,17 +83,6 @@ namespace game
 
         protected override bool TryDie()
         {
-            var cfg = ConfigService.instance.combatConfig.playerParam;
-            if (hp <= 0 && !_lowHealthProtected)
-            {
-                if (hp > cfg.lowHealthProtectMinValue)
-                {
-                    _lowHealthProtected = true;
-                    hp = 1;
-                }
-            }
-
-            if (hp <= 0)
             {
                 var attri = CombatService.instance.playerAttri;
                 var spareEngineTime = attri.ttModifier.spareEngineSec;
@@ -145,10 +134,9 @@ namespace game
             if (v < 0)
             {
                 //Debug.Log(HealthRatio + HealthRatio);
-                var cfg = ConfigService.instance.combatConfig.playerParam;
-                if (HealthRatio * 100 < cfg.vignetteShowPercentage)
+                if (HealthRatio * 100 <50)
                 {
-                    svb.BlinkToValue(cfg.vignetteShowAlpha - HealthRatio);
+                    svb.BlinkToValue(0.5f - HealthRatio);
                 }
 
                 OnHitFeedBack(v);

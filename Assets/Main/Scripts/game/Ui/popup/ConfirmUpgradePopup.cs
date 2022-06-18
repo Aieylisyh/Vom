@@ -51,8 +51,8 @@ namespace game
                     var suc = Levelup();
                     if (suc)
                     {
-                        ShipWindowBehaviour.instance.attributePanelBehaviour.OnLevelupSuc();
-                        ShipService.instance.CheckShipUpgradeMissions();
+                        //ShipWindowBehaviour.instance.attributePanelBehaviour.OnLevelupSuc();
+                        //ShipService.instance.CheckShipUpgradeMissions();
 
                         attri_shipLayer = CombatService.instance.playerAttri.vBase;
                         var hp2 = attri_shipLayer.hp;

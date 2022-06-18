@@ -139,8 +139,8 @@ namespace game
         void UnlockSuc()
         {
             ShipService.instance.UnlockShip();
-            ShipWindowBehaviour.instance.UpdateShipView();
-            ShipWindowBehaviour.instance.PlayEffectUnlock();
+            //ShipWindowBehaviour.instance.UpdateShipView();
+            //ShipWindowBehaviour.instance.PlayEffectUnlock();
             var shipNameLocalized = LocalizationService.instance.GetLocalizedText(ShipService.instance.GetPrototype().title);
 
             SoundService.instance.Play("ship unlock");
@@ -192,11 +192,11 @@ namespace game
             ShipService.instance.LevelupShip();
             SoundService.instance.Play("btn big");
             //CombatService.instance.RefreshPlayerAttri();
-            ShipWindowBehaviour.instance.UpdateShipView();
+            //ShipWindowBehaviour.instance.UpdateShipView();
             var go = Instantiate(particleGo, particleGo.transform.parent);
             go.SetActive(true);
             Destroy(go, 1);
-            ShipWindowBehaviour.instance.PlayEffectLevelup();
+            //ShipWindowBehaviour.instance.PlayEffectLevelup();
         }
     }
 }

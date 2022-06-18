@@ -13,13 +13,10 @@ namespace game
         public NetworkConfig networkConfig;
         public PayConfig payConfig;
         public AchievementConfig achievementConfig;
-        public ShipConfig factoryConfig;
         public TalentConfig talentConfig;
-        //public TechniqueConfig techniqueConfig;
-        public FishingConfig fishingConfig;
         public MailConfig mailConfig;
         public CombatAbilityConfig combatAbilityConfig;
-        public CombatConfig combatConfig;
+        public vom.CombatConfig combatConfig;
         public EnemyConfig enemyConfig;
         public CoreConfig coreConfig;
         public SettingsConfig settingsConfig;

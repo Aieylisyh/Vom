@@ -9,7 +9,7 @@ namespace game
         {
             shipId = id;
             ttModifier = new TalentModifier();
-            sabModifier = new ShipAbilityModifier();
+            //sabModifier = new ShipAbilityModifier();
             cabModifier = new CombatAbilityModifier();
         }
 
@@ -49,7 +49,6 @@ namespace game
         public string shipId { get; private set; }
 
         public TalentModifier ttModifier;
-        public ShipAbilityModifier sabModifier;
         public CombatAbilityModifier cabModifier;        //RuntimeLevel List<string> cabCards to check cab
 
         public BaseValue vBase;
@@ -58,35 +57,29 @@ namespace game
         {
             get
             {
-                return MathGame.GetPercentageAdded(
-                    vBase.hp,
-                    sabModifier.hpAdd + cabModifier.hpAdd + ttModifier.hpAdd);
+                return 0;
             }
         }
         public float speed
         {
             get
             {
-                var speedMultiplied = MathGame.GetPercentageAdded(vBase.speed, sabModifier.speedAdd + ttModifier.speedAdd);
-                return speedMultiplied + 0.01f * cabModifier.speedAdd;
+                return 0;
             }
         }
         public int torDmg
         {
             get
             {
-                return MathGame.GetPercentageAdded(
-           vBase.torDmg,
-           sabModifier.torDmgAdd + cabModifier.torDmgAdd + ttModifier.torDmgAdd);
+                return 0;
+                // return MathGame.GetPercentageAdded(       vBase.torDmg,     sabModifier.torDmgAdd + cabModifier.torDmgAdd + ttModifier.torDmgAdd);
             }
         }
         public int bombDmg
         {
             get
             {
-                return MathGame.GetPercentageAdded(
-           vBase.bombDmg,
-           sabModifier.bombDmgAdd + cabModifier.bombDmgAdd + ttModifier.bombDmgAdd);
+                return 0;
             }
         }
         //reg per tick
@@ -94,9 +87,7 @@ namespace game
         {
             get
             {
-                return MathGame.GetPercentageAdded(
-            vBase.reg,
-            sabModifier.regAdd + cabModifier.regAdd + ttModifier.regAdd);
+                return 0;
             }
         }
         public int vita
@@ -107,8 +98,7 @@ namespace game
         {
             get
             {
-                return vBase.armor
-                  + sabModifier.armorAdd + cabModifier.armorAdd + ttModifier.armorAdd;
+                return 0;
             }
         }
         public int armor_hotWeapon
@@ -121,7 +111,7 @@ namespace game
         }
         public int armor_ghost
         {
-            get { return vBase.armor_ghost + sabModifier.dmgReduceGhostAdd; }
+            get { return 0; }
         }
         public float dmgReduce
         {
@@ -129,22 +119,15 @@ namespace game
         }
         public float dmgReduce_hotWeapon
         {
-            get { return vBase.dmgReduce_hot + sabModifier.dmgReduceHotAdd + cabModifier.dmgReduceHotAdd; }
+            get { return 0; }
         }
         public float dmgReduce_laser
         {
-            get
-            {
-                return vBase.dmgReduce_laser + ttModifier.dmgReduce_laserAdd + sabModifier.dmgReduceLaserAdd + cabModifier.dmgReduceLaserAdd;
-            }
+            get { return 0; }
         }
         public float dmgReduce_ghost
         {
-            get
-            {
-                return vBase.dmgReduce_ghost
-                   + ttModifier.dmgReduce_ghostAdd;
-            }
+            get { return 0; }
         }
         public int torTraceNum
         {
@@ -196,18 +179,13 @@ namespace game
                 vBase.dmgReduce_laser = proto.dmgReduce_laser.GetValue(shipLevel);
                 vBase.dmgReduce_ghost = proto.dmgReduce_ghost.GetValue(shipLevel);
 
-                vBase.torTraceNum = ConfigService.instance.combatConfig.playerParam.torTraceNum;
-                vBase.torDirNum = ConfigService.instance.combatConfig.playerParam.torDirNum;
-                vBase.bombStorage = ConfigService.instance.combatConfig.playerParam.bombStorage;
-                vBase.bombInterval = ConfigService.instance.combatConfig.playerParam.bombInterval;
-
                 layer = PlayerAttriLayer.ShipAbility;
             }
 
             if (layer == PlayerAttriLayer.ShipAbility)
             {
                 //UnityEngine.Debug.Log("shipAbilityModifier");
-                sabModifier.Setup(shipItem);
+                //sabModifier.Setup(shipItem);
 
                 layer = PlayerAttriLayer.Talent;
             }
@@ -236,7 +214,7 @@ namespace game
             UnityEngine.Debug.Log("ttModifier");
             TextFormat.DumpToConsole(ttModifier);
             UnityEngine.Debug.Log("sabModifier");
-            TextFormat.DumpToConsole(sabModifier);
+            // TextFormat.DumpToConsole(sabModifier);
             UnityEngine.Debug.Log("cabModifier");
             TextFormat.DumpToConsole(cabModifier);
         }

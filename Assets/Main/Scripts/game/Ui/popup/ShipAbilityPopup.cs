@@ -128,15 +128,15 @@ namespace game
         private void OnLearn()
         {
             MainHudBehaviour.instance.Refresh();
-            ShipWindowBehaviour.instance.UpdateShipView();
+            //ShipWindowBehaviour.instance.UpdateShipView();
 
             SharkIsland.instance.TryShowShark();
             PortalIsland.instance.TryShowPortal();
             BirdIsland.instance.TryShowBird();
             StatuesBehaviour.instance.TryShowStatues();
 
-            ShipWindowBehaviour.instance.abilityPanelBehaviour.PlayEffectLearnSlot(_slot.GetComponent<RectTransform>());
-            ShipWindowBehaviour.instance.PlayEffectSab();
+            //ShipWindowBehaviour.instance.abilityPanelBehaviour.PlayEffectLearnSlot(_slot.GetComponent<RectTransform>());
+            //ShipWindowBehaviour.instance.PlayEffectSab();
         }
     }
 }

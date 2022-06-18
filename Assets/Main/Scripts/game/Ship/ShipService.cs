@@ -14,7 +14,7 @@ namespace game
 
         private List<ShipPrototype> GetPrototypes()
         {
-            return ConfigService.instance.factoryConfig.ships;
+            return new List<ShipPrototype>();
         }
 
         public string currentShipId
@@ -47,13 +47,6 @@ namespace game
 
         public ShipPrototype GetPrototype(string id)
         {
-            foreach (var i in ConfigService.instance.factoryConfig.ships)
-            {
-                if (i.id == id)
-                {
-                    return i;
-                }
-            }
             return null;
         }
 

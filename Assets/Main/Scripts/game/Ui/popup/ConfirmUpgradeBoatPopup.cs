@@ -24,10 +24,6 @@ namespace game
             Hide();
 
             var suc = Levelup();
-            if (suc)
-            {
-                ShipWindowBehaviour.instance.attributePanelBehaviour.OnLevelupSuc();
-            }
         }
 
         private bool Levelup()

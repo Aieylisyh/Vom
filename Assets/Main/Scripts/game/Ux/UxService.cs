@@ -445,7 +445,7 @@ namespace game
             }
             else if (id == "Exp")
             {
-                AddExp(amountDelta);
+                //AddExp(amountDelta);
                 finished = true;
                 changedHudItem = true;
             }
@@ -511,38 +511,6 @@ namespace game
                 MainHudBehaviour.instance.Refresh();
 
             SaveGameItemData();
-        }
-
-        public void AddExp(int amount)
-        {
-            gameDataCache.cache.exp += amount;
-            var top = GetExpTop();
-            if (gameDataCache.cache.exp >= top)
-            {
-                if (gameDataCache.cache.playerLevel >= ConfigService.instance.combatConfig.playerParam.maxLevel)
-                {
-                    gameDataCache.cache.exp = GetExpTop();
-                }
-                else
-                {
-                    //PlayerLevelUpFeedBack TODO
-                    gameDataCache.cache.playerLevel += 1;
-                    gameDataCache.cache.exp -= top;
-                }
-            }
-
-            SaveGameData();
-            MainHudBehaviour.instance.Refresh();
-        }
-
-        public int GetExpTop()
-        {
-            return GetExpTop(gameDataCache.cache.playerLevel);
-        }
-        public int GetExpTop(int lv)
-        {
-            var formula = ConfigService.instance.combatConfig.playerParam.expByLevel;
-            return formula.GetIntValue(lv - 1);
         }
 
         public void SortItems()

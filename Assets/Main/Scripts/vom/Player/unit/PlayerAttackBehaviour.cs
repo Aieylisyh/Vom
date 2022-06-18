@@ -10,7 +10,9 @@ namespace vom
 
         public PlayerEnemySearcherBehaviour searcher;
 
-        public PlayerOrbBehaviour orbs;
+        public OrbsController orbs;
+
+        public string spawnFireballSound;
 
         protected override void Start()
         {
@@ -55,6 +57,7 @@ namespace vom
         public void AddFireBalls()
         {
             orbs.AddFireBalls();
+            SoundService.instance.Play(spawnFireballSound);
         }
 
         public void Attacked()

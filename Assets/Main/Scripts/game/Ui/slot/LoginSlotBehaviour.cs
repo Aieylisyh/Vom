@@ -112,7 +112,7 @@ namespace game
             var starCount = LevelService.instance.GetCampaignLevelStars(_gameDataCache);
             starCountTxt.text = starCount + "";
             var crt = data.exp;
-            var max = UxService.instance.GetExpTop(data.playerLevel);
+            var max = 10000;
 
             float expRatio = (float)crt / max;
             expBar.localScale = new Vector3(expRatio, 1, 1);

@@ -78,18 +78,7 @@ namespace game
 
         private Item GetRevivePrice()
         {
-            var cfg = ConfigService.instance.combatConfig.playerParam;
-            if (GetRestReviveCount() > 1)
-            {
-                return new Item(cfg.reviveDiamond1, "Diamond");
-            }
-
-            if (AdService.instance.CanPlayAd(false))
-            {
-                return new Item(1, "Ad");
-            }
-
-            return new Item(cfg.reviveDiamond2, "Diamond");
+            return new Item(999, "Diamond");
         }
 
         public void DemandRevive(Action rejectCb)
@@ -173,8 +162,8 @@ namespace game
         private int GetRestReviveCount()
         {
             var reviveCount = LevelService.instance.runtimeLevel.reviveCount;
-            var maxCount = ConfigService.instance.combatConfig.reviveMaxCount;
-            return maxCount - reviveCount;
+            // var maxCount = ConfigService.instance.combatConfig.reviveMaxCount;
+            return 0;
         }
     }
 }

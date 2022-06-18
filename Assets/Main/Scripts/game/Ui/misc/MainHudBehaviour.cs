@@ -100,7 +100,7 @@ namespace game
             var data = UxService.instance.gameDataCache.cache;
             amountLevel.text = data.playerLevel + "";
             var crt = data.exp;
-            var max = UxService.instance.GetExpTop();
+            var max = 10000;
 
             amountExpMax.text = "/" + max;
             if (withAnim)

@@ -318,17 +318,8 @@ namespace game
 
         private List<Item> GetLevelupRewards(int lvFrom)
         {
-            var param = ConfigService.instance.combatConfig.playerParam;
-            //return new Item(cfg.playerParam.levelUpReward.n, cfg.playerParam.levelUpReward.id);
             var res = new List<Item>();
-            if (lvFrom >= param.minLevelFromToGainTalentPoint)
-            {
-                //Debug.Log("GetLevelupRewards add tt");
-                res.Add(new Item(1, "TalentPoint"));
-            }
-
-            //Debug.Log("GetLevelupRewards add diamond");
-            res.Add(new Item(param.levelUpBaseReward.n, param.levelUpBaseReward.id));
+            res.Add(new Item(1, "TalentPoint"));
             return res;
         }
 

@@ -63,8 +63,8 @@ namespace game
             var distanceSafe = 4.1f;
 
             var boss = self as Boss;
-            var left = cfg.levelFieldParam.boundLeft + distanceSafe;
-            var right = cfg.levelFieldParam.boundRight - distanceSafe;
+            var left =111;
+            var right = 1111;
 
             if (self.move.transform.position.x > right && boss.bossMove.goingRight && boss.bossMove.Speed != 0)
             {

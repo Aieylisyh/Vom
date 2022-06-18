@@ -94,7 +94,7 @@ namespace game
             {
                 if (playerAttri.ttModifier.bombAoeDmg > 0 && _hitByBombCount % 5 == 0)
                 {
-                    var range = ConfigService.instance.combatConfig.aoeParam.rangeExplodeBomb;
+                    var range = 5;
                     CreateAoeDamage(range, MathGame.GetPercentage(damage.value, playerAttri.ttModifier.bombAoeDmg));
                 }
 
@@ -129,7 +129,7 @@ namespace game
                 {
                     if (playerAttri.ttModifier.torAoeMaxHit > 0)
                     {
-                        var rangeTor = ConfigService.instance.combatConfig.aoeParam.rangeTor;
+                        var rangeTor = 5;
                         CreateAoeToProjectiles(rangeTor, playerAttri.ttModifier.torAoeMaxHit);
                     }
                 }
@@ -137,7 +137,7 @@ namespace game
                 {
                     if (playerAttri.ttModifier.bombAoeMaxHit > 0)
                     {
-                        var rangeBomb = ConfigService.instance.combatConfig.aoeParam.rangeBomb;
+                        var rangeBomb = 5;
                         CreateAoeToProjectiles(rangeBomb, playerAttri.ttModifier.bombAoeMaxHit);
                     }
                 }

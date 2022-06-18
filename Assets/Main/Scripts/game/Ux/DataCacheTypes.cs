@@ -228,17 +228,6 @@ namespace game
             talentPoint = ConfigService.instance.talentConfig.initialPoints;
             talentItems = new List<TalentItem>();
 
-            currentShipId = ConfigService.instance.combatConfig.playerParam.defaultShipId;
-            shipItems = new List<ShipItem>();
-            var ships = ConfigService.instance.factoryConfig.ships;
-            foreach (var ship in ships)
-            {
-                var item = new ShipItem(ship.id);
-                shipItems.Add(item);
-                if (currentShipId == ship.id)
-                    item.saveData.unlocked = true;
-            }
-
             idleClaimedDate = DateTime.Now;
             rawLastPlayedDays_Clover = -1;
             rawLastPlayedDays_Salary = -1;

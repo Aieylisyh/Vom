@@ -150,27 +150,9 @@ namespace game
 
         void Teleport()
         {
-            var em = self.move as EnemyMove;
-            var cfg = ConfigService.instance.combatConfig.levelFieldParam;
-
-            var pos = em.transform.position;
-            var x = pos.x;
-
-            var goTeleport = PoolingService.instance.GetInstance(psTeleportId);
-            goTeleport.transform.position = pos + new Vector3(0, 0, -2);
-            var posTo = pos;
-            if (Mathf.Abs(cfg.boundLeft - x) > Mathf.Abs(cfg.boundRight - x))
-            {
-                posTo = new Vector3(cfg.boundLeft + 2.8f, pos.y, pos.z);
-                em.Teleport(false, posTo);
-            }
-            else
-            {
-                posTo = new Vector3(cfg.boundRight - 2.8f, pos.y, pos.z);
-                em.Teleport(true, posTo);
-            }
+            //...
             var goTeleportTo = PoolingService.instance.GetInstance(psTeleportId);
-            goTeleportTo.transform.position = posTo + new Vector3(0, 0, -2);
+            goTeleportTo.transform.position = new Vector3(0, 0, -2);
         }
 
         protected override void LaunchAttack()

@@ -198,7 +198,6 @@ namespace game
         public void SearchTarget()
         {
             //Debug.Log("SearchTargets");
-            var lfp = ConfigService.instance.combatConfig.levelFieldParam;
 
             if (_target == null || !_target.IsAlive())
             {
@@ -266,16 +265,6 @@ namespace game
 
                         Vector3 tpPos = e.move.transform.position;
 
-                        float ignoreDistance = 0;
-                        if (e is Enemy)
-                        {
-                            ignoreDistance = (e as Enemy).sizeFactor * lfp.sizeLengthFactor * 0.5f;
-                        }
-                        if (tpPos.x < lfp.boundLeft - ignoreDistance
-                            || tpPos.x > lfp.boundRight + ignoreDistance)
-                        {
-                            continue;
-                        }
                         tpDist = (tpPos - transform.position).magnitude;
                         if (dist < 0 || dist > tpDist)
                         {

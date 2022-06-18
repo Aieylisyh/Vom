@@ -91,7 +91,7 @@ namespace game
 
         public FishingConfig GetConfig()
         {
-            return ConfigService.instance.fishingConfig;
+            return null;
         }
 
         public bool IsLevelupPossible()
