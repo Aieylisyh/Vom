@@ -35,7 +35,7 @@ public class Vibration
         if (!IsEnabled())
             return;
 
-      //  Handheld.Vibrate();
+        Handheld.Vibrate();
         //MMVibrationManager.ContinuousHaptic(1, 1, 0.5f, HapticTypes.LightImpact, null, true);
     }
 }
