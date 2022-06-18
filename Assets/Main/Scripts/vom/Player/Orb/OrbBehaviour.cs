@@ -6,6 +6,8 @@ namespace vom
 {
     public class OrbBehaviour : MonoBehaviour
     {
+        public CameraShake.ShakeLevel hitShakeLevel;
+
         private float _rotateDegreeSpeed;
         public float releaseSpeed;
         private float _orbitalRadius;
@@ -23,18 +25,25 @@ namespace vom
         private float _expectedReleaseTime;
         private float _expectedReleaseTimer;
         private Vector3 _releaseDir;
+
         private Vector3 _releaseTempPos;
 
         public string releasingSound;
         public string explodeSound;
 
         public GameObject dieVFX;
-        public float releaseHeightOffsetRatioByDistance;
-        private float _releaseHeightOffset;
+
+        private float _orbitalStartHeightAdd;
+        public float releaseOffsetRatioByDistance;
+        private float _releaseOffset;
+        private Vector3 _releaseOffsetDir;
 
         private RotateAlignMove _rotateAlignMove;
 
         private BasicEffect _be;
+
+        private float _startPositioningTimer;
+        private float _startPositioningTime;
 
         private void Awake()
         {
@@ -43,7 +52,11 @@ namespace vom
             var cfg = ConfigService.instance.combatConfig;
             _rotateDegreeSpeed = cfg.orbs.rotateDegreeSpeed;
             _orbitalRadius = cfg.orbs.orbitalRadius;
+            _orbitalStartHeightAdd = cfg.orbs.orbitalStartHeightAdd;
+
+            _startPositioningTime = cfg.orbs.startPositioningTime;
         }
+
         private void OnTriggerEnter(Collider other)
         {
             if (_isOrbital)
@@ -61,6 +74,7 @@ namespace vom
                 {
                     Debug.Log("hit ene" + other.gameObject);
                     //TODO deal damage
+                    ene.OnHit(this);
                     Die(false);
                 }
             }
@@ -73,6 +87,8 @@ namespace vom
             if (releaseTrait != null)
                 releaseTrait.enabled = false;
             _isOrbital = true;
+
+            _startPositioningTimer = _startPositioningTime;
         }
 
         public void SetRelease(Vector3 target)
@@ -83,24 +99,52 @@ namespace vom
                 releaseTrait.enabled = true;
             _isOrbital = false;
 
-            releasingPs?.Play();
+            if (releasingPs != null)
+                releasingPs.Play();
+
+            var offsetR =
             _be.enabled = true;
             SoundService.instance.Play(releasingSound);
 
             _releaseTempPos = transform.position;
             _releaseDir = target - _releaseTempPos;
+            var offset1 = Vector3.Cross(Vector3.up, _releaseDir).normalized;
+            var r = Random.Range(-1f, 1f);
+            _releaseOffsetDir = Vector3.up * (1 - Mathf.Abs(r)) + offset1 * r;
 
             var dist = _releaseDir.magnitude;
-            _releaseHeightOffset = dist * releaseHeightOffsetRatioByDistance;
+            _releaseOffset = dist * releaseOffsetRatioByDistance;
             _expectedReleaseTime = dist / releaseSpeed;
             _expectedReleaseTimer = 0;
         }
 
+        public bool IsReadyInOrbital()
+        {
+            if (_startPositioningTime > 0)
+            {
+                return _startPositioningTimer <= 0;
+            }
+            return true;
+        }
+
         void SyncOrbitalPos()
         {
-            transform.position = orbitalHost.position + orbitalOffset +
-                Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) * _orbitalRadius +
-                    Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree) * _orbitalRadius;
+            float r = 0;
+            if (_startPositioningTime > 0)
+            {
+                _startPositioningTimer -= GameTime.deltaTime;
+                if (_startPositioningTimer < 0)
+                {
+                    _startPositioningTimer = 0;
+                }
+                r = _startPositioningTimer / _startPositioningTime;
+            }
+
+            transform.position = orbitalHost.position +
+                orbitalOffset + Mathf.Lerp(0, _orbitalStartHeightAdd, r) * Vector3.up +
+            (Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) +
+            Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree)) *
+            Mathf.Lerp(1, 0, r) * _orbitalRadius;
         }
 
         public void Die(bool silent)
@@ -127,23 +171,23 @@ namespace vom
         {
             if (_isOrbital)
             {
-                orbitalDegree += Time.deltaTime * _rotateDegreeSpeed;
+                orbitalDegree += GameTime.deltaTime * _rotateDegreeSpeed;
                 var oldPos = transform.position;
                 SyncOrbitalPos();
                 //rotateAlignMove.Rotate(transform.position - oldPos);
             }
             else
             {
-                _releaseTempPos += _releaseDir.normalized * releaseSpeed * Time.deltaTime;
+                _releaseTempPos += _releaseDir.normalized * releaseSpeed * GameTime.deltaTime;
 
                 var acv = releaseCurveAc.Evaluate(_expectedReleaseTimer / _expectedReleaseTime);
-                var newPos = _releaseTempPos + acv * _releaseHeightOffset * Vector3.up;
+                var newPos = _releaseTempPos + acv * _releaseOffset * _releaseOffsetDir;
                 var dir = newPos - transform.position;
                 transform.position = newPos;
 
                 //stop rotate immidiately and go a curve not staight line!
                 //if the target moves, will not follow so just do the collision test!
-                _expectedReleaseTimer += Time.deltaTime;
+                _expectedReleaseTimer += GameTime.deltaTime;
 
                 _rotateAlignMove.Rotate(dir);
             }

@@ -19,7 +19,7 @@ namespace game
         private void Awake()
         {
             instance = this;
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
         }
 
         private void Update()

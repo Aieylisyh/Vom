@@ -15,5 +15,7 @@ namespace vom
     {
         public float rotateDegreeSpeed;
         public float orbitalRadius;
+        public float orbitalStartHeightAdd;
+        public float startPositioningTime;
     }
 }

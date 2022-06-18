@@ -12,7 +12,7 @@ TagManager:
   - Blocker
   - Water
   - UI
-  - 
+  - World ui
   - postProcessing
   - Player
   - Enemy
@@ -41,4 +41,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: WorldUI
+    uniqueID: 4186123351
     locked: 0

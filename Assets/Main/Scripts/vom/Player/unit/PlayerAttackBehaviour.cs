@@ -42,6 +42,7 @@ namespace vom
 
         private Transform _target;
         private Vector3 _targetPos;
+
         void PerformAttack()
         {
             var e = searcher.GetTargetEnemy();
@@ -54,6 +55,8 @@ namespace vom
             }
         }
 
+        public bool isAttacking { get { return _attackIntervalTimer > 0f; } }
+
         public void AddFireBalls()
         {
             orbs.AddFireBalls();
@@ -63,6 +66,7 @@ namespace vom
         public void Attacked()
         {
             //Debug.LogWarning("Attacked");
+            orbs.LaunchArcane(_targetPos);
             orbs.ReleaseFirst(_targetPos);
             _target = null;
         }

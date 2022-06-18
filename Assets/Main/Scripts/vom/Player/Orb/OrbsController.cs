@@ -8,7 +8,9 @@ namespace vom
         public Transform spawnSpace;
 
         public GameObject fireball;
+        public GameObject arcaneBolt;
         private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
+        public Transform weaponPos;
 
         public void AddFireBalls()
         {
@@ -18,9 +20,9 @@ namespace vom
             SpawnOrb(fireball, 240);
         }
 
-        public void LaunchArcane()
+        public void LaunchArcane(Vector3 targetPos)
         {
-
+            SpawnShoot(arcaneBolt, targetPos);
         }
 
         void SpawnOrb(GameObject prefab, float degree)
@@ -28,8 +30,18 @@ namespace vom
             GameObject orbGo = Instantiate(prefab, spawnSpace);
             orbGo.SetActive(true);
             var orb = orbGo.GetComponent<OrbBehaviour>();
-            orb.SetOrbital(degree, vom.PlayerBehaviour.instance.transform);
+            orb.SetOrbital(degree, PlayerBehaviour.instance.transform);
             _orbs.Add(orb);
+        }
+
+        void SpawnShoot(GameObject prefab, Vector3 targetPos)
+        {
+            GameObject shootGo = Instantiate(prefab, spawnSpace);
+            shootGo.SetActive(true);
+            shootGo.transform.position = weaponPos.position;
+
+            var shoot = shootGo.GetComponent<OrbBehaviour>();
+            shoot.SetRelease(targetPos);
         }
 
         void Clear()
@@ -51,12 +63,16 @@ namespace vom
 
             if (_orbs.Count > 0)
             {
-                _orbs[0].SetRelease(target);
-                _orbs.RemoveAt(0);
+                var orb = _orbs[0];
+                if (orb.IsReadyInOrbital())
+                {
+                    orb.SetRelease(target);
+                    _orbs.Remove(orb);
+                }
             }
         }
 
-        void ClearInvalids() 
+        void ClearInvalids()
         {
             for (var i = _orbs.Count - 1; i >= 0; i--)
             {

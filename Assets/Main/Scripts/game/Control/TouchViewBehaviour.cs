@@ -7,12 +7,13 @@ namespace game
 {
     public class TouchViewBehaviour : MonoBehaviour
     {
-        public RectTransform View;
-        public RectTransform ArrowRotateTrans;
-        public RectTransform ArrowSizeTrans;
-
-        public float widthArrow = 15;
-        public float arrowSizeFactor = 0.50f;
+        public RectTransform arrowRotateTrans;
+        public RectTransform ringSizeTrans;
+        public RectTransform arrowSizeTrans;
+        public GameObject view;
+        public float arrowSizeFactor = 1f;
+        public float ringSizeFactor = 2f;
+        public float maxSize = 100;
 
         private void Start()
         {
@@ -21,36 +22,20 @@ namespace game
 
         public void Hide()
         {
-            View.gameObject.SetActive(false);
+            view.SetActive(false);
         }
 
         public void Show(Vector2 vec2)
         {
-            if (!View.gameObject.activeSelf)
-            {
-                // var pos = InputPanel.instance.GetStartPos();
-                var pos = Vector2.zero;
+            if (!view.activeSelf)
+                view.SetActive(true);
 
-
-                //Debug.Log(pos);
-                //Debug.Log(pos + "  " + pos / canvasTrans.localScale.x);
-                //Debug.Log(Screen.height);
-                //Debug.Log(Screen.width);
-                //pos /= InputPanel.instance.canvasScale;
-                pos.x *= 720f / Screen.width;
-                //pos.y *= 1280f / Screen.height;
-                pos.y *= 720f / Screen.width;
-
-
-                View.anchoredPosition = pos;
-                View.gameObject.SetActive(true);
-            }
-
-            float sizeFactor = vec2.magnitude;
+            float sizeFactor = Mathf.Min(vec2.magnitude, maxSize);
             float rotDeg = Mathf.Atan2(vec2.y, vec2.x) * Mathf.Rad2Deg;
 
-            ArrowRotateTrans.localEulerAngles = new Vector3(0, 0, rotDeg - 90);
-            ArrowSizeTrans.sizeDelta = new Vector2(widthArrow, arrowSizeFactor * sizeFactor);
+            arrowRotateTrans.localEulerAngles = new Vector3(0, 0, rotDeg - 90);
+            arrowSizeTrans.sizeDelta = new Vector2(1, arrowSizeFactor * sizeFactor);
+            //ringSizeTrans.sizeDelta = new Vector2(ringSizeFactor * sizeFactor, ringSizeFactor * sizeFactor);
         }
     }
 }

@@ -1,42 +1,53 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace com
 {
+    [System.Serializable]
+    public class CameraShakeDetail
+    {
+        public CameraShake.ShakeLevel level;
+
+        public int turn = 5;
+        public float amplitude = 4;
+        public float time = 1;
+    }
+
     public class CameraShake : MonoBehaviour
     {
-        public int Turn = 5;
-        public float Amplitude = 4;
+        public enum ShakeLevel
+        {
+            VeryStrong,
+            Strong,
+            Medium,
+            VeryWeak,
+            Weak,
+            None,
+        }
+
+        public List<CameraShakeDetail> levels;
+        private CameraShakeDetail _detail;
         public Transform self;
-        public float Time = 1;
         private float _timer;
 
-        public static CameraShake Instance;
-        public static CameraShake InstanceStrong;
-        public bool isStrongInstance;
+        public static CameraShake instance { get; private set; }
 
         void Start()
         {
             _timer = 0;
-            if (isStrongInstance)
-            {
-                InstanceStrong = this;
-            }
-            else
-            {
-                Instance = this;
-            }
+            instance = this;
         }
 
         void Update()
         {
             if (_timer > 0)
             {
-                float t = _timer / Time;
+                float t = _timer / _detail.time;
                 float f = 1 - Mathf.Abs(2 * t - 1f);
-                float amp = f * Amplitude;
-                self.localPosition = Vector3.up * amp * Mathf.Sin(Mathf.PI * t * 2 * Turn);
-                //Debug.Log("amp " + amp);
-                _timer -= UnityEngine.Time.deltaTime;
+                float amp = f * _detail.amplitude;
+                self.localPosition = Vector3.up * amp * Mathf.Sin(Mathf.PI * t * 2 * _detail.turn);
+
+                _timer -= Time.deltaTime;
 
                 if (_timer <= 0)
                 {
@@ -44,9 +55,21 @@ namespace com
                 }
             }
         }
-        public void Shake()
+
+        public void Shake(ShakeLevel level)
         {
-            _timer = Time;
+            if (level == ShakeLevel.None)
+                return;
+
+            foreach (var lv in levels)
+            {
+                if (lv.level == level)
+                {
+                    _detail = lv;
+                }
+            }
+
+            _timer = _detail.time;
         }
     }
 }
