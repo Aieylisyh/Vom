@@ -1,0 +1,132 @@
+{"frames": [
+
+{
+	"filename": "ad.png",
+	"frame": {"x":1,"y":118,"w":117,"h":88},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":117,"h":88},
+	"sourceSize": {"w":117,"h":88}
+},
+{
+	"filename": "coin.png",
+	"frame": {"x":1,"y":1,"w":116,"h":115},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":116,"h":115},
+	"sourceSize": {"w":116,"h":115}
+},
+{
+	"filename": "exp.png",
+	"frame": {"x":119,"y":1,"w":98,"h":100},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":1,"y":0,"w":98,"h":100},
+	"sourceSize": {"w":99,"h":100}
+},
+{
+	"filename": "heroIcon_DarkKnight.png",
+	"frame": {"x":214,"y":277,"w":92,"h":83},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":8,"w":92,"h":83},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Elf.png",
+	"frame": {"x":214,"y":103,"w":92,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":5,"w":92,"h":86},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Foxy.png",
+	"frame": {"x":120,"y":197,"w":92,"h":91},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":91},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Knight.png",
+	"frame": {"x":120,"y":103,"w":92,"h":92},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":92,"h":92},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Nezha.png",
+	"frame": {"x":214,"y":191,"w":92,"h":84},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":7,"w":92,"h":84},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Peasant.png",
+	"frame": {"x":1,"y":208,"w":92,"h":87},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":5,"w":92,"h":87},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Pirate.png",
+	"frame": {"x":219,"y":1,"w":92,"h":86},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":5,"w":92,"h":86},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "heroIcon_Sor.png",
+	"frame": {"x":1,"y":297,"w":92,"h":81},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":10,"w":92,"h":81},
+	"sourceSize": {"w":92,"h":92}
+},
+{
+	"filename": "rarityIcon_Blue.png",
+	"frame": {"x":95,"y":290,"w":91,"h":79},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":79},
+	"sourceSize": {"w":91,"h":79}
+},
+{
+	"filename": "rarityIcon_Green.png",
+	"frame": {"x":188,"y":362,"w":91,"h":79},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":79},
+	"sourceSize": {"w":91,"h":79}
+},
+{
+	"filename": "rarityIcon_Orange.png",
+	"frame": {"x":1,"y":380,"w":91,"h":78},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":1,"w":91,"h":78},
+	"sourceSize": {"w":91,"h":79}
+},
+{
+	"filename": "rarityIcon_Purple.png",
+	"frame": {"x":95,"y":371,"w":91,"h":79},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":91,"h":79},
+	"sourceSize": {"w":91,"h":79}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "spritesheet1.png",
+	"format": "RGBA8888",
+	"size": {"w":312,"h":459},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:0f1a9adf9d05b440c787e84224a72d4b:fc09a9aeb825a397dc71b063b0209a40:bdd4b1bd95a26fb1dd6c3c9dc46315cb$"
+}
+}

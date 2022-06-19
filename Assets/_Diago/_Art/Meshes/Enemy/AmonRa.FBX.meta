@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: a9a97247a0c6b1f4ba8a110dc0168db8
+timeCreated: 1530109949
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: AmonRa
+    100002: //RootNode
+    100004: AmonRa_Khopis
+    100006: CTR_Goblin_Body
+    100008: CTR_Goblin_body1
+    100010: CTR_Goblin_Body2
+    100012: CTR_Goblin_Eyes
+    100014: CTR_Goblin_HandL
+    100016: CTR_Goblin_HandR
+    100018: CTR_Goblin_Head
+    100020: CTR_Goblin_Mouth
+    100022: CTR_Goblin_ROOT
+    100024: CTR_Goblin_Weapon
+    100026: CTR_Goblin_WeaponMB
+    100028: CTR_Goblin_Wobble
+    100030: Goblin_Body1
+    100032: Goblin_Body2
+    100034: Goblin_Eyes
+    100036: Goblin_HandL
+    100038: Goblin_HandL_null
+    100040: Goblin_HandR
+    100042: Goblin_HandR_null
+    100044: Goblin_Head
+    100046: Goblin_Head_null
+    100048: Goblin_Head_Wobble
+    100050: Goblin_Mouth
+    100052: Goblin_ROOT_null
+    100054: Goblin_Shoulders_Null
+    100056: Goblin_Weapon
+    100058: Goblin_Weapon_Null
+    100060: Goblin_WeaponAnchor_null
+    100062: Goblin_WeaponMB
+    100064: Goblin_WeaponMB_Null
+    400000: //RootNode
+    400002: AmonRa
+    400004: AmonRa_Khopis
+    400006: CTR_Goblin_Body
+    400008: CTR_Goblin_body1
+    400010: CTR_Goblin_Body2
+    400012: CTR_Goblin_Eyes
+    400014: CTR_Goblin_HandL
+    400016: CTR_Goblin_HandR
+    400018: CTR_Goblin_Head
+    400020: CTR_Goblin_Mouth
+    400022: CTR_Goblin_ROOT
+    400024: CTR_Goblin_Weapon
+    400026: CTR_Goblin_WeaponMB
+    400028: CTR_Goblin_Wobble
+    400030: Goblin_Body1
+    400032: Goblin_Body2
+    400034: Goblin_Eyes
+    400036: Goblin_HandL
+    400038: Goblin_HandL_null
+    400040: Goblin_HandR
+    400042: Goblin_HandR_null
+    400044: Goblin_Head
+    400046: Goblin_Head_null
+    400048: Goblin_Head_Wobble
+    400050: Goblin_Mouth
+    400052: Goblin_ROOT_null
+    400054: Goblin_Shoulders_Null
+    400056: Goblin_Weapon
+    400058: Goblin_Weapon_Null
+    400060: Goblin_WeaponAnchor_null
+    400062: Goblin_WeaponMB
+    400064: Goblin_WeaponMB_Null
+    4300000: AmonRa
+    4300002: AmonRa_Khopis
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: AmonRa
+    13700002: AmonRa_Khopis
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

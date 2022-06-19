@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using com;
+using vom;
 
 namespace game
 {
@@ -16,7 +17,7 @@ namespace game
         public TalentConfig talentConfig;
         public MailConfig mailConfig;
         public CombatAbilityConfig combatAbilityConfig;
-        public vom.CombatConfig combatConfig;
+     
         public EnemyConfig enemyConfig;
         public CoreConfig coreConfig;
         public SettingsConfig settingsConfig;
@@ -27,6 +28,9 @@ namespace game
         public LocalRemoteConfig localRemoteConfig;
         public ShopsConfig shopsConfig;
         public PediaConfig pediaConfig;
+
+        public CombatConfig combatConfig;
+        public MapConfig mapConfig;
 
         void Awake()
         {

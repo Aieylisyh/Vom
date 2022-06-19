@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 9e98910e7138ff04bba9d63bc6d65041
+timeCreated: 1530017829
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CTR_Hero_ROOT
+    100002: Fox_body
+    100004: Fox_sword
+    100006: Hero_Body1
+    100008: Hero_Body2_null
+    100010: Hero_EarL
+    100012: Hero_EarR
+    100014: Hero_HandL
+    100016: Hero_HandR
+    100018: Hero_handR
+    100020: Hero_Head
+    100022: Hero_Head_null
+    100024: Hero_Head_Wobble
+    100026: Hero_Nose
+    100028: Hero_ROOT_null
+    100030: Hero_WeaponR
+    100032: Hero_WeaponR_MB
+    100034: Hrero_Body2
+    100036: LadyMaria_Body
+    100038: //RootNode
+    100040: Point001
+    400000: CTR_Hero_ROOT
+    400002: Fox_body
+    400004: Fox_sword
+    400006: Hero_Body1
+    400008: Hero_Body2_null
+    400010: Hero_EarL
+    400012: Hero_EarR
+    400014: Hero_HandL
+    400016: Hero_HandR
+    400018: Hero_handR
+    400020: Hero_Head
+    400022: Hero_Head_null
+    400024: Hero_Head_Wobble
+    400026: Hero_Nose
+    400028: Hero_ROOT_null
+    400030: Hero_WeaponR
+    400032: Hero_WeaponR_MB
+    400034: Hrero_Body2
+    400036: LadyMaria_Body
+    400038: //RootNode
+    400040: Point001
+    4300000: Fox_body
+    4300002: Fox_sword
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Fox_body
+    13700002: Fox_sword
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: ffdf966be05a7a44c822da5e0aebd89c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: CTR_Goblin_Body
+    100002: CTR_Goblin_body1
+    100004: CTR_Goblin_Body2
+    100006: CTR_Goblin_Eyes
+    100008: CTR_Goblin_HandL
+    100010: CTR_Goblin_HandR
+    100012: CTR_Goblin_Head
+    100014: CTR_Goblin_Mouth
+    100016: CTR_Goblin_ROOT
+    100018: CTR_Goblin_Weapon
+    100020: CTR_Goblin_WeaponMB
+    100022: CTR_Goblin_Wobble
+    100024: Goblin_Body1
+    100026: Goblin_Body2
+    100028: Goblin_Eyes
+    100030: Goblin_HandL
+    100032: Goblin_HandL_null
+    100034: Goblin_HandR
+    100036: Goblin_HandR_null
+    100038: Goblin_Head
+    100040: Goblin_Head_null
+    100042: Goblin_Head_Wobble
+    100044: Goblin_Mouth
+    100046: Goblin_ROOT_null
+    100048: Goblin_Shoulders_Null
+    100050: Goblin_Weapon
+    100052: Goblin_Weapon_Null
+    100054: Goblin_WeaponAnchor_null
+    100056: Goblin_WeaponMB
+    100058: Goblin_WeaponMB_Null
+    100060: //RootNode
+    100062: Mummy_Bandaid
+    100064: Mummy_Body
+    100066: Spear_Egyptian
+    100068: Sword_Egyptian
+    400000: CTR_Goblin_Body
+    400002: CTR_Goblin_body1
+    400004: CTR_Goblin_Body2
+    400006: CTR_Goblin_Eyes
+    400008: CTR_Goblin_HandL
+    400010: CTR_Goblin_HandR
+    400012: CTR_Goblin_Head
+    400014: CTR_Goblin_Mouth
+    400016: CTR_Goblin_ROOT
+    400018: CTR_Goblin_Weapon
+    400020: CTR_Goblin_WeaponMB
+    400022: CTR_Goblin_Wobble
+    400024: Goblin_Body1
+    400026: Goblin_Body2
+    400028: Goblin_Eyes
+    400030: Goblin_HandL
+    400032: Goblin_HandL_null
+    400034: Goblin_HandR
+    400036: Goblin_HandR_null
+    400038: Goblin_Head
+    400040: Goblin_Head_null
+    400042: Goblin_Head_Wobble
+    400044: Goblin_Mouth
+    400046: Goblin_ROOT_null
+    400048: Goblin_Shoulders_Null
+    400050: Goblin_Weapon
+    400052: Goblin_Weapon_Null
+    400054: Goblin_WeaponAnchor_null
+    400056: Goblin_WeaponMB
+    400058: Goblin_WeaponMB_Null
+    400060: //RootNode
+    400062: Mummy_Bandaid
+    400064: Mummy_Body
+    400066: Spear_Egyptian
+    400068: Sword_Egyptian
+    4300000: Spear_Egyptian
+    4300002: Sword_Egyptian
+    4300004: Mummy_Body
+    4300006: Mummy_Bandaid
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: Mummy_Bandaid
+    13700002: Mummy_Body
+    13700004: Spear_Egyptian
+    13700006: Sword_Egyptian
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 0
+    tangentImportMode: 0
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

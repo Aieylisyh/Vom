@@ -1,0 +1,820 @@
+fileFormatVersion: 2
+guid: 5903e27c5a2dcf040809a850a16b8e1d
+ModelImporter:
+  serializedVersion: 19301
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: CTR_SkeletonTrap_ArmRot
+  - first:
+      1: 100002
+    second: CTR_SkeletonTrap_Main
+  - first:
+      1: 100004
+    second: Ground
+  - first:
+      1: 100006
+    second: Null_SkeletonTrap_All
+  - first:
+      1: 100008
+    second: Null_SkeletonTrap_Arm
+  - first:
+      1: 100010
+    second: Null_SkeletonTrap_Fingers
+  - first:
+      1: 100012
+    second: Null_SkeletonTrap_Hand
+  - first:
+      1: 100014
+    second: //RootNode
+  - first:
+      1: 100016
+    second: SkeletonTrap_Arm
+  - first:
+      1: 100018
+    second: SkeletonTrap_ArmEnd
+  - first:
+      1: 100020
+    second: SkeletonTrap_Finger1a
+  - first:
+      1: 100022
+    second: SkeletonTrap_Finger1b
+  - first:
+      1: 100024
+    second: SkeletonTrap_Finger1c
+  - first:
+      1: 100026
+    second: SkeletonTrap_Finger2a
+  - first:
+      1: 100028
+    second: SkeletonTrap_Finger2b
+  - first:
+      1: 100030
+    second: SkeletonTrap_Finger2c
+  - first:
+      1: 100032
+    second: SkeletonTrap_Finger3a
+  - first:
+      1: 100034
+    second: SkeletonTrap_Finger3b
+  - first:
+      1: 100036
+    second: SkeletonTrap_Finger3c
+  - first:
+      1: 100038
+    second: SkeletonTrap_Forearm
+  - first:
+      1: 100040
+    second: SkeletonTrap_Ground
+  - first:
+      1: 100042
+    second: SkeletonTrap_Hand
+  - first:
+      1: 100044
+    second: SkeletonTrap_Thumb1
+  - first:
+      1: 100046
+    second: SkeletonTrap_Thumb2
+  - first:
+      1: 100048
+    second: SkeletonTrap_Thumb3
+  - first:
+      1: 100050
+    second: CTR_SkeletonTrap_ArmPos
+  - first:
+      1: 100052
+    second: CTR_SkeletonTrap_Elbow
+  - first:
+      1: 100054
+    second: CTR_SkeletonTrap_HandPos
+  - first:
+      1: 100056
+    second: CTR_SkeletonTrap_HandRot
+  - first:
+      1: 100058
+    second: IK_SkeletonTrap_Arm
+  - first:
+      1: 100060
+    second: Object031
+  - first:
+      1: 100062
+    second: HandTrap
+  - first:
+      4: 400000
+    second: CTR_SkeletonTrap_ArmRot
+  - first:
+      4: 400002
+    second: CTR_SkeletonTrap_Main
+  - first:
+      4: 400004
+    second: Ground
+  - first:
+      4: 400006
+    second: Null_SkeletonTrap_All
+  - first:
+      4: 400008
+    second: Null_SkeletonTrap_Arm
+  - first:
+      4: 400010
+    second: Null_SkeletonTrap_Fingers
+  - first:
+      4: 400012
+    second: Null_SkeletonTrap_Hand
+  - first:
+      4: 400014
+    second: //RootNode
+  - first:
+      4: 400016
+    second: SkeletonTrap_Arm
+  - first:
+      4: 400018
+    second: SkeletonTrap_ArmEnd
+  - first:
+      4: 400020
+    second: SkeletonTrap_Finger1a
+  - first:
+      4: 400022
+    second: SkeletonTrap_Finger1b
+  - first:
+      4: 400024
+    second: SkeletonTrap_Finger1c
+  - first:
+      4: 400026
+    second: SkeletonTrap_Finger2a
+  - first:
+      4: 400028
+    second: SkeletonTrap_Finger2b
+  - first:
+      4: 400030
+    second: SkeletonTrap_Finger2c
+  - first:
+      4: 400032
+    second: SkeletonTrap_Finger3a
+  - first:
+      4: 400034
+    second: SkeletonTrap_Finger3b
+  - first:
+      4: 400036
+    second: SkeletonTrap_Finger3c
+  - first:
+      4: 400038
+    second: SkeletonTrap_Forearm
+  - first:
+      4: 400040
+    second: SkeletonTrap_Ground
+  - first:
+      4: 400042
+    second: SkeletonTrap_Hand
+  - first:
+      4: 400044
+    second: SkeletonTrap_Thumb1
+  - first:
+      4: 400046
+    second: SkeletonTrap_Thumb2
+  - first:
+      4: 400048
+    second: SkeletonTrap_Thumb3
+  - first:
+      4: 400050
+    second: CTR_SkeletonTrap_ArmPos
+  - first:
+      4: 400052
+    second: CTR_SkeletonTrap_Elbow
+  - first:
+      4: 400054
+    second: CTR_SkeletonTrap_HandPos
+  - first:
+      4: 400056
+    second: CTR_SkeletonTrap_HandRot
+  - first:
+      4: 400058
+    second: IK_SkeletonTrap_Arm
+  - first:
+      4: 400060
+    second: Object031
+  - first:
+      4: 400062
+    second: HandTrap
+  - first:
+      43: 4300000
+    second: Ground
+  - first:
+      43: 4300002
+    second: HandTrap
+  - first:
+      74: 7400000
+    second: SkeletonHandTrap_Entrance
+  - first:
+      74: 7400002
+    second: SkeletonHandTrap_Grab
+  - first:
+      74: 7400004
+    second: SkeletonHandTrap_Rot1
+  - first:
+      74: 7400006
+    second: SkeletonHandTrap_Rot2
+  - first:
+      74: 7400008
+    second: SkeletonHandTrap_Rot3
+  - first:
+      74: 7400010
+    second: SkeletonHandTrap_Rot4
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: Ground
+  - first:
+      137: 13700002
+    second: HandTrap
+  externalObjects: {}
+  materials:
+    materialImportMode: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: SkeletonHandTrap_Entrance
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 5
+      lastFrame: 22
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTR_SkeletonTrap_Main
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm/SkeletonTrap_ArmEnd
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b/SkeletonTrap_Finger1c
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b/SkeletonTrap_Finger2c
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b/SkeletonTrap_Finger3c
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2/SkeletonTrap_Thumb3
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/SkeletonTrap_Ground
+        weight: 1
+      - path: Ground
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkeletonHandTrap_Grab
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 22
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 0.3230436
+        functionName: AttackStarted
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: de1e04a06e43fe742a71274339b8c9b6,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.68670064
+        functionName: AttackEnded
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: de1e04a06e43fe742a71274339b8c9b6,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.9473684
+        functionName: Attacked
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: de1e04a06e43fe742a71274339b8c9b6,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTR_SkeletonTrap_Main
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm/SkeletonTrap_ArmEnd
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b/SkeletonTrap_Finger1c
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b/SkeletonTrap_Finger2c
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b/SkeletonTrap_Finger3c
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2/SkeletonTrap_Thumb3
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/SkeletonTrap_Ground
+        weight: 1
+      - path: Ground
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkeletonHandTrap_Rot1
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 22
+      lastFrame: 85
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTR_SkeletonTrap_Main
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm/SkeletonTrap_ArmEnd
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b/SkeletonTrap_Finger1c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b/SkeletonTrap_Finger2c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b/SkeletonTrap_Finger3c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2/SkeletonTrap_Thumb3
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/SkeletonTrap_Ground
+        weight: 0
+      - path: Ground
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkeletonHandTrap_Rot2
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 85
+      lastFrame: 148
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTR_SkeletonTrap_Main
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm/SkeletonTrap_ArmEnd
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b/SkeletonTrap_Finger1c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b/SkeletonTrap_Finger2c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b/SkeletonTrap_Finger3c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2/SkeletonTrap_Thumb3
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/SkeletonTrap_Ground
+        weight: 0
+      - path: Ground
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkeletonHandTrap_Rot3
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 148
+      lastFrame: 211
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTR_SkeletonTrap_Main
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm/SkeletonTrap_ArmEnd
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b/SkeletonTrap_Finger1c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b/SkeletonTrap_Finger2c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b/SkeletonTrap_Finger3c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2/SkeletonTrap_Thumb3
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/SkeletonTrap_Ground
+        weight: 0
+      - path: Ground
+        weight: 0
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SkeletonHandTrap_Rot4
+      takeName: Take 001
+      internalID: 0
+      firstFrame: 211
+      lastFrame: 274
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CTR_SkeletonTrap_Main
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot
+        weight: 1
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Arm/SkeletonTrap_Arm/SkeletonTrap_Forearm/SkeletonTrap_ArmEnd
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger1a/SkeletonTrap_Finger1b/SkeletonTrap_Finger1c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger2a/SkeletonTrap_Finger2b/SkeletonTrap_Finger2c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Finger3a/SkeletonTrap_Finger3b/SkeletonTrap_Finger3c
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/CTR_SkeletonTrap_ArmRot/Null_SkeletonTrap_All/Null_SkeletonTrap_Hand/SkeletonTrap_Hand/Null_SkeletonTrap_Fingers/SkeletonTrap_Thumb1/SkeletonTrap_Thumb2/SkeletonTrap_Thumb3
+        weight: 0
+      - path: CTR_SkeletonTrap_Main/SkeletonTrap_Ground
+        weight: 0
+      - path: Ground
+        weight: 0
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 180
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
