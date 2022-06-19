@@ -154,7 +154,7 @@ PlayerSettings:
   applicationIdentifier:
     Android: com.Yisca.WarofSubmarine
     Standalone: com.Yisca.WarofSubmarine
-    iPhone: com.LIsska.Vom
+    iPhone: com.LIsska.WarofSubmarine
   buildNumber:
     Standalone: 0
     iPhone: 0
