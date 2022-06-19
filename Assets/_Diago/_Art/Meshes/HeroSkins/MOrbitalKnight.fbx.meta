@@ -1,7 +1,7 @@
 fileFormatVersion: 2
 guid: 404a58b64eb35443bb9deb5b25418bcf
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 20200
   internalIDToNameTable:
   - first:
       1: 100000
@@ -332,16 +332,14 @@ ModelImporter:
       - time: 0.04619526
         functionName: Moved
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.5484959
         functionName: Moved
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -377,16 +375,14 @@ ModelImporter:
       - time: 0.021578873
         functionName: Moved
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.5050505
         functionName: Moved
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -535,11 +531,10 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.25113884
+      - time: 0.5879341
         functionName: Attacked
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -575,8 +570,7 @@ ModelImporter:
       - time: 0
         functionName: DiedFromCrash
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -612,8 +606,7 @@ ModelImporter:
       - time: 0
         functionName: DiedFromEnemy
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -649,8 +642,7 @@ ModelImporter:
       - time: 0
         functionName: DiedFromFalling
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -686,8 +678,7 @@ ModelImporter:
       - time: 0
         functionName: DiedFromDrowning
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -810,8 +801,7 @@ ModelImporter:
       - time: 0.5016835
         functionName: Spawned
         data: 
-        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149,
-          type: 3}
+        objectReferenceParameter: {fileID: 11500000, guid: b089ee6838b920249a373128158fd149, type: 3}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
@@ -924,6 +914,7 @@ ModelImporter:
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
@@ -933,6 +924,9 @@ ModelImporter:
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
@@ -966,6 +960,7 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
