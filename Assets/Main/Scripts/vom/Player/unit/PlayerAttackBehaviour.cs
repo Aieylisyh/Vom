@@ -51,7 +51,8 @@ namespace vom
                 _target = e.transform;
                 _targetPos = _target.position;
                 _attackIntervalTimer = attackInterval;
-                player.animator.SetTrigger("DisplayAttack");
+                player.animator.SetBool("move", false);
+                player.animator.SetTrigger("attack");
             }
         }
 
@@ -65,7 +66,7 @@ namespace vom
 
         public void Attacked()
         {
-            //Debug.LogWarning("Attacked");
+            Debug.LogWarning("Attacked");
             orbs.LaunchArcane(_targetPos);
             orbs.ReleaseFirst(_targetPos);
             _target = null;
