@@ -121,16 +121,16 @@ QualitySettings:
     - Standalone
   - serializedVersion: 2
     name: Vom
-    pixelLightCount: 1
+    pixelLightCount: 4
     shadows: 1
     shadowResolution: 2
     shadowProjection: 0
-    shadowCascades: 2
-    shadowDistance: 70
+    shadowCascades: 1
+    shadowDistance: 50
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
-    shadowmaskMode: 1
+    shadowmaskMode: 0
     skinWeights: 2
     textureQuality: 0
     anisotropicTextures: 1

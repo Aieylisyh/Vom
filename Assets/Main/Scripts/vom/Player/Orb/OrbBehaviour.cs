@@ -171,8 +171,12 @@ namespace vom
         {
             if (_isOrbital)
             {
-                orbitalDegree += GameTime.deltaTime * _rotateDegreeSpeed;
-                var oldPos = transform.position;
+                if (_startPositioningTimer<=0)
+                {
+                    orbitalDegree += GameTime.deltaTime * _rotateDegreeSpeed;
+                }
+                
+                //var oldPos = transform.position;
                 SyncOrbitalPos();
                 //rotateAlignMove.Rotate(transform.position - oldPos);
             }
