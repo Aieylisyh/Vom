@@ -45,6 +45,11 @@ namespace vom
         private float _startPositioningTimer;
         private float _startPositioningTime;
 
+        public bool isEnemyShoot;
+
+
+        public int dmg=1;//test only
+
         private void Awake()
         {
             _rotateAlignMove = GetComponent<RotateAlignMove>();
@@ -69,14 +74,27 @@ namespace vom
             }
             else
             {
-                var ene = other.GetComponent<EnemyBehaviour>();
-                if (ene != null)
+                if (isEnemyShoot)
                 {
-                    Debug.Log("hit ene" + other.gameObject);
-                    //TODO deal damage
-                    ene.OnHit(this);
-                    Die(false);
+                    var play = other.GetComponent<PlayerBehaviour>();
+                    if (play != null)
+                    {
+                        play.OnHit(this);
+                        Die(false);
+                    }
                 }
+                else
+                {
+                    var ene = other.GetComponent<EnemyBehaviour>();
+                    if (ene != null)
+                    {
+                        //Debug.Log("hit ene" + other.gameObject);
+                        //TODO deal damage
+                        ene.OnHit(this);
+                        Die(false);
+                    }
+                }
+              
             }
         }
 

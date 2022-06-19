@@ -8,6 +8,9 @@ namespace vom
         public Transform spawnSpace;
 
         public GameObject fireball;
+        public GameObject iceball;
+        public GameObject poisonball;
+
         public GameObject arcaneBolt;
         private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
         public Transform weaponPos;
@@ -20,6 +23,21 @@ namespace vom
             SpawnOrb(fireball, 240);
         }
 
+        public void AddIceBalls()
+        {
+            Clear();
+            SpawnOrb(iceball, 40);
+            SpawnOrb(iceball, 220);
+        }
+
+        public void AddPoisonBalls()
+        {
+            Clear();
+            SpawnOrb(poisonball, 20);
+            SpawnOrb(poisonball, 110);
+            SpawnOrb(poisonball, 200);
+            SpawnOrb(poisonball, 290);
+        }
         public void LaunchArcane(Vector3 targetPos)
         {
             SpawnShoot(arcaneBolt, targetPos);

@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: lightray2_ADD
-  m_Shader: {fileID: 4800000, guid: a7449e7b39dac0f428766725e13a7d8a, type: 3}
+  m_Shader: {fileID: 4800000, guid: 3fe8c737c82449640a3a325c56e936de, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _FADING_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0

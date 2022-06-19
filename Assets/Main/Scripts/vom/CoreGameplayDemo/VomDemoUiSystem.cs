@@ -30,8 +30,17 @@ namespace vom
 
         public void OnClickFireBalls()
         {
-            //charge 3 fire balls
             PlayerBehaviour.instance.attack.AddFireBalls();
+        }
+
+        public void OnClickIceBalls()
+        {
+            PlayerBehaviour.instance.attack.AddIceBalls();
+        }
+
+        public void OnClickPoisonBalls()
+        {
+            PlayerBehaviour.instance.attack.AddPoisonBalls();
         }
     }
 }
