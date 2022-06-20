@@ -6,17 +6,26 @@ namespace vom
     public class EnemySystem : MonoBehaviour
     {
         public static EnemySystem instance { get; private set; }
-        //public List<EnemyBehaviour> enemies { get; private set; }
+
         public List<EnemyBehaviour> enemies;
+
+        public EnemySpawnSystem spawnSys;
 
         private void Awake()
         {
             instance = this;
         }
 
-        public void SpawnEnemies()
+        private void Start()
         {
+           // enemies = new List<EnemyBehaviour>();
 
+            spawnSys.SpawnEnemies();
+        }
+
+        public void AddEnemy(EnemyBehaviour e)
+        {
+            enemies.Add(e);
         }
     }
 }
