@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu]
-public class EnemySpawnPrototype : ScriptableObject
+namespace vom
 {
-    public string prefabId;
-    //public tra
+    [CreateAssetMenu]
+    public class EnemySpawnPrototype : ScriptableObject
+    {
+        public string prefabId;
+        //public tra
+    }
 }

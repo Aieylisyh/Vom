@@ -19,12 +19,12 @@ namespace vom
 
         private void Start()
         {
-            health.HealToFull();
+            health.Init();
         }
 
         void Update()
         {
-            if (health.isAlive)
+            if (!health.dead)
             {
                 attack.Attack();
                 move.Move();
@@ -35,7 +35,6 @@ namespace vom
         {
             CameraShake.instance.Shake(orb.hitShakeLevel);
             health.ReceiveDamage(orb.dmg);
-            //animator.SetTrigger("Wound");
         }
     }
 }

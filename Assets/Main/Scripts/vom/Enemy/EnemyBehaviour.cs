@@ -19,28 +19,24 @@ namespace vom
 
         public Transform weaponPos;
 
+        public EnemyHealthBehaviour health;
+
         public void Start()
         {
             _attackIntervalTimer = 0;
-        }
-
-        public void OnHit(OrbBehaviour orb)
-        {
-            //CameraShake.instance.Shake(orb.hitShakeLevel);
-            animator.SetTrigger("Wound");
+            health.Init();
         }
 
         private void Update()
         {
-            if (_attackIntervalTimer > 0)
+            if (!health.dead)
             {
-                _attackIntervalTimer -= GameTime.deltaTime;
-            }
+                if (_attackIntervalTimer > 0)
+                    _attackIntervalTimer -= GameTime.deltaTime;
 
-            var dir = PlayerBehaviour.instance.transform.position - transform.position;
-            if (dir.magnitude < range)
-            {
-                Attack();
+                var dir = PlayerBehaviour.instance.transform.position - transform.position;
+                if (dir.magnitude < range)
+                    Attack();
             }
         }
 
@@ -70,6 +66,13 @@ namespace vom
             shoot.isEnemyShoot = true;
             shoot.dmg = dmg;
             shoot.SetRelease(targetPos);
+        }
+
+        public void OnHit(OrbBehaviour orb)
+        {
+            // CameraShake.instance.Shake(orb.hitShakeLevel);
+            health.ReceiveDamage(orb.dmg);
+            animator.SetTrigger("Wound");
         }
     }
 }

@@ -7,12 +7,20 @@ namespace vom
     {
         public int healthMax;
         public int hp { get; private set; }
-        public HealthBar bar;
+        public HpBarBehaviour bar;
+        public bool dead { get; private set; }
+
+        public void Init()
+        {
+            bar = HpBarSystem.instance.Create(transform, 140, 0.75f);
+            HealToFull();
+        }
 
         public void HealToFull()
         {
             hp = healthMax;
             SyncBar(true);
+            dead = false;
         }
 
         public void SyncBar(bool instant)
@@ -24,8 +32,17 @@ namespace vom
         {
             hp -= v;
             SyncBar(false);
+
+            if (hp <= 0 && !dead)
+            {
+                Die();
+            }
         }
 
-        public bool isAlive { get { return hp > 0; } }
+        void Die()
+        {
+            dead = true;
+            HeartDistortSystem.instance.Create(this.transform);
+        }
     }
 }
