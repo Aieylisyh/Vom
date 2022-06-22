@@ -13,19 +13,15 @@ namespace vom
         private Vector2 _moveDist;
 
         public float speed;
-
-        public Vector3 lastEular { get; private set; }
         public Transform rotatePart;
 
         public float rotationLerpFactor = 0.1f;
 
         public TouchViewBehaviour touchView;
 
-
         protected override void Start()
         {
             base.Start();
-            lastEular = rotatePart.forward;
         }
 
         public void StartDrag(Vector2 pos)
@@ -83,27 +79,15 @@ namespace vom
                 player.animator.SetBool("move", true);
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
                 player.cc.SimpleMove(deltaDist * speed);
-                lastEular = deltaDist;
+                Rotate(deltaDist);
             }
 
             _moveDist = Vector2.zero;
-
-            Rotate();
-        }
-
-        public void Rotate()
-        {
-            if (isMoving)
-                return;
-
-            var dir = Vector3.Lerp(rotatePart.forward, lastEular, rotationLerpFactor);
-            rotatePart.rotation = Quaternion.LookRotation(dir);
         }
 
         public void Rotate(Vector3 to)
         {
             rotatePart.rotation = Quaternion.LookRotation(to);
-            lastEular = to;
         }
 
         public void ReceiveMoveInput(Vector2 dir)

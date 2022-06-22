@@ -15,5 +15,10 @@ namespace vom
             //Debug.LogWarning("AnimationEventResolver " + "Attacked");
             player.attack.Attacked();
         }
+
+        public void Spawned()
+        {
+            //Debug.LogWarning("AnimationEventResolver " + "Spawned");
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace vom
         void Die()
         {
             dead = true;
-            HeartDistortSystem.instance.Create(this.transform);
+            //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }
     }
 }

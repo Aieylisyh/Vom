@@ -71,7 +71,6 @@ namespace game
 
             CameraControllerBehaviour.instance.EnterPort();
             ClearLevel();
-            GameFlowService.instance.SetInputState(GameFlowService.InputState.Forbidden);
             GameFlowService.instance.SetWindowState(GameFlowService.WindowState.Main);
         }
 
@@ -401,7 +400,6 @@ namespace game
             SetLevelId("Pedia");
            
             CameraControllerBehaviour.instance.LeavePort();
-            GameFlowService.instance.SetInputState(GameFlowService.InputState.Forbidden);
             GameFlowService.instance.SetWindowState(GameFlowService.WindowState.Gameplay);
         }
 
@@ -422,7 +420,6 @@ namespace game
 
             ClearLevel();
             CameraControllerBehaviour.instance.LeavePort();
-            GameFlowService.instance.SetInputState(GameFlowService.InputState.Forbidden);
             GameFlowService.instance.SetWindowState(GameFlowService.WindowState.Gameplay);
         }
 

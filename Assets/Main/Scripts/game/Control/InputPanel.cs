@@ -16,11 +16,23 @@ namespace game
         private float _timestampTap;
         public float canvasScale { get; private set; }
 
+        private bool _disabledInput;
+
         protected InputPanel()
         {
             //Debug.Log("InputPanel");
         }
 
+        public void DisableInput()
+        {
+            _disabledInput = true;
+            PlayerBehaviour.instance.move.EndDrag();
+        }
+
+        public void EnableInput()
+        {
+            _disabledInput = false;
+        }
         protected override void Awake()
         {
             base.Awake();
@@ -30,17 +42,12 @@ namespace game
 
         public void OnDrag(PointerEventData eventData)
         {
-            if (!GameFlowService.instance.IsGameplayControlEnabled())
-                return;
-
             PlayerBehaviour.instance.move.UpdateDrag(eventData.position);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
             SceneInputSystem.instance.InputPanelDown(eventData);
-            if (!GameFlowService.instance.IsGameplayControlEnabled())
-                return;
             //Debug.Log("OnPointerDown");
             _timestampTap = Time.unscaledTime;
             PlayerBehaviour.instance.move.StartDrag(eventData.position);
@@ -63,8 +70,6 @@ namespace game
         {
             SceneInputSystem.instance.InputPanelRelease(eventData);
             //Debug.Log("OnPointerUp");
-            if (!GameFlowService.instance.IsGameplayControlEnabled())
-                return;
 
             PlayerBehaviour.instance.move.EndDrag();
         }

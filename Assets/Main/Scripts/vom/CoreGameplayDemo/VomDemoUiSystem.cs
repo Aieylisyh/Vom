@@ -17,15 +17,18 @@ namespace vom
 
         private void Start()
         {
-            GameFlowService.instance.SetInputState(GameFlowService.InputState.Allow);
             GameFlowService.instance.SetPausedState(GameFlowService.PausedState.Normal);
             GameFlowService.instance.SetWindowState(GameFlowService.WindowState.Gameplay);
 
-            ConfirmBoxPopup.ConfirmBoxData data = new ConfirmBoxPopup.ConfirmBoxData();
-            data.title = "What to Test";
-            data.content = "Fall\n screen combat feeling";
-            data.btnClose = true;
-            WindowService.instance.ShowConfirmBoxPopup(data);
+            TransitionBehaviour.instance.Opening(() =>
+            {
+                ConfirmBoxPopup.ConfirmBoxData data = new ConfirmBoxPopup.ConfirmBoxData();
+                data.title = "What to Test";
+                data.content = "new bie\nVillage";
+                data.btnClose = false;
+                data.btnBgClose = true;
+                WindowService.instance.ShowConfirmBoxPopup(data);
+            });
         }
 
         public void OnClickFireBalls()

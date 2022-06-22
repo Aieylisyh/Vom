@@ -39,11 +39,6 @@ namespace game
             //throw new System.NotImplementedException();
         }
 
-        public void OnReceiveInputState(GameFlowService.InputState state)
-        {
-            // throw new System.NotImplementedException();
-        }
-
         public void OnWindowState(GameFlowService.WindowState state)
         {
             if (state == GameFlowService.WindowState.Main)

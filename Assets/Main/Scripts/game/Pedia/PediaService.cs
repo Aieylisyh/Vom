@@ -50,7 +50,6 @@ namespace game
             CameraControllerBehaviour.instance.EnterPort();
             LevelService.instance.ClearLevel();
             gameFlow.SetPausedState(GameFlowService.PausedState.Normal);
-            gameFlow.SetInputState(GameFlowService.InputState.Forbidden);
             gameFlow.SetWindowState(GameFlowService.WindowState.Main);
             bgLight.SetActive(false);
             DeleteView();

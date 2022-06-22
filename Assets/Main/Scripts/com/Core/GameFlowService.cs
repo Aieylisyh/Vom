@@ -6,7 +6,6 @@ namespace com
     {
         void OnWindowState(GameFlowService.WindowState state);
         void OnPausedState(GameFlowService.PausedState state);
-        void OnReceiveInputState(GameFlowService.InputState state);
     }
 
     public class GameFlowService : MonoBehaviour
@@ -18,7 +17,6 @@ namespace com
             instance = this;
             windowState = WindowState.None;
             pausedState = PausedState.Normal;
-            inputState = InputState.Forbidden;
             gameFlowEvent = GameFlowEvent.None;
         }
 
@@ -55,16 +53,9 @@ namespace com
             Speed3,
         }
 
-        public enum InputState
-        {
-            Allow,
-            Forbidden,//Interrupted any
-        }
 
         public WindowState windowState { get; private set; }
         public PausedState pausedState { get; private set; }
-        public InputState inputState { get; private set; }
-
 
         public void SetWindowState(WindowState state)
         {
@@ -86,16 +77,6 @@ namespace com
             //Debug.Log("WindowState -> " + state);
         }
 
-        public void SetInputState(InputState state)
-        {
-            if (inputState == state)
-            {
-                return;
-            }
-            inputState = state;
-            //Debug.Log("InputState  -> " + state);
-        }
-
         public void SetPausedState(PausedState state)
         {
             pausedState = state;
@@ -112,20 +93,6 @@ namespace com
             {
                 com.GameTime.timeScale = 2;
             }
-        }
-
-        public bool IsGameplayControlEnabled()
-        {
-            if (inputState != InputState.Allow)
-            {
-                return false;
-            }
-            if (windowState != WindowState.Gameplay)
-            {
-                return false;
-            }
-            //!CombatService.instance.playerShip.IsAlive()
-            return true;
         }
 
         public bool IsPauseEnabled
@@ -190,7 +157,6 @@ namespace com
             switch (gameFlowEvent)
             {
                 case GameFlowEvent.GoToCombat:
-                    SetInputState(InputState.Allow);
                     LevelService.instance.StartLevel();
                     MusicService.instance.PlayCombat();
                     //show level title...

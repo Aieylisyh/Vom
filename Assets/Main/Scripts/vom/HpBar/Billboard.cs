@@ -1,20 +1,30 @@
 ﻿using UnityEngine;
-using System.Collections;
 
-public class Billboard : MonoBehaviour
+namespace com
 {
-    public Transform cameraTrans;
-
-    // Use this for initialization
-    void Start()
+    public class Billboard : MonoBehaviour
     {
-        if (cameraTrans == null)
-            cameraTrans = Camera.main.transform;
-    }
+        public Transform cameraTrans;
+        public bool startOnly;
+        void Start()
+        {
+            if (cameraTrans == null)
+                cameraTrans = Camera.main.transform;
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.forward = cameraTrans.forward;
+            if (startOnly)
+                Set();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (!startOnly)
+                Set();
+        }
+
+        void Set()
+        {
+            transform.forward = cameraTrans.forward;
+        }
     }
 }

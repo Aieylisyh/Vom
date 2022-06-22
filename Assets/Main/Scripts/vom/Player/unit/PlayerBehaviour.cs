@@ -36,5 +36,10 @@ namespace vom
             CameraShake.instance.Shake(orb.hitShakeLevel);
             health.ReceiveDamage(orb.dmg);
         }
+
+        public void LitMovement()
+        {
+            animator.SetTrigger("jump");
+        }
     }
 }

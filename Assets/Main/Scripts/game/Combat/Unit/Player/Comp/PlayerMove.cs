@@ -27,11 +27,7 @@ namespace game
             if (self.IsAlive())
             {
                 floatingBehaviour.FloatMove();
-
-                if (GameFlowService.instance.IsGameplayControlEnabled())
-                {
-                    transform.position = new Vector3(Mathf.Clamp(transform.position.x, boundMin, boundMax), transform.position.y, transform.position.z);
-                }
+                transform.position = new Vector3(Mathf.Clamp(transform.position.x, boundMin, boundMax), transform.position.y, transform.position.z);
             }
         }
 
@@ -41,7 +37,7 @@ namespace game
 
         private void Sink()
         {
-        
+
         }
 
         public override void ResetState()

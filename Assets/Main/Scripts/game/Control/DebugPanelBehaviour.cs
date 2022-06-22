@@ -100,7 +100,6 @@ namespace game
 
             CameraControllerBehaviour.instance.EnterPort();
             LevelService.instance.ClearLevel();
-            GameFlowService.instance.SetInputState(GameFlowService.InputState.Forbidden);
             GameFlowService.instance.SetWindowState(GameFlowService.WindowState.Main);
 
             //MainSceneManager.Instance.AppearIslands(false);
@@ -119,7 +118,6 @@ namespace game
             LevelService.instance.ClearLevel();
             CameraControllerBehaviour.instance.LeavePort();
 
-            GameFlowService.instance.SetInputState(GameFlowService.InputState.Forbidden);
             GameFlowService.instance.SetWindowState(GameFlowService.WindowState.Gameplay);
 
             //MainSceneManager.Instance.DisappearIslands(false);
@@ -417,11 +415,6 @@ namespace game
 
         public void TestLocalize()
         {
-            //string test1 = LocalizationService.instance.GetLocalizedText("test1");
-            //string test2 = LocalizationService.instance.GetLocalizedText("test2", LocalizationService.Language.ZHS);
-            //string test3 = LocalizationService.instance.GetLocalizedTextFormatted("test3", new object[] { 1, 2, "1212" });
-            //string test4 = LocalizationService.instance.GetLocalizedTextFormatted("test4", 14, 11, 11);
-
             string test = LocalizationService.instance.GetLocalizedTextFormatted("testLvjuren", 3, 8, "Google");
             Debug.Log(test);
         }

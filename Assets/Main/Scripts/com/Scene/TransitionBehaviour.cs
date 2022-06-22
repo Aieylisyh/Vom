@@ -25,7 +25,7 @@ namespace com
 
         private void Start()
         {
-            Hide();
+            //Hide();
         }
 
         public void SetCallback(Action cb = null)
@@ -40,19 +40,43 @@ namespace com
             SetCallback();
         }
 
+        public void Opening(Action cb = null)
+        {
+            SetCallback(cb);
+            cg.DOKill();
+            cg.alpha = 1;
+            cg.DOFade(0, duration).OnComplete(() =>
+            {
+                _cb?.Invoke();
+            });
+        }
+
         public void ShowBigger(Action cb = null)
         {
             //Debug.Log("ShowBigger");
-            StartTransition(sizeMin, sizeMax, duration, cb);
+            StartTransition(duration, cb);
         }
 
         public void ShowSmaller(Action cb = null)
         {
             //Debug.Log("ShowSmaller");
-            StartTransition(sizeMax, sizeMin, durationSmall, cb);
+            StartTransition(durationSmall, cb);
         }
 
-        void StartTransition(float start, float end, float t, Action cb)
+        void StartTransition(float t, Action cb)
+        {
+            //Debug.Log("StartTransition");
+            SetCallback(cb);
+            cg.DOKill();
+            cg.alpha = 0;
+            cg.DOFade(1, t).OnComplete(() =>
+            {
+                _cb?.Invoke();
+                cg.DOFade(0, t);
+            });
+        }
+
+        void StartTransitionRotate(float start, float end, float t, Action cb)
         {
             //Debug.Log("StartTransition");
             SetCallback(cb);

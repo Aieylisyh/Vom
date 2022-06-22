@@ -9,9 +9,6 @@ namespace game
 
         protected override void Tick()
         {
-            if (!GameFlowService.instance.IsGameplayControlEnabled())
-                return;
-
             MovePlayerShip();
         }
 
