@@ -14,7 +14,7 @@ public class HeatDistortBehaviour : MonoBehaviour
         time = t;
         _timer = t;
 
-        transform.DOScale(size, t).SetEase(Ease.OutCubic);
+        transform.DOScale(size, t).SetEase(Ease.OutQuad);
         gameObject.SetActive(true);
     }
 

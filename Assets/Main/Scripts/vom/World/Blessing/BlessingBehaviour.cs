@@ -22,7 +22,7 @@ namespace vom
 
         public void DoLit()
         {
-            HeartDistortSystem.instance.Create(this.transform, 35, 5f);
+            HeartDistortSystem.instance.Create(this.transform, 32, 5.5f);
             SetLit();
         }
 

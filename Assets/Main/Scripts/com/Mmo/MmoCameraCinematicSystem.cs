@@ -78,8 +78,8 @@ namespace com
             };
 
             CinematicEventPrototype e4 = new CinematicEventPrototype();
-            e4.TimeToNext = 5.1f;
-            e4.duration = 5.1f;
+            e4.TimeToNext = 5.5f;
+            e4.duration = 5.5f;
             e4.ease = DG.Tweening.Ease.InOutCubic;
             e4.type = CinematicActionTypes.TweenPositionAndRotation;
             e4.usePositionAndRotation = true;
