@@ -15,6 +15,11 @@
                 vs.ground = newVs.ground;
                 vs.groundPercentage = newVs.groundPercentage;
             }
+            else if (Compare(newVs.ground, oldVs.ground) == 0)
+            {
+                vs.ground = oldVs.ground;
+                vs.groundPercentage = UnityEngine.Mathf.Max(oldVs.groundPercentage, newVs.groundPercentage);
+            }
             else
             {
                 vs.ground = oldVs.ground;
@@ -25,6 +30,11 @@
             {
                 vs.obstacle = newVs.obstacle;
                 vs.obstaclePercentage = newVs.obstaclePercentage;
+            }
+            else if (Compare(newVs.obstacle, oldVs.obstacle) == 0)
+            {
+                vs.obstacle = oldVs.obstacle;
+                vs.obstaclePercentage = UnityEngine.Mathf.Max(oldVs.obstaclePercentage, newVs.obstaclePercentage);
             }
             else
             {
