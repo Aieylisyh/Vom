@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e69d2948490d4ba8c6190ecd9ed68, type: 3}
   m_Name: Map Prototype-test1
   m_EditorClassIdentifier: 
-  id: test1
-  bgColor: {r: 1, g: 0.496, b: 0, a: 1}
+  id: Griffith Forest
+  bgColor: {r: 0.5990566, g: 1, b: 0.9917223, a: 1}
   biome: 0

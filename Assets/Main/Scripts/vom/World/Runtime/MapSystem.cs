@@ -7,17 +7,25 @@ namespace vom
 {
     public class MapSystem : Ticker
     {
+        public static MapSystem instance { get; private set; }
+
         public MapItem item;
         public GameObject player;
         public Transform mapParent;
         public Transform tilesParent;
 
-        public MapItem currentMap;
+        public MapItem currentMap { get; private set; }
+
+        private void Awake()
+        {
+            instance = this;
+        }
 
         private void Start()
         {
             GeneratorMap();
             InitMap();
+            mapFeedbackSystem.EnterNewMap();
         }
 
         void GeneratorMap()
@@ -153,5 +161,7 @@ namespace vom
                 }
             }
         }
+
+        public MapFeedbackSystem mapFeedbackSystem;
     }
 }

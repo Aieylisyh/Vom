@@ -22,12 +22,12 @@ namespace vom
 
             TransitionBehaviour.instance.Opening(() =>
             {
-                ConfirmBoxPopup.ConfirmBoxData data = new ConfirmBoxPopup.ConfirmBoxData();
-                data.title = "What to Test";
-                data.content = "new bie\nVillage";
-                data.btnClose = false;
-                data.btnBgClose = true;
-                WindowService.instance.ShowConfirmBoxPopup(data);
+                // ConfirmBoxPopup.ConfirmBoxData data = new ConfirmBoxPopup.ConfirmBoxData();
+                // data.title = "What to Test";
+                // data.content = "new bie\nVillage";
+                // data.btnClose = false;
+                // data.btnBgClose = true;
+                // WindowService.instance.ShowConfirmBoxPopup(data);
             });
         }
 
