@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using com;
 
 namespace vom
 {
     public class HpBarSystem : MonoBehaviour
     {
-        public GameObject prefab;
+        //public GameObject prefab;
         public static HpBarSystem instance { get; private set; }
+
+        public string prefabId = "hpbar";
 
         private void Awake()
         {
@@ -19,7 +22,7 @@ namespace vom
 
         public HpBarBehaviour Create(Transform host, float offset = 150f, float scale = 1f)
         {
-            var newHpBarGo = Instantiate(prefab, host);
+            var newHpBarGo = Instantiate(PoolingService.instance.GetInstance(prefabId), host);
             newHpBarGo.transform.localPosition = Vector3.zero;
             newHpBarGo.SetActive(true);
 
