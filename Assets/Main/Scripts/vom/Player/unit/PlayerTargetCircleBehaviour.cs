@@ -19,7 +19,7 @@ namespace vom
             circle.transform.SetParent(parent);
             circle.transform.localPosition = Vector3.zero;
             circle.transform.localScale = Vector3.one;
-            circle.transform.localEulerAngles = new Vector3(90, 0, 0);
+            circle.transform.localEulerAngles = new Vector3(0, 0, 0);
             circle.SetActive(true);
         }
     }

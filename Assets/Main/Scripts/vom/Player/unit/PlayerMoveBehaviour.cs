@@ -87,6 +87,7 @@ namespace vom
 
         public void Rotate(Vector3 to)
         {
+            to.y = 0;
             rotatePart.rotation = Quaternion.LookRotation(to);
         }
 

@@ -9,10 +9,11 @@ namespace vom
         public GameObject groundView;
         public GameObject obstacleView;
         public TileCacheBehaviour.OutputTileData tileData;
+        public Vector2Int offset;
 
         public void SyncPos()
         {
-            transform.position = new Vector3(tileData.x, tileData.height, tileData.z);
+            transform.position = new Vector3(tileData.x + offset.x, tileData.height, tileData.z + offset.y);
         }
 
         public void Visualize()
@@ -61,13 +62,13 @@ namespace vom
         void CreateObstacleView()
         {
             obstacleView = Instantiate(tileData.obstacle, transform);
-            obstacleView.transform.localPosition = new Vector3(0, tileData.height, 0);
+            obstacleView.transform.localPosition = new Vector3(0, 0, 0);
         }
 
         void CreateGroundView()
         {
             groundView = Instantiate(tileData.tile, transform);
-            groundView.transform.localPosition = new Vector3(0, tileData.height, 0);
+            groundView.transform.localPosition = new Vector3(0, 0, 0);
         }
     }
 }

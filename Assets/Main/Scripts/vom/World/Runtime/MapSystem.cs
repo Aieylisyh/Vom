@@ -81,9 +81,7 @@ namespace vom
             foreach (var t in currentMap.tiles)
             {
                 if (t.x == x && t.z == z)
-                {
                     return t;
-                }
             }
 
             Debug.LogWarning("no data x" + x + " z" + z);
@@ -111,7 +109,7 @@ namespace vom
                     }
                     else
                     {
-                        var tileData = GetTileData(intPos.x, intPos.y);
+                        var tileData = GetTileData(x, y);
                         var go = PoolingService.instance.GetInstance(prefabId);
 
                         var tile = go.GetComponent<MapTileBehaviour>();
@@ -123,7 +121,9 @@ namespace vom
                         go.transform.SetParent(tilesParent);
                         tile.tileData = tileData;
                         tile.gen = gen;
+                        tile.offset = new Vector2Int(-(int)currentMap.playerStart.localPosition.x, -(int)currentMap.playerStart.localPosition.z);
                         tile.Visualize();
+
                         if (_tiles.ContainsKey(pPos))
                         {
                             _tiles[pPos] = tile;
