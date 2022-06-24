@@ -42,7 +42,7 @@ namespace vom
         public VolumeCoreType core;
         public VolumeTerrainType terrain;
         public VolumeGroundType ground;
-        public int groundInfluenceTileDistance;
+        public int groundPercentage;
         public VolumeObstacleType obstacle;
         public int obstaclePercentage;
     }

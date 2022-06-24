@@ -13,12 +13,12 @@
             if (Compare(newVs.ground, oldVs.ground) > 0)
             {
                 vs.ground = newVs.ground;
-                vs.groundInfluenceTileDistance = newVs.groundInfluenceTileDistance;
+                vs.groundPercentage = newVs.groundPercentage;
             }
             else
             {
                 vs.ground = oldVs.ground;
-                vs.groundInfluenceTileDistance = oldVs.groundInfluenceTileDistance;
+                vs.groundPercentage = oldVs.groundPercentage;
             }
 
             if (Compare(newVs.obstacle, oldVs.obstacle) > 0)

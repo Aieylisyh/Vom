@@ -11,10 +11,11 @@ namespace vom
 
         public MapPrototype mapPrototype;
 
-        public bool toggleShow;
-
         public GameObject groundView;
         public GameObject obstacleView;
+
+        public bool toggleBuild;
+        public bool toggleShow;
 
         [Serializable]
         public struct OutputTileData
@@ -32,13 +33,15 @@ namespace vom
             tileData.z = z;
             mapPrototype = p;
 
-            //volume = new VolumeSetter();
-            volume.obstaclePercentage = 100;
             volume.core = VolumeCoreType.Normal;
-            volume.ground = VolumeGroundType.Normal;
-            volume.obstacle = VolumeObstacleType.None;
+
             volume.terrain = VolumeTerrainType.Normal;
-            volume.groundInfluenceTileDistance = 0;
+
+            volume.ground = VolumeGroundType.Normal;
+            volume.groundPercentage = 100;
+
+            volume.obstacle = VolumeObstacleType.None;
+            volume.obstaclePercentage = 100;
         }
 
         public void Build()
@@ -50,6 +53,7 @@ namespace vom
                 tileData.height = 0;
                 return;
             }
+
             if (volume.core == VolumeCoreType.Fixed)
             {
                 return;
@@ -57,8 +61,10 @@ namespace vom
 
             tileData.height = MapVolumeService.GetHeight(this);
             tileData.tile = MapGeneratorSystem.instance.mapVolumeSystem.GetGround(this.volume, mapPrototype.biome);
-            if (volume.terrain != VolumeTerrainType.Wall && volume.ground != VolumeGroundType.Water)
+
+            if (volume.ground != VolumeGroundType.Water)
             {
+                //(volume.terrain != VolumeTerrainType.Wall ??
                 tileData.obstacle = MapGeneratorSystem.instance.mapVolumeSystem.GetObstacle(this.volume, mapPrototype.biome);
             }
             else
@@ -128,6 +134,13 @@ namespace vom
             {
                 toggleShow = false;
                 Visualize();
+            }
+
+            if (toggleBuild)
+            {
+                toggleBuild = false;
+                Build();
+                toggleShow = true;
             }
         }
     }
