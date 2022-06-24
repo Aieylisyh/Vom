@@ -72,7 +72,7 @@ namespace vom
 
         Vector2Int GetPlayerRelativeIntPos()
         {
-            var pos = PlayerBehaviour.instance.transform.position - currentMap.playerStart.localPosition;
+            var pos = PlayerBehaviour.instance.transform.position + currentMap.playerStart.localPosition;
             return new Vector2Int((int)pos.x, (int)pos.z);
         }
 
