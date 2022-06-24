@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: test1
   bgColor: {r: 1, g: 0.496, b: 0, a: 1}
-  biome: 4
+  biome: 0

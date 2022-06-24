@@ -27,7 +27,7 @@ namespace vom
                 {
                     if (t != tile && (t.transform.position - tile.transform.position).magnitude < 1.1f)
                     {
-                        if (tile.volume.terrain == terrainType)
+                        if (tile.volume.core == VolumeCoreType.Normal && tile.volume.terrain == terrainType)
                             adjacentSame++;
                         else
                             adjacentNonSame++;
@@ -39,10 +39,6 @@ namespace vom
                     if (adjacentSame > 0)
                     {
                         height += GetBaseHeight(terrainType);
-                        if (adjacentSame > 6)
-                        {
-                            height += GetBaseHeight(terrainType);
-                        }
                     }
                 }
             }
@@ -68,10 +64,9 @@ namespace vom
             return height;
         }
 
-
         static bool CanRebaseHeight(VolumeTerrainType terrainType)
         {
-            if (terrainType == VolumeTerrainType.Wall)
+            if (terrainType == VolumeTerrainType.Normal)
                 return false;
 
             return true;

@@ -17,7 +17,7 @@ namespace vom
         public GameObject tileCachePrefab;
         public Transform tilesParent;
 
-        public  List<TileCacheBehaviour> tiles { get; private set; }
+        public List<TileCacheBehaviour> tiles { get; private set; }
 
         public bool willVisualize = false;
 
@@ -48,7 +48,7 @@ namespace vom
                 }
             }
 
-            Invoke("GenerateStep2", 1.0f);
+            Invoke("GenerateStep2", 2.0f);
         }
 
         void GenerateStep2()

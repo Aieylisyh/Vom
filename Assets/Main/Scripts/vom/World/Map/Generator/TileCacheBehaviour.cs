@@ -33,12 +33,12 @@ namespace vom
             mapPrototype = p;
 
             //volume = new VolumeSetter();
-            //volume.obstaclePercentage = 100;
-            //volume.core = VolumeCoreType.Normal;
-            //volume.ground = VolumeGroundType.Normal;
-            //volume.obstacle = VolumeObstacleType.None;
-            //volume.terrain = VolumeTerrainType.Normal;
-            //volume.groundInfluenceTileDistance = 0;
+            volume.obstaclePercentage = 100;
+            volume.core = VolumeCoreType.Normal;
+            volume.ground = VolumeGroundType.Normal;
+            volume.obstacle = VolumeObstacleType.None;
+            volume.terrain = VolumeTerrainType.Normal;
+            volume.groundInfluenceTileDistance = 0;
         }
 
         public void Build()
@@ -57,7 +57,14 @@ namespace vom
 
             tileData.height = MapVolumeService.GetHeight(this);
             tileData.tile = MapGeneratorSystem.instance.mapVolumeSystem.GetGround(this.volume, mapPrototype.biome);
-            tileData.tile = MapGeneratorSystem.instance.mapVolumeSystem.GetObstacle(this.volume, mapPrototype.biome);
+            if (volume.terrain != VolumeTerrainType.Wall && volume.ground != VolumeGroundType.Water)
+            {
+                tileData.obstacle = MapGeneratorSystem.instance.mapVolumeSystem.GetObstacle(this.volume, mapPrototype.biome);
+            }
+            else
+            {
+                tileData.obstacle = null;
+            }
         }
 
         public void Visualize()
@@ -82,19 +89,6 @@ namespace vom
                 CreateGroundView();
             }
 
-            if (groundView == null)
-            {
-                if (tileData.tile != null)
-                {
-                    CreateGroundView();
-                }
-            }
-            else
-            {
-                Destroy(groundView);
-                groundView = null;
-            }
-
             bool hasObstacle = (tileData.obstacle != null);
             if (obstacleView == null && hasObstacle)
             {
@@ -113,19 +107,6 @@ namespace vom
             {
                 Destroy(obstacleView);
                 CreateObstacleView();
-            }
-
-            if (obstacleView == null)
-            {
-                if (tileData.tile != null)
-                {
-                    CreateObstacleView();
-                }
-            }
-            else
-            {
-                Destroy(obstacleView);
-                obstacleView = null;
             }
         }
 
