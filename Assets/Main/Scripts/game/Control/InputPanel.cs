@@ -42,11 +42,17 @@ namespace game
 
         public void OnDrag(PointerEventData eventData)
         {
+            if (_disabledInput)
+                return;
+
             PlayerBehaviour.instance.move.UpdateDrag(eventData.position);
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (_disabledInput)
+                return;
+
             SceneInputSystem.instance.InputPanelDown(eventData);
             //Debug.Log("OnPointerDown");
             _timestampTap = Time.unscaledTime;
@@ -68,14 +74,19 @@ namespace game
 
         public void OnPointerUp(PointerEventData eventData)
         {
+            if (_disabledInput)
+                return;
+
             SceneInputSystem.instance.InputPanelRelease(eventData);
             //Debug.Log("OnPointerUp");
-
+           
             PlayerBehaviour.instance.move.EndDrag();
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
+            if (_disabledInput)
+                return;
             SceneInputSystem.instance.InputPanelClick(eventData);
         }
     }

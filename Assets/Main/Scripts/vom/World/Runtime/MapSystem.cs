@@ -27,7 +27,9 @@ namespace vom
             var pos = player.transform.position;
             var playerStartPos = currentMap.playerStart.position;
 
-            currentMap.transform.position = currentMap.transform.position + pos - playerStartPos;
+            var posMap = currentMap.transform.position + pos - playerStartPos;
+            posMap.y = 0;
+            currentMap.transform.position = posMap;
         }
 
         public int tileNumRight;

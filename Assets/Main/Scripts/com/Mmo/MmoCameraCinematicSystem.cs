@@ -64,7 +64,8 @@ namespace com
             offset.z = offset.z * 0.4f;
             var pendDir = Vector3.Cross(Vector3.up, other.position - player.position);
 
-            var goodPos = centerPos + offset + pendDir.normalized * 3.2f;
+
+            var goodPos = centerPos + offset + pendDir.normalized * ((other.position.x - player.position.x > 0) ? 3.1f : -3.1f);
             e2.position = goodPos + Vector3.up * 0.3f;
             e2.rotation = Quaternion.LookRotation(centerPos - goodPos);
 
@@ -78,7 +79,7 @@ namespace com
             };
 
             CinematicEventPrototype e4 = new CinematicEventPrototype();
-            e4.TimeToNext = 5.5f;
+            e4.TimeToNext = 5.7f;
             e4.duration = 5.5f;
             e4.ease = DG.Tweening.Ease.InOutCubic;
             e4.type = CinematicActionTypes.TweenPositionAndRotation;

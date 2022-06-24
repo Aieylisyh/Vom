@@ -33,7 +33,8 @@ namespace vom
 
         public GameObject dieVFX;
 
-        private float _orbitalStartHeightAdd;
+        private float _orbitalStartHeight;
+        private float _orbitalHeightAdd;
         public float releaseOffsetRatioByDistance;
         private float _releaseOffset;
         private Vector3 _releaseOffsetDir;
@@ -48,7 +49,7 @@ namespace vom
         public bool isEnemyShoot;
 
 
-        public int dmg=1;//test only
+        public int dmg = 1;//test only
 
         private void Awake()
         {
@@ -57,8 +58,8 @@ namespace vom
             var cfg = ConfigService.instance.combatConfig;
             _rotateDegreeSpeed = cfg.orbs.rotateDegreeSpeed;
             _orbitalRadius = cfg.orbs.orbitalRadius;
-            _orbitalStartHeightAdd = cfg.orbs.orbitalStartHeightAdd;
-
+            _orbitalStartHeight = cfg.orbs.orbitalStartHeight; 
+             _orbitalHeightAdd = cfg.orbs.orbitalHeightAdd;
             _startPositioningTime = cfg.orbs.startPositioningTime;
         }
 
@@ -94,7 +95,7 @@ namespace vom
                         Die(false);
                     }
                 }
-              
+
             }
         }
 
@@ -159,7 +160,7 @@ namespace vom
             }
 
             transform.position = orbitalHost.position +
-                orbitalOffset + Mathf.Lerp(0, _orbitalStartHeightAdd, r) * Vector3.up +
+                orbitalOffset + Mathf.Lerp(_orbitalStartHeight, _orbitalStartHeight + _orbitalHeightAdd, r) * Vector3.up +
             (Vector3.right * Mathf.Sin(Mathf.Deg2Rad * orbitalDegree) +
             Vector3.forward * Mathf.Cos(Mathf.Deg2Rad * orbitalDegree)) *
             Mathf.Lerp(1, 0, r) * _orbitalRadius;
@@ -189,11 +190,11 @@ namespace vom
         {
             if (_isOrbital)
             {
-                if (_startPositioningTimer<=0)
+                if (_startPositioningTimer <= 0)
                 {
                     orbitalDegree += GameTime.deltaTime * _rotateDegreeSpeed;
                 }
-                
+
                 //var oldPos = transform.position;
                 SyncOrbitalPos();
                 //rotateAlignMove.Rotate(transform.position - oldPos);

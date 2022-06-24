@@ -15,6 +15,7 @@ MonoBehaviour:
   orbs:
     rotateDegreeSpeed: 180
     orbitalRadius: 0.88
-    orbitalStartHeightAdd: 3.1
+    orbitalHeightAdd: 1.5
+    orbitalStartHeight: 0.2
     startPositioningTime: 0.8
   blockerLayerMask: 3
