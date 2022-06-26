@@ -59,6 +59,7 @@ namespace vom
         {
             GenerateStartingMap(MapService.GetMapItemById(testBaseMapId));
             gameCoreGameObjects.SetActive(true);
+            mapFeedbackSystem.EnterNewMap();
         }
 
         void GenerateStartingMap(MapItem mapItem)
@@ -73,14 +74,12 @@ namespace vom
             mapPos.y = 0;
             map.transform.position = mapPos;
 
-            currentMap = map;
             map.offsetX = Mathf.FloorToInt(mapPos.x);
             map.offsetZ = Mathf.FloorToInt(mapPos.z);
             _globalOffsetX = map.offsetX;
             _globalOffsetZ = map.offsetZ;
-
+            currentMap = map;
             loadedMaps.Add(map);
-            mapFeedbackSystem.EnterNewMap();
         }
 
         void InitMapSynchronizer()
@@ -278,6 +277,7 @@ namespace vom
                         if (mapTileData.map != null)
                         {
                             tile.tileData = mapTileData.tileData;
+                            tile.map = mapTileData.map;
                             tile.offset = new Vector2(mapTileData.map.transform.position.x, mapTileData.map.transform.position.z);
                             tile.Visualize();
                         }
@@ -302,6 +302,17 @@ namespace vom
                 else
                 {
                     tile.Value.SyncPos();
+                }
+            }
+
+            var playerPosMapTileData = _tiles[new Vector2Int(playerIntPos.x, playerIntPos.y)];
+            if (playerPosMapTileData.map != null)
+            {
+                if (playerPosMapTileData.map != currentMap)
+                {
+                    //Debug.Log("CheckStep!!!!");
+                    currentMap = playerPosMapTileData.map;
+                    mapFeedbackSystem.EnterNewMap();
                 }
             }
         }

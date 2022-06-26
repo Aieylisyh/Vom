@@ -8,7 +8,9 @@ namespace vom
 
         public GameObject groundView;
         public GameObject obstacleView;
+
         public TileCacheBehaviour.OutputTileData tileData;
+        public MapItem map;
         public Vector2 offset;
 
         public void SyncPos()
