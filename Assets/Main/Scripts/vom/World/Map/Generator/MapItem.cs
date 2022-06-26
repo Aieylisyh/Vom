@@ -23,8 +23,17 @@ namespace vom
         public int sizeX;
         [HideInInspector]
         public int sizeZ;
+        [HideInInspector]
+        public int offsetX;
+        [HideInInspector]
+        public int offsetZ;
 
-        public void Start()
+        void Awake()
+        {
+            Init();
+        }
+
+        public void Init()
         {
             foreach (var c in connectors)
             {

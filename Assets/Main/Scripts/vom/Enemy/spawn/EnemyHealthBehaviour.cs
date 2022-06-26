@@ -12,8 +12,6 @@ namespace vom
 
         public void Init()
         {
-            Debug.Log("Init");
-
             if (bar == null)
             {
                 bar = HpBarSystem.instance.Create(transform, 155, 1.0f);

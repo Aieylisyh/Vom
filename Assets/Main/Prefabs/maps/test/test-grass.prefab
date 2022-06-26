@@ -30597,13 +30597,17 @@ MonoBehaviour:
   - type: 0
     toId: test-des-1
     posPercentage: 0.5
-    posOffset: 0
+    posOffset: -14
     fromId: 
   - type: 2
     toId: test-des-2
     posPercentage: 0
     posOffset: 10
     fromId: 
+  sizeX: 0
+  sizeZ: 0
+  offsetX: 0
+  offsetZ: 0
 --- !u!1 &2001082976572149010
 GameObject:
   m_ObjectHideFlags: 0
