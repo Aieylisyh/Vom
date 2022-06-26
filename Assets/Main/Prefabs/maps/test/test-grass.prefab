@@ -30594,15 +30594,15 @@ MonoBehaviour:
   playerStart: {fileID: 2001082975759560070}
   blessing: {fileID: 2235883418387425944}
   connectors:
-  - type: 0
+  - type: 1
     toId: test-des-1
     posPercentage: 0.5
     posOffset: -14
     fromId: 
   - type: 2
     toId: test-des-2
-    posPercentage: 0
-    posOffset: 10
+    posPercentage: 0.525
+    posOffset: 0
     fromId: 
   sizeX: 0
   sizeZ: 0

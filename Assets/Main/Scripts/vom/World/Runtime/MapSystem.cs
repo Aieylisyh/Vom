@@ -158,88 +158,92 @@ namespace vom
 
         void LoadConnectedMap(int x, int z, MapConnectorPrototype connector, MapItem fromMap)
         {
-            var newMapId = connector.toId;
+            var toMapId = connector.toId;
             foreach (var loadedMap in loadedMaps)
             {
-                if (loadedMap.mapId == newMapId)
+                if (loadedMap.mapId == toMapId)
                 {
                     //Debug.Log("loaded " + mapId);
                     return;
                 }
             }
 
-            Debug.LogWarning("LoadConnectedMap " + newMapId);
-            var newMapItemPrefab = MapService.GetMapItemById(newMapId);
+            Debug.LogWarning("LoadConnectedMap " + toMapId);
+            var toMapPrefab = MapService.GetMapItemById(toMapId);
 
-            MapConnectorPrototype prefabNewMapConnector = null;
-            foreach (var pConnector in newMapItemPrefab.connectors)
+            MapConnectorPrototype prefabToMapConnector = null;
+            foreach (var pConnector in toMapPrefab.connectors)
             {
                 //must ensure there is only 1 connector between 2 maps!
                 if (pConnector.toId == connector.fromId)
                 {
-                    prefabNewMapConnector = pConnector;
+                    prefabToMapConnector = pConnector;
                     break;
                 }
             }
 
-            if (prefabNewMapConnector == null)
+            if (prefabToMapConnector == null)
             {
-                Debug.LogError("no loadedMapConnector " + newMapId);
+                Debug.LogError("no loadedMapConnector " + toMapId);
                 return;
             }
 
-            var newMap = Instantiate<MapItem>(newMapItemPrefab, mapParent);
+            var toMap = Instantiate<MapItem>(toMapPrefab, mapParent);
 
-            MapConnectorPrototype newMapConnector = null;
-            foreach (var pConnector in newMap.connectors)
+            MapConnectorPrototype toMapConnector = null;
+            foreach (var pConnector in toMap.connectors)
             {
                 if (pConnector.toId == connector.fromId)
                 {
-                    newMapConnector = pConnector;
+                    toMapConnector = pConnector;
                     break;
                 }
             }
 
-            Vector2 newMapOffset = Vector2.zero;
+            Vector2 toMapOffset = Vector2.zero;
             switch (connector.type)
             {
                 case MapConnectorPrototype.ConnectToType.Backward:
-                    newMapOffset.x = 0;
-                    newMapOffset.y = 0;
+                    toMapOffset.x = 0;
+                    toMapOffset.y = 0;
                     break;
 
                 case MapConnectorPrototype.ConnectToType.Forward:
-                    newMapOffset.x = 0;
-                    newMapOffset.y = 0;
+                    toMapOffset.x = fromMap.transform.position.x;
+                    toMapOffset.y = fromMap.transform.position.z + fromMap.sizeZ;
+                    toMapOffset.x += Mathf.Floor(connector.posPercentage * fromMap.sizeX) + connector.posOffset;
+                    toMapOffset.x -= Mathf.Floor(toMapConnector.posPercentage * toMap.sizeX) + toMapConnector.posOffset;
                     break;
                 case MapConnectorPrototype.ConnectToType.Left:
-                    newMapOffset.x = 0;
-                    newMapOffset.y = 0;
+                    toMapOffset.x = fromMap.transform.position.x - toMap.sizeX;
+                    toMapOffset.y = fromMap.transform.position.z;
+                    toMapOffset.y += Mathf.Floor(connector.posPercentage * fromMap.sizeZ) + connector.posOffset;
+                    toMapOffset.y -= Mathf.Floor(toMapConnector.posPercentage * toMap.sizeZ) + toMapConnector.posOffset;
                     break;
 
                 case MapConnectorPrototype.ConnectToType.Right:
-                    newMapOffset.x = fromMap.transform.position.x + fromMap.sizeX;
-                    newMapOffset.y = fromMap.transform.position.z;
-                    newMapOffset.y += Mathf.Floor(connector.posPercentage * fromMap.sizeZ) + connector.posOffset;
-                    newMapOffset.y -= Mathf.Floor(newMapConnector.posPercentage * newMap.sizeZ) + newMapConnector.posOffset;
+                    toMapOffset.x = fromMap.transform.position.x + fromMap.sizeX;
+                    toMapOffset.y = fromMap.transform.position.z;
+                    toMapOffset.y += Mathf.Floor(connector.posPercentage * fromMap.sizeZ) + connector.posOffset;
+                    toMapOffset.y -= Mathf.Floor(toMapConnector.posPercentage * toMap.sizeZ) + toMapConnector.posOffset;
                     break;
             }
 
-            Debug.Log("newMapOffset " + newMapOffset);
+            Debug.Log("toMapOffset " + toMapOffset);
             //this rect pos of starting map is 
             //Pos  -playerstart.x, -playerstart.z(BL)
             // BL -playerstart.x, -playerstart.z
             // BR sizeX-playerstart.x, -playerstart.z
             // TL -playerstart.x, sizeZ-playerstart.z
             // TR sizeX-playerstart.x, sizeZ-playerstart.z
-            Vector3 newMapPos = new Vector3(newMapOffset.x, 0, newMapOffset.y);
+            Vector3 toMapPos = new Vector3(toMapOffset.x, 0, toMapOffset.y);
 
-            newMap.offsetX = Mathf.FloorToInt(newMapPos.x);
-            newMap.offsetZ = Mathf.FloorToInt(newMapPos.z);
+            toMap.offsetX = Mathf.FloorToInt(toMapPos.x);
+            toMap.offsetZ = Mathf.FloorToInt(toMapPos.z);
 
-            newMap.transform.position = newMapPos;
+            toMap.transform.position = toMapPos;
 
-            loadedMaps.Add(newMap);
+            loadedMaps.Add(toMap);
         }
 
         void Sync()

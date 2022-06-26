@@ -61654,9 +61654,13 @@ MonoBehaviour:
   connectors:
   - type: 3
     toId: test-grass
-    posPercentage: 0.5
-    posOffset: -20
+    posPercentage: 0
+    posOffset: 0
     fromId: 
+  sizeX: 0
+  sizeZ: 0
+  offsetX: 0
+  offsetZ: 0
 --- !u!1 &5198465341547491265
 GameObject:
   m_ObjectHideFlags: 0

@@ -61652,7 +61652,7 @@ MonoBehaviour:
   playerStart: {fileID: 5198465340749565781}
   blessing: {fileID: 5541286736314697803}
   connectors:
-  - type: 1
+  - type: 0
     toId: test-grass
     posPercentage: 0.058
     posOffset: 3
