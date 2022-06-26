@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7622032807442250222}
   - component: {fileID: 7622032807438825932}
   - component: {fileID: 7622032807439825676}
-  - component: {fileID: 6412208691539361513}
+  - component: {fileID: 195318508541965455}
   m_Layer: 3
   m_Name: CroppyFieldsTree2
   m_TagString: Untagged
@@ -113,8 +113,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6412208691539361513
-SphereCollider:
+--- !u!65 &195318508541965455
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -124,5 +124,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.47
-  m_Center: {x: -0.066870004, y: 0.62973845, z: -0.007695496}
+  m_Size: {x: 0.66, y: 1, z: 0.66}
+  m_Center: {x: -0.066870004, y: 0.698, z: -0.007695496}

@@ -65,7 +65,6 @@
             return 0;
         }
 
-
         public static int Compare(VolumeTerrainType a, VolumeTerrainType b)
         {
             if (a > b)

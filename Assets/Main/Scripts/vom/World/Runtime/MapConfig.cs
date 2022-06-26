@@ -7,6 +7,8 @@ namespace vom
     public class MapConfig : ScriptableObject
     {
         public TilesParam tiles;
+
+        public List<MapItem> maps;
     }
 
     [System.Serializable]

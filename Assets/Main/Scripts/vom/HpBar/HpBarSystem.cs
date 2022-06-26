@@ -22,7 +22,8 @@ namespace vom
 
         public HpBarBehaviour Create(Transform host, float offset = 150f, float scale = 1f)
         {
-            var newHpBarGo = Instantiate(PoolingService.instance.GetInstance(prefabId), host);
+            var newHpBarGo = PoolingService.instance.GetInstance(prefabId);
+            newHpBarGo.transform.parent = host;
             newHpBarGo.transform.localPosition = Vector3.zero;
             newHpBarGo.SetActive(true);
 

@@ -9,7 +9,7 @@ namespace vom
     {
         public static MapSystem instance { get; private set; }
 
-        public MapItem item;
+        public string testBaseMapId;
         public GameObject player;
         public Transform mapParent;
         public Transform tilesParent;
@@ -23,15 +23,15 @@ namespace vom
 
         private void Start()
         {
-            GeneratorMap();
+            GeneratorMap(MapService.GetMapItemById(testBaseMapId));
             InitMap();
             mapFeedbackSystem.EnterNewMap();
         }
 
-        void GeneratorMap()
+        void GeneratorMap(MapItem mapItem)
         {
             //PlacePlayer on the right pos;
-            currentMap = Instantiate<MapItem>(item, mapParent);
+            currentMap = Instantiate<MapItem>(mapItem, mapParent);
             var pos = player.transform.position;
             var playerStartPos = currentMap.playerStart.position;
 

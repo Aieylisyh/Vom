@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e69d2948490d4ba8c6190ecd9ed68, type: 3}
   m_Name: Map Prototype-test2
   m_EditorClassIdentifier: 
-  id: test2
-  bgColor: {r: 0.15472585, g: 0.26186463, b: 0.5377358, a: 1}
+  id: Sirike Land
+  bgColor: {r: 0.32542333, g: 0.08957815, b: 0.5754717, a: 1}
   biome: 4

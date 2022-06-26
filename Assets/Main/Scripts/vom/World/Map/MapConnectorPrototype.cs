@@ -10,12 +10,20 @@ namespace vom
         {
             Right,
             Left,
-            Up,
-            Down,
+            Forward,
+            Backward,
         }
 
         public ConnectToType type;
+
         public string toId;
+
+        [Range(0f, 1f)]
+        public float posPercentage;
+
+        public int posOffset;
+
+        [HideInInspector]
         public string fromId;
     }
 }
