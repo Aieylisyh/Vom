@@ -19,12 +19,20 @@ namespace vom
 
         public List<MapConnectorPrototype> connectors;
 
+        [HideInInspector]
+        public int sizeX;
+        [HideInInspector]
+        public int sizeZ;
+
         public void Start()
         {
             foreach (var c in connectors)
             {
                 c.fromId = mapId;
             }
+
+            sizeX = tiles[tiles.Count - 1].x + 1;
+            sizeZ = tiles[tiles.Count - 1].z + 1;
         }
     }
 }

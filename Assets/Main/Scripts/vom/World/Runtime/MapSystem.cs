@@ -16,30 +16,6 @@ namespace vom
 
         public MapItem currentMap { get; private set; }
 
-        private void Awake()
-        {
-            instance = this;
-        }
-
-        private void Start()
-        {
-            GeneratorMap(MapService.GetMapItemById(testBaseMapId));
-            InitMap();
-            mapFeedbackSystem.EnterNewMap();
-        }
-
-        void GeneratorMap(MapItem mapItem)
-        {
-            //PlacePlayer on the right pos;
-            currentMap = Instantiate<MapItem>(mapItem, mapParent);
-            var pos = player.transform.position;
-            var playerStartPos = currentMap.playerStart.position;
-
-            var posMap = currentMap.transform.position + pos - playerStartPos;
-            posMap.y = 0;
-            currentMap.transform.position = posMap;
-        }
-
         public int tileNumRight;
         public int tileNumForward;
         public int tileNumBackward;
@@ -50,8 +26,42 @@ namespace vom
         public bool paused;
 
         public string prefabId = "MapTile";
+        public GameObject gameCoreGameObjects;
 
-        void InitMap()
+        private void Awake()
+        {
+            instance = this;
+        }
+
+        private void Start()
+        {
+            InitMapSynchronizer();
+            StartMap();//TODO call this after load from saved data
+        }
+
+        public void StartMap()
+        {
+            GenerateStartingMap(MapService.GetMapItemById(testBaseMapId));
+            gameCoreGameObjects.SetActive(true);
+        }
+
+        void GenerateStartingMap(MapItem mapItem)
+        {
+            var map = Instantiate<MapItem>(mapItem, mapParent);
+            var playerPos = player.transform.position;
+            var mapPos = map.transform.position;
+
+            var playerStartPos = map.playerStart.position;
+            //PlacePlayer on the right pos;
+            mapPos += playerPos - playerStartPos;
+            mapPos.y = 0;
+            map.transform.position = mapPos;
+
+            currentMap = map;
+            mapFeedbackSystem.EnterNewMap();
+        }
+
+        void InitMapSynchronizer()
         {
             _lastPos = Vector2Int.zero;
             _tiles = new Dictionary<Vector2Int, MapTileBehaviour>();
@@ -94,9 +104,55 @@ namespace vom
                     return t;
             }
 
+            return TryFindOtherTileData(x, z);
+        }
+
+        TileCacheBehaviour.OutputTileData TryFindOtherTileData(int x, int z)
+        {
             Debug.LogWarning("no data x" + x + " z" + z);
+            TryGenerateConnectedMap(x, z);
 
             return new TileCacheBehaviour.OutputTileData();
+        }
+
+        void TryGenerateConnectedMap(int x, int z)
+        {
+            Debug.Log("TryGenerateConnectedMap " + x + " " + z);
+            //Debug.Log(currentMap.sizeX);
+            //Debug.Log(currentMap.sizeZ);
+            foreach (var c in currentMap.connectors)
+            {
+                if (x >= currentMap.sizeX && c.type == MapConnectorPrototype.ConnectToType.Right)
+                {
+                    Debug.Log(c.toId);
+                }
+                else if (x <= -1 && c.type == MapConnectorPrototype.ConnectToType.Left)
+                {
+                    Debug.Log(c.toId);
+                }
+                else if (z >= currentMap.sizeZ && c.type == MapConnectorPrototype.ConnectToType.Forward)
+                {
+                    Debug.Log(c.toId);
+                }
+                else if (z <= -1 && c.type == MapConnectorPrototype.ConnectToType.Backward)
+                {
+                    Debug.Log(c.toId);
+                }
+            }
+            return;
+            var mapItem = MapService.GetMapItemById(testBaseMapId);
+            var map = Instantiate<MapItem>(mapItem, mapParent);
+            var playerPos = player.transform.position;
+            var mapPos = map.transform.position;
+
+            var playerStartPos = currentMap.playerStart.position;
+            //PlacePlayer on the right pos;
+            mapPos += playerPos - playerStartPos;
+            mapPos.y = 0;
+            map.transform.position = mapPos;
+
+            currentMap = map;
+            mapFeedbackSystem.EnterNewMap();
         }
 
         void Sync()
