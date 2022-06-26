@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using com;
 using game;
+using System.Linq;
 
 namespace vom
 {
@@ -26,7 +27,8 @@ namespace vom
         public int gen { get; private set; }
         public bool paused;
 
-        public string prefabId = "MapTile";
+        // public string prefabId = "MapTile"; do not use since no improve
+        public MapTileBehaviour prefabTile;
         public GameObject gameCoreGameObjects;
 
         int _globalOffsetX;
@@ -114,8 +116,8 @@ namespace vom
 
         Vector2Int GetPlayerRelativeIntPos()
         {
-            var pos = PlayerBehaviour.instance.transform.position + currentMap.playerStart.localPosition;
-            return new Vector2Int(Mathf.FloorToInt(pos.x), Mathf.FloorToInt(pos.z));
+            var pos = PlayerBehaviour.instance.transform.position;
+            return new Vector2Int(Mathf.FloorToInt(pos.x - _globalOffsetX), Mathf.FloorToInt(pos.z - _globalOffsetZ));
         }
 
         MapTileData GetMapTileData(int x, int z)
@@ -124,15 +126,21 @@ namespace vom
 
             foreach (var loadedMap in loadedMaps)
             {
-                foreach (var t in loadedMap.tiles)
+                var px = x + _globalOffsetX - loadedMap.offsetX;
+                var pz = z + _globalOffsetZ - loadedMap.offsetZ;
+
+                var first = loadedMap.tiles[0];
+                if (first.x > px || first.z > pz)
                 {
-                    if (t.x + loadedMap.offsetX - _globalOffsetX == x && t.z + loadedMap.offsetZ - _globalOffsetZ == z)
-                    {
-                        //Debug.Log("loadedMap xz " + x + " " + z);
-                        //Debug.Log("MapTileData from other " + t.x + " " + t.z + " map " + loadedMap.mapId);
-                        return new MapTileData(t, loadedMap);
-                    }
+                    continue;
                 }
+                var last = loadedMap.tiles[loadedMap.tiles.Count - 1];
+                if (last.x < px || last.z < pz)
+                {
+                    continue;
+                }
+
+                return new MapTileData(loadedMap.tiles[px * loadedMap.sizeZ + pz], loadedMap);
             }
 
             return new MapTileData(new TileCacheBehaviour.OutputTileData(), null);
@@ -261,7 +269,7 @@ namespace vom
                 for (int y = playerIntPos.y - tileNumBackward; y <= playerIntPos.y + tileNumForward; y++)
                 {
                     Vector2Int pPos = new Vector2Int(x, y);
-                    if (_tiles.ContainsKey(pPos) && _tiles[pPos] != null && _tiles[pPos].gameObject != null && _tiles[pPos].gameObject.activeSelf)
+                    if (_tiles.ContainsKey(pPos) && _tiles[pPos] != null)
                     {
                         _tiles[pPos].gen = gen;
                     }
@@ -269,10 +277,8 @@ namespace vom
                     {
                         var mapTileData = GetMapTileData(x, y);
 
-                        var go = PoolingService.instance.GetInstance(prefabId);
-                        var tile = go.GetComponent<MapTileBehaviour>();
-
-                        go.transform.SetParent(tilesParent);
+                        var tile = Instantiate<MapTileBehaviour>(prefabTile, tilesParent);
+                        tile.gameObject.SetActive(true);
                         tile.gen = gen;
                         if (mapTileData.map != null)
                         {
@@ -290,14 +296,20 @@ namespace vom
                 }
             }
 
+            foreach (var s in _tiles.Where(
+                kv => kv.Value == null).ToList())
+            {
+                _tiles.Remove(s.Key);
+            }
+
             foreach (var tile in _tiles)
             {
-                if (tile.Value == null || tile.Value.gameObject == null || !tile.Value.gameObject.activeSelf)
+                if (tile.Value == null || tile.Value.gameObject == null)
                     continue;
 
                 if (tile.Value.gen != gen)
                 {
-                    PoolingService.instance.Recycle(tile.Value.gameObject);
+                    Destroy(tile.Value.gameObject);
                 }
                 else
                 {

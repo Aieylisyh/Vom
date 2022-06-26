@@ -20757,7 +20757,12 @@ MonoBehaviour:
   prototype: {fileID: 11400000, guid: 76184f2ca8f27a04c83453142cfac7b9, type: 2}
   playerStart: {fileID: 3041789110056436327}
   blessing: {fileID: 3383515408681207161}
-  connectors: []
+  connectors:
+  - type: 1
+    toId: test-multi-f-2
+    posPercentage: 0.5
+    posOffset: 0
+    fromId: 
   sizeX: 0
   sizeZ: 0
   offsetX: 0
