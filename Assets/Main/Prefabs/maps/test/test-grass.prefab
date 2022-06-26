@@ -30599,9 +30599,9 @@ MonoBehaviour:
     posPercentage: 0.5
     posOffset: -14
     fromId: 
-  - type: 2
+  - type: 3
     toId: test-des-2
-    posPercentage: 0.525
+    posPercentage: 0.5
     posOffset: 0
     fromId: 
   sizeX: 0

@@ -30,7 +30,10 @@ namespace vom
 
         void Awake()
         {
-            Init();
+            if (tiles.Count>0)
+            {
+                Init();
+            }
         }
 
         public void Init()

@@ -204,8 +204,10 @@ namespace vom
             switch (connector.type)
             {
                 case MapConnectorPrototype.ConnectToType.Backward:
-                    toMapOffset.x = 0;
-                    toMapOffset.y = 0;
+                    toMapOffset.x = fromMap.transform.position.x;
+                    toMapOffset.y = fromMap.transform.position.z - toMap.sizeZ;
+                    toMapOffset.x += Mathf.Floor(connector.posPercentage * fromMap.sizeX) + connector.posOffset;
+                    toMapOffset.x -= Mathf.Floor(toMapConnector.posPercentage * toMap.sizeX) + toMapConnector.posOffset;
                     break;
 
                 case MapConnectorPrototype.ConnectToType.Forward:
