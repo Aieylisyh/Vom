@@ -1,19 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using game;
 
 namespace vom
 {
-    public class PlayerEnemySearcherBehaviour : Ticker
+    public class PlayerEnemySearcherBehaviour : MonoBehaviour
     {
-        public float searchRange;
+        public AttackRange range = AttackRange.Melee;
+        float _fRange;
+
         public int maskToInclude;
 
-        protected override void Tick()
+        private void Start()
         {
-            //UpdateEnemies();
+            _fRange = CombatSystem.instance.GetRange(range);
         }
-
+        /*
         public void UpdateEnemies_nonBlockedFirst()
         {
             var enemies = EnemySystem.instance.enemies;
@@ -27,12 +28,12 @@ namespace vom
             foreach (var e in enemies)
             {
                 var dir = e.transform.position - pos;
-                if (dir.magnitude > searchRange)
+                if (dir.magnitude > _fRange)
                 {
                     Debug.Log("ene " + e.gameObject + " too far");
                     continue;
                 }
-                var res = Physics.Raycast(pos, dir, out hitInfo, searchRange, 1 << maskToInclude);
+                var res = Physics.Raycast(pos, dir, out hitInfo, _fRange, 1 << maskToInclude);
                 if (res) { Debug.Log("ene " + e.gameObject + " blocked by " + hitInfo.collider.gameObject); }
                 else
                 {
@@ -52,7 +53,7 @@ namespace vom
                // PlayerOrbBehaviour.instance.ReleaseFirst(nearestNonBlockedEnemy.gameObject);
             }
         }
-
+        */
         public EnemyBehaviour GetTargetEnemy()
         {
             var enemies = EnemySystem.instance.enemies;
@@ -64,7 +65,7 @@ namespace vom
             foreach (var e in enemies)
             {
                 var dir = e.transform.position - pos;
-                if (dir.magnitude > searchRange)
+                if (dir.magnitude > _fRange)
                 {
                     //Debug.Log("ene " + e.gameObject + " too far");
                     continue;

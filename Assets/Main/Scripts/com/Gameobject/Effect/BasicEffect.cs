@@ -14,7 +14,7 @@ namespace com
 
         private void Update()
         {
-            _killTimer -= com.GameTime.deltaTime;
+            _killTimer -= GameTime.deltaTime;
             if (_killTimer < 0)
             {
                 Recycle();

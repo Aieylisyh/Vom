@@ -2,18 +2,18 @@
 
 namespace vom
 {
-    public class PlayerAnimationEventResolver : VomUnitComponent
+    public class PlayerAnimationEventResolver : VomPlayerComponent
     {
         public void Moved()
         {
             //Debug.LogWarning("AnimationEventResolver " + "Moved");
-            player.move.Moved();
+            host.move.Moved();
         }
 
         public void Attacked()
         {
             //Debug.LogWarning("AnimationEventResolver " + "Attacked");
-            player.attack.Attacked();
+            host.attack.Attacked();
         }
 
         public void Spawned()

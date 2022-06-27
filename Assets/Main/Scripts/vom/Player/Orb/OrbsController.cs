@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace vom
 {
-    public class OrbsController : VomUnitComponent
+    public class OrbsController : VomPlayerComponent
     {
         public Transform spawnSpace;
 

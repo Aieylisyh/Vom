@@ -3,10 +3,11 @@ using game;
 
 namespace vom
 {
-    public class PlayerHealthBehaviour : VomUnitComponent
+    public class PlayerHealthBehaviour : VomPlayerComponent
     {
         public int healthMax;
         public int hp { get; private set; }
+        [HideInInspector]
         public HpBarBehaviour bar;
         public bool dead { get; private set; }
 

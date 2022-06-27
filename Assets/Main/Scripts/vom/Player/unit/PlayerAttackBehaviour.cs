@@ -3,7 +3,7 @@ using com;
 
 namespace vom
 {
-    public class PlayerAttackBehaviour : VomUnitComponent
+    public class PlayerAttackBehaviour : VomPlayerComponent
     {
         public float attackInterval = 1;
         private float _attackIntervalTimer;
@@ -36,11 +36,9 @@ namespace vom
         public void Attack()
         {
             if (_attackIntervalTimer > 0)
-            {
                 _attackIntervalTimer -= GameTime.deltaTime;
-            }
 
-            if (player.move.isMoving)
+            if (host.move.isMoving)
             {
                 CancelTargeting();
                 return;
@@ -51,7 +49,7 @@ namespace vom
                 PerformAttack();
                 if (_target != null)
                 {
-                    player.move.Rotate((_targetPos - transform.position).normalized);
+                    host.move.Rotate((_targetPos - transform.position).normalized);
                 }
             }
         }
@@ -64,8 +62,8 @@ namespace vom
                 _target = e.transform;
                 _targetPos = _target.position;
                 _attackIntervalTimer = attackInterval;
-                player.animator.SetBool("move", false);
-                player.animator.SetTrigger("attack");
+                host.animator.SetBool("move", false);
+                host.animator.SetTrigger("attack");
                 playerTargetCircle.Show(e);
             }
             else
@@ -101,5 +99,7 @@ namespace vom
             orbs.ReleaseFirst(_targetPos);
             _target = null;
         }
+
+        public bool HasTarget { get { return _target != null; } }
     }
 }

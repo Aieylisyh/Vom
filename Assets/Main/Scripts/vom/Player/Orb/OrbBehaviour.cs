@@ -41,20 +41,19 @@ namespace vom
 
         private RotateAlignMove _rotateAlignMove;
 
-        private BasicEffect _be;
+        private AutoDestory _des;
 
         private float _startPositioningTimer;
         private float _startPositioningTime;
-
+        [HideInInspector]
         public bool isEnemyShoot;
-
 
         public int dmg = 1;//test only
 
         private void Awake()
         {
             _rotateAlignMove = GetComponent<RotateAlignMove>();
-            _be = GetComponent<BasicEffect>();
+            _des = GetComponent<AutoDestory>();
             var cfg = ConfigService.instance.combatConfig;
             _rotateDegreeSpeed = cfg.orbs.rotateDegreeSpeed;
             _orbitalRadius = cfg.orbs.orbitalRadius;
@@ -122,7 +121,7 @@ namespace vom
                 releasingPs.Play();
 
             var offsetR =
-            _be.enabled = true;
+            _des.enabled = true;
             SoundService.instance.Play(releasingSound);
 
             _releaseTempPos = transform.position;

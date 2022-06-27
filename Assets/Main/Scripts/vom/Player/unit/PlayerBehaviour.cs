@@ -5,12 +5,13 @@ namespace vom
 {
     public class PlayerBehaviour : MonoBehaviour
     {
-        public static PlayerBehaviour instance;
+        public static PlayerBehaviour instance { get; private set; }
         public Animator animator;
         public CharacterController cc;
         public PlayerAttackBehaviour attack;
         public PlayerMoveBehaviour move;
         public PlayerHealthBehaviour health;
+        public PlayerCombatStateBehaviour combat;
 
         void Awake()
         {

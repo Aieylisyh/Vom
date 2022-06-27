@@ -3,7 +3,7 @@ using game;
 
 namespace vom
 {
-    public class PlayerMoveBehaviour : VomUnitComponent
+    public class PlayerMoveBehaviour : VomPlayerComponent
     {
         private bool _draging;
         private Vector2 _startPos;
@@ -18,6 +18,12 @@ namespace vom
         public float rotationLerpFactor = 0.1f;
 
         public TouchViewBehaviour touchView;
+
+        public float camDistSpeed;
+        public float movingCamDist;
+        public float stayCamDist;
+
+        public com.MmoCameraBehaviour mmoCamera;
 
         protected override void Start()
         {
@@ -59,6 +65,18 @@ namespace vom
                     ReceiveMoveInput(delta);
                 }
                 touchView.Show(delta);
+
+                if (mmoCamera.parameters.distance < movingCamDist)
+                {
+                    mmoCamera.parameters.distance += camDistSpeed * Time.deltaTime;
+                }
+            }
+            else
+            {
+                if (!host.combat.isInCombat && mmoCamera.parameters.distance > stayCamDist)
+                {
+                    mmoCamera.parameters.distance -= camDistSpeed * Time.deltaTime;
+                }
             }
         }
 
@@ -68,17 +86,17 @@ namespace vom
         {
             if (_moveDist.magnitude == 0)
             {
-                player.animator.SetBool("move", false);
-                if (!player.cc.isGrounded)
+                host.animator.SetBool("move", false);
+                if (!host.cc.isGrounded)
                 {
-                    player.cc.SimpleMove(-8f * Vector3.up);
+                    host.cc.SimpleMove(-8f * Vector3.up);
                 }
             }
             else
             {
-                player.animator.SetBool("move", true);
+                host.animator.SetBool("move", true);
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
-                player.cc.SimpleMove(deltaDist * speed);
+                host.cc.SimpleMove(deltaDist * speed);
                 Rotate(deltaDist);
             }
 
