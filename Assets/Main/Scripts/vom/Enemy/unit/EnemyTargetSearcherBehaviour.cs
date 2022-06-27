@@ -21,16 +21,13 @@ namespace vom
             _alertTimer = 0;
             target = null;
             alerted = false;
+            _hasTriggered = false;
             base.Start();
         }
 
         public void RepositionDone()
         {
-            if (_hasTriggered)
-            {
-                _hasTriggered = true;
-                host.health.HealToFull();
-            }
+            alerted = false;
         }
 
         void CheckSight()
@@ -54,6 +51,8 @@ namespace vom
 
         public void OnUpdate()
         {
+            CheckSight();
+
             if (alerted)
             {
                 if (_alertTimer > 0)
@@ -64,10 +63,6 @@ namespace vom
                         alerted = false;
                     }
                 }
-            }
-            else
-            {
-                CheckSight();
             }
         }
 

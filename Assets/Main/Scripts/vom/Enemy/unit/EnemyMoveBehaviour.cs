@@ -7,7 +7,7 @@ namespace vom
     {
         private Vector3 _startPos;
 
-        private Vector2 _moveDist;
+        private Vector3 _moveDist;
 
         public float speed;
         public float runSpeed = 15f;
@@ -20,8 +20,9 @@ namespace vom
         protected override void Start()
         {
             base.Start();
-            _startPos = transform.position;
+
             _fRange = CombatSystem.GetRange(stopRange);
+            _startPos = transform.position;
         }
 
         public void Moved()
@@ -32,14 +33,13 @@ namespace vom
         public void Move()
         {
             if (host.attack.isAttacking)
-            {
                 return;
-            }
 
             if (host.targetSearcher.alerted && host.targetSearcher.target != null)
             {
                 if (host.targetSearcher.targetDist >= _fRange)
                 {
+                    Debug.Log("mtp");
                     SetMoveTo(host.targetSearcher.target.position);
                 }
 
@@ -57,43 +57,58 @@ namespace vom
             if (host.animator.GetBool("move"))
                 host.animator.SetBool("move", false);
 
+            host.cc.SimpleMove(-1f * Vector3.up);
             host.targetSearcher.RepositionDone();
+            if (host.health.hp < host.health.healthMax)
+            {
+                host.health.HealToFull();
+            }
         }
 
         void RunBack()
         {
             var dir = _startPos - transform.position;
-            if (dir.magnitude < 0.5f)
+            dir.y = 0;
+            var dist = dir.magnitude;
+            if (dist < 0.5f)
             {
                 RepositionDone();
                 return;
             }
 
+            Debug.Log("rb");
             SetMoveTo(_startPos);
             if (!host.animator.GetBool("move"))
                 host.animator.SetBool("move", true);
 
-            var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
-            host.cc.SimpleMove(deltaDist * speed);//TODO maybe directly pass all obstacles transit
-            Rotate(deltaDist);
+            var s = _moveDist * runSpeed;
+            if (s.magnitude > dist)
+            {
+                s = s.normalized * dist;
+            }
+
+            host.cc.SimpleMove(s);//TODO maybe directly pass all obstacles transit
+            Rotate(_moveDist);
         }
 
         void PerformMove()
         {
             if (_moveDist.magnitude == 0)
             {
-                host.animator.SetBool("move", false);
+                if (host.animator.GetBool("move"))
+                    host.animator.SetBool("move", false);
                 if (!host.cc.isGrounded)
                 {
-                    host.cc.SimpleMove(-8f * Vector3.up);
+                    host.cc.SimpleMove(-1f * Vector3.up);
                 }
             }
             else
             {
-                host.animator.SetBool("move", true);
-                var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
-                host.cc.SimpleMove(deltaDist * runSpeed);
-                Rotate(deltaDist);
+                if (!host.animator.GetBool("move"))
+                    host.animator.SetBool("move", true);
+
+                host.cc.SimpleMove(_moveDist * speed);
+                Rotate(_moveDist);
             }
 
             _moveDist = Vector2.zero;
@@ -102,6 +117,8 @@ namespace vom
         public void Rotate(Vector3 to)
         {
             to.y = 0;
+            if (to.magnitude <= 0)
+                return;
             rotatePart.rotation = Quaternion.LookRotation(to);
         }
 

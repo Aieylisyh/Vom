@@ -38,11 +38,10 @@ namespace vom
         public void OnHit(OrbBehaviour orb)
         {
             if (health.dead)
-            {
                 return;
-            }
-            // CameraShake.instance.Shake(orb.hitShakeLevel);
+
             health.ReceiveDamage(orb.dmg);
+            targetSearcher.OnAttacked();
             animator.SetTrigger("Wound");
         }
     }

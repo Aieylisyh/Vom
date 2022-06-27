@@ -62,6 +62,7 @@ namespace vom
                 {
                     ReceiveMoveInput(delta);
                 }
+
                 touchView.Show(delta);
 
                 if (mmoCamera.parameters.distance < movingCamDist)
@@ -107,6 +108,9 @@ namespace vom
         public void Rotate(Vector3 to)
         {
             to.y = 0;
+            if (to.magnitude <= 0)
+                return;
+
             rotatePart.rotation = Quaternion.LookRotation(to);
         }
 
