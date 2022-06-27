@@ -29,9 +29,9 @@ namespace vom
         {
             if (!health.dead)
             {
+                targetSearcher.OnUpdate();
                 attack.Attack();
                 move.Move();
-                targetSearcher.OnUpdate();
             }
         }
 

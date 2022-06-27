@@ -12,6 +12,7 @@ namespace vom
         public AttackRange sightRange = AttackRange.Sight;
         float _fSightRan;
         bool _hasTriggered;
+        Vector3 _toPlayerDir;
 
         public float targetDist { get; private set; }
 
@@ -40,7 +41,8 @@ namespace vom
             }
 
             var playerPos = player.transform.position;
-            targetDist = (playerPos - transform.position).magnitude;
+            _toPlayerDir = playerPos - transform.position;
+            targetDist = (_toPlayerDir).magnitude;
             if (targetDist < _fSightRan)
             {
                 target = player.transform;
@@ -83,6 +85,22 @@ namespace vom
             alerted = false;
             target = null;
             _hasTriggered = true;
+        }
+
+        public bool IsInPlayerView()
+        {
+            var dX = _toPlayerDir.x;
+            var dZ = _toPlayerDir.z;
+            //Debug.Log(dX + " " + dZ + " | " + MapSystem.instance.tileNumRight + " " + MapSystem.instance.tileNumForward + " " + MapSystem.instance.tileNumBackward);
+            if (Mathf.Abs(dX) < MapSystem.instance.tileNumRight)
+            {
+                if (-dZ < MapSystem.instance.tileNumForward && dZ < MapSystem.instance.tileNumBackward)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

@@ -32,6 +32,12 @@ namespace vom
 
         public void Move()
         {
+            if (!host.targetSearcher.IsInPlayerView())
+            {
+                RunBack();
+                return;
+            }
+
             if (host.attack.isAttacking)
                 return;
 
@@ -39,7 +45,8 @@ namespace vom
             {
                 if (host.targetSearcher.targetDist >= _fRange)
                 {
-                    Debug.Log("mtp");
+                    if (!host.cc.enabled)
+                        host.cc.enabled = true;
                     SetMoveTo(host.targetSearcher.target.position);
                 }
 
@@ -58,13 +65,29 @@ namespace vom
                 host.animator.SetBool("move", false);
 
             if (!host.cc.enabled)
-                host.cc.enabled = true;
-
-            host.cc.SimpleMove(-1f * Vector3.up);
-            host.targetSearcher.RepositionDone();
-            if (host.health.hp < host.health.healthMax)
             {
-                host.health.HealToFull();
+                host.cc.enabled = true;
+                host.targetSearcher.RepositionDone();
+
+                if (host.health.hp < host.health.healthMax)
+                {
+                    host.health.HealToFull();
+                }
+            }
+
+            if (host.targetSearcher.IsInPlayerView())
+            {
+                //if has tile below
+                //Debug.Log(host.targetSearcher.targetDist);
+                Fall();
+            }
+        }
+
+        void Fall()
+        {
+            if (!host.cc.isGrounded)
+            {
+                host.cc.SimpleMove(-1f * Vector3.up);
             }
         }
 
@@ -74,22 +97,24 @@ namespace vom
                 host.cc.enabled = false;
 
             var dir = _startPos - transform.position;
-            var dist = dir.magnitude;
-            if (dist < 0.5f)
+            var dirNoY = dir;
+            dirNoY.y = 0;
+
+            if (dirNoY.magnitude < 0.5f)
             {
                 RepositionDone();
                 return;
             }
 
+            //Debug.Log("rb");
+            var restDist = dir.magnitude;
             SetMoveTo(_startPos);
             if (!host.animator.GetBool("move"))
                 host.animator.SetBool("move", true);
 
-            var s = _moveDist * runSpeed;
-            if (s.magnitude > dist)
-            {
-                s = s.normalized * dist;
-            }
+            var s = _moveDist * runSpeed * com.GameTime.deltaTime;
+            if (s.magnitude > restDist)
+                s = s.normalized * restDist;
 
             transform.position += s;
             Rotate(_moveDist);
@@ -101,10 +126,7 @@ namespace vom
             {
                 if (host.animator.GetBool("move"))
                     host.animator.SetBool("move", false);
-                if (!host.cc.isGrounded)
-                {
-                    host.cc.SimpleMove(-1f * Vector3.up);
-                }
+                Fall();
             }
             else
             {
@@ -123,6 +145,8 @@ namespace vom
             to.y = 0;
             if (to.magnitude <= 0)
                 return;
+
+            //Debug.Log(to);
             rotatePart.rotation = Quaternion.LookRotation(to);
         }
 

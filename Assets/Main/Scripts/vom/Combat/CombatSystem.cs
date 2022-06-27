@@ -30,13 +30,13 @@ namespace vom
                     return 1.6f;
 
                 case AttackRange.Short:
-                    return 5.5f;
+                    return 6.0f;
 
                 case AttackRange.Mid:
                     return 7.5f;
 
                 case AttackRange.Long:
-                    return 9.5f;
+                    return 9.0f;
 
                 case AttackRange.Sight:
                     return 10.5f;

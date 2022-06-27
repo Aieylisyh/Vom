@@ -20,5 +20,10 @@ namespace vom
         {
             //Debug.LogWarning("AnimationEventResolver " + "Spawned");
         }
+
+        public void DiedFromEnemy()
+        {
+
+        }
     }
 }
