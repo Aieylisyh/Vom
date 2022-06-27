@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace vom
 {
-  
+
     public class EnemySystem : MonoBehaviour
     {
         public static EnemySystem instance { get; private set; }
 
-        public List<EnemyBehaviour> enemies;
+        public List<EnemyBehaviour> enemies { get; private set; }
 
         public EnemySpawnSystem spawnSys;
         public Transform attackSpace;
@@ -16,12 +16,11 @@ namespace vom
         private void Awake()
         {
             instance = this;
+            enemies = new List<EnemyBehaviour>();
         }
 
         private void Start()
         {
-            // enemies = new List<EnemyBehaviour>();
-
             spawnSys.SpawnEnemies();
         }
 
@@ -30,11 +29,16 @@ namespace vom
             enemies.Add(e);
         }
 
+        public void RemoveEnemy(EnemyBehaviour e)
+        {
+            enemies.Remove(e);
+        }
+
         public bool HasEnemyTargetedPlayer()
         {
             foreach (var e in enemies)
             {
-                if (e.gameObject.activeSelf && e.attack.HasTarget)
+                if (e.gameObject.activeSelf && e.targetSearcher.alerted)//todo multi target
                 {
                     return true;
                 }

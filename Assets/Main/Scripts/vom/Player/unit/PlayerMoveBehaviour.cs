@@ -15,8 +15,6 @@ namespace vom
         public float speed;
         public Transform rotatePart;
 
-        public float rotationLerpFactor = 0.1f;
-
         public TouchViewBehaviour touchView;
 
         public float camDistSpeed;
@@ -86,7 +84,9 @@ namespace vom
         {
             if (_moveDist.magnitude == 0)
             {
-                host.animator.SetBool("move", false);
+                if (host.animator.GetBool("move"))
+                    host.animator.SetBool("move", false);
+
                 if (!host.cc.isGrounded)
                 {
                     host.cc.SimpleMove(-8f * Vector3.up);
@@ -94,7 +94,8 @@ namespace vom
             }
             else
             {
-                host.animator.SetBool("move", true);
+                if (!host.animator.GetBool("move"))
+                    host.animator.SetBool("move", true);
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
                 host.cc.SimpleMove(deltaDist * speed);
                 Rotate(deltaDist);

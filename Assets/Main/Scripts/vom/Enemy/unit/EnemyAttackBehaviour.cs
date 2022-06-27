@@ -5,7 +5,7 @@ namespace vom
 {
     public class EnemyAttackBehaviour : VomEnemyComponent
     {
-        public AttackRange range= AttackRange.Melee;
+        public AttackRange range = AttackRange.Melee;
         float _fRange;
         public int dmg;
 
@@ -16,16 +16,13 @@ namespace vom
 
         public Transform weaponPos;
 
-        private Transform _target;
         private Vector3 _targetPos;
-
-        public bool HasTarget { get { return _target != null; } }
 
         protected override void Start()
         {
             base.Start();
             _attackIntervalTimer = 0;
-            _fRange = CombatSystem.instance.GetRange(range);
+            _fRange = CombatSystem.GetRange(range);
         }
 
         public void Attack()
@@ -33,16 +30,13 @@ namespace vom
             if (_attackIntervalTimer > 0)
                 _attackIntervalTimer -= GameTime.deltaTime;
 
-            var dir = PlayerBehaviour.instance.transform.position - transform.position;
-            if (dir.magnitude < _fRange)
+            if (host.targetSearcher.alerted && host.targetSearcher.target != null)
             {
-                _target = PlayerBehaviour.instance.transform;
-                _targetPos = _target.position;
-                PerformAttack();
-            }
-            else
-            {
-                _target = null;
+                if (host.targetSearcher.targetDist < _fRange)
+                {
+                    _targetPos = host.targetSearcher.target.position;
+                    PerformAttack();
+                }
             }
         }
 
@@ -59,6 +53,8 @@ namespace vom
         {
             SpawnShoot(shootBullet, _targetPos);
         }
+
+        public bool isAttacking { get { return _attackIntervalTimer > 0f; } }
 
         void SpawnShoot(GameObject prefab, Vector3 targetPos)
         {

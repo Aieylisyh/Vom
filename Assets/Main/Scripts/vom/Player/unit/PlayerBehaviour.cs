@@ -8,6 +8,7 @@ namespace vom
         public static PlayerBehaviour instance { get; private set; }
         public Animator animator;
         public CharacterController cc;
+
         public PlayerAttackBehaviour attack;
         public PlayerMoveBehaviour move;
         public PlayerHealthBehaviour health;
@@ -34,6 +35,10 @@ namespace vom
 
         public void OnHit(OrbBehaviour orb)
         {
+            if (health.dead)
+            {
+                return;
+            }
             CameraShake.instance.Shake(orb.hitShakeLevel);
             health.ReceiveDamage(orb.dmg);
         }

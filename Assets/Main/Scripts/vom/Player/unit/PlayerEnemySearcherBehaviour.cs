@@ -12,7 +12,7 @@ namespace vom
 
         private void Start()
         {
-            _fRange = CombatSystem.instance.GetRange(range);
+            _fRange = CombatSystem.GetRange(range);
         }
         /*
         public void UpdateEnemies_nonBlockedFirst()
@@ -64,6 +64,10 @@ namespace vom
 
             foreach (var e in enemies)
             {
+                if (e.health.dead)
+                {
+                    continue;
+                }
                 var dir = e.transform.position - pos;
                 if (dir.magnitude > _fRange)
                 {

@@ -46,10 +46,6 @@ namespace vom
             core_normal.SetActive(false);
             SoundService.instance.Play("module on");
 
-            foreach (var e in EnemySystem.instance.enemies)
-            {
-                e.health.HealToFull();
-            }
             PlayerBehaviour.instance.health.HealToFull();
         }
 
@@ -65,10 +61,6 @@ namespace vom
             core_normal.SetActive(true);
             SoundService.instance.Play("module on");
 
-            foreach (var e in EnemySystem.instance.enemies)
-            {
-                e.health.HealToFull();
-            }
             PlayerBehaviour.instance.health.HealToFull();
         }
     }

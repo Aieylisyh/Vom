@@ -49,6 +49,9 @@ namespace vom
         void Die()
         {
             dead = true;
+            host.animator.SetTrigger("Die");
+            bar.Hide();
+            host.targetSearcher.ExitAlert();
             //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }
     }

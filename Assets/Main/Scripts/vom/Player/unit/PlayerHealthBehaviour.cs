@@ -43,6 +43,8 @@ namespace vom
         void Die()
         {
             dead = true;
+            host.animator.SetTrigger("Die");
+            bar.Hide();
         }
     }
 }

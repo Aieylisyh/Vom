@@ -9,13 +9,14 @@ namespace vom
         public static CombatSystem instance { get; private set; }
 
         public Transform EnemyProjectileSpace;
+        public static float enemyAlertTime = 2.0f;
 
         void Awake()
         {
             instance = this;
         }
 
-        public float GetRange(AttackRange range)
+        public static float GetRange(AttackRange range)
         {
             switch (range)
             {
@@ -37,6 +38,9 @@ namespace vom
                 case AttackRange.Long:
                     return 10f;
 
+                case AttackRange.Sight:
+                    return 10.5f;
+
                 case AttackRange.VeryLong:
                     return 15f;
             }
@@ -53,6 +57,7 @@ namespace vom
         Short,
         Mid,
         Long,
+        Sight,
         VeryLong,
     }
 }
