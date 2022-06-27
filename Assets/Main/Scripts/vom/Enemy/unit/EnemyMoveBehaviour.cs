@@ -57,6 +57,9 @@ namespace vom
             if (host.animator.GetBool("move"))
                 host.animator.SetBool("move", false);
 
+            if (!host.cc.enabled)
+                host.cc.enabled = true;
+
             host.cc.SimpleMove(-1f * Vector3.up);
             host.targetSearcher.RepositionDone();
             if (host.health.hp < host.health.healthMax)
@@ -67,8 +70,10 @@ namespace vom
 
         void RunBack()
         {
+            if (host.cc.enabled)
+                host.cc.enabled = false;
+
             var dir = _startPos - transform.position;
-            dir.y = 0;
             var dist = dir.magnitude;
             if (dist < 0.5f)
             {
@@ -76,7 +81,6 @@ namespace vom
                 return;
             }
 
-            Debug.Log("rb");
             SetMoveTo(_startPos);
             if (!host.animator.GetBool("move"))
                 host.animator.SetBool("move", true);
@@ -87,7 +91,7 @@ namespace vom
                 s = s.normalized * dist;
             }
 
-            host.cc.SimpleMove(s);//TODO maybe directly pass all obstacles transit
+            transform.position += s;
             Rotate(_moveDist);
         }
 
