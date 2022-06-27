@@ -31,6 +31,8 @@ namespace vom
         public MapTileBehaviour prefabTile;
         public GameObject gameCoreGameObjects;
 
+        public MapFeedbackSystem mapFeedbackSystem;
+
         int _globalOffsetX;
         int _globalOffsetZ;
 
@@ -238,7 +240,7 @@ namespace vom
                     break;
             }
 
-            Debug.Log("toMapOffset " + toMapOffset);
+            //Debug.Log("toMapOffset " + toMapOffset);
             //this rect pos of starting map is 
             //Pos  -playerstart.x, -playerstart.z(BL)
             // BL -playerstart.x, -playerstart.z
@@ -325,10 +327,46 @@ namespace vom
                     //Debug.Log("CheckStep!!!!");
                     currentMap = playerPosMapTileData.map;
                     mapFeedbackSystem.EnterNewMap();
+                    TryUnloadMaps();
                 }
             }
         }
 
-        public MapFeedbackSystem mapFeedbackSystem;
+        void TryUnloadMaps()
+        {
+            Vector2Int playerIntPos = GetPlayerRelativeIntPos();
+            var x = playerIntPos.x;
+            var z = playerIntPos.y;
+
+            int unloadDistX = 15;
+            int unloadDistZ = 25;
+
+            for (var i = loadedMaps.Count - 1; i > -1; i--)
+            {
+                var loadedMap = loadedMaps[i];
+                var px = x + _globalOffsetX - loadedMap.offsetX;
+                var pz = z + _globalOffsetZ - loadedMap.offsetZ;
+
+                var first = loadedMap.tiles[0];
+                if (first.x > px + unloadDistX || first.z > pz + unloadDistZ)
+                {
+                    UnloadMap(loadedMap);
+                    continue;
+                }
+                var last = loadedMap.tiles[loadedMap.tiles.Count - 1];
+                if (last.x + unloadDistX < px || last.z + unloadDistZ < pz)
+                {
+                    UnloadMap(loadedMap);
+                    continue;
+                }
+            }
+        }
+
+        void UnloadMap(MapItem loadedMap)
+        {
+            Debug.LogWarning("UnloadMap " + loadedMap.mapId);
+            loadedMaps.Remove(loadedMap);
+            Destroy(loadedMap.gameObject);
+        }
     }
 }
