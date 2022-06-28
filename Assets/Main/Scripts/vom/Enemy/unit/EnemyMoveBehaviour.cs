@@ -59,6 +59,8 @@ namespace vom
 
         public bool isMoving { get { return _moveDist.magnitude > 0f; } }
 
+        public bool isRunningBack { get { return !host.cc.enabled; } }
+
         void RepositionDone()
         {
             if (host.animator.GetBool("move"))
@@ -85,8 +87,10 @@ namespace vom
 
         void Fall()
         {
+            Debug.Log("Fall");
             if (!host.cc.isGrounded)
             {
+                Debug.Log("Fall11");
                 host.cc.SimpleMove(-1f * Vector3.up);
             }
         }
@@ -97,27 +101,24 @@ namespace vom
                 host.cc.enabled = false;
 
             var dir = _startPos - transform.position;
-            var dirNoY = dir;
-            dirNoY.y = 0;
-
-            if (dirNoY.magnitude < 0.5f)
+            var restDist = dir.magnitude;
+            if (restDist < 0.1f)
             {
                 RepositionDone();
                 return;
             }
 
             //Debug.Log("rb");
-            var restDist = dir.magnitude;
             SetMoveTo(_startPos);
             if (!host.animator.GetBool("move"))
                 host.animator.SetBool("move", true);
 
-            var s = _moveDist * runSpeed * com.GameTime.deltaTime;
+            var s = dir.normalized * runSpeed * com.GameTime.deltaTime;
             if (s.magnitude > restDist)
                 s = s.normalized * restDist;
 
             transform.position += s;
-            Rotate(_moveDist);
+            Rotate(dir);
         }
 
         void PerformMove()

@@ -39,6 +39,11 @@ namespace vom
                 ExitAlert();
                 return;
             }
+            if (host.move.isRunningBack)
+            {
+                ExitAlert();
+                return;
+            }
 
             var playerPos = player.transform.position;
             _toPlayerDir = playerPos - transform.position;
@@ -46,7 +51,10 @@ namespace vom
             if (targetDist < _fSightRan)
             {
                 target = player.transform;
-                EnterAlert();
+                if (!alerted)
+                {
+                    EnterAlert();
+                }
                 return;
             }
         }

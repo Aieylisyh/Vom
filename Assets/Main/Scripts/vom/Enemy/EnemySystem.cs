@@ -38,7 +38,7 @@ namespace vom
         {
             foreach (var e in enemies)
             {
-                if (e.gameObject.activeSelf && e.targetSearcher.alerted)//todo multi target
+                if (e.gameObject.activeSelf && !e.health.dead && e.targetSearcher.alerted)
                 {
                     return true;
                 }
