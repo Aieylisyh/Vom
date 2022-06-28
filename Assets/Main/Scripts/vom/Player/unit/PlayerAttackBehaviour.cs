@@ -72,13 +72,14 @@ namespace vom
                 return;
             }
 
+            if (_target != null)
+            {
+                host.move.Rotate((_targetPos - transform.position).normalized);
+            }
+
             if (_attackIntervalTimer <= 0)
             {
                 PerformAttack();
-                if (_target != null)
-                {
-                    host.move.Rotate((_targetPos - transform.position).normalized);
-                }
             }
         }
 

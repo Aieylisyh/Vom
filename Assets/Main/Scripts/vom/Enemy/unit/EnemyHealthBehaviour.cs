@@ -24,10 +24,12 @@ namespace vom
             HealToFull();
         }
 
+
         public void HealToFull()
         {
             hp = healthMax;
             SyncBar(true);
+            bar.Hide();
         }
 
         public void SyncBar(bool instant)
@@ -38,6 +40,7 @@ namespace vom
         public void ReceiveDamage(int v)
         {
             hp -= v;
+            bar.Show();
             SyncBar(false);
 
             if (hp <= 0 && !dead)

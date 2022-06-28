@@ -31,6 +31,7 @@ namespace game
 
         public CombatConfig combatConfig;
         public MapConfig mapConfig;
+        public SceneInteractionConfig sceneInteractionConfig;
 
         void Awake()
         {
