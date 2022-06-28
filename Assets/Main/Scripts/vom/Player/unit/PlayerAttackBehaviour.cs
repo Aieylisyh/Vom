@@ -21,17 +21,45 @@ namespace vom
         private Transform _target;
         private Vector3 _targetPos;
 
+        Vector3 _defaultMmoCamOffset;
+        Vector3 _cachedMmoCamOffset;
+        public float camOffsetDist = 1;
+        public float camOffsetSpeed = 2;
+
         protected override void Start()
         {
             base.Start();
             _attackIntervalTimer = 0;
+            _defaultMmoCamOffset = host.move.mmoCamera.parameters.offset;
+            _cachedMmoCamOffset = _defaultMmoCamOffset;
+        }
+
+        public void CheckMmoCameraOffset()
+        {
+            var dir = _cachedMmoCamOffset - host.move.mmoCamera.parameters.offset;
+            var dist = dir.magnitude;
+            if (dist >= 0.05f)
+            {
+                if (camOffsetSpeed * GameTime.deltaTime > dist)
+                {
+                    Vector3 speed = dist * dir.normalized;
+                    host.move.mmoCamera.parameters.offset += speed;
+                }
+                else
+                {
+                    Vector3 speed = camOffsetSpeed * GameTime.deltaTime * dir.normalized;
+                    host.move.mmoCamera.parameters.offset += speed;
+                }
+            }
         }
 
         void CancelTargeting()
         {
             playerTargetCircle.Hide();
             _target = null;
+            _cachedMmoCamOffset = _defaultMmoCamOffset;
         }
+
 
         public void Attack()
         {
@@ -61,6 +89,12 @@ namespace vom
             {
                 _target = e.transform;
                 _targetPos = _target.position;
+                var delta = _targetPos - transform.position;
+                delta.y = 0;
+                if (delta.magnitude > 1)
+                    delta = delta.normalized;
+                _cachedMmoCamOffset = _defaultMmoCamOffset + delta * camOffsetDist;
+
                 _attackIntervalTimer = attackInterval;
                 host.animator.SetBool("move", false);
                 host.animator.SetTrigger("attack");
@@ -97,9 +131,19 @@ namespace vom
             //Debug.LogWarning("Attacked");
             orbs.LaunchArcane(_targetPos);
             orbs.ReleaseFirst(_targetPos);
-            _target = null;
         }
 
         public bool HasTarget { get { return _target != null; } }
+        public bool HasAliveTarget
+        {
+            get
+            {
+                if (_target == null)
+                    return false;
+
+                var e = _target.GetComponent<EnemyBehaviour>();
+                return !e.health.dead;
+            }
+        }
     }
 }

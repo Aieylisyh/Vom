@@ -26,6 +26,8 @@ namespace vom
 
         void Update()
         {
+            attack.CheckMmoCameraOffset();
+
             if (!health.dead)
             {
                 attack.Attack();

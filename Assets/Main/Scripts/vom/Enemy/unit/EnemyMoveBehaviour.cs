@@ -37,11 +37,11 @@ namespace vom
         {
             if (!host.cc.enabled)
                 host.cc.enabled = true;
-            Debug.Log(transform.position);
+            //Debug.Log(transform.position);
             Fall();
             if (host.cc.isGrounded)
             {
-                Debug.LogWarning(transform.position);
+                //Debug.LogWarning(transform.position);
                 _groundFound = true;
                 _startPos = transform.position;
             }

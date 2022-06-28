@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c1e69d2948490d4ba8c6190ecd9ed68, type: 3}
   m_Name: Map Prototype-test4
   m_EditorClassIdentifier: 
-  id: ByeBye
+  id: Bye Bye Bye Bye
   bgColor: {r: 0, g: 0, b: 0, a: 1}
   biome: 4
