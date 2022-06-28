@@ -13,13 +13,14 @@ namespace vom
 
         public void Init(SceneInteractionTargetBehaviour target, SceneInteractionData data)
         {
+            target.ui = this;
             this.host = target;
             this.transform.position = target.transform.position;
 
             icon.sprite = data.sp;
             SyncProgress(0);
             view.localScale = Vector3.zero;
-            view.DOScale(1, 1f).SetEase(Ease.OutBack);
+            view.DOScale(1, 0.5f).SetEase(Ease.OutBack);
         }
 
         public void Remove()

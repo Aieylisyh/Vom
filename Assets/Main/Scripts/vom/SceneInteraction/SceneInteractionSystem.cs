@@ -36,8 +36,8 @@ namespace vom
         public SceneInteractionUiBehaviour CreateUi(SceneInteractionTargetBehaviour host, SceneInteractionData data)
         {
             var ui = Instantiate<SceneInteractionUiBehaviour>(prefabUi, uiParent);
-            ui.Init(host, data);
             ui.gameObject.SetActive(true);
+            ui.Init(host, data);
             return ui;
         }
     }
