@@ -153,6 +153,10 @@ namespace vom
             //Debug.Log("TryGenerateConnectedMap " + x + " " + z);
             //Debug.Log(currentMap.sizeX);
             //Debug.Log(currentMap.sizeZ);
+            //Debug.Log("TryGenerateConnectedMap1 " + x + " " + z);
+            x = x + _globalOffsetX - currentMap.offsetX;
+            z = z + _globalOffsetZ - currentMap.offsetZ;
+            //Debug.Log("TryGenerateConnectedMap2 " + x + " " + z);
             foreach (var c in currentMap.connectors)
             {
                 if ((x >= currentMap.sizeX && c.type == MapConnectorPrototype.ConnectToType.Right) ||
@@ -167,17 +171,21 @@ namespace vom
 
         void LoadConnectedMap(int x, int z, MapConnectorPrototype connector, MapItem fromMap)
         {
+            //Debug.Log("LoadConnectedMap " + x + " " + z);
             var toMapId = connector.toId;
             foreach (var loadedMap in loadedMaps)
             {
                 if (loadedMap.mapId == toMapId)
                 {
-                    //Debug.Log("loaded " + mapId);
+                    //Debug.Log("loaded " + toMapId);
                     return;
                 }
             }
 
-            Debug.LogWarning("LoadConnectedMap " + toMapId);
+            //Debug.Log(currentMap.mapId);
+            //Debug.Log("offset " + currentMap.offsetX + " " + currentMap.offsetZ);
+            //Debug.LogWarning("LoadConnectedMap " + x + " " + z + " toMapId " + toMapId);
+
             var toMapPrefab = MapService.GetMapItemById(toMapId);
 
             MapConnectorPrototype prefabToMapConnector = null;
@@ -364,7 +372,7 @@ namespace vom
 
         void UnloadMap(MapItem loadedMap)
         {
-            Debug.LogWarning("UnloadMap " + loadedMap.mapId);
+            //Debug.LogWarning("UnloadMap " + loadedMap.mapId);
             loadedMaps.Remove(loadedMap);
             Destroy(loadedMap.gameObject);
         }

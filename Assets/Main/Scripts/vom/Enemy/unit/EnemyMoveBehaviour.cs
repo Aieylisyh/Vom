@@ -17,12 +17,15 @@ namespace vom
         public AttackRange stopRange = AttackRange.Melee;
         float _fRange;
 
+        bool _groundFound;
+
         protected override void Start()
         {
             base.Start();
 
             _fRange = CombatSystem.GetRange(stopRange);
             _startPos = transform.position;
+            _groundFound = false;
         }
 
         public void Moved()
@@ -30,11 +33,33 @@ namespace vom
             // com.SoundService.instance.Play("step");
         }
 
+        void FindGround()
+        {
+            if (!host.cc.enabled)
+                host.cc.enabled = true;
+            Debug.Log(transform.position);
+            Fall();
+            if (host.cc.isGrounded)
+            {
+                Debug.LogWarning(transform.position);
+                _groundFound = true;
+                _startPos = transform.position;
+            }
+        }
+
         public void Move()
         {
             if (!host.targetSearcher.IsInPlayerView())
             {
+                if (!_groundFound)
+                    return;
                 RunBack();
+                return;
+            }
+
+            if (!_groundFound)
+            {
+                FindGround();
                 return;
             }
 
@@ -87,11 +112,11 @@ namespace vom
 
         void Fall()
         {
-            Debug.Log("Fall");
+            //Debug.Log("Fall");
             if (!host.cc.isGrounded)
             {
-                Debug.Log("Fall11");
-                host.cc.SimpleMove(-1f * Vector3.up);
+                //Debug.Log("Fall11");
+                host.cc.SimpleMove(-0.1f * Vector3.up);
             }
         }
 
@@ -102,13 +127,14 @@ namespace vom
 
             var dir = _startPos - transform.position;
             var restDist = dir.magnitude;
-            if (restDist < 0.1f)
+            if (restDist < 0.5f)
             {
+                //Debug.Log("RepositionDone");
                 RepositionDone();
                 return;
             }
 
-            //Debug.Log("rb");
+            //Debug.Log("rb" + dir);
             SetMoveTo(_startPos);
             if (!host.animator.GetBool("move"))
                 host.animator.SetBool("move", true);
