@@ -37,7 +37,7 @@ namespace vom
         {
             var ui = Instantiate<SceneInteractionUiBehaviour>(prefabUi, uiParent);
             ui.Init(host, data);
-
+            ui.gameObject.SetActive(true);
             return ui;
         }
     }

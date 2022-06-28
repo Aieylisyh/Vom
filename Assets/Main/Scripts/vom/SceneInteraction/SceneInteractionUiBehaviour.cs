@@ -32,5 +32,10 @@ namespace vom
         {
             progress.fillAmount = p;
         }
+
+        public void OnClick()
+        {
+            Debug.Log("onClick");
+        }
     }
 }
