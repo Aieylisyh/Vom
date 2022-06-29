@@ -8,19 +8,41 @@ namespace vom
     {
         public Image progress;
         public Image icon;
+        [HideInInspector]
         public SceneInteractionTargetBehaviour host;
         public RectTransform view;
+        public Camera cam;
+
+        RectTransform _rect;
+         float _canvasScale;
 
         public void Init(SceneInteractionTargetBehaviour target, SceneInteractionData data)
         {
+            _rect = GetComponent<RectTransform>();
+
             target.ui = this;
             this.host = target;
-            this.transform.position = target.transform.position;
 
             icon.sprite = data.sp;
             SyncProgress(0);
             view.localScale = Vector3.zero;
             view.DOScale(1, 0.5f).SetEase(Ease.OutBack);
+
+            _canvasScale = (float)Screen.width / 720;
+            if (Screen.width > (float)Screen.height)
+            {
+                _canvasScale = (float)Screen.height / 1280;
+            }
+        }
+
+        private void Update()
+        {
+            var pos = com.Convert2DAnd3D.GetScreenPosition(cam, host.transform.position, _canvasScale);
+            _rect.anchoredPosition = pos;
+            // _rect.position = host.transform.position;
+            // var p = _rect.anchoredPosition3D;
+            // p.z = 0;
+            // _rect.anchoredPosition3D = p;
         }
 
         public void Remove()
