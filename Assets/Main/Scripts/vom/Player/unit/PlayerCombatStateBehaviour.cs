@@ -14,5 +14,17 @@ namespace vom
                 return EnemySystem.instance.HasEnemyTargetedPlayer();
             }
         }
+
+        public void UpdateCombatState()
+        {
+            if (isInCombat)
+            {
+                host.interaction.HideAll();
+            }
+            else
+            {
+                host.interaction.ShowAll();
+            }
+        }
     }
 }

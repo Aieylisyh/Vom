@@ -26,9 +26,8 @@ namespace vom
         public float camOffsetDist = 1;
         public float camOffsetSpeed = 2;
 
-        protected override void Start()
+        public override void ResetState()
         {
-            base.Start();
             _attackIntervalTimer = 0;
             _defaultMmoCamOffset = host.move.mmoCamera.parameters.offset;
             _cachedMmoCamOffset = _defaultMmoCamOffset;
@@ -73,14 +72,10 @@ namespace vom
             }
 
             if (_target != null)
-            {
                 host.move.Rotate((_targetPos - transform.position).normalized);
-            }
 
             if (_attackIntervalTimer <= 0)
-            {
                 PerformAttack();
-            }
         }
 
         void PerformAttack()

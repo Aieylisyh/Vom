@@ -23,9 +23,8 @@ namespace vom
 
         public com.MmoCameraBehaviour mmoCamera;
 
-        protected override void Start()
+        public override void ResetState()
         {
-            base.Start();
         }
 
         public void StartDrag(Vector2 pos)
@@ -59,23 +58,17 @@ namespace vom
             {
                 var delta = _lastPos - _startPos;
                 if (delta.magnitude > ignoreThreshold)
-                {
                     ReceiveMoveInput(delta);
-                }
 
                 touchView.Show(delta);
 
                 if (mmoCamera.parameters.distance < movingCamDist)
-                {
                     mmoCamera.parameters.distance += camDistSpeed * Time.deltaTime;
-                }
             }
             else
             {
                 if (!host.combat.isInCombat && mmoCamera.parameters.distance > stayCamDist)
-                {
                     mmoCamera.parameters.distance -= camDistSpeed * Time.deltaTime;
-                }
             }
         }
 

@@ -11,7 +11,7 @@ namespace vom
         public HpBarBehaviour bar;
         public bool dead { get; private set; }
 
-        public void Init()
+        public override void ResetState()
         {
             bar = HpBarSystem.instance.Create(transform, 140, 0.75f);
             HealToFull();

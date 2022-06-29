@@ -13,6 +13,7 @@ namespace vom
         public PlayerMoveBehaviour move;
         public PlayerHealthBehaviour health;
         public PlayerCombatStateBehaviour combat;
+        public PlayerInteractionCheckBehaviour interaction;
 
         void Awake()
         {
@@ -21,7 +22,11 @@ namespace vom
 
         private void Start()
         {
-            health.Init();
+            attack.ResetState();
+            move.ResetState();
+            health.ResetState();
+            combat.ResetState();
+            interaction.ResetState();
         }
 
         void Update()
