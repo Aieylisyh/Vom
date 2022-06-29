@@ -83,6 +83,7 @@ namespace vom
             var e = searcher.GetTargetEnemy();
             if (e != null)
             {
+                host.combat.UpdateState();
                 _target = e.transform;
                 _targetPos = _target.position;
                 var delta = _targetPos - transform.position;

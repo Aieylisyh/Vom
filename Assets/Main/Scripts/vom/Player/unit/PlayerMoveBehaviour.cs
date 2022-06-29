@@ -81,10 +81,8 @@ namespace vom
                 if (host.animator.GetBool("move"))
                     host.animator.SetBool("move", false);
 
-                if (!host.cc.isGrounded)
-                {
-                    host.cc.SimpleMove(-8f * Vector3.up);
-                }
+                Fall();
+                host.combat.UpdateState();
             }
             else
             {
@@ -93,9 +91,17 @@ namespace vom
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
                 host.cc.SimpleMove(deltaDist * speed);
                 Rotate(deltaDist);
+
+                host.interaction.HideAll();
             }
 
             _moveDist = Vector2.zero;
+        }
+
+        void Fall()
+        {
+            if (!host.cc.isGrounded)
+                host.cc.SimpleMove(-0.5f * Vector3.up);
         }
 
         public void Rotate(Vector3 to)

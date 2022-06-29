@@ -15,7 +15,7 @@ namespace vom
             }
         }
 
-        public void UpdateCombatState()
+        public void UpdateState()
         {
             if (isInCombat)
             {

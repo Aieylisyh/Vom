@@ -116,7 +116,7 @@ namespace vom
             if (!host.cc.isGrounded)
             {
                 //Debug.Log("Fall11");
-                host.cc.SimpleMove(-0.1f * Vector3.up);
+                host.cc.SimpleMove(-0.5f * Vector3.up);
             }
         }
 
