@@ -38,6 +38,7 @@ namespace vom
             SpawnOrb(poisonball, 200);
             SpawnOrb(poisonball, 290);
         }
+
         public void LaunchArcane(Vector3 targetPos)
         {
             SpawnShoot(arcaneBolt, targetPos);

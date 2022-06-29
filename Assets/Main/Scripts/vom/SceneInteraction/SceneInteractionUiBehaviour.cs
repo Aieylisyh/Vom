@@ -35,6 +35,9 @@ namespace vom
 
         private void Update()
         {
+            if (host == null)
+                return;
+
             var pos = com.Convert2DAnd3D.GetScreenPosition(cam, host.transform.position, _canvasScale);
             _rect.anchoredPosition = pos;
             // _rect.position = host.transform.position;

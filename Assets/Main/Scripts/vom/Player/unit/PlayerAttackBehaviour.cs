@@ -109,18 +109,21 @@ namespace vom
         {
             orbs.AddFireBalls();
             SoundService.instance.Play(spawnFireballSound);
+            host.skill.CastSpellBig();
         }
 
         public void AddIceBalls()
         {
             orbs.AddIceBalls();
             SoundService.instance.Play(spawnIceballSound);
+            host.skill.CastSpell();
         }
 
         public void AddPoisonBalls()
         {
             orbs.AddPoisonBalls();
             SoundService.instance.Play(spawnPoisonballSound);
+            host.skill.CastSpell();
         }
 
         public void Attacked()

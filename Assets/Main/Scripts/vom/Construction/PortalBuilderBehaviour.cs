@@ -45,8 +45,6 @@ namespace vom
             core_actived.SetActive(true);
             core_normal.SetActive(false);
             SoundService.instance.Play("module on");
-
-            PlayerBehaviour.instance.health.HealToFull();
         }
 
         void UnBuild()
@@ -60,8 +58,6 @@ namespace vom
             core_actived.SetActive(false);
             core_normal.SetActive(true);
             SoundService.instance.Play("module on");
-
-            PlayerBehaviour.instance.health.HealToFull();
         }
     }
 }

@@ -24,6 +24,17 @@ namespace vom
             dead = false;
         }
 
+        public void Heal(int v)
+        {
+            hp += v;
+            if (hp>healthMax)
+            {
+                hp = healthMax;
+            }
+
+            SyncBar(true);
+        }
+
         public void SyncBar(bool instant)
         {
             bar.Set((float)hp / healthMax, instant);

@@ -73,6 +73,10 @@ namespace vom
             _currentSi = si;
             _passedTimer = 0;
             Refresh();
+
+            host.move.Rotate(si.transform.position - transform.position);
+            host.animator.SetTrigger("slice");
+            host.animator.ResetTrigger("stopSlice");
         }
 
         private void OnTriggerEnter(Collider other)
@@ -80,7 +84,7 @@ namespace vom
             var si = other.GetComponent<SceneInteractionTargetBehaviour>();
             if (si != null)
             {
-                Debug.Log("enter " + si.interaction);
+                //Debug.Log("enter " + si.interaction);
                 interactionTargets.Add(si);
                 Refresh();
             }
@@ -91,7 +95,7 @@ namespace vom
             var si = other.GetComponent<SceneInteractionTargetBehaviour>();
             if (si != null)
             {
-                Debug.Log("exit " + si.interaction);
+                //Debug.Log("exit " + si.interaction);
                 if (si == _currentSi)
                 {
                     StopCurrentSi();
@@ -104,9 +108,19 @@ namespace vom
 
         void StopCurrentSi()
         {
-            _currentSi = null;
-            _started = false;
-            _passedTimer = 0;
+            if (_started)
+            {
+                _currentSi = null;
+                _started = false;
+                _passedTimer = 0;
+
+                var i = host.animator.GetCurrentAnimatorClipInfo(0);
+                if (i.Length == 1 && i[0].clip.name == "slice")
+                {
+                    Debug.Log("stopSlice");
+                    host.animator.SetTrigger("stopSlice");
+                }
+            }
         }
 
         protected override void Update()
@@ -128,7 +142,7 @@ namespace vom
 
         void OnFinish()
         {
-            Debug.Log("OnFinish");
+            _currentSi.OnFinish();
             _started = false;
         }
     }
