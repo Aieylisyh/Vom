@@ -1696,8 +1696,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c89961007081094dba8cabd32158f7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prototype: {fileID: 11400000, guid: 1954bcd8cfefe974b9a8f09272279e67, type: 2}
-  size_x: 20
+  prototype: {fileID: 11400000, guid: 76184f2ca8f27a04c83453142cfac7b9, type: 2}
+  size_x: 40
   size_z: 100
   mapVolumeSystem: {fileID: 821001318}
   tileCachePrefab: {fileID: 794125681}
