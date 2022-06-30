@@ -83,6 +83,7 @@ namespace vom
 
                 Fall();
                 host.combat.UpdateState();
+                //host.combat.ShowHud(true);
             }
             else
             {
@@ -93,6 +94,7 @@ namespace vom
                 Rotate(deltaDist);
 
                 host.interaction.HideAll();
+                host.combat.ShowHud(false);
             }
 
             _moveDist = Vector2.zero;

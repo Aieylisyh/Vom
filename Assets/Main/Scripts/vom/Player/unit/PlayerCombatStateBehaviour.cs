@@ -19,17 +19,22 @@ namespace vom
             }
         }
 
+        public void ShowHud(bool show)
+        {
+            _showHud = show;
+        }
+
         public void UpdateState()
         {
             if (isInCombat)
             {
                 host.interaction.HideAll();
-                _showHud = false;
+                ShowHud(false);
             }
             else
             {
                 host.interaction.ShowAll();
-                _showHud = true;
+                ShowHud(true);
             }
         }
 
