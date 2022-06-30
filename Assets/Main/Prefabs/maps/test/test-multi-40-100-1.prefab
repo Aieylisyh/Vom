@@ -188,8 +188,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186457375657856891}
-  m_LocalRotation: {x: -0, y: -0.98097956, z: -0, w: 0.19411121}
-  m_LocalPosition: {x: 3.69, y: -0.0010700226, z: 39.62}
+  m_LocalRotation: {x: -0, y: -0.975218, z: -0, w: -0.2212462}
+  m_LocalPosition: {x: 3.297, y: -0.0010700226, z: 39.906}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1188066134764439593}
@@ -197,7 +197,7 @@ Transform:
   - {fileID: 1180638396929348931}
   m_Father: {fileID: 4337162700841660991}
   m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: -157.614, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -205.564, z: 0}
 --- !u!95 &1234911070347246579
 Animator:
   serializedVersion: 3
@@ -21059,7 +21059,17 @@ MonoBehaviour:
   prototype: {fileID: 11400000, guid: 76184f2ca8f27a04c83453142cfac7b9, type: 2}
   playerStart: {fileID: 4337162701637505706}
   blessing: {fileID: 4103483211114124724}
-  connectors: []
+  connectors:
+  - type: 1
+    toId: test-multi-f-2
+    posPercentage: 0.5
+    posOffset: 0
+    fromId: 
+  - type: 2
+    toId: test-multi-r-2
+    posPercentage: 0.7
+    posOffset: 0
+    fromId: 
   sizeX: 0
   sizeZ: 0
   offsetX: 0
@@ -41202,7 +41212,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8787340507610056163}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.19, y: 0.99893, z: 22.02547}
+  m_LocalPosition: {x: 25.67, y: 0.99893, z: 22.02547}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4337162700841660991}

@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 using System.Collections.Generic;
 using UnityEngine;
 using com;
+using vom;
 
 namespace game
 {
@@ -63,6 +64,18 @@ namespace game
             sound();
         }
 
+        public void TogglePlayerFastMode()
+        {
+            var pm = PlayerBehaviour.instance.move;
+            if (pm.speed < 5)
+            {
+                pm.speed = 15;
+            }
+            else
+            {
+                pm.speed = 4.4f;
+            }
+        }
         public void AddTime(float sec)
         {
             var d = UxService.instance.accountDataCache.cache.firstLaunchDate;
