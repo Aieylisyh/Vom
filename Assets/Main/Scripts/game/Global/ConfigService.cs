@@ -32,6 +32,10 @@ namespace game
         public CombatConfig combatConfig;
         public MapConfig mapConfig;
         public SceneInteractionConfig sceneInteractionConfig;
+        public CraftConfig craftConfig;
+        public InventoryConfig inventoryConfig;
+        public LootConfig lootConfig;
+        public ItemsConfig itemsConfig;
 
         void Awake()
         {
