@@ -107,6 +107,8 @@ namespace vom
 
         public void AddFireBalls()
         {
+            if (host.health.dead)
+                return;
             orbs.AddFireBalls();
             SoundService.instance.Play(spawnFireballSound);
             host.skill.CastSpellBig();
@@ -114,6 +116,8 @@ namespace vom
 
         public void AddIceBalls()
         {
+            if (host.health.dead)
+                return;
             orbs.AddIceBalls();
             SoundService.instance.Play(spawnIceballSound);
             host.skill.CastSpell();
@@ -121,6 +125,8 @@ namespace vom
 
         public void AddPoisonBalls()
         {
+            if (host.health.dead)
+                return;
             orbs.AddPoisonBalls();
             SoundService.instance.Play(spawnPoisonballSound);
             host.skill.CastSpell();

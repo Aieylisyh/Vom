@@ -63,7 +63,7 @@ namespace vom
             shoot.SetRelease(targetPos);
         }
 
-        void Clear()
+        public void Clear()
         {
             for (var i = _orbs.Count - 1; i >= 0; i--)
             {

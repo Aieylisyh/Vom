@@ -9,7 +9,17 @@ namespace vom
         bool _showHud;
         public float showHudSpeed = 4;
 
-        public bool isInCombat { get { return host.attack.HasAliveTarget || IsTargeted; } }
+        public bool isInCombat
+        {
+            get
+            {
+                if (host.health.dead)
+                {
+                    return false;
+                }
+                return host.attack.HasAliveTarget || IsTargeted;
+            }
+        }
 
         public bool IsTargeted
         {
@@ -22,10 +32,27 @@ namespace vom
         public void ShowHud(bool show)
         {
             _showHud = show;
+            if (show)
+            {
+                cg.blocksRaycasts = true;
+                cg.interactable = true;
+            }
+            else
+            {
+                cg.blocksRaycasts = false;
+                cg.interactable = false;
+            }
         }
 
         public void UpdateState()
         {
+            if (host.health.dead)
+            {
+                host.interaction.HideAll();
+                ShowHud(false);
+                return;
+            }
+
             if (isInCombat)
             {
                 host.interaction.HideAll();
@@ -37,7 +64,6 @@ namespace vom
                 ShowHud(true);
             }
         }
-
         protected override void Update()
         {
             if (cg.alpha > 0 && !_showHud)

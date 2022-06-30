@@ -27,7 +27,7 @@ namespace vom
         public void Heal(int v)
         {
             hp += v;
-            if (hp>healthMax)
+            if (hp > healthMax)
             {
                 hp = healthMax;
             }
@@ -56,6 +56,8 @@ namespace vom
             dead = true;
             host.animator.SetTrigger("Die");
             bar.Hide();
+            host.attack.orbs.Clear();
+            host.combat.UpdateState();
         }
     }
 }
