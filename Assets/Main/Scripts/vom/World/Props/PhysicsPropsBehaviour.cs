@@ -27,6 +27,9 @@ namespace vom
         protected override void Tick()
         {
             base.Tick();
+            if (PlayerBehaviour.instance == null)
+                return;
+
             var playerPos = PlayerBehaviour.instance.transform.position;
             _toPlayerDir = playerPos - transform.position;
             var inView = IsInPlayerView();
