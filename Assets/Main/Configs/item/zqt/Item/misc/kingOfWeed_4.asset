@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a0155dbd5f74b4a837b9b276d6c49d, type: 3}
+  m_Name: kingOfWeed_4
+  m_EditorClassIdentifier: 
+  id: KingOfWeed_4
+  invHide: 0
+  sp: {fileID: 21300000, guid: 7a9b33a0cc6e07b46a64eb035fb648ae, type: 3}
+  itemValue:
+  - n: 2500
+    id: Gold
+  itemOutPut:
+    n: 0
+    id: 
+  intValue: 0
+  floatValue: 0
+  sortWeight1: 6
+  sortWeight2: 7
+  sellConfirm: 1
+  usage: 2

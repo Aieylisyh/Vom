@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3a0155dbd5f74b4a837b9b276d6c49d, type: 3}
+  m_Name: course5
+  m_EditorClassIdentifier: 
+  id: Course5
+  invHide: 0
+  sp: {fileID: 21300000, guid: 87582bfacdd28fe47bdb5abfcfd7ef2a, type: 3}
+  itemValue: []
+  itemOutPut:
+    n: 2
+    id: TalentPoint
+  intValue: 0
+  floatValue: 0
+  sortWeight1: 4
+  sortWeight2: 5
+  sellConfirm: 0
+  usage: 4

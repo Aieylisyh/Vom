@@ -58,10 +58,10 @@ namespace vom
                     return;
 
                 case ESceneInteraction.Tree:
-                    //+wood
-                    Debug.Log("+wood " + data.baseAmount);
-                    PlayerBehaviour.instance.health.Heal(1);
-                    Instantiate(vfx, transform.position, Quaternion.identity, this.transform.parent);
+                    Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
+                    LootSystem.instance.Spawn(transform.position, new ItemData((int)data.baseAmount, "wood"), 0);
+                    LootSystem.instance.Spawn(transform.position, new ItemData((int)data.baseAmount, "wood"), 1);
+                    LootSystem.instance.Spawn(transform.position, new ItemData((int)data.baseAmount, "wood"), 2);
                     Destroy(targetItem);
                     return;
             }

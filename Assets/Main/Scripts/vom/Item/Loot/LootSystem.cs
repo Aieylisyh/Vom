@@ -9,20 +9,26 @@ namespace vom
 
         List<LootBehaviour> _loots;
 
+        public LootBehaviour prefab;
+        public Transform lootParent;
+
         private void Awake()
         {
             instance = this;
             _loots = new List<LootBehaviour>();
         }
 
-        public void Add(LootBehaviour l)
+        public void Spawn(Vector3 pos, ItemData item, int index = 0)
         {
-            _loots.Add(l);
+            var loot = Instantiate(prefab, pos, Quaternion.identity, lootParent);
+            loot.Init(item, index);
+            _loots.Add(loot);
         }
 
         public void Remove(LootBehaviour l)
         {
             _loots.Remove(l);
+            Destroy(l.gameObject);
         }
 
         public void Clear(bool receiveLoot = false)

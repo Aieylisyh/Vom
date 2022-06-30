@@ -18,6 +18,7 @@ namespace vom
 
         public Rigidbody rb;
         public float force;
+        public Collider col;
 
         public void Init(int dropIndex)
         {
@@ -61,6 +62,7 @@ namespace vom
 
                 rb.useGravity = false;
                 rb.isKinematic = true;
+                col.isTrigger = true;
             }
         }
 

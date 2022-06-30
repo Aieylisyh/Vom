@@ -7,10 +7,9 @@ namespace vom
     {
         public string itemId;
         public int amount;
-        public Transform viewParent;//2d 3d?
         public PlaySoundBehaviour psb;
         public PickByString pbs;
-        public ParticleSystem ps;
+        //public ParticleSystem ps;
         public LootMoveBehaviour move;
 
         public void Init(ItemData item, int dropIndex)
@@ -19,7 +18,6 @@ namespace vom
             amount = item.n;
             move.Init(dropIndex);
             pbs?.Setup(itemId);
-            LootSystem.instance.Add(this);
         }
 
         public void OnTriggerEnter(Collider other)
@@ -28,16 +26,17 @@ namespace vom
             if (player != null)
             {
                 ReceiveLoot(false);
+                LootSystem.instance.Remove(this);
             }
         }
 
         public void ReceiveLoot(bool silent)
         {
             InventorySystem.instance.AddItem(itemId, amount);
-
+            PlayerBehaviour.instance.health.Heal(1);//TODO
             if (!silent)
             {
-                ps.Play();
+                //ps.Play();
                 psb.Play();
             }
         }
