@@ -9,7 +9,9 @@ namespace vom
 
         List<LootBehaviour> _loots;
 
-        public LootBehaviour prefab;
+        public LootBehaviour prefabGold;
+        public LootBehaviour prefabSoul;
+
         public Transform lootParent;
 
         private void Awake()
@@ -18,10 +20,10 @@ namespace vom
             _loots = new List<LootBehaviour>();
         }
 
-        public void Spawn(Vector3 pos, ItemData item, int index = 0)
+        public void SpawnGold(Vector3 pos, ItemData item, int index = 0)
         {
-            var loot = Instantiate(prefab, pos, Quaternion.identity, lootParent);
-            loot.Init(item, index);
+            var loot = Instantiate(prefabGold, lootParent);
+            loot.Init(item, index, pos);
             _loots.Add(loot);
         }
 

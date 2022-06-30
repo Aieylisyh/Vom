@@ -58,10 +58,12 @@ namespace vom
                     return;
 
                 case ESceneInteraction.Tree:
-                    Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
-                    LootSystem.instance.Spawn(transform.position, new ItemData((int)data.baseAmount, "wood"), 0);
-                    LootSystem.instance.Spawn(transform.position, new ItemData((int)data.baseAmount, "wood"), 1);
-                    LootSystem.instance.Spawn(transform.position, new ItemData((int)data.baseAmount, "wood"), 2);
+                    var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
+                    go.SetActive(true);
+                    for (int i = 0; i < 5; i++)
+                    {
+                        LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "wood"), i);
+                    }
                     Destroy(targetItem);
                     return;
             }

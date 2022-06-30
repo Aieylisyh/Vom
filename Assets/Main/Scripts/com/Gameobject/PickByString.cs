@@ -29,9 +29,7 @@ namespace com
             {
                 //info.Close();
                 if (!info.ids.Contains(s))
-                {
                     continue;
-                }
                 SetToInfo(info);
                 return;
             }
@@ -43,13 +41,18 @@ namespace com
         {
             if (info.gos.Count == 1)
             {
-                info.gos[0].SetActive(true);
+                SetActive(info.gos[0]);
             }
             else if (info.gos.Count > 1)
             {
                 int r = Random.Range(0, info.gos.Count);
-                info.gos[r].SetActive(true);
+                SetActive(info.gos[r]);
             }
+        }
+
+        void SetActive(GameObject go)
+        {
+            go.SetActive(true);
         }
     }
 }

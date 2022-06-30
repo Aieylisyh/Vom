@@ -55,6 +55,13 @@ namespace vom
             host.animator.SetTrigger("Die");
             bar.Hide();
             host.targetSearcher.ExitAlert();
+
+            //var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
+            //go.SetActive(true);
+            for (int i = 0; i < 10; i++)
+            {
+                LootSystem.instance.SpawnGold(transform.position, new ItemData(1, "wood"), i);
+            }
             //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }
     }

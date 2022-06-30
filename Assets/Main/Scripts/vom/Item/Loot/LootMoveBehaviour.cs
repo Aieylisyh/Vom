@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace vom
 {
@@ -16,26 +17,29 @@ namespace vom
         public float absorbSpeedMax;
         private float _absorbSpeed;
 
-        public Rigidbody rb;
+        Rigidbody _rb;
         public float force;
-        public Collider col;
+        Collider _col;
 
-        public void Init(int dropIndex)
+        public void Init(int dropIndex, Vector3 pos)
         {
+            _rb = GetComponent<Rigidbody>();
+            _col = GetComponent<Collider>();
+
             _dropTimer = dropTime + Random.Range(0, dropTimeRandomnizer); ;
             _waitTimer = 0;
 
-            float r1 = Random.value;
-            r1 = r1 * 2 - 1;
-            float r2 = Random.value;
-            r2 = r2 * 2 - 1;
-            //TODO dropIndex
+            var radian = dropIndex * 0.6f;
+            //Random.value;??
             Vector3 tempDir = Vector3.up;
-            tempDir += Vector3.right * r2 + Vector3.forward * r1;
+            tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
+            tempDir.Normalize();
+            transform.position = pos + tempDir * 1;
 
-            rb.useGravity = true;
-            rb.isKinematic = false;
-            rb.AddForce(tempDir.normalized * force);
+            _rb.useGravity = true;
+            _rb.isKinematic = false;
+            _rb.AddForce(tempDir * force);
+            _rb.AddTorque(200, 200, 200);
         }
 
         private void Drop()
@@ -60,9 +64,9 @@ namespace vom
                 _waitTimer = 0;
                 _absorbSpeed = 0;
 
-                rb.useGravity = false;
-                rb.isKinematic = true;
-                col.isTrigger = true;
+                _rb.useGravity = false;
+                _rb.isKinematic = true;
+                _col.isTrigger = true;
             }
         }
 
@@ -73,7 +77,7 @@ namespace vom
             if (_absorbSpeed < absorbSpeedMax)
                 _absorbSpeed += absorbAcc * dt;
 
-            var targetPos = PlayerBehaviour.instance.transform.position;
+            var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.5f;
             var absorbDir = targetPos - transform.position;
             transform.position += absorbDir.normalized * _absorbSpeed * dt;
         }
@@ -86,6 +90,21 @@ namespace vom
                 Wait();
             else
                 Absorb();
+        }
+    }
+
+    [System.Serializable]
+    public struct pickInfo
+    {
+        public List<string> ids;
+        public List<GameObject> gos;
+
+        public void Close()
+        {
+            foreach (var go in gos)
+            {
+                go.SetActive(false);
+            }
         }
     }
 }

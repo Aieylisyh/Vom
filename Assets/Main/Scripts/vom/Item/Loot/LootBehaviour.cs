@@ -8,16 +8,15 @@ namespace vom
         public string itemId;
         public int amount;
         public PlaySoundBehaviour psb;
-        public PickByString pbs;
+
         //public ParticleSystem ps;
         public LootMoveBehaviour move;
 
-        public void Init(ItemData item, int dropIndex)
+        public void Init(ItemData item, int dropIndex, Vector3 pos)
         {
             itemId = item.id;
             amount = item.n;
-            move.Init(dropIndex);
-            pbs?.Setup(itemId);
+            move.Init(dropIndex, pos);
         }
 
         public void OnTriggerEnter(Collider other)
