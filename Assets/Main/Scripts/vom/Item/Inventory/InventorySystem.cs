@@ -32,6 +32,7 @@ namespace vom
         public void AddItem(string id, int num = 1)
         {
             AddItem(new ItemData(num, id));
+            game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Diamond> +1", PlayerBehaviour.instance.transform);
         }
 
         public void SortItems()

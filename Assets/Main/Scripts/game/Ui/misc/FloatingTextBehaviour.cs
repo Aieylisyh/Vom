@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 using Text = TMPro.TextMeshProUGUI;
 
 namespace game
@@ -12,7 +11,7 @@ namespace game
         public Text txt;
         private float timer;
         public float canvasScale = 1;
-
+        public Camera cam;
         public RectTransform rect;
 
         public void SetText(string s)
@@ -31,7 +30,7 @@ namespace game
             canvasScale = (float)Screen.width / 720;
             var pos = rect.anchoredPosition;
             //Debug.Log("SetPos");
-            pos = com.Convert2DAnd3D.GetScreenPosition(CameraControllerBehaviour.instance.portCam, trans.position, canvasScale);
+            pos = com.Convert2DAnd3D.GetScreenPosition(cam, trans.position, canvasScale);
             //Debug.Log(pos);
             rect.anchoredPosition = pos;
         }

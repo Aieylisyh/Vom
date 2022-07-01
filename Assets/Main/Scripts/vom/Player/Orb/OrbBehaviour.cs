@@ -84,7 +84,6 @@ namespace vom
                     var play = other.GetComponent<PlayerBehaviour>();
                     if (play != null)
                     {
-                        _triggered = true;
                         play.OnHit(this);
                         Die(false);
                     }
@@ -94,7 +93,6 @@ namespace vom
                     var ene = other.GetComponent<EnemyBehaviour>();
                     if (ene != null)
                     {
-                        _triggered = true;
                         //Debug.Log("hit ene" + other.gameObject);
                         ene.OnHit(this);
                         Die(false);
@@ -173,6 +171,7 @@ namespace vom
 
         public void Die(bool silent)
         {
+            _triggered = true;
             if (silent)
             {
                 Destroy(gameObject);
@@ -182,7 +181,7 @@ namespace vom
                 var vfx = Instantiate(dieVFX, transform.position, Quaternion.identity, this.transform.parent);
                 vfx.SetActive(true);
                 SoundService.instance.Play(explodeSound);
-                Destroy(gameObject, 1f);
+                Destroy(gameObject, 0.6f);
             }
         }
 
@@ -193,6 +192,9 @@ namespace vom
 
         void Move()
         {
+            if (_triggered)
+                return;
+
             if (_isOrbital)
             {
                 if (_startPositioningTimer <= 0)
