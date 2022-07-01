@@ -4,9 +4,18 @@ namespace vom
 {
     public class LootDropMoveBehaviour : LootMoveBehaviour
     {
+        public float force;
+
         public override void Init(int dropIndex, Vector3 pos)
         {
             base.Init(dropIndex, pos);
+
+            var radian = dropIndex * 0.6f;
+            //Random.value;??
+            _tempDir = Vector3.up;
+            _tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
+            _tempDir.Normalize();
+            transform.position = pos + _tempDir * 1;
 
             _rb.useGravity = true;
             _rb.isKinematic = false;

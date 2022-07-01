@@ -89,7 +89,7 @@ MonoBehaviour:
   waitTimeRandomnizer: 0.2
   absorbAcc: 75
   absorbSpeedMax: 25
-  force: 150
+  force: 160
 --- !u!54 &3005722648633176359
 Rigidbody:
   m_ObjectHideFlags: 0

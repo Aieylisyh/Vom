@@ -33,10 +33,10 @@ namespace vom
             _loots.Add(loot);
         }
 
-        public void Remove(LootBehaviour l)
+        public void Remove(LootBehaviour l, float delay = 0)
         {
             _loots.Remove(l);
-            Destroy(l.gameObject);
+            Destroy(l.gameObject, delay);
         }
 
         public void Clear(bool receiveLoot = false)

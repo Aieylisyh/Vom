@@ -17,7 +17,7 @@ namespace vom
         protected float _absorbSpeed;
 
         protected Rigidbody _rb;
-        public float force;
+        
         protected Collider _col;
         protected Vector3 _tempDir;
 
@@ -28,13 +28,6 @@ namespace vom
 
             _dropTimer = dropTime + Random.Range(0, dropTimeRandomnizer); ;
             _waitTimer = 0;
-
-            var radian = dropIndex * 0.6f;
-            //Random.value;??
-            _tempDir = Vector3.up;
-            _tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
-            _tempDir.Normalize();
-            transform.position = pos + _tempDir * 1;
         }
 
         protected virtual void Drop()

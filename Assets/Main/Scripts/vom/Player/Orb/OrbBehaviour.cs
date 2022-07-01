@@ -49,6 +49,7 @@ namespace vom
         public bool isEnemyShoot;
 
         public int dmg = 1;//test only
+        bool _triggered;
 
         private void Awake()
         {
@@ -57,19 +58,23 @@ namespace vom
             var cfg = ConfigService.instance.combatConfig;
             _rotateDegreeSpeed = cfg.orbs.rotateDegreeSpeed;
             _orbitalRadius = cfg.orbs.orbitalRadius;
-            _orbitalStartHeight = cfg.orbs.orbitalStartHeight; 
-             _orbitalHeightAdd = cfg.orbs.orbitalHeightAdd;
+            _orbitalStartHeight = cfg.orbs.orbitalStartHeight;
+            _orbitalHeightAdd = cfg.orbs.orbitalHeightAdd;
             _startPositioningTime = cfg.orbs.startPositioningTime;
+            _triggered = false;
         }
 
         private void OnTriggerEnter(Collider other)
         {
+            if (_triggered)
+                return;
+
             if (_isOrbital)
                 return;
 
             if (other.gameObject.layer == ConfigService.instance.combatConfig.blockerLayerMask)
             {
-                Debug.Log("hit block " + other.gameObject);
+                //Debug.Log("hit block " + other.gameObject);
                 Die(false);
             }
             else
@@ -79,6 +84,7 @@ namespace vom
                     var play = other.GetComponent<PlayerBehaviour>();
                     if (play != null)
                     {
+                        _triggered = true;
                         play.OnHit(this);
                         Die(false);
                     }
@@ -88,8 +94,8 @@ namespace vom
                     var ene = other.GetComponent<EnemyBehaviour>();
                     if (ene != null)
                     {
+                        _triggered = true;
                         //Debug.Log("hit ene" + other.gameObject);
-                        //TODO deal damage
                         ene.OnHit(this);
                         Die(false);
                     }
@@ -176,7 +182,7 @@ namespace vom
                 var vfx = Instantiate(dieVFX, transform.position, Quaternion.identity, this.transform.parent);
                 vfx.SetActive(true);
                 SoundService.instance.Play(explodeSound);
-                Destroy(gameObject);
+                Destroy(gameObject, 1f);
             }
         }
 
