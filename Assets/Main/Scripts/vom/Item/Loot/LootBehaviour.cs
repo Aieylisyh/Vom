@@ -8,8 +8,6 @@ namespace vom
         public string itemId;
         public int amount;
         public PlaySoundBehaviour psb;
-
-        //public ParticleSystem ps;
         public LootMoveBehaviour move;
 
         public void Init(ItemData item, int dropIndex, Vector3 pos)

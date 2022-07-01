@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using com;
 
 namespace vom
 {
@@ -39,6 +40,13 @@ namespace vom
             }
         }
 
+        public void Chopped()
+        {
+            var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
+            go.SetActive(true);
+            SoundService.instance.Play("wood hit");
+        }
+
         public void OnFinish()
         {
             if (ui != null)
@@ -58,11 +66,12 @@ namespace vom
                     return;
 
                 case ESceneInteraction.Tree:
-                    var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
-                    go.SetActive(true);
-                    for (int i = 0; i < 5; i++)
+                    Chopped();
+                    SoundService.instance.Play("rockDestory");
+                    CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
+                    for (int i = 0; i < 3; i++)
                     {
-                        LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "wood"), i);
+                        LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"), i);
                     }
                     Destroy(targetItem);
                     return;

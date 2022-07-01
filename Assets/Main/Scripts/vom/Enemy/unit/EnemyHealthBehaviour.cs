@@ -58,9 +58,9 @@ namespace vom
 
             //var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             //go.SetActive(true);
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 6; i++)
             {
-                LootSystem.instance.SpawnGold(transform.position, new ItemData(1, "wood"), i);
+                LootSystem.instance.SpawnSoul(transform.position, new ItemData(1, "Soul"), i);
             }
             //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }

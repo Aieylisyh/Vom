@@ -67,6 +67,16 @@ namespace vom
             Refresh();
         }
 
+        public void Sliced()
+        {
+            if (_currentSi != null)
+            {
+                _currentSi.Chopped();
+                SoundService.instance.Play("slice");
+                CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
+            }
+        }
+
         public void Interact(SceneInteractionTargetBehaviour si)
         {
             _started = true;

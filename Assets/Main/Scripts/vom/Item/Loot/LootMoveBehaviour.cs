@@ -1,27 +1,27 @@
 ﻿using UnityEngine;
-using System.Collections.Generic;
 
 namespace vom
 {
     public class LootMoveBehaviour : MonoBehaviour
     {
         public float dropTime;
-        private float _dropTimer;
+        protected float _dropTimer;
         public float dropTimeRandomnizer = 0.5f;
 
         public float waitTime;
         public float waitTimeRandomnizer = 0.5f;
-        private float _waitTimer;
+        protected float _waitTimer;
 
         public float absorbAcc;
         public float absorbSpeedMax;
-        private float _absorbSpeed;
+        protected float _absorbSpeed;
 
-        Rigidbody _rb;
+        protected Rigidbody _rb;
         public float force;
-        Collider _col;
+        protected Collider _col;
+        protected Vector3 _tempDir;
 
-        public void Init(int dropIndex, Vector3 pos)
+        public virtual void Init(int dropIndex, Vector3 pos)
         {
             _rb = GetComponent<Rigidbody>();
             _col = GetComponent<Collider>();
@@ -31,18 +31,13 @@ namespace vom
 
             var radian = dropIndex * 0.6f;
             //Random.value;??
-            Vector3 tempDir = Vector3.up;
-            tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
-            tempDir.Normalize();
-            transform.position = pos + tempDir * 1;
-
-            _rb.useGravity = true;
-            _rb.isKinematic = false;
-            _rb.AddForce(tempDir * force);
-            _rb.AddTorque(200, 200, 200);
+            _tempDir = Vector3.up;
+            _tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
+            _tempDir.Normalize();
+            transform.position = pos + _tempDir * 1;
         }
 
-        private void Drop()
+        protected virtual void Drop()
         {
             var dt = com.GameTime.deltaTime;
 
@@ -51,10 +46,12 @@ namespace vom
             {
                 _dropTimer = 0;
                 _waitTimer = waitTime + Random.Range(0, waitTimeRandomnizer);
+
+                StartWait();
             }
         }
 
-        private void Wait()
+        protected virtual void Wait()
         {
             var dt = com.GameTime.deltaTime;
 
@@ -64,22 +61,20 @@ namespace vom
                 _waitTimer = 0;
                 _absorbSpeed = 0;
 
-                _rb.useGravity = false;
-                _rb.isKinematic = true;
-                _col.isTrigger = true;
+                StartAbsorb();
             }
         }
 
-        private void Absorb()
+        protected virtual void StartWait()
         {
-            var dt = com.GameTime.deltaTime;
+        }
 
-            if (_absorbSpeed < absorbSpeedMax)
-                _absorbSpeed += absorbAcc * dt;
+        protected virtual void StartAbsorb()
+        {
+        }
 
-            var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.5f;
-            var absorbDir = targetPos - transform.position;
-            transform.position += absorbDir.normalized * _absorbSpeed * dt;
+        protected virtual void Absorb()
+        {
         }
 
         void Update()
@@ -90,21 +85,6 @@ namespace vom
                 Wait();
             else
                 Absorb();
-        }
-    }
-
-    [System.Serializable]
-    public struct pickInfo
-    {
-        public List<string> ids;
-        public List<GameObject> gos;
-
-        public void Close()
-        {
-            foreach (var go in gos)
-            {
-                go.SetActive(false);
-            }
         }
     }
 }

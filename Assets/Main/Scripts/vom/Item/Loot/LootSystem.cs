@@ -26,6 +26,12 @@ namespace vom
             loot.Init(item, index, pos);
             _loots.Add(loot);
         }
+        public void SpawnSoul(Vector3 pos, ItemData item, int index = 0)
+        {
+            var loot = Instantiate(prefabSoul, lootParent);
+            loot.Init(item, index, pos);
+            _loots.Add(loot);
+        }
 
         public void Remove(LootBehaviour l)
         {

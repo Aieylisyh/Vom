@@ -25,5 +25,10 @@ namespace vom
         {
 
         }
+
+        public void Sliced()
+        {
+            host.interaction.Sliced();
+        }
     }
 }
