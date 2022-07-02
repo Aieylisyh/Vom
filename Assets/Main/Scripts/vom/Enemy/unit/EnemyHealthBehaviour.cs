@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using game;
 
 namespace vom
 {
@@ -11,22 +10,15 @@ namespace vom
         [HideInInspector]
         public HpBarBehaviour bar;
 
-        public bool dead { get; private set; }
         public float hpBarOffset = 155;
-        public Collider bodyCol;
 
-        public void Init()
+        void Start()
         {
             if (bar == null)
-            {
                 bar = HpBarSystem.instance.Create(transform, hpBarOffset, 1.0f);
-            }
 
-            if (bodyCol != null)
-                bodyCol.enabled = true;
             HealToFull();
         }
-
 
         public void HealToFull()
         {
@@ -46,30 +38,10 @@ namespace vom
             bar.Show();
             SyncBar(false);
 
-            if (hp <= 0 && !dead)
+            if (hp <= 0 && !host.death.dead)
             {
-                Die();
+                host.death.Die();
             }
-        }
-
-        void Die()
-        {
-            dead = true;
-            host.animator.SetTrigger("Die");
-            bar.Hide();
-            host.targetSearcher.ExitAlert();
-
-            if (bodyCol != null)
-                bodyCol.enabled = false;
-
-            host.cc.enabled = false;
-            //var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
-            //go.SetActive(true);
-            for (int i = 0; i < 6; i++)
-            {
-                LootSystem.instance.SpawnSoul(transform.position, new ItemData(1, "Soul"), i);
-            }
-            //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }
     }
 }

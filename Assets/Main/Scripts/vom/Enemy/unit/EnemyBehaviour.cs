@@ -7,16 +7,25 @@ namespace vom
     {
         public Animator animator;
         public CharacterController cc;
-
         public Transform circleTrans;
-        public EnemyHealthBehaviour health;
-        public EnemyAttackBehaviour attack;
-        public EnemyMoveBehaviour move;
-        public EnemyTargetSearcherBehaviour targetSearcher;
+
+        public EnemyHealthBehaviour health { get; private set; }
+        public EnemyAttackBehaviour attack { get; private set; }
+        public EnemyMoveBehaviour move { get; private set; }
+        public EnemyTargetSearcherBehaviour targetSearcher { get; private set; }
+        public EnemyDeathBehaviour death { get; private set; }
+
+        private void Awake()
+        {
+            health = GetComponent<EnemyHealthBehaviour>();
+            attack = GetComponent<EnemyAttackBehaviour>();
+            move = GetComponent<EnemyMoveBehaviour>();
+            targetSearcher = GetComponent<EnemyTargetSearcherBehaviour>();
+            death = GetComponent<EnemyDeathBehaviour>();
+        }
 
         public void Start()
         {
-            health.Init();
             EnemySystem.instance.AddEnemy(this);
         }
 
@@ -27,7 +36,7 @@ namespace vom
 
         private void Update()
         {
-            if (!health.dead)
+            if (!death.dead)
             {
                 targetSearcher.OnUpdate();
                 attack.Attack();
@@ -37,7 +46,7 @@ namespace vom
 
         public void OnHit(OrbBehaviour orb)
         {
-            if (health.dead)
+            if (death.dead)
                 return;
 
             health.ReceiveDamage(orb.dmg);

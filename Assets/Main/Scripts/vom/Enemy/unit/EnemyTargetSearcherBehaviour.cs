@@ -16,14 +16,13 @@ namespace vom
 
         public float targetDist { get; private set; }
 
-        protected override void Start()
+        void Start()
         {
             _fSightRan = CombatSystem.GetRange(sightRange);
             _alertTimer = 0;
             target = null;
             alerted = false;
             _hasTriggered = false;
-            base.Start();
         }
 
         public void RepositionDone()
@@ -61,19 +60,16 @@ namespace vom
 
         public void OnUpdate()
         {
-            CheckSight();
-
             if (alerted)
             {
                 if (_alertTimer > 0)
                 {
                     _alertTimer -= GameTime.deltaTime;
                     if (_alertTimer <= 0)
-                    {
                         alerted = false;
-                    }
                 }
             }
+            CheckSight();
         }
 
         public void OnAttacked()
@@ -84,7 +80,7 @@ namespace vom
 
         void EnterAlert()
         {
-            _alertTimer = CombatSystem.enemyAlertTime;
+            _alertTimer = game.ConfigService.instance.combatConfig.enemy.alertTime;
             alerted = true;
         }
 

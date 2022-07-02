@@ -64,7 +64,7 @@ namespace vom
 
             foreach (var e in enemies)
             {
-                if (e.health.dead)
+                if (e.death.dead)
                 {
                     continue;
                 }

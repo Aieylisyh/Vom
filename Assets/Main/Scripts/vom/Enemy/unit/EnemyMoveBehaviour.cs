@@ -19,10 +19,8 @@ namespace vom
 
         bool _groundFound;
 
-        protected override void Start()
+        void Start()
         {
-            base.Start();
-
             _fRange = CombatSystem.GetRange(stopRange);
             _startPos = transform.position;
             _groundFound = false;

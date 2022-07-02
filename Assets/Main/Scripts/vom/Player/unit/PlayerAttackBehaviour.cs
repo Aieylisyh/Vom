@@ -148,7 +148,7 @@ namespace vom
                     return false;
 
                 var e = _target.GetComponent<EnemyBehaviour>();
-                return !e.health.dead;
+                return !e.death.dead;
             }
         }
     }

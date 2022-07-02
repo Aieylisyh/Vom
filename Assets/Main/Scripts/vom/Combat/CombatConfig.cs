@@ -7,7 +7,17 @@ namespace vom
     public class CombatConfig : ScriptableObject
     {
         public OrbsParam orbs;
+
+        public enemyParam enemy;
+
         public int blockerLayerMask = 3;
+    }
+
+    [System.Serializable]
+    public struct enemyParam
+    {
+        public float alertTime;
+        public float sinkAcc;
     }
 
     [System.Serializable]

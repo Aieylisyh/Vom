@@ -18,9 +18,8 @@ namespace vom
 
         private Vector3 _targetPos;
 
-        protected override void Start()
+        void Start()
         {
-            base.Start();
             _attackIntervalTimer = 0;
             _fRange = CombatSystem.GetRange(range);
         }

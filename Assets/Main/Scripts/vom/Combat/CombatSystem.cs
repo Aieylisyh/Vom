@@ -9,7 +9,6 @@ namespace vom
         public static CombatSystem instance { get; private set; }
 
         public Transform EnemyProjectileSpace;
-        public static float enemyAlertTime = 2.5f;
 
         void Awake()
         {

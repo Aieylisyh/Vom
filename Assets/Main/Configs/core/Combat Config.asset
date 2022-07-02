@@ -14,8 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   orbs:
     rotateDegreeSpeed: 180
-    orbitalRadius: 0.88
+    orbitalRadius: 0.85
     orbitalHeightAdd: 1.5
     orbitalStartHeight: 0.2
     startPositioningTime: 0.8
+  enemy:
+    alertTime: 2
+    sinkAcc: 0.4
   blockerLayerMask: 3
