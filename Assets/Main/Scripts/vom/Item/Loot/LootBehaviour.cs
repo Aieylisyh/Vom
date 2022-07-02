@@ -12,12 +12,21 @@ namespace vom
 
         bool _triggered;
 
-        public void Init(ItemData item, int dropIndex, Vector3 pos)
+        public void Init(ItemData item)
         {
             itemId = item.id;
             amount = item.n;
-            move.Init(dropIndex, pos);
             _triggered = false;
+        }
+
+        public void SetPos(Vector3 pos)
+        {
+            transform.position = pos;
+        }
+
+        public void SetPos(int dropIndex, Vector3 pos)
+        {
+            move.Init(dropIndex, pos);
         }
 
         public void OnTriggerEnter(Collider other)
@@ -38,6 +47,7 @@ namespace vom
             _triggered = true;
             InventorySystem.instance.AddItem(itemId, amount);
             PlayerBehaviour.instance.health.Heal(1);//TODO
+
             if (!silent)
             {
                 //ps.Play();

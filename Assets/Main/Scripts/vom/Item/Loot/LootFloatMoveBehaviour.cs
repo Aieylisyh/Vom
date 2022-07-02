@@ -28,7 +28,7 @@ namespace vom
 
             var radian = dropIndex * 0.6f;
             //Random.value;??
-            _tempDir = Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian) + Vector3.up * 0.3f;
+            _tempDir = Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian) + Vector3.up * 0.2f;
             _tempDir.Normalize();
             transform.position = pos + _tempDir * 1;
 
@@ -48,7 +48,18 @@ namespace vom
 
             var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.4f;
             var absorbDir = targetPos - transform.position;
-            transform.position += absorbDir.normalized * _absorbSpeed * dt;
+
+            var dist = absorbDir.normalized;
+            if (_absorbSpeed * dt > absorbDir.magnitude)
+            {
+                dist *= absorbDir.magnitude;
+            }
+            else
+            {
+                dist *= _absorbSpeed * dt;
+            }
+
+            transform.position += dist;
         }
 
         protected override void Drop()
@@ -65,9 +76,12 @@ namespace vom
         protected override void StartWait()
         {
             _releaseTempPos = transform.position;
-            trait.emitting = false;
         }
 
+        protected override void StartAbsorb()
+        {
+            trait.emitting = false;
+        }
         protected override void Wait()
         {
             base.Wait();

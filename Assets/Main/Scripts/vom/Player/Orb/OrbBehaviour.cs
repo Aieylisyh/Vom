@@ -138,6 +138,8 @@ namespace vom
             _releaseOffset = dist * releaseOffsetRatioByDistance;
             _expectedReleaseTime = dist / releaseSpeed;
             _expectedReleaseTimer = 0;
+
+            _releaseDir.Normalize();
         }
 
         public bool IsReadyInOrbital()
@@ -208,7 +210,7 @@ namespace vom
             }
             else
             {
-                _releaseTempPos += _releaseDir.normalized * releaseSpeed * GameTime.deltaTime;
+                _releaseTempPos += _releaseDir * releaseSpeed * GameTime.deltaTime;
 
                 var acv = releaseCurveAc.Evaluate(_expectedReleaseTimer / _expectedReleaseTime);
                 var newPos = _releaseTempPos + acv * _releaseOffset * _releaseOffsetDir;

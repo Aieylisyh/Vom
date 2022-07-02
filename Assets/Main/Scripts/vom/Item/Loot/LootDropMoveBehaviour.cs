@@ -39,7 +39,18 @@ namespace vom
 
             var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.5f;
             var absorbDir = targetPos - transform.position;
-            transform.position += absorbDir.normalized * _absorbSpeed * dt;
+
+            var dist = absorbDir.normalized;
+            if (_absorbSpeed * dt > absorbDir.magnitude)
+            {
+                dist *= absorbDir.magnitude;
+            }
+            else
+            {
+                dist *= _absorbSpeed * dt;
+            }
+
+            transform.position += dist;
         }
     }
 }

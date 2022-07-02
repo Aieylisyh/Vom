@@ -23,13 +23,15 @@ namespace vom
         public void SpawnGold(Vector3 pos, ItemData item, int index = 0)
         {
             var loot = Instantiate(prefabGold, lootParent);
-            loot.Init(item, index, pos);
+            loot.Init(item);
+            loot.SetPos(index, pos);
             _loots.Add(loot);
         }
         public void SpawnSoul(Vector3 pos, ItemData item, int index = 0)
         {
             var loot = Instantiate(prefabSoul, lootParent);
-            loot.Init(item, index, pos);
+            loot.Init(item);
+            loot.SetPos(index, pos);
             _loots.Add(loot);
         }
 
