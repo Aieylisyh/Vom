@@ -24,16 +24,16 @@ namespace vom
                     return 0;
 
                 case AttackRange.Melee:
-                    return 1.1f;
+                    return 1.75f;
 
                 case AttackRange.MeleeBig:
-                    return 1.6f;
+                    return 2.25f;
 
                 case AttackRange.Short:
-                    return 6.0f;
+                    return 6.5f;
 
                 case AttackRange.Mid:
-                    return 7.5f;
+                    return 7.75f;
 
                 case AttackRange.MidLong:
                     return 9.25f;
