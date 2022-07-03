@@ -5,28 +5,15 @@ namespace game
     public class Ticker : MonoBehaviour
     {
         public float TickTime;
-        private float _tickTimer;
-        public bool fixedUpdateTick;
+        float _nextTimestamp;
 
         protected virtual void Update()
         {
-            if (fixedUpdateTick)
-                return;
-
-            _tickTimer -= com.GameTime.deltaTime;
-            if (_tickTimer < 0)
+            if (com.GameTime.time >= _nextTimestamp)
             {
-                _tickTimer = TickTime;
+                _nextTimestamp = com.GameTime.time + TickTime;
                 Tick();
             }
-        }
-
-        protected virtual void FixedUpdate()
-        {
-            if (!fixedUpdateTick)
-                return;
-
-            Tick();
         }
 
         protected virtual void Tick()

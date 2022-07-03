@@ -8,6 +8,7 @@ namespace vom
         public Animator animator;
         public CharacterController cc;
         public Transform circleTrans;
+        public float size = 0.25f;
 
         public EnemyHealthBehaviour health { get; private set; }
         public EnemyAttackBehaviour attack { get; private set; }
@@ -27,6 +28,8 @@ namespace vom
         public void Start()
         {
             EnemySystem.instance.AddEnemy(this);
+
+            circleTrans.localScale = Vector3.one * size;
         }
 
         private void OnDestroy()

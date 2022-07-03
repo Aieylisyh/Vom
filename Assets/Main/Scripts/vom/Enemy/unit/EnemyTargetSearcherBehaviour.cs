@@ -11,7 +11,7 @@ namespace vom
 
         public AttackRange sightRange = AttackRange.Sight;
         float _fSightRan;
-        bool _hasTriggered;
+
         Vector3 _toPlayerDir;
 
         public float targetDist { get; private set; }
@@ -22,7 +22,6 @@ namespace vom
             _alertTimer = 0;
             target = null;
             alerted = false;
-            _hasTriggered = false;
         }
 
         public void RepositionDone()
@@ -88,11 +87,21 @@ namespace vom
         {
             alerted = false;
             target = null;
-            _hasTriggered = true;
         }
+
+        bool _isInPlayerView;
+        int _checkedFrame;
 
         public bool IsInPlayerView()
         {
+            if (Time.frameCount == _checkedFrame)
+            {
+                return _isInPlayerView;
+            }
+
+            _checkedFrame = Time.frameCount;
+            _isInPlayerView = false;
+
             var dX = _toPlayerDir.x;
             var dZ = _toPlayerDir.z;
             //Debug.Log(dX + " " + dZ + " | " + MapSystem.instance.tileNumRight + " " + MapSystem.instance.tileNumForward + " " + MapSystem.instance.tileNumBackward);
@@ -100,11 +109,11 @@ namespace vom
             {
                 if (-dZ < MapSystem.instance.tileNumForward && dZ < MapSystem.instance.tileNumBackward)
                 {
-                    return true;
+                    _isInPlayerView = true;
                 }
             }
 
-            return false;
+            return _isInPlayerView;
         }
     }
 }

@@ -10,12 +10,12 @@ namespace vom
         [HideInInspector]
         public HpBarBehaviour bar;
 
-        public float hpBarOffset = 155;
+        public float hpBarOffset = 0;
 
         void Start()
         {
             if (bar == null)
-                bar = HpBarSystem.instance.Create(transform, hpBarOffset, 1.0f);
+                bar = HpBarSystem.instance.Create(transform, (host.size - 0.1f) * 400 + hpBarOffset, host.size * 1.3f + 0.38f);
 
             HealToFull();
         }
