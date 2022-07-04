@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4505b6af9df15f441a99899e73c156bc, type: 3}
   m_Name: Hero Config
   m_EditorClassIdentifier: 
+  heroes:
+  - {fileID: 11400000, guid: 1ba11f97f8bafe3458d8a88023657ce9, type: 2}
+  defaultHero: {fileID: 11400000, guid: 1ba11f97f8bafe3458d8a88023657ce9, type: 2}

@@ -6,6 +6,8 @@ namespace vom
     {
         public static HeroSystem instance { get; private set; }
 
+        public HeroData debugHeroData;
+
         private void Awake()
         {
             instance = this;
@@ -16,10 +18,9 @@ namespace vom
 
         }
 
-        // Update is called once per frame
-        void Update()
+       public HeroData GetCurrentHeroData()
         {
-
+            return debugHeroData;
         }
     }
 }

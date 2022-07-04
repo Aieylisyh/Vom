@@ -12,8 +12,8 @@ namespace vom
         public virtual string subDesc { get { return id + "_subDesc"; } }
 
         public string draft;
-
-        public int tierUnlock = 0;
+        public Sprite sp;
+        public float cd;
 
         public List<SkillPerkPrototype> perks;
 
@@ -26,7 +26,6 @@ namespace vom
         public int fixedAttri3;
         public int fixedAttri4;
 
-        public float cd;
-        public int slot;//0 1 2
+     
     }
 }

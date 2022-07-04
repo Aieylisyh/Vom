@@ -36,6 +36,9 @@ namespace game
         public InventoryConfig inventoryConfig;
         public LootConfig lootConfig;
         public ItemsConfig itemsConfig;
+        public HeroConfig heroConfig;
+        public DailyLevelConfig dailyLevelConfig;
+        public SkillConfig skillConfig;
 
         void Awake()
         {

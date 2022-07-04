@@ -6,6 +6,9 @@ namespace vom
     [CreateAssetMenu]
     public class HeroConfig : ScriptableObject
     {
-        List<HeroPrototype> heroes;
+        public List<HeroPrototype> heroes;
+
+        public HeroPrototype defaultHero;
+
     }
 }
