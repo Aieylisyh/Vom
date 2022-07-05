@@ -51,7 +51,7 @@ namespace vom
             {
                 if (!_groundFound)
                     return;
-                Debug.Log("RunBack !IsInPlayerView");
+                //Debug.Log("RunBack !IsInPlayerView");
                 RunBack();
                 return;
             }
@@ -87,7 +87,7 @@ namespace vom
 
         void RepositionDone()
         {
-            Debug.Log("RepositionDone");
+            //Debug.Log("RepositionDone");
             if (host.animator.GetBool("move"))
                 host.animator.SetBool("move", false);
 
@@ -112,7 +112,7 @@ namespace vom
 
         void Fall()
         {
-            Debug.Log("Fall");
+            //Debug.Log("Fall");
             if (!host.cc.isGrounded)
             {
                 //Debug.Log("Fall11");

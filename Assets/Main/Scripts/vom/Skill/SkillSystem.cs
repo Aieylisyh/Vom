@@ -108,6 +108,7 @@ namespace vom
             {
                 var cd = skl.cd;
                 var dt = GameTime.time - data.useTimestamp;
+
                 if (dt >= cd)
                 {
                     //finished cd

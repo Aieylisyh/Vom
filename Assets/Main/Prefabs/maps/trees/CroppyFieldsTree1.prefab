@@ -61,6 +61,7 @@ MonoBehaviour:
   interaction: 1
   targetItem: {fileID: 0}
   vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  shakeTarget: {fileID: 1671192214151985966}
 --- !u!1 &1671192214151816974
 GameObject:
   m_ObjectHideFlags: 0

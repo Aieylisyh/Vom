@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using com;
+using DG.Tweening;
 
 namespace vom
 {
@@ -21,6 +22,16 @@ namespace vom
         public GameObject targetItem;
 
         public GameObject vfx;
+
+        public Transform shakeTarget;
+
+        private void Start()
+        {
+            if (targetItem == null)
+            {
+                targetItem = gameObject;
+            }
+        }
 
         public void HideUi()
         {
@@ -45,6 +56,8 @@ namespace vom
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             go.SetActive(true);
             SoundService.instance.Play("wood hit");
+
+            shakeTarget.DOShakeRotation(0.5f, new Vector3(30, 0, 30), 8);
         }
 
         public void OnFinish()
@@ -53,11 +66,6 @@ namespace vom
             {
                 ui.Remove();
                 ui = null;
-            }
-
-            if (targetItem == null)
-            {
-                targetItem = gameObject;
             }
 
             switch (interaction)
