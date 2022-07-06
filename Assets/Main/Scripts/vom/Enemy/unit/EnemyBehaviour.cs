@@ -47,14 +47,19 @@ namespace vom
             }
         }
 
-        public void OnHit(OrbBehaviour orb)
+        public void OnHit(int dmg)
         {
             if (death.dead)
                 return;
 
-            health.ReceiveDamage(orb.dmg);
+            health.ReceiveDamage(dmg);
             targetSearcher.OnAttacked();
             animator.SetTrigger("Wound");
+        }
+
+        public void OnHit(OrbBehaviour orb)
+        {
+            OnHit(orb.dmg);
         }
     }
 }

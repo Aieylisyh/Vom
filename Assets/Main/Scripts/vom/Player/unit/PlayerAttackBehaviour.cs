@@ -27,6 +27,8 @@ namespace vom
         SkillPrototype _skillCharging;
 
         public ParticleSystem psArcane;
+        public ParticleSystem psArcaneExp;
+        public ParticleSystem psFrostNove;
 
         public override void ResetState()
         {
@@ -71,7 +73,7 @@ namespace vom
 
         void CancelCharging()
         {
-            Debug.Log("CancelCharging");
+            //Debug.Log("CancelCharging");
             _skillIntervalTimer = 0;
             _skillChargingTimer = 0;
             _skillCharging = null;

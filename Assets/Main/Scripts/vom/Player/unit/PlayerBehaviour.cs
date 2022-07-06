@@ -44,11 +44,16 @@ namespace vom
 
         public void OnHit(OrbBehaviour orb)
         {
+            CameraShake.instance.Shake(orb.hitShakeLevel);
+            OnHit(orb.dmg);
+        }
+
+        public void OnHit(int dmg)
+        {
             if (health.dead)
                 return;
 
-            CameraShake.instance.Shake(orb.hitShakeLevel);
-            health.ReceiveDamage(orb.dmg);
+            health.ReceiveDamage(dmg);
             combat.UpdateState();
         }
 

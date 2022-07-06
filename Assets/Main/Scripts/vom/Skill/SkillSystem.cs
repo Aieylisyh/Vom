@@ -172,17 +172,33 @@ namespace vom
 
                 case "FrostNova":
                     host.skill.CastSpellBigAnim();
-
+                    host.attack.psFrostNove.Play(true);
+                    DealAoeDamage(5, host.transform.position, 5);
                     break;
 
                 case "ArcaneExposion":
                     host.skill.CastSpellAnim();
-
+                    host.attack.psArcaneExp.Play(true);
+                    DealAoeDamage(4, host.transform.position, 6);
                     break;
 
                 case "ArcaneBlasts":
                     host.attack.StartChargingSkill(skl);
+              
                     break;
+            }
+        }
+
+        void DealAoeDamage(int dmg, Vector3 origin, float range = 5f)
+        {
+            var enes = EnemySystem.instance.enemies;
+            foreach (var e in enes)
+            {
+                var pos = e.transform.position;
+                if (Vector3.Distance(pos, origin) < range)
+                {
+                    e.OnHit(dmg);
+                }
             }
         }
     }
