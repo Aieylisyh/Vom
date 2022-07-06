@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroes:
   - {fileID: 11400000, guid: 1ba11f97f8bafe3458d8a88023657ce9, type: 2}
-  defaultHero: {fileID: 11400000, guid: 1ba11f97f8bafe3458d8a88023657ce9, type: 2}
+  - {fileID: 11400000, guid: d4724ff5452b2f043851941803d0131f, type: 2}
+  defaultHero: {fileID: 11400000, guid: d4724ff5452b2f043851941803d0131f, type: 2}

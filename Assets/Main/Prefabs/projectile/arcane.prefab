@@ -9562,7 +9562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitShakeLevel: 5
-  releaseSpeed: 7.5
+  releaseSpeed: 9
   orbitalOffset: {x: 0, y: 0.2, z: 0}
   releaseTrait: {fileID: 0}
   releasingPs: {fileID: 0}
@@ -9620,7 +9620,7 @@ MonoBehaviour:
   releasingSound: lll
   explodeSound: exp nor b
   dieVFX: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
-  releaseOffsetRatioByDistance: 0.85
+  releaseOffsetRatioByDistance: 0.55
   isEnemyShoot: 0
   dmg: 1
 --- !u!114 &3307667407526838804

@@ -54,9 +54,11 @@ namespace vom
 
         public void FinishFruit()
         {
-            Chopped(false);
+            var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
+            go.SetActive(true);
+
             SoundService.instance.Play("fruit");
-            CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
+
             for (int i = 0; i < 2; i++)
             {
                 LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"), i);

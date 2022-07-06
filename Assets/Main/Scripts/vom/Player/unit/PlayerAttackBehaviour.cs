@@ -14,10 +14,6 @@ namespace vom
 
         public PlayerTargetCircleBehaviour playerTargetCircle;
 
-        public string spawnFireballSound;
-        public string spawnIceballSound;
-        public string spawnPoisonballSound;
-
         private Transform _target;
         private Vector3 _targetPos;
 
@@ -26,11 +22,20 @@ namespace vom
         public float camOffsetDist = 1;
         public float camOffsetSpeed = 2;
 
+        float _skillChargingTimer;
+        float _skillIntervalTimer;
+        SkillPrototype _skillCharging;
+
+        public ParticleSystem psArcane;
+
         public override void ResetState()
         {
             _attackIntervalTimer = 0;
             _defaultMmoCamOffset = host.move.mmoCamera.parameters.offset;
             _cachedMmoCamOffset = _defaultMmoCamOffset;
+            _skillIntervalTimer = 0;
+            _skillChargingTimer = 0;
+            _skillCharging = null;
         }
 
         public void CheckMmoCameraOffset()
@@ -54,11 +59,24 @@ namespace vom
 
         void CancelTargeting()
         {
-            playerTargetCircle.Hide();
-            _target = null;
-            _cachedMmoCamOffset = _defaultMmoCamOffset;
+            if (_target != null || playerTargetCircle.showing || isCharging)
+            {
+                playerTargetCircle.Hide();
+                _target = null;
+                _cachedMmoCamOffset = _defaultMmoCamOffset;
+
+                CancelCharging();
+            }
         }
 
+        void CancelCharging()
+        {
+            Debug.Log("CancelCharging");
+            _skillIntervalTimer = 0;
+            _skillChargingTimer = 0;
+            _skillCharging = null;
+            host.skill.CastChargeAnim(false);
+        }
 
         public void Attack()
         {
@@ -74,11 +92,66 @@ namespace vom
             if (_target != null)
                 host.move.Rotate((_targetPos - transform.position).normalized);
 
+            if (isCharging)
+            {
+                Charge();
+                return;
+            }
+
             if (_attackIntervalTimer <= 0)
                 PerformAttack();
         }
 
         void PerformAttack()
+        {
+            AimEnemy();
+            if (_target != null)
+            {
+                _attackIntervalTimer = attackInterval;
+                host.animator.SetBool("move", false);
+                host.animator.SetTrigger("attack");
+            }
+        }
+
+        public bool isAttacking { get { return isCharging || _attackIntervalTimer > 0f; } }
+
+        public bool isCharging { get { return _skillChargingTimer > 0f; } }
+
+        void Charge()
+        {
+            _skillChargingTimer -= GameTime.deltaTime;
+            if (_skillChargingTimer < 0)
+            {
+                CancelCharging();
+                return;
+            }
+
+            _skillIntervalTimer -= GameTime.deltaTime;
+            if (_skillIntervalTimer <= 0)
+            {
+                _skillIntervalTimer += _skillCharging.interval;
+                TriggerCharge();
+            }
+        }
+
+        void TriggerCharge()
+        {
+            switch (_skillCharging.id)
+            {
+                case "ArcaneBlasts":
+                    AimEnemy();
+
+                    if (_target != null)
+                    {
+                        _attackIntervalTimer = attackInterval;
+                        orbs.LaunchArcaneBlast(_targetPos);
+                    }
+
+                    break;
+            }
+        }
+
+        void AimEnemy()
         {
             var e = searcher.GetTargetEnemy();
             if (e != null)
@@ -92,9 +165,6 @@ namespace vom
                     delta = delta.normalized;
                 _cachedMmoCamOffset = _defaultMmoCamOffset + delta * camOffsetDist;
 
-                _attackIntervalTimer = attackInterval;
-                host.animator.SetBool("move", false);
-                host.animator.SetTrigger("attack");
                 playerTargetCircle.Show(e);
             }
             else
@@ -103,33 +173,17 @@ namespace vom
             }
         }
 
-        public bool isAttacking { get { return _attackIntervalTimer > 0f; } }
-
-        public void AddFireBalls()
+        public void StartChargingSkill(SkillPrototype skl)
         {
-            if (host.health.dead)
-                return;
-            orbs.AddFireBalls();
-            SoundService.instance.Play(spawnFireballSound);
-            host.skill.CastSpellBig();
-        }
+            //Debug.Log("StartChargingSkill");
+            host.skill.CastChargeAnim(true);
+            host.animator.SetBool("move", false);
 
-        public void AddIceBalls()
-        {
-            if (host.health.dead)
-                return;
-            orbs.AddIceBalls();
-            SoundService.instance.Play(spawnIceballSound);
-            host.skill.CastSpell();
-        }
+            _skillChargingTimer = skl.duration;
+            _skillIntervalTimer = skl.interval;
+            _skillCharging = skl;
 
-        public void AddPoisonBalls()
-        {
-            if (host.health.dead)
-                return;
-            orbs.AddPoisonBalls();
-            SoundService.instance.Play(spawnPoisonballSound);
-            host.skill.CastSpell();
+            psArcane.Play(true);
         }
 
         public void Attacked()

@@ -6,6 +6,8 @@ namespace vom
     {
         public GameObject circle;
 
+        public bool showing { get { return circle.activeSelf; } }
+
         public void Hide()
         {
             circle.transform.SetParent(transform);

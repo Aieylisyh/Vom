@@ -15,6 +15,12 @@ namespace vom
         public Sprite sp;
         public float cd;
 
+        public float duration;
+        public bool isCharge { get { return duration > 0; } }
+        public float interval;
+
+        public string sound;
+
         public List<SkillPerkPrototype> perks;
 
         public int attri1;
@@ -26,6 +32,6 @@ namespace vom
         public int fixedAttri3;
         public int fixedAttri4;
 
-     
+
     }
 }

@@ -7,6 +7,8 @@ namespace vom
         public static HeroSystem instance { get; private set; }
 
         public HeroData debugHeroData;
+        public HeroData debugHeroData_1;
+        public HeroData debugHeroData_2;
 
         private void Awake()
         {

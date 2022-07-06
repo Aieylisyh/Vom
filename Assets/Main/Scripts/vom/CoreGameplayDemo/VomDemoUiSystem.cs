@@ -13,8 +13,6 @@ namespace vom
         public GameObject orbPrefab;
         public Transform spawnSpace;
 
-
-
         private void Start()
         {
             GameFlowService.instance.SetPausedState(GameFlowService.PausedState.Normal);
@@ -29,21 +27,6 @@ namespace vom
                 // data.btnBgClose = true;
                 // WindowService.instance.ShowConfirmBoxPopup(data);
             });
-        }
-
-        public void OnClickFireBalls()
-        {
-            PlayerBehaviour.instance.attack.AddFireBalls();
-        }
-
-        public void OnClickIceBalls()
-        {
-            PlayerBehaviour.instance.attack.AddIceBalls();
-        }
-
-        public void OnClickPoisonBalls()
-        {
-            PlayerBehaviour.instance.attack.AddPoisonBalls();
         }
     }
 }

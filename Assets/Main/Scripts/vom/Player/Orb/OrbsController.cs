@@ -12,6 +12,8 @@ namespace vom
         public GameObject poisonball;
 
         public GameObject arcaneBolt;
+        public GameObject arcaneBlast;
+
         private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
         public Transform weaponPos;
 
@@ -42,6 +44,10 @@ namespace vom
         public void LaunchArcane(Vector3 targetPos)
         {
             SpawnShoot(arcaneBolt, targetPos);
+        }
+        public void LaunchArcaneBlast(Vector3 targetPos)
+        {
+            SpawnShoot(arcaneBlast, targetPos);
         }
 
         void SpawnOrb(GameObject prefab, float degree)

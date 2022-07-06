@@ -2,7 +2,6 @@
 
 namespace vom
 {
-    [System.Serializable]
     public class RuntimeSkillData
     {
         public float useTimestamp;

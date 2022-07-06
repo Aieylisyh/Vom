@@ -18,6 +18,9 @@ namespace vom
         private void Awake()
         {
             instance = this;
+            _rtskl1 = new RuntimeSkillData();
+            _rtskl2 = new RuntimeSkillData();
+            _rtskl3 = new RuntimeSkillData();
         }
 
         void Start()
@@ -73,6 +76,9 @@ namespace vom
 
         public bool CanUseSkill1()
         {
+            if (PlayerBehaviour.instance.health.dead)
+                return false;
+
             if (_rtskl1.hasCd)
                 return false;
 
@@ -81,6 +87,9 @@ namespace vom
 
         public bool CanUseSkill2()
         {
+            if (PlayerBehaviour.instance.health.dead)
+                return false;
+
             if (_rtskl2.hasCd)
                 return false;
 
@@ -89,6 +98,9 @@ namespace vom
 
         public bool CanUseSkill3()
         {
+            if (PlayerBehaviour.instance.health.dead)
+                return false;
+
             if (_rtskl3.hasCd)
                 return false;
 
@@ -130,18 +142,26 @@ namespace vom
         void UseSkill(SkillPrototype skl)
         {
             Debug.Log("UseSkill " + skl.id);
+            var host = PlayerBehaviour.instance;
+
+            if (!string.IsNullOrEmpty(skl.sound))
+                SoundService.instance.Play(skl.sound);
+
             switch (skl.id)
             {
                 case "FireOrb":
-                    PlayerBehaviour.instance.attack.AddFireBalls();
+                    host.skill.CastSpellBigAnim();
+                    host.attack.orbs.AddFireBalls();
                     break;
 
                 case "IceOrb":
-                    PlayerBehaviour.instance.attack.AddIceBalls();
+                    host.skill.CastSpellAnim();
+                    host.attack.orbs.AddIceBalls();
                     break;
 
                 case "PoisonOrb":
-                    PlayerBehaviour.instance.attack.AddPoisonBalls();
+                    host.skill.CastSpellAnim();
+                    host.attack.orbs.AddPoisonBalls();
                     break;
 
                 case "Spint":
@@ -151,12 +171,17 @@ namespace vom
                     break;
 
                 case "FrostNova":
+                    host.skill.CastSpellBigAnim();
+
                     break;
 
                 case "ArcaneExposion":
+                    host.skill.CastSpellAnim();
+
                     break;
 
                 case "ArcaneBlasts":
+                    host.attack.StartChargingSkill(skl);
                     break;
             }
         }
