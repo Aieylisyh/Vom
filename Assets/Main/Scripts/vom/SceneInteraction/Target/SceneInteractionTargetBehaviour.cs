@@ -1,6 +1,4 @@
 ﻿using UnityEngine;
-using com;
-using DG.Tweening;
 
 namespace vom
 {
@@ -22,8 +20,6 @@ namespace vom
         public GameObject targetItem;
 
         public GameObject vfx;
-
-        public Transform shakeTarget;
 
         private void Start()
         {
@@ -51,15 +47,6 @@ namespace vom
             }
         }
 
-        public void Chopped()
-        {
-            var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
-            go.SetActive(true);
-            SoundService.instance.Play("wood hit");
-
-            shakeTarget.DOShakeRotation(0.5f, new Vector3(30, 0, 30), 8);
-        }
-
         public void OnFinish()
         {
             if (ui != null)
@@ -74,14 +61,7 @@ namespace vom
                     return;
 
                 case ESceneInteraction.Tree:
-                    Chopped();
-                    SoundService.instance.Play("rockDestory");
-                    CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
-                    for (int i = 0; i < 2; i++)
-                    {
-                        LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"), i);
-                    }
-                    Destroy(targetItem);
+                    (this as FruitTreeBehaviour).FinishChop();
                     return;
             }
         }

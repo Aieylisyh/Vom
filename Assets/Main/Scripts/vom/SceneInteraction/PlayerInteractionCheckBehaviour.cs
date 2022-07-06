@@ -71,7 +71,7 @@ namespace vom
         {
             if (_currentSi != null)
             {
-                _currentSi.Chopped();
+                (_currentSi as FruitTreeBehaviour).Chopped();
                 SoundService.instance.Play("slice");
                 CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
             }
