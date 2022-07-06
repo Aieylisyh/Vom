@@ -6,7 +6,7 @@ namespace vom
     {
         None,
         Tree,
-        Loot,
+        Fruit,
     }
 
     public class SceneInteractionTargetBehaviour : MonoBehaviour
@@ -62,6 +62,10 @@ namespace vom
 
                 case ESceneInteraction.Tree:
                     (this as FruitTreeBehaviour).FinishChop();
+                    return;
+
+                case ESceneInteraction.Fruit:
+                    (this as FruitTreeBehaviour).FinishFruit();
                     return;
             }
         }

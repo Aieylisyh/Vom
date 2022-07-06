@@ -32,13 +32,9 @@ namespace vom
                     if (_started)
                     {
                         if (si != _currentSi)
-                        {
                             si.HideUi();
-                        }
                         else
-                        {
                             si.ShowUi();
-                        }
                     }
                     else
                     {
@@ -107,9 +103,8 @@ namespace vom
             {
                 //Debug.Log("exit " + si.interaction);
                 if (si == _currentSi)
-                {
                     StopCurrentSi();
-                }
+
                 si.HideUi();
                 interactionTargets.Remove(si);
                 Refresh();
@@ -124,12 +119,17 @@ namespace vom
                 _started = false;
                 _passedTimer = 0;
 
-                var i = host.animator.GetCurrentAnimatorClipInfo(0);
-                if (i.Length == 1 && i[0].clip.name == "slice")
-                {
-                    Debug.Log("stopSlice");
-                    host.animator.SetTrigger("stopSlice");
-                }
+                StopSliceAnim();
+            }
+        }
+
+        void StopSliceAnim()
+        {
+            var i = host.animator.GetCurrentAnimatorClipInfo(0);
+            if (i.Length == 1 && i[0].clip.name == "slice")
+            {
+                //Debug.Log("stopSlice");
+                host.animator.SetTrigger("stopSlice");
             }
         }
 
@@ -154,6 +154,7 @@ namespace vom
         {
             _currentSi.OnFinish();
             _started = false;
+            StopSliceAnim();
         }
     }
 }

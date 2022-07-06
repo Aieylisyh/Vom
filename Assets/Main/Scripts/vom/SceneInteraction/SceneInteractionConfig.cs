@@ -16,5 +16,7 @@ namespace vom
     public class SceneInteractionConfig : ScriptableObject
     {
         public List<SceneInteractionData> interactionDatas;
+
+        public float treeHasFruitChance=0.1f;
     }
 }

@@ -11,21 +11,32 @@ namespace vom
 
         public GameObject fruits;
 
+        public bool hasFruit { get; private set; }
+
         private void Start()
         {
             if (targetItem == null)
-            {
                 targetItem = gameObject;
+
+            if (interaction == ESceneInteraction.Tree && fruits != null && Random.value < game.ConfigService.instance.sceneInteractionConfig.treeHasFruitChance)
+            {
+                interaction = ESceneInteraction.Fruit;
+                hasFruit = true;
+                fruits.SetActive(true);
             }
+
+            tree.localEulerAngles = new Vector3(0, Random.Range(0, 360), 0);
         }
 
-        public void Chopped()
+        public void Chopped(bool weak = true)
         {
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             go.SetActive(true);
             SoundService.instance.Play("wood hit");
-
-            tree.DOShakeRotation(0.5f, new Vector3(30, 0, 30), 8);
+            var amplitude = 30f;
+            if (weak)
+                amplitude = 18;
+            tree.DOShakeRotation(0.5f, new Vector3(amplitude, 0, amplitude), 8);
         }
 
         public void FinishChop()
@@ -39,6 +50,21 @@ namespace vom
             }
 
             Destroy(targetItem);
+        }
+
+        public void FinishFruit()
+        {
+            Chopped(false);
+            SoundService.instance.Play("fruit");
+            CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
+            for (int i = 0; i < 2; i++)
+            {
+                LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"), i);
+            }
+
+            hasFruit = false;
+            fruits.SetActive(false);
+            interaction = ESceneInteraction.Tree;
         }
     }
 }
