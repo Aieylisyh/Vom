@@ -9735,6 +9735,7 @@ GameObject:
   - component: {fileID: 6945674502222365672}
   - component: {fileID: 2962006364834695202}
   - component: {fileID: 4485799168090604864}
+  - component: {fileID: 7033576591139198148}
   m_Layer: 9
   m_Name: enemy aqua
   m_TagString: Untagged
@@ -9889,6 +9890,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyTime: 2
   bodyCanSink: 0
+--- !u!114 &7033576591139198148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122428149466550949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f236ee71b1d0b48a0fbc92f9746338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dec: 1
 --- !u!1 &1369476555885983589
 GameObject:
   m_ObjectHideFlags: 0

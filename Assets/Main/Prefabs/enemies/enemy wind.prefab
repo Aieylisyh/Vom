@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 8053378777104382860}
   - component: {fileID: 8418591526047955317}
   - component: {fileID: 8026054292716785552}
+  - component: {fileID: 6986167063014652850}
   m_Layer: 9
   m_Name: enemy wind
   m_TagString: Untagged
@@ -1134,6 +1135,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyTime: 2
   bodyCanSink: 1
+--- !u!114 &6986167063014652850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4892344309063477814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f236ee71b1d0b48a0fbc92f9746338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dec: 1
 --- !u!1 &5094131276550698568
 GameObject:
   m_ObjectHideFlags: 0

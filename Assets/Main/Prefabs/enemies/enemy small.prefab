@@ -1446,6 +1446,7 @@ GameObject:
   - component: {fileID: 7948492415696758964}
   - component: {fileID: 7808454311703637169}
   - component: {fileID: 3436793391983347974}
+  - component: {fileID: 7846636067516201406}
   m_Layer: 9
   m_Name: enemy small
   m_TagString: Untagged
@@ -1600,6 +1601,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bodyTime: 2
   bodyCanSink: 1
+--- !u!114 &7846636067516201406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256859559597148800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8f236ee71b1d0b48a0fbc92f9746338, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dec: 1
 --- !u!1 &7604592346437970507
 GameObject:
   m_ObjectHideFlags: 0

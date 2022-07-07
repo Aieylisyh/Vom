@@ -22,22 +22,16 @@ namespace vom
         public float camOffsetDist = 1;
         public float camOffsetSpeed = 2;
 
-        float _skillChargingTimer;
-        float _skillIntervalTimer;
-        SkillPrototype _skillCharging;
-
         public ParticleSystem psArcane;
         public ParticleSystem psArcaneExp;
         public ParticleSystem psFrostNove;
+        public GameObject arcaneBlastsOrb;
 
         public override void ResetState()
         {
             _attackIntervalTimer = 0;
             _defaultMmoCamOffset = host.move.mmoCamera.parameters.offset;
             _cachedMmoCamOffset = _defaultMmoCamOffset;
-            _skillIntervalTimer = 0;
-            _skillChargingTimer = 0;
-            _skillCharging = null;
         }
 
         public void CheckMmoCameraOffset()
@@ -61,23 +55,12 @@ namespace vom
 
         void CancelTargeting()
         {
-            if (_target != null || playerTargetCircle.showing || isCharging)
+            if (_target != null || playerTargetCircle.showing)
             {
                 playerTargetCircle.Hide();
                 _target = null;
                 _cachedMmoCamOffset = _defaultMmoCamOffset;
-
-                CancelCharging();
             }
-        }
-
-        void CancelCharging()
-        {
-            //Debug.Log("CancelCharging");
-            _skillIntervalTimer = 0;
-            _skillChargingTimer = 0;
-            _skillCharging = null;
-            host.skill.CastChargeAnim(false);
         }
 
         public void Attack()
@@ -94,12 +77,6 @@ namespace vom
             if (_target != null)
                 host.move.Rotate((_targetPos - transform.position).normalized);
 
-            if (isCharging)
-            {
-                Charge();
-                return;
-            }
-
             if (_attackIntervalTimer <= 0)
                 PerformAttack();
         }
@@ -115,43 +92,7 @@ namespace vom
             }
         }
 
-        public bool isAttacking { get { return isCharging || _attackIntervalTimer > 0f; } }
-
-        public bool isCharging { get { return _skillChargingTimer > 0f; } }
-
-        void Charge()
-        {
-            _skillChargingTimer -= GameTime.deltaTime;
-            if (_skillChargingTimer < 0)
-            {
-                CancelCharging();
-                return;
-            }
-
-            _skillIntervalTimer -= GameTime.deltaTime;
-            if (_skillIntervalTimer <= 0)
-            {
-                _skillIntervalTimer += _skillCharging.interval;
-                TriggerCharge();
-            }
-        }
-
-        void TriggerCharge()
-        {
-            switch (_skillCharging.id)
-            {
-                case "ArcaneBlasts":
-                    AimEnemy();
-
-                    if (_target != null)
-                    {
-                        _attackIntervalTimer = attackInterval;
-                        orbs.LaunchArcaneBlast(_targetPos);
-                    }
-
-                    break;
-            }
-        }
+        public bool isAttacking { get { return  _attackIntervalTimer > 0f; } }
 
         void AimEnemy()
         {
@@ -175,17 +116,10 @@ namespace vom
             }
         }
 
-        public void StartChargingSkill(SkillPrototype skl)
+        public void SummorArcaneBlastsOrb()
         {
-            //Debug.Log("StartChargingSkill");
-            host.skill.CastChargeAnim(true);
-            host.animator.SetBool("move", false);
-
-            _skillChargingTimer = skl.duration;
-            _skillIntervalTimer = skl.interval;
-            _skillCharging = skl;
-
             psArcane.Play(true);
+            Instantiate(arcaneBlastsOrb, transform.position + Vector3.up*1.8f, Quaternion.identity, transform);
         }
 
         public void Attacked()

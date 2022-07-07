@@ -173,23 +173,41 @@ namespace vom
                 case "FrostNova":
                     host.skill.CastSpellBigAnim();
                     host.attack.psFrostNove.Play(true);
-                    DealAoeDamage(5, host.transform.position, 5);
+                    DealAoeDamage(2, host.transform.position, 5, 0.06f);
+                    if (displayRange)
+                        ShowRangeView(5);
                     break;
 
                 case "ArcaneExposion":
                     host.skill.CastSpellAnim();
                     host.attack.psArcaneExp.Play(true);
-                    DealAoeDamage(4, host.transform.position, 6);
+                    DealAoeDamage(1, host.transform.position, 6, 0.1f);
+                    if (displayRange)
+                        ShowRangeView(6);
                     break;
 
                 case "ArcaneBlasts":
-                    host.attack.StartChargingSkill(skl);
-              
+                    host.attack.SummorArcaneBlastsOrb();
                     break;
             }
         }
 
-        void DealAoeDamage(int dmg, Vector3 origin, float range = 5f)
+        public bool displayRange;
+        public GameObject rangeView;
+
+        void HideRangeView()
+        {
+            rangeView.SetActive(false);
+        }
+
+        void ShowRangeView(float range)
+        {
+            rangeView.SetActive(true);
+            rangeView.transform.localScale = Vector3.one * (range * 2);
+            Invoke("HideRangeView", 0.2f);
+        }
+
+        void DealAoeDamage(int dmg, Vector3 origin, float range = 5f, float knockBackForce = 0)
         {
             var enes = EnemySystem.instance.enemies;
             foreach (var e in enes)
@@ -197,6 +215,8 @@ namespace vom
                 var pos = e.transform.position;
                 if (Vector3.Distance(pos, origin) < range)
                 {
+                    if (knockBackForce > 0)
+                        e.KnockBack(origin, knockBackForce);
                     e.OnHit(dmg);
                 }
             }

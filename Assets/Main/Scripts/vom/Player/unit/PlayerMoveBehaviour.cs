@@ -22,9 +22,12 @@ namespace vom
         public float stayCamDist;
 
         public com.MmoCameraBehaviour mmoCamera;
+        public KnockBackBehaviour knockBack { get; private set; }
 
         public override void ResetState()
         {
+            knockBack = GetComponent<KnockBackBehaviour>();
+            knockBack.setCc(host.cc);
         }
 
         public void StartDrag(Vector2 pos)

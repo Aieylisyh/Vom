@@ -12,6 +12,7 @@ namespace vom
 
         public RectTransform rectTrans;
         public CanvasGroup cg;
+        public bool hideIfFull;
 
         public void Hide()
         {
@@ -25,8 +26,14 @@ namespace vom
 
         public void Set(float percentage, bool instant = false)
         {
-            bar.fillAmount = percentage;
+            if (percentage == 1 && hideIfFull)
+            {
+                Hide();
+                return;
+            }
 
+            bar.fillAmount = percentage;
+            Show();
             if (bar_shadow != null)
             {
                 if (!instant && duration > 0)

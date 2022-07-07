@@ -30,6 +30,11 @@ namespace vom
             EnemySystem.instance.AddEnemy(this);
 
             circleTrans.localScale = Vector3.one * size;
+            attack.ResetState();
+            move.ResetState();
+            health.ResetState();
+            targetSearcher.ResetState();
+            death.ResetState();
         }
 
         private void OnDestroy()
@@ -55,6 +60,16 @@ namespace vom
             health.ReceiveDamage(dmg);
             targetSearcher.OnAttacked();
             animator.SetTrigger("Wound");
+        }
+
+        public void KnockBack(Vector3 orgin, float knockBackForce)
+        {
+            if (death.dead)
+                return;
+
+            var dir = transform.position - orgin;
+            dir.y = 0;
+            move.knockBack.KnockBack(dir.normalized, knockBackForce);
         }
 
         public void OnHit(OrbBehaviour orb)

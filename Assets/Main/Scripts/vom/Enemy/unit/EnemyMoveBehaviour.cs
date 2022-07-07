@@ -19,8 +19,13 @@ namespace vom
 
         bool _groundFound;
 
-        void Start()
+        public KnockBackBehaviour knockBack { get; private set; }
+
+        public override void ResetState()
         {
+            knockBack = GetComponent<KnockBackBehaviour>();
+            knockBack.setCc(host.cc);
+
             _fRange = CombatSystem.GetRange(stopRange);
             _startPos = transform.position;
             _groundFound = false;
