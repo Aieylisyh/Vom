@@ -11,7 +11,6 @@ namespace vom
         public List<EnemyBehaviour> enemies { get; private set; }
 
         public EnemySpawnSystem spawnSys;
-        public Transform attackSpace;
 
         private void Awake()
         {

@@ -4791,29 +4791,38 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1.7051452
-      outSlope: 1.7051452
+      inSlope: 0.78159946
+      outSlope: 0.78159946
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.1726549
+      outWeight: 0.08455381
     - serializedVersion: 3
-      time: 0.12378201
-      value: 0.101197526
-      inSlope: -0.022598805
-      outSlope: -0.022598805
+      time: 0.23617825
+      value: 0.0927289
+      inSlope: -0.12088277
+      outSlope: -0.12088277
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.47084644
-      outWeight: 0.08591609
+      outWeight: 0.07711711
+    - serializedVersion: 3
+      time: 0.5078198
+      value: -0.0004317055
+      inSlope: -0.0052687568
+      outSlope: -0.0052687568
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.109561875
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.034473293
-      outSlope: -0.034473293
+      inSlope: -0.016717857
+      outSlope: -0.016717857
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.07082815
+      inWeight: 0.10605227
       outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -4821,7 +4830,7 @@ MonoBehaviour:
   releasingSound: acc
   explodeSound: exp nor b
   dieVFX: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
-  releaseOffsetRatioByDistance: 0.7
+  releaseOffsetRatioByDistance: 1.5
   isEnemyShoot: 0
   dmg: 1
 --- !u!114 &3307667407526838804

@@ -57,7 +57,7 @@ namespace vom
 
         void SpawnShoot(GameObject prefab, Vector3 targetPos)
         {
-            GameObject shootGo = Instantiate(prefab, EnemySystem.instance.attackSpace);
+            GameObject shootGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
             shootGo.SetActive(true);
             shootGo.transform.position = weaponPos.position;
 

@@ -4794,3 +4794,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skl: {fileID: 11400000, guid: 0a4e7714d62984b47989323d6962c9e4, type: 2}
+  arcaneBlast: {fileID: 3307667407526838801, guid: 6fa19d85c7a3eda4887a51ba0e50ae76, type: 3}

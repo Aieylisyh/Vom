@@ -8,7 +8,7 @@ namespace vom
     {
         public static CombatSystem instance { get; private set; }
 
-        public Transform EnemyProjectileSpace;
+        public Transform projectileSpace;
 
         void Awake()
         {

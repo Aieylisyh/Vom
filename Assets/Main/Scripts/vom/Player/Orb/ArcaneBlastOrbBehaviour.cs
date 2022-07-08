@@ -9,6 +9,8 @@ namespace vom
         float _intervalTimer;
         public SkillPrototype skl;
 
+        public GameObject arcaneBlast;
+
         void Start()
         {
             _timer = skl.duration;
@@ -44,8 +46,23 @@ namespace vom
             if (e != null)
             {
                 var target = e.transform;
-                player.attack.orbs.LaunchArcaneBlast(target.position);
+                LaunchArcaneBlast(target.position);
             }
+        }
+
+        public void LaunchArcaneBlast(Vector3 targetPos)
+        {
+            SpawnShoot(arcaneBlast, targetPos);
+        }
+
+        void SpawnShoot(GameObject prefab, Vector3 targetPos)
+        {
+            GameObject shootGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
+            shootGo.SetActive(true);
+            shootGo.transform.position = transform.position;
+
+            var shoot = shootGo.GetComponent<OrbBehaviour>();
+            shoot.SetRelease(targetPos);
         }
     }
 }

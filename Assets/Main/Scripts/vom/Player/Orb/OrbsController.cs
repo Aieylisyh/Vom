@@ -5,14 +5,12 @@ namespace vom
 {
     public class OrbsController : VomPlayerComponent
     {
-        public Transform spawnSpace;
-
         public GameObject fireball;
         public GameObject iceball;
         public GameObject poisonball;
 
         public GameObject arcaneBolt;
-        public GameObject arcaneBlast;
+       
 
         private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
         public Transform weaponPos;
@@ -45,14 +43,10 @@ namespace vom
         {
             SpawnShoot(arcaneBolt, targetPos);
         }
-        public void LaunchArcaneBlast(Vector3 targetPos)
-        {
-            SpawnShoot(arcaneBlast, targetPos);
-        }
 
         void SpawnOrb(GameObject prefab, float degree)
         {
-            GameObject orbGo = Instantiate(prefab, spawnSpace);
+            GameObject orbGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
             orbGo.SetActive(true);
             var orb = orbGo.GetComponent<OrbBehaviour>();
             orb.SetOrbital(degree, PlayerBehaviour.instance.transform);
@@ -61,7 +55,7 @@ namespace vom
 
         void SpawnShoot(GameObject prefab, Vector3 targetPos)
         {
-            GameObject shootGo = Instantiate(prefab, spawnSpace);
+            GameObject shootGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
             shootGo.SetActive(true);
             shootGo.transform.position = weaponPos.position;
 
