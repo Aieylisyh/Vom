@@ -78,12 +78,16 @@ namespace vom
 
         public void Interact(SceneInteractionTargetBehaviour si)
         {
+            host.move.Rotate(si.transform.position - transform.position);
+            if (!si.TestCanInteract())
+            {
+                return;
+            }
+
             _started = true;
             _currentSi = si;
             _passedTimer = 0;
             Refresh();
-
-            host.move.Rotate(si.transform.position - transform.position);
             host.animator.ResetTrigger("stopSlice");
 
             switch (si.interaction)

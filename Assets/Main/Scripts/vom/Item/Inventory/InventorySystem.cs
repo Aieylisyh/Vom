@@ -40,11 +40,12 @@ namespace vom
             //game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Diamond> +1", PlayerBehaviour.instance.transform);
             if (data.id == "Gold")
             {
-                game.FloatingTextPanelBehaviour.instance.Create("<color=#FFFF00>+1</color>", 0.5f, 0.9f);
+                // game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Gold><size=75%><color=#FFFFAA>+" + data.n + "</color></size>",   0.5f + Random.value * 0.12f, 0.966f);
+                game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Gold><size=80%><color=#FFFFAA>+" + data.n + "</color></size>", PlayerBehaviour.instance.transform);
             }
             else if (data.id == "Soul")
             {
-                game.FloatingTextPanelBehaviour.instance.Create("<color=#00FF99>+1</color>", 0.7f, 0.9f);
+                game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Diamond><size=80%><color=#AAFFFF>+" + data.n + "</color></size>", PlayerBehaviour.instance.transform);
             }
             else
             {

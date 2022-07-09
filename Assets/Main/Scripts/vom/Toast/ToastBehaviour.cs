@@ -15,7 +15,7 @@ namespace vom
         public Image bg;
         public Text amount;
         public CanvasGroup cg;
-
+        public GameObject view;
         bool _fading;
         float _hideTimestamp;
 
@@ -37,14 +37,17 @@ namespace vom
                 targetHeight = cfg.heightWithSp;
             }
 
-            if (toastData.itemCount > 1)
+            view.SetActive(false);
+            if (toastData.itemCount > 0)
                 amount.text = toastData.itemCount + "";
+            else
+                amount.text = "";
 
-            var targetSize = new Vector2(rect.sizeDelta.x, 0);
-            rect.sizeDelta = new Vector2(rect.sizeDelta.x, 0);
-
+            var x = rect.sizeDelta.x;
+            var targetSize = new Vector2(x, targetHeight);
             rect.DOKill();
-            rect.DOSizeDelta(targetSize, cfg.expandDuration);
+            rect.sizeDelta = new Vector2(x, 0);
+            rect.DOSizeDelta(targetSize, cfg.expandDuration).OnComplete(() => { view.SetActive(true); });
 
             gameObject.SetActive(true);
             cg.alpha = 1;

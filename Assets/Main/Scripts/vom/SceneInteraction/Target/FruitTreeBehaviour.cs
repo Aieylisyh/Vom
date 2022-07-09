@@ -46,7 +46,7 @@ namespace vom
             CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
             for (int i = 0; i < 2; i++)
             {
-                LootSystem.instance.SpawnLoot(transform.position, new ItemData(3, "Gold"));
+                LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(1, 1000), "Gold"));
             }
             LootSystem.instance.SpawnLoot(transform.position, new ItemData(1, "Wood"));
             Destroy(targetItem);

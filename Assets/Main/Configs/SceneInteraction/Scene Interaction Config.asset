@@ -20,6 +20,6 @@ MonoBehaviour:
     duration: 0.58
     sp: {fileID: 21300000, guid: 59bd7cefe5a7f594b9dd1dc086cff750, type: 3}
   - type: 3
-    duration: 2
+    duration: 1.2
     sp: {fileID: 21300000, guid: 0c34b1a087c8e194087903a7716884d9, type: 3}
   treeHasFruitChance: 0.1

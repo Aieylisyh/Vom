@@ -24,6 +24,8 @@ namespace vom
         {
             if (_speed <= 0)
                 return;
+            if (!_cc.enabled)
+                return;
 
             _cc.Move(_dir * _speed);
             _speed -= dec * com.GameTime.deltaTime;

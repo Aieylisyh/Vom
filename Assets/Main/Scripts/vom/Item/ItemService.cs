@@ -31,16 +31,16 @@ namespace vom
                     return Color.white;
 
                 case ItemPrototype.Rarity.Uncommon:
-                    return new Color(0.25f, 1f, 0);
+                    return new Color(0.4f, 1f, 0.3f);
 
                 case ItemPrototype.Rarity.Rare:
-                    return new Color(0.25f, 0.25f, 1);
+                    return new Color(0.3f, 0.5f, 1);
 
                 case ItemPrototype.Rarity.Epic:
                     return new Color(1, 0.0f, 1);
 
                 case ItemPrototype.Rarity.Legendary:
-                    return new Color(1, 0.5f, 0);
+                    return new Color(1, 0.5f, 0.1f);
             }
 
             return Color.white;

@@ -51,15 +51,21 @@ namespace vom
             cover.transform.SetPositionAndRotation(closedTrans.position, closedTrans.rotation);
         }
 
-        public void Open()
+        public override bool TestCanInteract()
         {
+            base.TestCanInteract();
             bool hasKey = false;//TODO
             if (locked && !hasKey)
             {
-                ToastSystem.instance.Add("No keys!");
-                return;
+                ToastSystem.instance.Add("I need a key to open it...");
+                return false;
             }
 
+            return true;
+        }
+
+        public void Open()
+        {
             SoundService.instance.Play("rockDestory");
             CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);

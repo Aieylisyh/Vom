@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 namespace vom
 {
@@ -9,10 +10,17 @@ namespace vom
 
         public List<ToastBehaviour> toasts;
         public Transform toastsParent;
+         RectTransform _rect;
+
+        private void Update()
+        {
+            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
+        }
 
         private void Awake()
         {
             instance = this;
+            _rect = GetComponent<RectTransform>();
         }
 
         public void Add(string s, int amount = 0)
@@ -20,6 +28,7 @@ namespace vom
             var data = new ToastData();
             data.title = s;
             data.itemCount = amount;
+            data.bgColor = Color.white;
             Add(data);
         }
 

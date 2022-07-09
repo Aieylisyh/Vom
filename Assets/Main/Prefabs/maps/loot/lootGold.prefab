@@ -83,9 +83,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f77d88542201b14ab649dabd471f60c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropTime: 0.8
+  dropTime: 1
   dropTimeRandomnizer: 0.2
-  waitTime: 0.8
+  waitTime: 1
   waitTimeRandomnizer: 0.2
   absorbAcc: 50
   absorbSpeedMax: 30

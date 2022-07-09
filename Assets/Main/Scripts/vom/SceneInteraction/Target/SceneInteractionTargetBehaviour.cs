@@ -22,6 +22,8 @@ namespace vom
 
         public GameObject vfx;
 
+        public string startSound;
+
         public bool triggered { get; private set; }
 
         private void Start()
@@ -38,6 +40,12 @@ namespace vom
                 ui.Remove();
                 ui = null;
             }
+        }
+
+        public virtual bool TestCanInteract()
+        {
+            com.SoundService.instance.Play(startSound);
+            return true;
         }
 
         public void ShowUi()
