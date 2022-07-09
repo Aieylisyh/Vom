@@ -17,7 +17,7 @@ namespace vom
 
         private Dictionary<Vector2Int, TileBehaviour> _tiles;
 
-        public string prefabId = "tile";
+        public GameObject tilePrefab;
 
         public int gen { get; private set; }
 
@@ -80,7 +80,8 @@ namespace vom
                     }
                     else
                     {
-                        var go = PoolingService.instance.GetInstance(prefabId);
+                        var go = Instantiate(tilePrefab);
+                        go.SetActive(true);
                         var tile = go.GetComponent<TileBehaviour>();
                         if (tile == null)
                         {

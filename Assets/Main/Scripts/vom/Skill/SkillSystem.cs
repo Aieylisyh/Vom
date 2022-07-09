@@ -176,6 +176,8 @@ namespace vom
                     DealAoeDamage(2, host.transform.position, 5, 0.06f);
                     if (displayRange)
                         ShowRangeView(5);
+
+                    PlayerBehaviour.instance.health.Heal(5);
                     break;
 
                 case "ArcaneExposion":
@@ -184,6 +186,8 @@ namespace vom
                     DealAoeDamage(1, host.transform.position, 6, 0.1f);
                     if (displayRange)
                         ShowRangeView(6);
+
+                    PlayerBehaviour.instance.health.Heal(5);
                     break;
 
                 case "ArcaneBlasts":

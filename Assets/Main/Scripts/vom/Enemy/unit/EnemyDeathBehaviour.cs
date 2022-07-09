@@ -57,7 +57,7 @@ namespace vom
             //go.SetActive(true);
             for (int i = 0; i < 1; i++)
             {
-                LootSystem.instance.SpawnSoul(transform.position, new ItemData(1, "Soul"));
+                LootSystem.instance.SpawnLoot(transform.position, new ItemData(1, "Soul"));
             }
             //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }

@@ -25,6 +25,16 @@ namespace vom
 
         public bool sellConfirm;
 
+        public Rarity rarity;
+        public enum Rarity
+        {
+            Common,
+            Uncommon,
+            Rare,
+            Epic,
+            Legendary,
+        }
+
         public Usage usage;
         public enum Usage
         {

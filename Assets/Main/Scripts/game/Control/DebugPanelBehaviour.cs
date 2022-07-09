@@ -154,14 +154,6 @@ namespace game
             SoundService.instance.Play("tap");
         }
 
-        public void TestEffect()
-        {
-            var effectId = "exp small";
-            Debug.Log(effectId);
-            var go = PoolingService.instance.GetInstance(effectId);
-            go.transform.position = CombatService.instance.playerShip.transform.position + Vector3.down * 4;
-        }
-
         public void PlayMusic()
         {
             MusicService.instance.TurnOffMusic(MusicService.Musics.MenuMusicVolume);

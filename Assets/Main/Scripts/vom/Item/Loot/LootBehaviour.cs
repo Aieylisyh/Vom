@@ -42,7 +42,6 @@ namespace vom
         {
             _triggered = true;
             InventorySystem.instance.AddItem(itemId, amount);
-            PlayerBehaviour.instance.health.Heal(1);//TODO
 
             if (!silent)
                 psb.Play();

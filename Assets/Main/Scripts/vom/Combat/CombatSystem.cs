@@ -19,6 +19,8 @@ namespace vom
         public float r_Sight = 10.25f;
         public float r_VeryLong = 15.0f;
 
+        public GameObject hpBarPrefab;
+
         void Awake()
         {
             instance = this;

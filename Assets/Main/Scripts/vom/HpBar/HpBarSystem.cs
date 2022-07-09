@@ -22,7 +22,9 @@ namespace vom
 
         public HpBarBehaviour Create(Transform host, float offset = 150f, float scale = 1f)
         {
-            var newHpBarGo = PoolingService.instance.GetInstance(prefabId);
+            var newHpBarGo = Instantiate(CombatSystem.instance.hpBarPrefab);
+            newHpBarGo.SetActive(true);
+
             newHpBarGo.transform.SetParent(host);
             newHpBarGo.transform.localPosition = Vector3.zero;
             newHpBarGo.SetActive(true);

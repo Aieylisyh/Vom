@@ -84,8 +84,22 @@ namespace vom
             Refresh();
 
             host.move.Rotate(si.transform.position - transform.position);
-            host.animator.SetTrigger("slice");
             host.animator.ResetTrigger("stopSlice");
+
+            switch (si.interaction)
+            {
+                case ESceneInteraction.Chest:
+                    host.animator.SetTrigger("jump");
+                    break;
+
+                case ESceneInteraction.Fruit:
+                    host.animator.SetTrigger("slice");
+                    break;
+
+                case ESceneInteraction.Tree:
+                    host.animator.SetTrigger("slice");
+                    break;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
@@ -122,11 +136,11 @@ namespace vom
                 _started = false;
                 _passedTimer = 0;
 
-                StopSliceAnim();
+                StopConsistInteractionAnim();
             }
         }
 
-        void StopSliceAnim()
+        void StopConsistInteractionAnim()
         {
             var i = host.animator.GetCurrentAnimatorClipInfo(0);
             if (i.Length == 1 && i[0].clip.name == "slice")
@@ -157,7 +171,7 @@ namespace vom
         {
             _currentSi.OnFinish();
             _started = false;
-            StopSliceAnim();
+            StopConsistInteractionAnim();
         }
     }
 }

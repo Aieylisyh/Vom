@@ -5,6 +5,7 @@ namespace vom
     public class LootDropMoveBehaviour : LootMoveBehaviour
     {
         public float force;
+        public float torque = 200;
 
         public override void Init(Vector3 pos)
         {
@@ -19,7 +20,11 @@ namespace vom
             _rb.useGravity = true;
             _rb.isKinematic = false;
             _rb.AddForce(_tempDir * force);
-            _rb.AddTorque(200, 200, 200);
+
+            if (torque > 0)
+            {
+                _rb.AddTorque(torque, torque, torque);
+            }
         }
 
         protected override void StartAbsorb()

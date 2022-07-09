@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace game
 {
@@ -8,7 +7,7 @@ namespace game
         public FloatingTextBehaviour ftb;
         public FloatingTextBehaviour ftbSlow;
         public Transform parent;
-        public static FloatingTextPanelBehaviour instance;
+        public static FloatingTextPanelBehaviour instance { get; private set; }
 
         private void Awake()
         {

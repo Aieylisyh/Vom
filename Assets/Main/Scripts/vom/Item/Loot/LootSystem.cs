@@ -11,6 +11,7 @@ namespace vom
 
         public LootBehaviour prefabGold;
         public LootBehaviour prefabSoul;
+        public LootBehaviour prefabLightOrb;
 
         public Transform lootParent;
 
@@ -20,17 +21,19 @@ namespace vom
             _loots = new List<LootBehaviour>();
         }
 
-        public void SpawnGold(Vector3 pos, ItemData item)
+        public void SpawnLoot(Vector3 pos, ItemData item)
         {
-            var loot = Instantiate(prefabGold, lootParent);
-            loot.Init(item);
-            loot.SetPos(pos);
-            _loots.Add(loot);
-        }
+            var prefab = prefabLightOrb;
+            if (item.id == "Gold")
+            {
+                prefab = prefabGold;
+            }
+            else if (item.id == "Soul")
+            {
+                prefab = prefabSoul;
+            }
 
-        public void SpawnSoul(Vector3 pos, ItemData item)
-        {
-            var loot = Instantiate(prefabSoul, lootParent);
+            var loot = Instantiate(prefab, lootParent);
             loot.Init(item);
             loot.SetPos(pos);
             _loots.Add(loot);

@@ -7,6 +7,7 @@ namespace vom
         None,
         Tree,
         Fruit,
+        Chest,
     }
 
     public class SceneInteractionTargetBehaviour : MonoBehaviour
@@ -69,6 +70,10 @@ namespace vom
 
                 case ESceneInteraction.Fruit:
                     (this as FruitTreeBehaviour).FinishFruit();
+                    return;
+
+                case ESceneInteraction.Chest:
+                    (this as ChestBehaviour).Open();
                     return;
             }
         }

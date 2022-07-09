@@ -15,9 +15,11 @@ MonoBehaviour:
   interactionDatas:
   - type: 1
     duration: 1.6
-    baseAmount: 1
-    sp: {fileID: 21300000, guid: e59f0bfcfef389f4cb7e29deac7f41e3, type: 3}
+    sp: {fileID: 21300000, guid: 3453cdb3a5871cc42b38c29c86195079, type: 3}
   - type: 2
     duration: 0.58
-    baseAmount: 1
-    sp: {fileID: 21300000, guid: e88e17d1b9fb4d243b6ece3dd701b34a, type: 3}
+    sp: {fileID: 21300000, guid: 59bd7cefe5a7f594b9dd1dc086cff750, type: 3}
+  - type: 3
+    duration: 2
+    sp: {fileID: 21300000, guid: 0c34b1a087c8e194087903a7716884d9, type: 3}
+  treeHasFruitChance: 0.1

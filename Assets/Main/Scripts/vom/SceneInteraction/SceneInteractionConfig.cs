@@ -8,8 +8,7 @@ namespace vom
     {
         public ESceneInteraction type;
         public float duration;
-        public float baseAmount;
-        public UnityEngine.Sprite sp;
+        public Sprite sp;
     }
 
     [CreateAssetMenu]
@@ -17,6 +16,6 @@ namespace vom
     {
         public List<SceneInteractionData> interactionDatas;
 
-        public float treeHasFruitChance=0.1f;
+        public float treeHasFruitChance = 0.1f;
     }
 }

@@ -17,7 +17,7 @@ namespace game
         public TalentConfig talentConfig;
         public MailConfig mailConfig;
         public CombatAbilityConfig combatAbilityConfig;
-     
+
         public EnemyConfig enemyConfig;
         public CoreConfig coreConfig;
         public SettingsConfig settingsConfig;
@@ -39,6 +39,7 @@ namespace game
         public HeroConfig heroConfig;
         public DailyLevelConfig dailyLevelConfig;
         public SkillConfig skillConfig;
+        public ToastConfig toastConfig;
 
         void Awake()
         {
