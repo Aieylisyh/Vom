@@ -6,12 +6,11 @@ namespace vom
     {
         public float force;
 
-        public override void Init(int dropIndex, Vector3 pos)
+        public override void Init(Vector3 pos)
         {
-            base.Init(dropIndex, pos);
+            base.Init(pos);
 
-            var radian = dropIndex * 0.6f;
-            //Random.value;??
+            var radian = Mathf.PI * Random.value * 2;
             _tempDir = Vector3.up;
             _tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
             _tempDir.Normalize();

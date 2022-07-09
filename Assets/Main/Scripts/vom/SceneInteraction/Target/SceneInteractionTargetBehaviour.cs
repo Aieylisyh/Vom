@@ -21,12 +21,13 @@ namespace vom
 
         public GameObject vfx;
 
+        public bool triggered { get; private set; }
+
         private void Start()
         {
+            triggered = true;
             if (targetItem == null)
-            {
                 targetItem = gameObject;
-            }
         }
 
         public void HideUi()
@@ -49,6 +50,8 @@ namespace vom
 
         public void OnFinish()
         {
+            triggered = true;
+
             if (ui != null)
             {
                 ui.Remove();

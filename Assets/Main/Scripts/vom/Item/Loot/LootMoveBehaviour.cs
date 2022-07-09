@@ -17,11 +17,11 @@ namespace vom
         protected float _absorbSpeed;
 
         protected Rigidbody _rb;
-        
+
         protected Collider _col;
         protected Vector3 _tempDir;
 
-        public virtual void Init(int dropIndex, Vector3 pos)
+        public virtual void Init(Vector3 pos)
         {
             _rb = GetComponent<Rigidbody>();
             _col = GetComponent<Collider>();

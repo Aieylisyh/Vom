@@ -1055,7 +1055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6701fbf6b732be64eb12dd7e3c20f2f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 4
   dmg: 2
   attackInterval: 1.4
   shootBullet: {fileID: 8490995160174162748, guid: d1d0084ac82a72340820535aa8946eb6, type: 3}
@@ -1090,8 +1090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2a4ff29a847ad4f951b777d0ed5c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  runSpeed: 11
+  speed: 3
+  runSpeed: 12
   rotatePart: {fileID: 6874011943610968723}
   stopRange: 1
 --- !u!114 &8053378777104382860
@@ -1106,7 +1106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0890d5387cd16794b9a7b0c8fd407c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 7
+  sightRange: 5
 --- !u!114 &8418591526047955317
 MonoBehaviour:
   m_ObjectHideFlags: 0

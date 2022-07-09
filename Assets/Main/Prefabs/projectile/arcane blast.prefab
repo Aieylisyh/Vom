@@ -4781,7 +4781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitShakeLevel: 5
-  releaseSpeed: 14
+  releaseSpeed: 15
   orbitalOffset: {x: 0, y: 0.1, z: 0}
   releaseTrait: {fileID: 0}
   releasingPs: {fileID: 0}
@@ -4830,9 +4830,9 @@ MonoBehaviour:
   releasingSound: acc
   explodeSound: exp nor b
   dieVFX: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
-  releaseOffsetRatioByDistance: 1.5
+  releaseOffsetRatioByDistance: 1.2
   isEnemyShoot: 0
-  dmg: 1
+  dmg: 2
 --- !u!114 &3307667407526838804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4960,7 +4960,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 0.3
+  m_Time: 0.25
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 0.4

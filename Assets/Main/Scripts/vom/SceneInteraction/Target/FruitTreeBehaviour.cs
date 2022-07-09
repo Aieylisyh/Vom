@@ -46,7 +46,7 @@ namespace vom
             CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
             for (int i = 0; i < 2; i++)
             {
-                LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"), i);
+                LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"));
             }
 
             Destroy(targetItem);
@@ -61,7 +61,7 @@ namespace vom
 
             for (int i = 0; i < 2; i++)
             {
-                LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"), i);
+                LootSystem.instance.SpawnGold(transform.position, new ItemData((int)data.baseAmount, "Gold"));
             }
 
             hasFruit = false;

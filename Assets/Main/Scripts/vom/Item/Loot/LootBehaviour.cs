@@ -22,11 +22,7 @@ namespace vom
         public void SetPos(Vector3 pos)
         {
             transform.position = pos;
-        }
-
-        public void SetPos(int dropIndex, Vector3 pos)
-        {
-            move.Init(dropIndex, pos);
+            move.Init(pos);
         }
 
         public void OnTriggerEnter(Collider other)
@@ -49,10 +45,7 @@ namespace vom
             PlayerBehaviour.instance.health.Heal(1);//TODO
 
             if (!silent)
-            {
-                //ps.Play();
                 psb.Play();
-            }
         }
     }
 }

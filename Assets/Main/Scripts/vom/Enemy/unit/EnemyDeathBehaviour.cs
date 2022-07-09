@@ -55,9 +55,9 @@ namespace vom
             host.cc.enabled = false;
             //var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             //go.SetActive(true);
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 1; i++)
             {
-                LootSystem.instance.SpawnSoul(transform.position, new ItemData(1, "Soul"), i);
+                LootSystem.instance.SpawnSoul(transform.position, new ItemData(1, "Soul"));
             }
             //HeartDistortSystem.instance.Create(this.transform, 20, 1f);
         }

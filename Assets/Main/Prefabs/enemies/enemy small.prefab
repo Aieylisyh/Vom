@@ -1506,7 +1506,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ec6cf6eef18942a6482f180dcfd89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 2
+  healthMax: 3
   bar: {fileID: 0}
   hpBarOffset: 0
 --- !u!114 &4343703055229018117
@@ -1556,8 +1556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2a4ff29a847ad4f951b777d0ed5c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  runSpeed: 8
+  speed: 2
+  runSpeed: 10
   rotatePart: {fileID: 5687895711228865607}
   stopRange: 1
 --- !u!114 &7948492415696758964
@@ -1572,7 +1572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0890d5387cd16794b9a7b0c8fd407c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 7
+  sightRange: 5
 --- !u!114 &7808454311703637169
 MonoBehaviour:
   m_ObjectHideFlags: 0

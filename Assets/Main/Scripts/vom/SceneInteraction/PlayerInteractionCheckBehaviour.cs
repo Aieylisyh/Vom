@@ -25,8 +25,15 @@ namespace vom
 
         void Refresh()
         {
-            foreach (var si in interactionTargets)
+            for (int i = interactionTargets.Count - 1; i >= 0; i--)
             {
+                var si = interactionTargets[i];
+                if (si.triggered)
+                {
+                    interactionTargets.Remove(si);
+                    continue;
+                }
+
                 if (_canShow)
                 {
                     if (_started)
@@ -37,14 +44,10 @@ namespace vom
                             si.ShowUi();
                     }
                     else
-                    {
                         si.ShowUi();
-                    }
                 }
                 else
-                {
                     si.HideUi();
-                }
             }
         }
 
@@ -88,7 +91,7 @@ namespace vom
         private void OnTriggerEnter(Collider other)
         {
             var si = other.GetComponent<SceneInteractionTargetBehaviour>();
-            if (si != null)
+            if (si != null && !si.triggered)
             {
                 //Debug.Log("enter " + si.interaction);
                 interactionTargets.Add(si);

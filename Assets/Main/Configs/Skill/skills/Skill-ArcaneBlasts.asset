@@ -17,7 +17,7 @@ MonoBehaviour:
   sp: {fileID: 21300000, guid: 89a99d60373089b418836172b35cbbe7, type: 3}
   cd: 5
   duration: 3.5
-  interval: 0.3
+  interval: 0.35
   sound: acc
   perks: []
   attri1: 2

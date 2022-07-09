@@ -17,17 +17,16 @@ namespace vom
 
         public TrailRenderer trait;
 
-        public override void Init(int dropIndex, Vector3 pos)
+        public override void Init(Vector3 pos)
         {
-            base.Init(dropIndex, pos);
+            base.Init(pos);
 
             _rb.useGravity = false;
             _rb.isKinematic = true;
             _col.isTrigger = true;
             trait.emitting = true;
 
-            var radian = dropIndex * 0.6f;
-            //Random.value;??
+            var radian = Mathf.PI * Random.value * 2;
             _tempDir = Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian) + Vector3.up * 0.2f;
             _tempDir.Normalize();
             transform.position = pos + _tempDir * 1;

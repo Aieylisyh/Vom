@@ -10,6 +10,15 @@ namespace vom
 
         public Transform projectileSpace;
 
+        public float r_Melee=1.75f;
+        public float r_MeleeBig = 2.5f;
+        public float r_Short = 6.5f;
+        public float r_Mid = 7.75f;
+        public float r_MidLong = 9.25f;
+        public float r_Long = 9.75f;
+        public float r_Sight = 10.25f;
+        public float r_VeryLong = 15.0f;
+
         void Awake()
         {
             instance = this;
@@ -19,32 +28,29 @@ namespace vom
         {
             switch (range)
             {
-                case AttackRange.None:
-                    return 0;
-
                 case AttackRange.Melee:
-                    return 1.75f;
+                    return instance.r_Melee;
 
                 case AttackRange.MeleeBig:
-                    return 2.25f;
+                    return instance.r_MeleeBig;
 
                 case AttackRange.Short:
-                    return 6.5f;
+                    return instance.r_Short;
 
                 case AttackRange.Mid:
-                    return 7.75f;
+                    return instance.r_Mid;
 
                 case AttackRange.MidLong:
-                    return 9.25f;
+                    return instance.r_MidLong;
 
                 case AttackRange.Long:
-                    return 9.75f;
+                    return instance.r_Long;
 
                 case AttackRange.Sight:
-                    return 10.25f;
+                    return instance.r_Sight;
 
                 case AttackRange.VeryLong:
-                    return 15f;
+                    return instance.r_VeryLong;
             }
 
             return 0;
