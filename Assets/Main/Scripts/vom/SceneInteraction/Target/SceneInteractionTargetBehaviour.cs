@@ -24,7 +24,7 @@ namespace vom
 
         public string startSound;
 
-        public bool triggered { get; private set; }
+        public bool triggered { get; protected set; }
 
         private void Start()
         {

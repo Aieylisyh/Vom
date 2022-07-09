@@ -67,6 +67,8 @@ namespace vom
             hasFruit = false;
             fruits.SetActive(false);
             interaction = ESceneInteraction.Tree;
+
+            triggered = false;
         }
     }
 }

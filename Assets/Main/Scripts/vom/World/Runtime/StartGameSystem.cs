@@ -9,10 +9,9 @@ namespace vom
 
         void Start()
         {
-            RenderSettings.fog = true;
+            //RenderSettings.fog = true;
             c._V_CW_Bend_X = -12;
             c._V_CW_Bend_Z = -12;
-
         }
     }
 }
