@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   expandDuration: 0.5
   duration: 5
-  heightPureText: 70
-  heightWithSp: 125
+  heightPureText: 90
+  heightWithSp: 150
