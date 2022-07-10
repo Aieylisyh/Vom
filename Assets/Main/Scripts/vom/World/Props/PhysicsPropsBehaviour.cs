@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using com;
 
 namespace vom
 {
-    public class PhysicsPropsBehaviour : game.Ticker
+    public class PhysicsPropsBehaviour : Ticker
     {
         Vector3 _toPlayerDir;
         public Rigidbody rb;

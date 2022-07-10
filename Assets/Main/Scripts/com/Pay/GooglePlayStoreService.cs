@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Purchasing;
-using game;
+using vom;
 using System;
 
 namespace com

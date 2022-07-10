@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using vom;
 
 namespace com
 {
@@ -47,12 +48,12 @@ namespace com
 
         private bool IsEnabled()
         {
-            if (game.UxService.instance.settingsDataCache == null)
+            if (UxService.instance.settingsDataCache == null)
             {
                 return true;
             }
 
-            return game.UxService.instance.settingsDataCache.cache.sfxOn;
+            return UxService.instance.settingsDataCache.cache.sfxOn;
         }
 
         public void Play(string soundName, float volume = 1)

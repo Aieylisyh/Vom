@@ -1,4 +1,4 @@
-﻿using game;
+﻿using vom;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -54,13 +54,13 @@ namespace com
             return res;
         }
 
-        public static string GetItemRichTextWithSubName(Item item)
+        public static string GetItemRichTextWithSubName(ItemData item)
         {
-            var proto = ItemService.instance.GetPrototype(item.id);
+            var proto = ItemService.GetPrototype(item.id);
             return GetRichTextTag(item.id) + "(" + LocalizationService.instance.GetLocalizedText(proto.title) + ")" + "×" + item.n;
         }
 
-        public static string GetItemText(Item item, bool isRichText, bool bigNumberScientific = false)
+        public static string GetItemText(ItemData item, bool isRichText, bool bigNumberScientific = false)
         {
             if (item == null)
                 return "";
@@ -72,7 +72,7 @@ namespace com
             if (isRichText)
                 return GetRichTextTag(item.id) + "×" + n;
 
-            var proto = ItemService.instance.GetPrototype(item.id);
+            var proto = ItemService.GetPrototype(item.id);
             return n + " " + LocalizationService.instance.GetLocalizedText(proto.title);
         }
 
@@ -98,7 +98,7 @@ namespace com
             return "<sprite name=" + id + ">";
         }
 
-        public static string GetItemText(List<Item> items, bool isRichText)
+        public static string GetItemText(List<ItemData> items, bool isRichText)
         {
             var res = "";
             foreach (var item in items)

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System;
+using vom;
 
 namespace com
 {
@@ -14,7 +15,7 @@ namespace com
         public enum Language { en_US, PL, DE, FR, ES, PTBR, ZHT, KO, RU, JA, IT, ZHS, None };
         public List<Language> supportedLanguages;
 
-        const string saveKey = "zqtmin";
+        const string saveKey = "vom";
 
         public LocalizationStorage localizationStorage;
         public Language currentLanguage;
@@ -39,7 +40,7 @@ namespace com
 
         void SetCurrentLangue()
         {
-            var cache = game.UxService.instance?.settingsDataCache?.cache;
+            var cache = UxService.instance?.settingsDataCache?.cache;
 
             if (cache != null && cache.langueHasSet)
             {
@@ -66,7 +67,7 @@ namespace com
                 //Debug.Log("保存语言 " + currentLanguage);
                 cache.langueHasSet = true;
                 cache.language = currentLanguage;
-                game.UxService.instance.SaveSettingsData();
+                UxService.instance.SaveSettingsData();
                 return;
             }
         }

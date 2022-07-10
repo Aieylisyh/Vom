@@ -61,59 +61,29 @@ namespace com
             return loaded == null ? defaultValue : JsonUtility.FromJson<T>(loaded);
         }
 
-        public SettingsData LoadSettingsData(string slotId)
-        {
-            var key = GetSimpleKey(slotId, StorageKey.SettingsData);
-            return LoadObject<SettingsData>(key, null);
-        }
+    //  public SettingsData LoadSettingsData(string slotId)
+    //  {
+    //      var key = GetSimpleKey(slotId, StorageKey.SettingsData);
+    //      return LoadObject<SettingsData>(key, null);
+    //  }
 
-        public AccountData LoadAccountData(string slotId)
-        {
-            //Debug.LogWarning("LoadAccountData " + slotId);
-            var key = GetSimpleKey(slotId, StorageKey.AccountData);
-            return LoadObject<AccountData>(key, null);
-        }
+    //   public AccountData LoadAccountData(string slotId)
+    //   {
+    //       var key = GetSimpleKey(slotId, StorageKey.AccountData);
+    //       return LoadObject<AccountData>(key, null);
+    //   }
 
-        public GameData LoadGameData(string slotId)
-        {
-            //Debug.LogWarning("LoadGameData " + slotId);
-            var key = GetSimpleKey(slotId, StorageKey.GameData);
-            return LoadObject<GameData>(key, null);
-        }
-
-        public GameItemData LoadGameItemData(string slotId)
-        {
-            //Debug.LogWarning("LoadGameItemData " + slotId);
-            var key = GetSimpleKey(slotId, StorageKey.GameItemData);
-            return LoadObject<GameItemData>(key, null);
-        }
-
-        public void SaveSettingsData(string slotId, SettingsData data)
-        {
-            var key = GetSimpleKey(slotId, StorageKey.SettingsData);
-            storageService.SetString(key, JsonUtility.ToJson(data));
-        }
-
-        public void SaveAccountData(string slotId, AccountData data)
-        {
-            //Debug.LogWarning("SaveAccountData " + slotId);
-            var key = GetSimpleKey(slotId, StorageKey.AccountData);
-            storageService.SetString(key, JsonUtility.ToJson(data));
-        }
-
-        public void SaveGameData(string slotId, GameData data)
-        {
-            //Debug.LogWarning("SaveGameData " + slotId);
-            var key = GetSimpleKey(slotId, StorageKey.GameData);
-            storageService.SetString(key, JsonUtility.ToJson(data));
-        }
-
-        public void SaveGameItemData(string slotId, GameItemData data)
-        {
-            //Debug.LogWarning("SaveGameItemData " + slotId);
-            var key = GetSimpleKey(slotId, StorageKey.GameItemData);
-            //Debug.LogWarning(JsonUtility.ToJson(data));
-            storageService.SetString(key, JsonUtility.ToJson(data));
-        }
+ //   public void SaveSettingsData(string slotId, SettingsData data)
+ //   {
+ //       var key = GetSimpleKey(slotId, StorageKey.SettingsData);
+ //       storageService.SetString(key, JsonUtility.ToJson(data));
+ //   }
+ //
+ //   public void SaveAccountData(string slotId, AccountData data)
+ //   {
+ //       //Debug.LogWarning("SaveAccountData " + slotId);
+ //       var key = GetSimpleKey(slotId, StorageKey.AccountData);
+ //       storageService.SetString(key, JsonUtility.ToJson(data));
+ //   }
     }
 }

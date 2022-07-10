@@ -36,7 +36,7 @@ namespace vom
                 hp = healthMax;
 
             var addHp = hp - oldHp;
-            game.FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#88FF00>+" + addHp + "</color>", transform, new Vector2(0, 35));
+            FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#88FF00>+" + addHp + "</color>", transform, new Vector2(0, 35));
             SyncBar(true);
         }
 
@@ -50,7 +50,7 @@ namespace vom
             hp -= v;
             SyncBar(false);
 
-            game.FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#FF0000>-" + v + "</color>", transform, new Vector2(0, 35));
+            FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#FF0000>-" + v + "</color>", transform, new Vector2(0, 35));
 
             if (hp <= 0 && !dead)
             {

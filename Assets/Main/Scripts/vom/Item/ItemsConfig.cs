@@ -7,5 +7,10 @@ namespace vom
     public class ItemsConfig : ScriptableObject
     {
         public List<ItemPrototype> items;
+
+        public void Sort()
+        {
+
+        }
     }
 }

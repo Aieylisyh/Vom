@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Purchasing;
 using System;
-using game;
+using vom;
 
 namespace com
 {

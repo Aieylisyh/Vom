@@ -8,7 +8,7 @@ namespace vom
         {
             get
             {
-                return game.ConfigService.instance.itemsConfig;
+                return ConfigService.instance.itemsConfig;
             }
         }
 

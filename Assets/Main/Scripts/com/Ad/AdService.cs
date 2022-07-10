@@ -1,8 +1,8 @@
 using UnityEngine;
 using System;
-using game;
+using vom;
 using UnityEngine.Advertisements;
- 
+
 namespace com
 {
     public class AdService : MonoBehaviour
@@ -114,46 +114,16 @@ namespace com
         public void CommonFeedback_Fail()
         {
             FloatingTextPanelBehaviour.instance.Create(LocalizationService.instance.GetLocalizedText("AdFail"), 0.5f, 0.7f, true);
-            return;
-            var confirmBoxData = new game.ConfirmBoxPopup.ConfirmBoxData();
-            confirmBoxData.btnClose = false;
-            confirmBoxData.btnBgClose = true;
-            confirmBoxData.btnLeft = true;
-            confirmBoxData.btnRight = false;
-            confirmBoxData.btnLeftTxt = LocalizationService.instance.GetLocalizedText("Continue");
-            confirmBoxData.title = LocalizationService.instance.GetLocalizedText("Not success");
-            confirmBoxData.content = LocalizationService.instance.GetLocalizedText("AdFail");
-            WindowService.instance.ShowConfirmBoxPopup(confirmBoxData);
         }
 
         public void CommonFeedback_Cease()
         {
             FloatingTextPanelBehaviour.instance.Create(LocalizationService.instance.GetLocalizedText("AdCease"), 0.5f, 0.7f, true);
-            return;
-            var confirmBoxData = new game.ConfirmBoxPopup.ConfirmBoxData();
-            confirmBoxData.btnClose = false;
-            confirmBoxData.btnBgClose = true;
-            confirmBoxData.btnLeft = true;
-            confirmBoxData.btnRight = false;
-            confirmBoxData.btnLeftTxt = LocalizationService.instance.GetLocalizedText("Continue");
-            confirmBoxData.title = LocalizationService.instance.GetLocalizedText("Not success");
-            confirmBoxData.content = LocalizationService.instance.GetLocalizedText("AdCease");
-            WindowService.instance.ShowConfirmBoxPopup(confirmBoxData);
         }
 
         public void CommonFeedback_CanNotPlay()
         {
             FloatingTextPanelBehaviour.instance.Create(LocalizationService.instance.GetLocalizedText("AdCanNotPlay"), 0.5f, 0.7f, true);
-            return;
-            var confirmBoxData = new game.ConfirmBoxPopup.ConfirmBoxData();
-            confirmBoxData.btnClose = false;
-            confirmBoxData.btnBgClose = true;
-            confirmBoxData.btnLeft = true;
-            confirmBoxData.btnRight = false;
-            confirmBoxData.btnLeftTxt = LocalizationService.instance.GetLocalizedText("Continue");
-            confirmBoxData.title = LocalizationService.instance.GetLocalizedText("Not success");
-            confirmBoxData.content = LocalizationService.instance.GetLocalizedText("AdCanNotPlay");
-            WindowService.instance.ShowConfirmBoxPopup(confirmBoxData);
         }
     }
 }

@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
+using com;
 
 namespace vom
 {
-    public class PropsSpawnBehaviour : game.Ticker
+    public class PropsSpawnBehaviour : Ticker
     {
         public GameObject prefab;
         bool spawned;

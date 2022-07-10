@@ -4,7 +4,7 @@
     {
         public static SkillPrototype GetPrototype(string id)
         {
-            foreach (var s in game.ConfigService.instance.skillConfig.skills)
+            foreach (var s in ConfigService.instance.skillConfig.skills)
             {
                 if (s.id == id)
                     return s;

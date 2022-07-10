@@ -10,7 +10,7 @@ public class Vibration
 
     public static bool IsEnabled()
     {
-        var cache = game.UxService.instance.settingsDataCache.cache;
+        var cache = vom.UxService.instance.settingsDataCache.cache;
         var vibrateOn = cache.vibrateOn;
         return vibrateOn;
     }

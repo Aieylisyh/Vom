@@ -15,19 +15,20 @@ namespace vom
             items = new List<ItemData>();
         }
 
+        //this is the final step to add an item, check feedbacks here
         public void AddItem(ItemData data)
         {
-            AddItemFeedback(data);
             foreach (var item in items)
             {
                 if (item.id == data.id)
                 {
                     item.n += data.n;
-                    return;
+                    break;
                 }
             }
 
             items.Add(data);
+            AddItemFeedback(data);
         }
 
         public void AddItem(string id, int num = 1)
@@ -40,6 +41,7 @@ namespace vom
             //game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Diamond> +1", PlayerBehaviour.instance.transform);
             if (data.id == "Gold")
             {
+                MainHudBehaviour.instance.SyncGold(false);
                 // game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Gold><size=75%><color=#FFFFAA>+" + data.n + "</color></size>",   0.5f + Random.value * 0.12f, 0.966f);
                 //game.FloatingTextPanelBehaviour.instance.Create("<sprite name=Gold><size=80%><color=#FFFFAA>+" + data.n + "</color></size>", PlayerBehaviour.instance.transform);
             }

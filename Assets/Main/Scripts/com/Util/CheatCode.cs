@@ -1,4 +1,6 @@
-﻿namespace com
+﻿using vom;
+
+namespace com
 {
     public class CheatCode
     {
@@ -27,7 +29,7 @@
         {
             var inst = GetInstance();
             if (inst._currentCheatCode == cheatCode)
-                game.DebugPanelBehaviour.instance.gameObject.SetActive(!game.DebugPanelBehaviour.instance.gameObject.activeSelf);
+                DebugPanelBehaviour.instance.gameObject.SetActive(!DebugPanelBehaviour.instance.gameObject.activeSelf);
 
             MobileConsole.MobileConsole.instance.ActiveOpenButton();
         }

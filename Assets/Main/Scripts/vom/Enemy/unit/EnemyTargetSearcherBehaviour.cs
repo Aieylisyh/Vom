@@ -79,7 +79,7 @@ namespace vom
 
         void EnterAlert()
         {
-            _alertTimer = game.ConfigService.instance.combatConfig.enemy.alertTime;
+            _alertTimer = ConfigService.instance.combatConfig.enemy.alertTime;
             alerted = true;
         }
 

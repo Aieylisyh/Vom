@@ -18,7 +18,7 @@ namespace vom
             if (targetItem == null)
                 targetItem = gameObject;
 
-            if (interaction == ESceneInteraction.Tree && fruits != null && Random.value < game.ConfigService.instance.sceneInteractionConfig.treeHasFruitChance)
+            if (interaction == ESceneInteraction.Tree && fruits != null && Random.value < ConfigService.instance.sceneInteractionConfig.treeHasFruitChance)
             {
                 interaction = ESceneInteraction.Fruit;
                 hasFruit = true;

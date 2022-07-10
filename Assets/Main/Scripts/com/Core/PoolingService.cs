@@ -66,16 +66,6 @@ namespace com
             d.Recycle(pi);
         }
 
-        public void Recycle(Unit u)
-        {
-            if (u == null)
-            {
-                return;
-            }
-
-            Recycle(u.gameObject);
-        }
-
         public InstantiateData GetInstantiateData(string id)
         {
             foreach (var d in _instantiateData)
