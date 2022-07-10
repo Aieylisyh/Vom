@@ -21,7 +21,7 @@ namespace vom
         private void Start()
         {
             //debug
-            Init(false, Random.value > 0.5f);
+            Init(false, Random.value > 0.9f);
         }
 
         public void Init(bool pOpened, bool pLocked)

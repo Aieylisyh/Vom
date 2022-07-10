@@ -10,11 +10,18 @@ namespace vom
 
         public List<ToastBehaviour> toasts;
         public Transform toastsParent;
-         RectTransform _rect;
+        RectTransform _rect;
 
         private void Update()
         {
-            LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
+            foreach (var t in toasts)
+            {
+                if (t.IsExpanding())
+                {
+                    LayoutRebuilder.ForceRebuildLayoutImmediate(_rect);
+                    break;
+                }
+            }
         }
 
         private void Awake()

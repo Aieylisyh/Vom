@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using DG.Tweening;
 
 namespace game
 {
@@ -6,6 +7,7 @@ namespace game
     {
         public FloatingTextBehaviour ftb;
         public FloatingTextBehaviour ftbSlow;
+        public FloatingTextBehaviour ftbCombat;
         public Transform parent;
         public static FloatingTextPanelBehaviour instance { get; private set; }
 
@@ -31,6 +33,16 @@ namespace game
             ins.SetPos(target);
             ins.StartMove();
         }
-    }
 
+        public void CreateCombatValue(string text, Transform target, Vector2 offset)
+        {
+            var ins = GameObject.Instantiate(ftbCombat, parent);
+            ins.gameObject.SetActive(true);
+            ins.SetText(text);
+            ins.SetPos(target, offset);
+            ins.StartMove();
+            ins.rect.DOScale(1, 0.5f);
+            ins.speedX = Random.Range(-100, 100);
+        }
+    }
 }

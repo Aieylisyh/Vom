@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f89439d12777944697819c1a644e43d, type: 3}
   m_Name: Toast Config
   m_EditorClassIdentifier: 
-  expandDuration: 0.4
+  expandDuration: 0.35
   duration: 3.6
-  heightPureText: 80
-  heightWithSp: 136
+  heightPureText: 78
+  heightWithSp: 130

@@ -47,12 +47,22 @@ namespace vom
             var targetSize = new Vector2(x, targetHeight);
             rect.DOKill();
             rect.sizeDelta = new Vector2(x, 0);
-            rect.DOSizeDelta(targetSize, cfg.expandDuration).OnComplete(() => { view.SetActive(true); });
+
+            rect.DOSizeDelta(targetSize, cfg.expandDuration).OnComplete(() =>
+            {
+                view.SetActive(true);
+            });
 
             gameObject.SetActive(true);
+            cg.DOKill();
             cg.alpha = 1;
             _fading = false;
             _hideTimestamp = GameTime.time + cfg.duration;
+        }
+
+        public bool IsExpanding()
+        {
+            return gameObject.activeSelf && !view.activeSelf;
         }
 
         private void Update()

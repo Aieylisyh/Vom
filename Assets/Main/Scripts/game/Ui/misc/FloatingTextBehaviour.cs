@@ -13,6 +13,7 @@ namespace game
         public float canvasScale = 1;
         public Camera cam;
         public RectTransform rect;
+        public float speedX;
 
         public void SetText(string s)
         {
@@ -24,7 +25,7 @@ namespace game
             timer = 0;
         }
 
-        public void SetPos(Transform trans)
+        public void SetPos(Transform trans, Vector2 offset)
         {
             var r = (float)Screen.width / (float)Screen.height;
             canvasScale = (float)Screen.width / 720;
@@ -32,7 +33,12 @@ namespace game
             //Debug.Log("SetPos");
             pos = com.Convert2DAnd3D.GetScreenPosition(cam, trans.position, canvasScale);
             //Debug.Log(pos);
-            rect.anchoredPosition = pos;
+            rect.anchoredPosition = pos + offset;
+        }
+
+        public void SetPos(Transform trans)
+        {
+            SetPos(trans, Vector2.zero);
         }
 
         public void SetPos(float xRatio = 0.5f, float yRatio = 0.5f)
@@ -50,24 +56,28 @@ namespace game
 
         void Update()
         {
-            timer += Time.deltaTime;
             if (timer > durationDestory)
             {
                 GameObject.Destroy(this.gameObject);
                 return;
             }
 
+            timer += Time.deltaTime;
             if (timer > durationMove)
-            {
                 return;
-            }
 
             var pos = rect.anchoredPosition;
             var y = pos.y;
             y += speed * Time.deltaTime;
+            if (speedX != 0)
+            {
+                var x = pos.x;
+                x += speedX * Time.deltaTime;
+                pos.x = x;
+            }
+
             pos.y = y;
             rect.anchoredPosition = pos;
         }
     }
-
 }
