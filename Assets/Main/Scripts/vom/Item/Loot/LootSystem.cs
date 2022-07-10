@@ -11,6 +11,7 @@ namespace vom
 
         public LootBehaviour prefabGold;
         public LootBehaviour prefabSoul;
+        public LootBehaviour prefabExp;
         public LootBehaviour prefabLightOrb;
 
         public Transform lootParent;
@@ -25,13 +26,11 @@ namespace vom
         {
             var prefab = prefabLightOrb;
             if (item.id == "Gold")
-            {
                 prefab = prefabGold;
-            }
             else if (item.id == "Soul")
-            {
                 prefab = prefabSoul;
-            }
+            else if (item.id == "Exp")
+                prefab = prefabExp;
 
             var loot = Instantiate(prefab, lootParent);
             loot.Init(item);
@@ -50,9 +49,7 @@ namespace vom
             foreach (var l in _loots)
             {
                 if (receiveLoot)
-                {
                     l.ReceiveLoot(true);
-                }
                 Destroy(l.gameObject);
             }
 

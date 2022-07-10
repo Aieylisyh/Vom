@@ -372,6 +372,8 @@ MonoBehaviour:
     id: Shit
   - n: 1
     id: Fish
+  - n: 1
+    id: Exp
 --- !u!1 &6707815538717704150
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,8 @@ namespace vom
             _rb.useGravity = false;
             _rb.isKinematic = true;
             _col.isTrigger = true;
-            trait.emitting = true;
+            if (trait != null)
+                trait.emitting = true;
 
             var radian = Mathf.PI * Random.value * 2;
             _tempDir = Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian) + Vector3.up * 0.2f;
@@ -79,8 +80,10 @@ namespace vom
 
         protected override void StartAbsorb()
         {
-            trait.emitting = false;
+            if (trait != null)
+                trait.emitting = false;
         }
+
         protected override void Wait()
         {
             base.Wait();

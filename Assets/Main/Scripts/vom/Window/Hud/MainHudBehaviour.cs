@@ -22,5 +22,15 @@ namespace vom
         {
 
         }
+
+        public void SyncExp(bool instant)
+        {
+
+        }
+
+        public void SyncSoul(bool instant)
+        {
+
+        }
     }
 }

@@ -56,6 +56,7 @@ namespace vom
             //var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             //go.SetActive(true);
             LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(10, 2000), "Soul"));
+            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(10, 2000), "Exp"));
         }
     }
 }

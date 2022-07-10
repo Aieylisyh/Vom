@@ -6,7 +6,7 @@ namespace vom
 {
     public class PlayerInteractionCheckBehaviour : VomPlayerComponent
     {
-        public List<SceneInteractionTargetBehaviour> interactionTargets;
+        public List<SceneInteractionTargetBehaviour> interactionTargets { get; private set; }
         bool _canShow;
 
         bool _started;
