@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections.Generic;
 
 namespace vom
 {
@@ -6,17 +7,50 @@ namespace vom
     {
         public static DailyPerkSystem instance { get; private set; }
 
-        public int exp { get; private set; }
-        public int level { get; private set; }
-        public int expMax { get; private set; }
+        private DailyLevelData _data = new DailyLevelData();
 
         private void Awake()
         {
             instance = this;
+        }
 
-            exp = 235;
-            expMax = 500;
-            level = 3;
+        private void Start()
+        {
+            InitData();
+        }
+
+        void InitData()
+        {
+            _data = new DailyLevelData();
+            _data.level = 1;
+            _data.exp = 0;
+            _data.perks = new List<string>();
+        }
+
+        public int expMax { get { return DailyPerkService.GetLevelMaxExp(_data.level); } }
+
+        public int level { get { return _data.level; } }
+
+        public int exp { get { return _data.exp; } }
+
+        public void SyncExp()
+        {
+            int currentLevel = level;
+            DailyPerkService.SetDataByTotalExp(InventorySystem.instance.ExpCount, ref _data);
+
+            var levelup = level - currentLevel;
+            OnLevelUp(levelup);
+
+            MainHudBehaviour.instance.SyncExp();
+        }
+
+        void OnLevelUp(int times)
+        {
+            if (times > 0)
+            {
+                Debug.Log("OnLevelUp " + times);
+                //TODO +perk
+            }
         }
     }
 }

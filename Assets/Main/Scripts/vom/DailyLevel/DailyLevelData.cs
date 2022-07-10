@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 namespace vom
 {
-    public class DailyLevelData : MonoBehaviour
+    [System.Serializable]
+    public class DailyLevelData 
     {
         public int level;
         public int exp;

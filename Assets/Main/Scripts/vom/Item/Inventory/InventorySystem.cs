@@ -7,18 +7,32 @@ namespace vom
     {
         public static InventorySystem instance { get; private set; }
 
-        public List<ItemData> items { get; private set; }
+        List<ItemData> _items = new List<ItemData>();
 
         private void Awake()
         {
             instance = this;
-            items = new List<ItemData>();
+        }
+
+        private void Start()
+        {
+            InitData();
+        }
+
+        void InitData()
+        {
+            _items = new List<ItemData>();
+            _items.Add(new ItemData(33, "Exp"));
+
+            MainHudBehaviour.instance.SyncGold();
+            MainHudBehaviour.instance.SyncSoul();
+            DailyPerkSystem.instance.SyncExp();
         }
 
         //this is the final step to add an item, check feedbacks here
         public void AddItem(ItemData data)
         {
-            foreach (var item in items)
+            foreach (var item in _items)
             {
                 if (item.id == data.id)
                 {
@@ -27,16 +41,17 @@ namespace vom
                 }
             }
 
-            items.Add(data);
+            _items.Add(data);
             AddItemFeedback(data);
         }
 
         public int GoldCount { get { return GetItemCount("Gold"); } }
         public int SoulCount { get { return GetItemCount("Soul"); } }
+        public int ExpCount { get { return GetItemCount("Exp"); } }
 
         public int GetItemCount(string id)
         {
-            foreach (var item in items)
+            foreach (var item in _items)
             {
                 if (item.id == id)
                     return item.n;
@@ -62,7 +77,7 @@ namespace vom
             }
             else if (data.id == "Exp")
             {
-                MainHudBehaviour.instance.SyncExp();
+                DailyPerkSystem.instance.SyncExp();
             }
             else
             {
@@ -72,7 +87,7 @@ namespace vom
 
         public void SortItems()
         {
-            items.Sort(InventoryService.CompareItem);
+            _items.Sort(InventoryService.CompareItem);
         }
     }
 }

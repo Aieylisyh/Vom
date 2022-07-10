@@ -41,13 +41,13 @@ namespace vom
             var endTxt = "" + amount;
             if (goldTxt.text != endTxt)
             {
+                goldTxt.DOKill();
                 if (goldTxt.text == "")
                 {
                     goldTxt.text = endTxt;
                 }
                 else
                 {
-                    goldTxt.DOKill();
                     goldTxt.DOText(endTxt, duration, false, ScrambleMode.Numerals);
                 }
             }
@@ -59,13 +59,13 @@ namespace vom
             var endTxt = "" + amount;
             if (soulTxt.text != endTxt)
             {
+                soulTxt.DOKill();
                 if (soulTxt.text == "")
                 {
                     soulTxt.text = endTxt;
                 }
                 else
                 {
-                    soulTxt.DOKill();
                     soulTxt.DOText(endTxt, duration, false, ScrambleMode.Numerals);
                 }
             }
@@ -73,10 +73,10 @@ namespace vom
 
         public void SyncExp()
         {
-            var currentExp = DailyPerkSystem.instance.exp;
+            var exp = DailyPerkSystem.instance.exp;
             var maxExp = DailyPerkSystem.instance.expMax;
             var level = DailyPerkSystem.instance.level;
-
+            // Debug.Log(exp + " " + maxExp + " " + level);
             bool levelChanged = false;
             if (levelTxt.text != "" + level)
             {
@@ -87,16 +87,17 @@ namespace vom
                 levelTxt.DOScale(1, duration).SetEase(Ease.OutElastic);
             }
 
-            float r = ((float)currentExp / maxExp);
-            var endValue = minBarValue + r * (1 - maxBarValue - minBarValue);
-
+            float r = ((float)exp / maxExp);
+            if (r > 1)
+                r = 1f;
+            float endValue = minBarValue + r * (maxBarValue - minBarValue);
+            expBar.DOKill();
             if (levelChanged)
             {
                 expBar.fillAmount = endValue;
             }
             else
             {
-                expBar.DOKill();
                 expBar.DOFillAmount(endValue, duration);
             }
         }

@@ -9,5 +9,7 @@ namespace vom
         public List<DailyPerkPrototype> perks;
 
         public com.Formula experienceRequirement;
+
+        public int maxLevel = 11;
     }
 }

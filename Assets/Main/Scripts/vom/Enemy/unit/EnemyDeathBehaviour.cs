@@ -12,6 +12,7 @@ namespace vom
         float _bodyTimer;
         float _sinkAcc;
         float _sinkSpeed;
+        public GameObject deathVfx;
 
         void Start()
         {
@@ -53,10 +54,15 @@ namespace vom
             host.targetSearcher.ExitAlert();
 
             host.cc.enabled = false;
-            //var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
-            //go.SetActive(true);
-            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(10, 2000), "Soul"));
-            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(10, 2000), "Exp"));
+
+            if (deathVfx != null)
+            {
+                var go = Instantiate(deathVfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
+                go.SetActive(true);
+            }
+
+            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(10, 1000), "Soul"));
+            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(90, 110), "Exp"));
         }
     }
 }
