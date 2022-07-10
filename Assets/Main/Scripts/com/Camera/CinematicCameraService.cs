@@ -20,7 +20,7 @@ namespace com
             base.Start();
 
             if (targetCamera == null)
-                targetCamera = Target.GetComponent<Camera>();
+                targetCamera = target.GetComponent<Camera>();
         }
 
         protected override void TriggerEvent(CinematicEventPrototype proto)

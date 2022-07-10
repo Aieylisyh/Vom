@@ -6,7 +6,7 @@ namespace com
 {
     public class CinematicService : MonoBehaviour
     {
-        public Transform Target;
+        public Transform target;
         public List<CinematicEventPrototype> events;
 
         protected float _nextTimestamp;
@@ -67,7 +67,7 @@ namespace com
             if (_crtEventIndex + 1 > events.Count - 1)
             {
                 _nextTimestamp = -1;
-                Debug.Log("no next event");
+                //Debug.Log("no next event");
             }
 
             TriggerEvent(crtEvent);
@@ -75,7 +75,7 @@ namespace com
 
         protected virtual void TriggerEvent(CinematicEventPrototype proto)
         {
-            Debug.Log("TriggerEvent");
+            //Debug.Log("TriggerEvent");
             var duration = proto.duration;
             if (duration < 0)
                 duration = proto.TimeToNext;
@@ -88,35 +88,35 @@ namespace com
                 case CinematicActionTypes.SetPosition:
                     if (proto.usePositionAndRotation)
                     {
-                        Target.position = proto.position;
+                        target.position = proto.position;
                     }
                     else
                     {
-                        Target.position = proto.trans.position;
+                        target.position = proto.trans.position;
                     }
                     break;
 
                 case CinematicActionTypes.SetRotation:
                     if (proto.usePositionAndRotation)
                     {
-                        Target.rotation = proto.rotation;
+                        target.rotation = proto.rotation;
                     }
                     else
                     {
-                        Target.rotation = proto.trans.rotation;
+                        target.rotation = proto.trans.rotation;
                     }
                     break;
 
                 case CinematicActionTypes.SetPositionAndRotation:
                     if (proto.usePositionAndRotation)
                     {
-                        Target.position = proto.position;
-                        Target.rotation = proto.trans.rotation;
+                        target.position = proto.position;
+                        target.rotation = proto.trans.rotation;
                     }
                     else
                     {
-                        Target.position = proto.trans.position;
-                        Target.rotation = proto.trans.rotation;
+                        target.position = proto.trans.position;
+                        target.rotation = proto.trans.rotation;
                     }
 
                     break;
@@ -124,35 +124,35 @@ namespace com
                 case CinematicActionTypes.TweenPosition:
                     if (proto.usePositionAndRotation)
                     {
-                        Target.DOMove(proto.position, duration).SetEase(proto.ease);
+                        target.DOMove(proto.position, duration).SetEase(proto.ease);
                     }
                     else
                     {
-                        Target.DOMove(proto.trans.position, duration).SetEase(proto.ease);
+                        target.DOMove(proto.trans.position, duration).SetEase(proto.ease);
                     }
                     break;
 
                 case CinematicActionTypes.TweenRotation:
                     if (proto.usePositionAndRotation)
                     {
-                        Target.DORotate(proto.rotation.eulerAngles, duration).SetEase(proto.ease);
+                        target.DORotate(proto.rotation.eulerAngles, duration).SetEase(proto.ease);
                     }
                     else
                     {
-                        Target.DORotate(proto.trans.eulerAngles, duration).SetEase(proto.ease);
+                        target.DORotate(proto.trans.eulerAngles, duration).SetEase(proto.ease);
                     }
                     break;
 
                 case CinematicActionTypes.TweenPositionAndRotation:
                     if (proto.usePositionAndRotation)
                     {
-                        Target.DOMove(proto.position, duration).SetEase(proto.ease);
-                        Target.DORotate(proto.rotation.eulerAngles, duration).SetEase(proto.ease);
+                        target.DOMove(proto.position, duration).SetEase(proto.ease);
+                        target.DORotate(proto.rotation.eulerAngles, duration).SetEase(proto.ease);
                     }
                     else
                     {
-                        Target.DOMove(proto.trans.position, duration).SetEase(proto.ease);
-                        Target.DORotate(proto.trans.eulerAngles, duration).SetEase(proto.ease);
+                        target.DOMove(proto.trans.position, duration).SetEase(proto.ease);
+                        target.DORotate(proto.trans.eulerAngles, duration).SetEase(proto.ease);
                     }
 
                     break;
@@ -162,11 +162,11 @@ namespace com
                     break;
 
                 case CinematicActionTypes.KillTween:
-                    Target.DOKill();
+                    target.DOKill();
                     break;
 
                 case CinematicActionTypes.Shake:
-                    Target.DOShakePosition(duration, proto.floatParam, 10).SetEase(proto.ease);
+                    target.DOShakePosition(duration, proto.floatParam, 10).SetEase(proto.ease);
                     break;
 
             }

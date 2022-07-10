@@ -56,7 +56,7 @@ namespace com
             e2.ease = DG.Tweening.Ease.InOutCubic;
             e2.type = CinematicActionTypes.TweenPositionAndRotation;
             e2.usePositionAndRotation = true;
-            var camPos = cinematic.Target.position;
+            var camPos = cinematic.target.position;
             var offset = camPos - player.position;
             var centerPos = (player.position + other.position) * 0.5f;
             offset.x = offset.x * 0.4f;
