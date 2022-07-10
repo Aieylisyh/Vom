@@ -8,7 +8,7 @@ namespace vom
         {
             get
             {
-                return ConfigService.instance.itemsConfig;
+                return ConfigSystem.instance.itemsConfig;
             }
         }
 

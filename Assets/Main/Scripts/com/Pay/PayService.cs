@@ -98,7 +98,7 @@ namespace com
         public string GetIapIdByCommodity(string commodityId)
         {
             Debug.Log("GetIapIdByCommodity " + commodityId);
-            var cfg = ConfigService.instance.payConfig;
+            var cfg = ConfigSystem.instance.payConfig;
             foreach (var p in cfg.pays)
             {
                 if (p.commodityId == commodityId)

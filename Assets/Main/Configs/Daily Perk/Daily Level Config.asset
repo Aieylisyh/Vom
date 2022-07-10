@@ -12,9 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cae4f740e2e4534ea83b1698d481556, type: 3}
   m_Name: Daily Level Config
   m_EditorClassIdentifier: 
-  perks: []
+  perks:
+  - {fileID: 11400000, guid: ad108550a980a774aa37b6f2fd213f1b, type: 2}
+  - {fileID: 11400000, guid: b32ca6690e2bb444686f98e743cec988, type: 2}
+  - {fileID: 11400000, guid: d263995fdb69d2142950ed0ceadbd750, type: 2}
   experienceRequirement:
-    Pow3Weight: 0
-    Pow2Weight: 0
-    Pow1Weight: 0
-    Pow0Weight: 0
+    Pow3Weight: 1
+    Pow2Weight: 10
+    Pow1Weight: 10
+    Pow0Weight: 100

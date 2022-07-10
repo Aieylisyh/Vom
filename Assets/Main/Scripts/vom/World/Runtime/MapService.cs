@@ -9,7 +9,7 @@ namespace vom
     {
         public static MapItem GetMapItemById(string id)
         {
-            var maps = ConfigService.instance.mapConfig.maps;
+            var maps = ConfigSystem.instance.mapConfig.maps;
             foreach (var map in maps)
             {
                 if (map.mapId == id)

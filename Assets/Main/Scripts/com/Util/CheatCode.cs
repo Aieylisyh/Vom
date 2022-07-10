@@ -29,7 +29,7 @@ namespace com
         {
             var inst = GetInstance();
             if (inst._currentCheatCode == cheatCode)
-                DebugPanelBehaviour.instance.gameObject.SetActive(!DebugPanelBehaviour.instance.gameObject.activeSelf);
+                DebugSystem.instance.gameObject.SetActive(!DebugSystem.instance.gameObject.activeSelf);
 
             MobileConsole.MobileConsole.instance.ActiveOpenButton();
         }

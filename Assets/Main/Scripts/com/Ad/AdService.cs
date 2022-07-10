@@ -57,8 +57,8 @@ namespace com
 
         public bool CanPlayAd(bool enableAdFreeSuc)
         {
-            Debug.Log("是否能播放广告? " + enableAdFreeSuc + " " + ConfigService.instance.adConfig.AdFreeSuc);
-            if (enableAdFreeSuc && ConfigService.instance.adConfig.AdFreeSuc)
+            Debug.Log("是否能播放广告? " + enableAdFreeSuc + " " + ConfigSystem.instance.adConfig.AdFreeSuc);
+            if (enableAdFreeSuc && ConfigSystem.instance.adConfig.AdFreeSuc)
                 return true;
 
             bool res = false;
@@ -97,7 +97,7 @@ namespace com
         public void PlayAd(Action cbFail, Action cbSuc, Action cbCease)
         {
             Debug.Log("PlayAd");
-            if (ConfigService.instance.adConfig.AdFreeSuc)
+            if (ConfigSystem.instance.adConfig.AdFreeSuc)
             {
                 cbSuc?.Invoke();
                 return;

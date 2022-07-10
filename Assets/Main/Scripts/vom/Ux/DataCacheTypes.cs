@@ -13,7 +13,7 @@ namespace vom
 
         public void Reset()
         {
-            var cfg = ConfigService.instance.settingsConfig;
+            var cfg = ConfigSystem.instance.settingsConfig;
             sfxOn = cfg.sfxOn;
             musicOn = cfg.musicOn;
             vibrateOn = cfg.vibrateOn;

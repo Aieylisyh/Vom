@@ -34,7 +34,7 @@ namespace com
                     Debug.Log("Unable to connect to the Google Play Billing service");
                 });
 
-            var cfg = ConfigService.instance.payConfig;
+            var cfg = ConfigSystem.instance.payConfig;
             foreach (var p in cfg.pays)
             {
                 builder.AddProduct(p.iapId, p.type);

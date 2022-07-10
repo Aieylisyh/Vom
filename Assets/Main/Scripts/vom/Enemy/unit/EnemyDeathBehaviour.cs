@@ -17,7 +17,7 @@ namespace vom
         {
             dead = false;
             _sinkSpeed = 0;
-            _sinkAcc = ConfigService.instance.combatConfig.enemy.sinkAcc;
+            _sinkAcc = ConfigSystem.instance.combatConfig.enemy.sinkAcc;
             _bodyTimer = bodyTime;
         }
 

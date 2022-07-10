@@ -20,7 +20,7 @@ namespace com
             Debug.Log("apple UnityPurchasing InitBuilder");
             var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 
-            var cfg = ConfigService.instance.payConfig;
+            var cfg = ConfigSystem.instance.payConfig;
             foreach (var p in cfg.pays)
             {
                 builder.AddProduct(p.iapId, p.type);

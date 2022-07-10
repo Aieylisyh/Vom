@@ -31,6 +31,20 @@ namespace vom
             AddItemFeedback(data);
         }
 
+        public int GoldCount { get { return GetItemCount("Gold"); } }
+        public int SoulCount { get { return GetItemCount("Soul"); } }
+
+        public int GetItemCount(string id)
+        {
+            foreach (var item in items)
+            {
+                if (item.id == id)
+                    return item.n;
+            }
+
+            return 0;
+        }
+
         public void AddItem(string id, int num = 1)
         {
             AddItem(new ItemData(num, id));
@@ -40,15 +54,15 @@ namespace vom
         {
             if (data.id == "Gold")
             {
-                MainHudBehaviour.instance.SyncGold(false);
+                MainHudBehaviour.instance.SyncGold();
             }
             else if (data.id == "Soul")
             {
-                MainHudBehaviour.instance.SyncSoul(false);
+                MainHudBehaviour.instance.SyncSoul();
             }
             else if (data.id == "Exp")
             {
-                MainHudBehaviour.instance.SyncExp(false);
+                MainHudBehaviour.instance.SyncExp();
             }
             else
             {

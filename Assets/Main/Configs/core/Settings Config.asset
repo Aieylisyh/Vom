@@ -9,10 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644e23c358884134ea622a4b50a45571, type: 3}
+  m_Script: {fileID: 11500000, guid: 53fd79639fe330541a13357d7a2d150a, type: 3}
   m_Name: Settings Config
   m_EditorClassIdentifier: 
   languageDefault: 0
-  sfxOn: 1
-  musicOn: 1
-  vibrateOn: 1
+  sfxOn: 0
+  musicOn: 0
+  vibrateOn: 0
+  ver_1: 0
+  ver_2: 0
+  ver_3: 0
+  ver_4: 0

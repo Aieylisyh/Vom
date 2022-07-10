@@ -55,7 +55,7 @@ namespace vom
         {
             _rotateAlignMove = GetComponent<RotateAlignMove>();
             _des = GetComponent<AutoDestory>();
-            var cfg = ConfigService.instance.combatConfig;
+            var cfg = ConfigSystem.instance.combatConfig;
             _rotateDegreeSpeed = cfg.orbs.rotateDegreeSpeed;
             _orbitalRadius = cfg.orbs.orbitalRadius;
             _orbitalStartHeight = cfg.orbs.orbitalStartHeight;
@@ -72,7 +72,7 @@ namespace vom
             if (_isOrbital)
                 return;
 
-            if (other.gameObject.layer == ConfigService.instance.combatConfig.blockerLayerMask)
+            if (other.gameObject.layer == ConfigSystem.instance.combatConfig.blockerLayerMask)
             {
                 //Debug.Log("hit block " + other.gameObject);
                 Die(false);

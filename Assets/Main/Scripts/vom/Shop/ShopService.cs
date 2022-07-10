@@ -23,7 +23,7 @@ namespace vom
 
         public ShopConfig GetShopCfg(ShopCategory shopCategory)
         {
-            var c = ConfigService.instance.shopsConfig;
+            var c = ConfigSystem.instance.shopsConfig;
             switch (shopCategory)
             {
                 case ShopCategory.Merchant:
@@ -243,7 +243,7 @@ namespace vom
                         {
                             if (c.restockable)
                             {
-                                list[i] = ConfigService.instance.shopsConfig.restockData;
+                                list[i] = ConfigSystem.instance.shopsConfig.restockData;
                             }
                             else
                             {

@@ -18,7 +18,7 @@ namespace vom
 
         public static SceneInteractionData GetData(ESceneInteraction type)
         {
-            var cfg = ConfigService.instance.sceneInteractionConfig;
+            var cfg = ConfigSystem.instance.sceneInteractionConfig;
             foreach (var si in cfg.interactionDatas)
             {
                 if (si.type == type)

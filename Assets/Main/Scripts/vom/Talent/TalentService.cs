@@ -14,7 +14,7 @@ namespace vom
 
         public TalentPrototype GetPrototype(string id)
         {
-            foreach (var i in ConfigService.instance.talentConfig.list)
+            foreach (var i in ConfigSystem.instance.talentConfig.list)
             {
                 if (i.id == id)
                 {
@@ -125,7 +125,7 @@ namespace vom
         public int GetAssignedTps()
         {
             int tps = 0;
-            var list = ConfigService.instance.talentConfig.list;
+            var list = ConfigSystem.instance.talentConfig.list;
             foreach (var s in list)
             {
                 var item = GetItem(s.id);
@@ -137,7 +137,7 @@ namespace vom
         public int GetAssignedTpsOfCategory(TalentCategory talentCategory)
         {
             int tps = 0;
-            var list = ConfigService.instance.talentConfig.list;
+            var list = ConfigSystem.instance.talentConfig.list;
             foreach (var s in list)
             {
                 if (s.category == talentCategory)
@@ -151,7 +151,7 @@ namespace vom
 
         public ItemData GetResetPrice()
         {
-            var prices = ConfigService.instance.talentConfig.resetDiamondPrices;
+            var prices = ConfigSystem.instance.talentConfig.resetDiamondPrices;
             var times = UxService.instance.gameDataCache.cache.resetTalentCount;
             if (times < prices.Count)
             {

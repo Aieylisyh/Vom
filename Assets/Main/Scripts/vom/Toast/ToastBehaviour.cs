@@ -21,7 +21,7 @@ namespace vom
 
         public void Show(ToastData toastData)
         {
-            var cfg = ConfigService.instance.toastConfig;
+            var cfg = ConfigSystem.instance.toastConfig;
             bg.color = toastData.bgColor;
             title.text = toastData.title;
             var targetHeight = cfg.heightPureText;

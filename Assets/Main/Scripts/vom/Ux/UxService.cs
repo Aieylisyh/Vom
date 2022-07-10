@@ -512,7 +512,7 @@ namespace vom
         public void SortItems()
         {
             var newList = new List<ItemData>();
-            var cfg = ConfigService.instance.itemsConfig;
+            var cfg = ConfigSystem.instance.itemsConfig;
             var allItems = GetAllItems();
 
             foreach (var c in cfg.items)
