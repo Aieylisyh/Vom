@@ -17,10 +17,10 @@ namespace vom
             if (bar == null)
                 bar = HpBarSystem.instance.Create(transform, (host.size - 0.1f) * 400 + hpBarOffset, host.size * 1.3f + 0.38f);
 
-            HealToFull();
+            ResetHealth();
         }
 
-        public void HealToFull()
+        public void ResetHealth()
         {
             hp = healthMax;
             SyncBar(true);

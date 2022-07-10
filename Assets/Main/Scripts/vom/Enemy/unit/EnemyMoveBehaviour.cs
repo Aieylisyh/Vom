@@ -103,7 +103,7 @@ namespace vom
 
                 if (host.health.hp < host.health.healthMax)
                 {
-                    host.health.HealToFull();
+                    host.health.ResetHealth();
                 }
             }
 

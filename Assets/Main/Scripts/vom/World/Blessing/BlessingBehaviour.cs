@@ -24,7 +24,7 @@ namespace vom
         {
             HeartDistortSystem.instance.Create(this.transform, 32, 5.5f);
             SetLit();
-            PlayerBehaviour.instance.health.HealToFull();
+            PlayerBehaviour.instance.health.ResetHealth();
         }
 
         private void OnTriggerEnter(Collider other)

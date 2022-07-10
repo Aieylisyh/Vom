@@ -14,10 +14,10 @@ namespace vom
         public override void ResetState()
         {
             bar = HpBarSystem.instance.Create(transform, 140, 0.75f);
-            HealToFull();
+            ResetHealth();
         }
 
-        public void HealToFull()
+        public void ResetHealth()
         {
             hp = healthMax;
             SyncBar(true);
@@ -26,12 +26,17 @@ namespace vom
 
         public void Heal(int v)
         {
-            hp += v;
-            if (hp > healthMax)
-            {
-                hp = healthMax;
-            }
+            if (v <= 0)
+                return;
 
+            var oldHp = hp;
+            hp += v;
+
+            if (hp > healthMax)
+                hp = healthMax;
+
+            var addHp = hp - oldHp;
+            game.FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#88FF00>+" + addHp + "</color>", transform, new Vector2(0, 35));
             SyncBar(true);
         }
 
