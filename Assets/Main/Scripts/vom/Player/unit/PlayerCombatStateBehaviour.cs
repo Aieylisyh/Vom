@@ -4,7 +4,8 @@ namespace vom
 {
     public class PlayerCombatStateBehaviour : VomPlayerComponent
     {
-        public CanvasGroup cg;
+        public CanvasGroup cg1;
+        public CanvasGroup cg2;
 
         bool _showHud;
         public float showHudSpeed = 4;
@@ -34,13 +35,17 @@ namespace vom
             _showHud = show;
             if (show)
             {
-                cg.blocksRaycasts = true;
-                cg.interactable = true;
+                cg1.blocksRaycasts = true;
+                cg1.interactable = true;
+                cg2.blocksRaycasts = true;
+                cg2.interactable = true;
             }
             else
             {
-                cg.blocksRaycasts = false;
-                cg.interactable = false;
+                cg1.blocksRaycasts = false;
+                cg1.interactable = false;
+                cg2.blocksRaycasts = false;
+                cg2.interactable = false;
             }
         }
 
@@ -66,17 +71,30 @@ namespace vom
         }
         protected override void Update()
         {
-            if (cg.alpha > 0 && !_showHud)
+            if (cg1.alpha > 0 && !_showHud)
             {
-                cg.alpha -= Time.deltaTime * showHudSpeed;
-                if (cg.alpha < 0)
-                    cg.alpha = 0;
+                cg1.alpha -= Time.deltaTime * showHudSpeed;
+                if (cg1.alpha < 0)
+                    cg1.alpha = 0;
             }
-            else if (cg.alpha < 1 && _showHud)
+            else if (cg1.alpha < 1 && _showHud)
             {
-                cg.alpha += Time.deltaTime * showHudSpeed;
-                if (cg.alpha > 1)
-                    cg.alpha = 1;
+                cg1.alpha += Time.deltaTime * showHudSpeed;
+                if (cg1.alpha > 1)
+                    cg1.alpha = 1;
+            }
+
+            if (cg2.alpha > 0 && !_showHud)
+            {
+                cg2.alpha -= Time.deltaTime * showHudSpeed;
+                if (cg2.alpha < 0)
+                    cg2.alpha = 0;
+            }
+            else if (cg2.alpha < 1 && _showHud)
+            {
+                cg2.alpha += Time.deltaTime * showHudSpeed;
+                if (cg2.alpha > 1)
+                    cg2.alpha = 1;
             }
         }
     }
