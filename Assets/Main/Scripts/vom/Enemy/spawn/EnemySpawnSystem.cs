@@ -5,23 +5,11 @@ namespace vom
 {
     public class EnemySpawnSystem : MonoBehaviour
     {
-        public List<Transform> enemieSpawnPosList;
-        public List<GameObject> enemyPrefabList;
+        public static EnemySpawnSystem instance { get; private set; }
 
         private void Awake()
         {
-        }
-
-        private void Start()
-        {
-        }
-
-        public void SpawnEnemies()
-        {
-            foreach (var pos in enemieSpawnPosList)
-            {
-
-            }
+            instance = this;
         }
     }
 }

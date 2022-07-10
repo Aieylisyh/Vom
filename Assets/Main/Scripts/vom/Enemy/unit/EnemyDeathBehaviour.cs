@@ -61,8 +61,8 @@ namespace vom
                 go.SetActive(true);
             }
 
-            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(10, 1000), "Soul"));
-            LootSystem.instance.SpawnLoot(transform.position, new ItemData(Random.Range(90, 110), "Exp"));
+            LootSystem.instance.SpawnLoot(transform.position, new ItemData(host.proto.soul, "Soul"));
+            LootSystem.instance.SpawnLoot(transform.position, new ItemData(host.proto.exp, "Exp"));
         }
     }
 }

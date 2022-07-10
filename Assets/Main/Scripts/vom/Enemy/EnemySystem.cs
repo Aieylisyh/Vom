@@ -3,14 +3,12 @@ using System.Collections.Generic;
 
 namespace vom
 {
-
     public class EnemySystem : MonoBehaviour
     {
         public static EnemySystem instance { get; private set; }
 
         public List<EnemyBehaviour> enemies { get; private set; }
 
-        public EnemySpawnSystem spawnSys;
 
         private void Awake()
         {
@@ -20,7 +18,6 @@ namespace vom
 
         private void Start()
         {
-            spawnSys.SpawnEnemies();
         }
 
         public void AddEnemy(EnemyBehaviour e)
@@ -38,9 +35,7 @@ namespace vom
             foreach (var e in enemies)
             {
                 if (e.gameObject.activeSelf && !e.death.dead && e.targetSearcher.alerted)
-                {
                     return true;
-                }
             }
 
             return false;

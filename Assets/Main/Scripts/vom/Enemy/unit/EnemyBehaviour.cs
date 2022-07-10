@@ -16,6 +16,8 @@ namespace vom
         public EnemyTargetSearcherBehaviour targetSearcher { get; private set; }
         public EnemyDeathBehaviour death { get; private set; }
 
+        public EnemyPrototype proto { get; private set; }
+
         private void Awake()
         {
             health = GetComponent<EnemyHealthBehaviour>();
@@ -23,6 +25,11 @@ namespace vom
             move = GetComponent<EnemyMoveBehaviour>();
             targetSearcher = GetComponent<EnemyTargetSearcherBehaviour>();
             death = GetComponent<EnemyDeathBehaviour>();
+        }
+
+        public void AssignAttibution(EnemyPrototype pProto)
+        {
+            proto = pProto;
         }
 
         public void Start()
