@@ -34,6 +34,7 @@ namespace vom
                 if (host.targetSearcher.targetDist < _fRange)
                 {
                     _targetPos = host.targetSearcher.target.position;
+                    host.move.Rotate(_targetPos - transform.position);
                     PerformAttack();
                 }
             }

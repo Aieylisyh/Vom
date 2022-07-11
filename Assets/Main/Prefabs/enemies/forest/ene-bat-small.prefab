@@ -81,7 +81,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthMax: 20
   bar: {fileID: 0}
-  hpBarOffset: 150
+  hpBarOffset: 130
 --- !u!114 &3476611265631080286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,13 +110,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2.8
-  m_Radius: 0.8
+  m_Height: 1.7
+  m_Radius: 0.6
   m_SlopeLimit: 40
   m_StepOffset: 0.3
   m_SkinWidth: 0.1
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.39, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5317220573202547310
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -787,7 +787,7 @@ GameObject:
   - component: {fileID: 5410313967758458755}
   - component: {fileID: 7948150345695359956}
   m_Layer: 0
-  m_Name: Bat_Tiny
+  m_Name: Bat_small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -802,7 +802,7 @@ Transform:
   m_GameObject: {fileID: 3504631160806839257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.3, z: 0}
-  m_LocalScale: {x: 52, y: 52, z: 52}
+  m_LocalScale: {x: 50, y: 50, z: 50}
   m_Children:
   - {fileID: 6771704801389554331}
   - {fileID: 2684085906627468539}
@@ -1065,7 +1065,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 4159902696535699045}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1075,7 +1075,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c8c42803e7784e5488547363323ed62c, type: 2}
+  - {fileID: 2100000, guid: 1945ca08888585540b2dbfd8b76f2b32, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

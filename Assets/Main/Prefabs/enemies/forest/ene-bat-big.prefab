@@ -111,7 +111,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2.8
-  m_Radius: 0.8
+  m_Radius: 1
   m_SlopeLimit: 40
   m_StepOffset: 0.3
   m_SkinWidth: 0.1
@@ -1654,7 +1654,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 8763872214607091389}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1
@@ -1664,7 +1664,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 1b23dc953f3a9474490b7b8cfcdf896f, type: 2}
+  - {fileID: 2100000, guid: c8c42803e7784e5488547363323ed62c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
