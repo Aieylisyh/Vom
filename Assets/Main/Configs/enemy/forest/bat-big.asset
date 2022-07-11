@@ -21,3 +21,8 @@ MonoBehaviour:
   hp: 25
   attack: 4
   speed: 3
+  sightRange: 6
+  bodyTime: 5
+  bodyCanSink: 1
+  soulLootCount: 3
+  expLootCount: 3
