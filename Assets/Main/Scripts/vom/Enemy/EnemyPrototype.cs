@@ -19,7 +19,7 @@ namespace vom
         public int hp;
         public int attack;
         public int speed;
-
+        public float attackInterval = 1.4f;
         public AttackRange sightRange = AttackRange.MidLong;
         public float bodyTime = 5;
         public bool bodyCanSink = true;

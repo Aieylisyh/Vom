@@ -8,7 +8,7 @@ namespace vom
         public AttackRange range = AttackRange.Melee;
         float _fRange;
 
-        public float attackInterval;
+        public float attackInterval { get; private set; }
         private float _attackIntervalTimer;
 
         public GameObject shootBullet;
@@ -22,10 +22,11 @@ namespace vom
         public override void ResetState()
         {
             attack = host.proto.attack;
+            attackInterval = host.proto.attackInterval;
             _attackIntervalTimer = 0;
             _fRange = CombatSystem.GetRange(range);
         }
-   
+
         public void Attack()
         {
             if (_attackIntervalTimer > 0)

@@ -26,13 +26,12 @@
         public static void SetDataByTotalExp(int totalExp, ref DailyLevelData data)
         {
             //UnityEngine.Debug.Log("SetDataByTotalExp" + totalExp);
+            int expMax = 0;
             for (var lv = 1; lv <= GetCfg().maxLevel; lv++)
             {
-                var exp = GetLevelMaxExp(lv);
-                if (totalExp >= exp)
-                {
-                    totalExp -= exp;
-                }
+                expMax = GetLevelMaxExp(lv);
+                if (totalExp >= expMax)
+                    totalExp -= expMax;
                 else
                 {
                     data.level = lv;
@@ -42,7 +41,7 @@
             }
 
             data.level = GetCfg().maxLevel;
-            data.exp = totalExp;
+            data.exp = expMax;
         }
     }
 }

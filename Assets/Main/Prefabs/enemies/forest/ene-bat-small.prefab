@@ -80,7 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 626ec6cf6eef18942a6482f180dcfd89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthMax: 20
   bar: {fileID: 0}
   hpBarOffset: 140
 --- !u!114 &3476611265631080286
@@ -96,9 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 4
-  dmg: 2
-  attackInterval: 1.4
-  shootBullet: {fileID: 6808580815222408916, guid: f4e72e3a21d0f4b42bd4aa763060439f, type: 3}
+  shootBullet: {fileID: 3307667407526838801, guid: b7340ac5dd2be9145bdf5ebf62caceeb, type: 3}
   weaponPos: {fileID: 5476136021404509666}
 --- !u!143 &8745235370282988360
 CharacterController:
@@ -130,8 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2a4ff29a847ad4f951b777d0ed5c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  runSpeed: 12
   rotatePart: {fileID: 6571864714241624231}
   stopRange: 1
 --- !u!114 &8000250683438515965
@@ -146,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0890d5387cd16794b9a7b0c8fd407c56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 5
 --- !u!114 &2773740923773062455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,8 +167,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6481982858e5ed84ab3dfa3b0ec58da0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyTime: 2
-  bodyCanSink: 0
   deathVfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
 --- !u!114 &7996474359495840209
 MonoBehaviour:
@@ -803,7 +795,7 @@ Transform:
   m_GameObject: {fileID: 3504631160806839257}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.35, z: 0}
-  m_LocalScale: {x: 40, y: 40, z: 40}
+  m_LocalScale: {x: 35, y: 35, z: 35}
   m_Children:
   - {fileID: 6771704801389554331}
   - {fileID: 2684085906627468539}

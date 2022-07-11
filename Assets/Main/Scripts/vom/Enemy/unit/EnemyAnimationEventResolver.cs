@@ -10,7 +10,7 @@ namespace vom
 
         public void Attacked()
         {
-            UnityEngine.Debug.Log("Attacked");
+            //UnityEngine.Debug.Log("Attacked");
             host.attack.Attacked();
         }
     }
