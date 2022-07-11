@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: rabbit-big
   m_EditorClassIdentifier: 
   id: rabbit-2
-  prefab: {fileID: 0}
+  prefab: {fileID: 2140459529026160387, guid: 1991687d3aa16bf4bbed97f59fabf759, type: 3}
   drops:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 500
   soul: 500
   hp: 100

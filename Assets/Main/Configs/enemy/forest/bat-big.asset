@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: bat-big
   m_EditorClassIdentifier: 
   id: bat-2
-  prefab: {fileID: 0}
-  drops: []
+  prefab: {fileID: 2140459529026160387, guid: 2a2089d48cc78544da59e31c1e7433fc, type: 3}
+  drops:
+  - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 1000
   soul: 1000
   hp: 100

@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9ef2f821ed383b14893f9ec10dc4e315, type: 3}
-  m_Name: bat-tiny
+  m_Name: bat-small
   m_EditorClassIdentifier: 
   id: bat-1
-  prefab: {fileID: 0}
+  prefab: {fileID: 2140459529026160387, guid: 5b4cbb24f15643a47a14d5bff1bb2a1a, type: 3}
   drops:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 200
   soul: 200
   hp: 100
