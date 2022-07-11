@@ -29,16 +29,9 @@ namespace vom
             death = GetComponent<EnemyDeathBehaviour>();
         }
 
-        public void AssignAttibution()
-        {
-         
-        }
-
         public void Start()
         {
             EnemySystem.instance.AddEnemy(this);
-
-            AssignAttibution();
 
             sizeValue = EnemyService.GetSize(size);
             circleTrans.localScale = Vector3.one * sizeValue;

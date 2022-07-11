@@ -9,16 +9,15 @@ namespace vom
         public Transform target { get; private set; }
         float _alertTimer;
 
-        public AttackRange sightRange = AttackRange.Sight;
-        float _fSightRan;
+        float _fSight;
 
         Vector3 _toPlayerDir;
 
         public float targetDist { get; private set; }
 
-        void Start()
+        public override void ResetState()
         {
-            _fSightRan = CombatSystem.GetRange(sightRange);
+            _fSight = CombatSystem.GetRange(host.proto.sightRange);
             _alertTimer = 0;
             target = null;
             alerted = false;
@@ -46,7 +45,7 @@ namespace vom
             var playerPos = player.transform.position;
             _toPlayerDir = playerPos - transform.position;
             targetDist = (_toPlayerDir).magnitude;
-            if (targetDist < _fSightRan)
+            if (targetDist < _fSight)
             {
                 target = player.transform;
                 if (!alerted)

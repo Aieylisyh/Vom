@@ -7,7 +7,6 @@ namespace vom
     {
         public AttackRange range = AttackRange.Melee;
         float _fRange;
-        public int dmg;
 
         public float attackInterval;
         private float _attackIntervalTimer;
@@ -18,12 +17,15 @@ namespace vom
 
         private Vector3 _targetPos;
 
-        void Start()
+        public int attack { get; private set; }
+
+        public override void ResetState()
         {
+            attack = host.proto.attack;
             _attackIntervalTimer = 0;
             _fRange = CombatSystem.GetRange(range);
         }
-
+   
         public void Attack()
         {
             if (_attackIntervalTimer > 0)
@@ -64,7 +66,7 @@ namespace vom
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
             shoot.isEnemyShoot = true;
-            shoot.dmg = dmg;
+            shoot.dmg = attack;
             shoot.SetRelease(targetPos);
         }
     }

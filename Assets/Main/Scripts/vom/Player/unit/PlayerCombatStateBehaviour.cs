@@ -4,8 +4,7 @@ namespace vom
 {
     public class PlayerCombatStateBehaviour : VomPlayerComponent
     {
-        public CanvasGroup cg1;
-        public CanvasGroup cg2;
+        public CanvasGroup[] cgs;
 
         bool _showHud;
         public float showHudSpeed = 4;
@@ -35,18 +34,20 @@ namespace vom
             _showHud = show;
             if (show)
             {
-                cg1.blocksRaycasts = true;
-                cg1.interactable = true;
-                cg2.blocksRaycasts = true;
-                cg2.interactable = true;
+                foreach (var cg in cgs)
+                    ToggleCanvasGroup(cg, true);
             }
             else
             {
-                cg1.blocksRaycasts = false;
-                cg1.interactable = false;
-                cg2.blocksRaycasts = false;
-                cg2.interactable = false;
+                foreach (var cg in cgs)
+                    ToggleCanvasGroup(cg, false);
             }
+        }
+
+        void ToggleCanvasGroup(CanvasGroup cg, bool b)
+        {
+            cg.blocksRaycasts = b;
+            cg.interactable = b;
         }
 
         public void UpdateState()
@@ -71,30 +72,20 @@ namespace vom
         }
         protected override void Update()
         {
-            if (cg1.alpha > 0 && !_showHud)
+            foreach (var cg in cgs)
             {
-                cg1.alpha -= Time.deltaTime * showHudSpeed;
-                if (cg1.alpha < 0)
-                    cg1.alpha = 0;
-            }
-            else if (cg1.alpha < 1 && _showHud)
-            {
-                cg1.alpha += Time.deltaTime * showHudSpeed;
-                if (cg1.alpha > 1)
-                    cg1.alpha = 1;
-            }
-
-            if (cg2.alpha > 0 && !_showHud)
-            {
-                cg2.alpha -= Time.deltaTime * showHudSpeed;
-                if (cg2.alpha < 0)
-                    cg2.alpha = 0;
-            }
-            else if (cg2.alpha < 1 && _showHud)
-            {
-                cg2.alpha += Time.deltaTime * showHudSpeed;
-                if (cg2.alpha > 1)
-                    cg2.alpha = 1;
+                if (cg.alpha > 0 && !_showHud)
+                {
+                    cg.alpha -= Time.deltaTime * showHudSpeed;
+                    if (cg.alpha < 0)
+                        cg.alpha = 0;
+                }
+                else if (cg.alpha < 1 && _showHud)
+                {
+                    cg.alpha += Time.deltaTime * showHudSpeed;
+                    if (cg.alpha > 1)
+                        cg.alpha = 1;
+                }
             }
         }
     }

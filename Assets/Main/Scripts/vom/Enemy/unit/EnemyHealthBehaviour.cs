@@ -4,7 +4,7 @@ namespace vom
 {
     public class EnemyHealthBehaviour : VomEnemyComponent
     {
-        public int healthMax;
+        public int healthMax { get; private set; }
         public int hp { get; private set; }
 
         [HideInInspector]
@@ -12,10 +12,12 @@ namespace vom
 
         public float hpBarOffset = 0;
 
-        void Start()
+        public override void ResetState()
         {
             if (bar == null)
                 bar = HpBarSystem.instance.Create(transform, (host.sizeValue - 0.1f) * 400 + hpBarOffset, host.sizeValue * 1.3f + 0.38f);
+
+            healthMax = host.proto.hp;
 
             ResetHealth();
         }

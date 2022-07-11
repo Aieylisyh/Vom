@@ -19,5 +19,11 @@ namespace vom
         public int hp;
         public int attack;
         public int speed;
+
+        public AttackRange sightRange = AttackRange.MidLong;
+        public float bodyTime = 5;
+        public bool bodyCanSink = true;
+        public int soulLootCount = 1;//how many soul view
+        public int expLootCount = 1;//how many exp view
     }
 }

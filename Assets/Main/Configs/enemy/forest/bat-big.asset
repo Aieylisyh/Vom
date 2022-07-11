@@ -16,8 +16,8 @@ MonoBehaviour:
   prefab: {fileID: 2140459529026160387, guid: 2a2089d48cc78544da59e31c1e7433fc, type: 3}
   drops:
   - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
-  exp: 1000
-  soul: 1000
-  hp: 100
-  attack: 2
-  speed: 2
+  exp: 2000
+  soul: 2000
+  hp: 25
+  attack: 4
+  speed: 3

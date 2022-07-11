@@ -5,28 +5,26 @@ namespace vom
     public class EnemyDeathBehaviour : VomEnemyComponent
     {
         public bool dead { get; private set; }
-
-        public float bodyTime = 5;
-        public bool bodyCanSink = true;
-
+        bool _sink;
         float _bodyTimer;
         float _sinkAcc;
         float _sinkSpeed;
         public GameObject deathVfx;
 
-        void Start()
+        public override void ResetState()
         {
             dead = false;
             _sinkSpeed = 0;
             _sinkAcc = ConfigSystem.instance.combatConfig.enemy.sinkAcc;
-            _bodyTimer = bodyTime;
+            _bodyTimer = host.proto.bodyTime;
+            _sink = host.proto.bodyCanSink;
         }
 
         protected override void Update()
         {
             if (dead)
             {
-                if (!bodyCanSink)
+                if (!_sink)
                     return;
 
                 var dt = com.GameTime.deltaTime;
@@ -61,8 +59,19 @@ namespace vom
                 go.SetActive(true);
             }
 
-            LootSystem.instance.SpawnLoot(transform.position, new ItemData(host.proto.soul, "Soul"));
-            LootSystem.instance.SpawnLoot(transform.position, new ItemData(host.proto.exp, "Exp"));
+            SpawnLoots();
+        }
+
+        void SpawnLoots()
+        {
+            for (int i = 0; i < host.proto.expLootCount; i++)
+            {
+                LootSystem.instance.SpawnLoot(transform.position, new ItemData(i == 0 ? host.proto.exp : 0, "Exp"));
+            }
+            for (int i = 0; i < host.proto.soulLootCount; i++)
+            {
+                LootSystem.instance.SpawnLoot(transform.position, new ItemData(i == 0 ? host.proto.soul : 0, "Soul"));
+            }
         }
     }
 }

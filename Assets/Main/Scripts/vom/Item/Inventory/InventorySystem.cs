@@ -29,9 +29,13 @@ namespace vom
             DailyPerkSystem.instance.SyncExp();
         }
 
+        //AddItem(new ItemData(num, id));
         //this is the final step to add an item, check feedbacks here
         public void AddItem(ItemData data)
         {
+            if (data.n == 0)
+                return;
+
             foreach (var item in _items)
             {
                 if (item.id == data.id)
@@ -58,11 +62,6 @@ namespace vom
             }
 
             return 0;
-        }
-
-        public void AddItem(string id, int num = 1)
-        {
-            AddItem(new ItemData(num, id));
         }
 
         public void AddItemFeedback(ItemData data)

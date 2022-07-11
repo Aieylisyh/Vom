@@ -41,7 +41,7 @@ namespace vom
         public void ReceiveLoot(bool silent)
         {
             _triggered = true;
-            InventorySystem.instance.AddItem(itemId, amount);
+            InventorySystem.instance.AddItem(new ItemData(amount, itemId));
 
             if (!silent)
                 psb.Play();

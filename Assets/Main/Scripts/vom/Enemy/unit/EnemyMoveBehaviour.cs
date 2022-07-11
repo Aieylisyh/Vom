@@ -7,8 +7,8 @@ namespace vom
         private Vector3 _startPos;
         private Vector3 _moveDist;
 
-        public float speed;
-        public float runSpeed = 15f;
+        public float speed { get; private set; }
+        public float runSpeed { get; private set; }
 
         public Transform rotatePart;
 
@@ -21,6 +21,9 @@ namespace vom
 
         public override void ResetState()
         {
+            speed = host.proto.speed;
+            runSpeed = speed + 5f;
+
             knockBack = GetComponent<KnockBackBehaviour>();
             knockBack.setCc(host.cc);
 
