@@ -59,7 +59,7 @@ namespace vom
 
         public void LitMovement()
         {
-            animator.SetTrigger("jump");
+            animator.SetTrigger(PlayerAnimeParams.jump);
         }
     }
 }

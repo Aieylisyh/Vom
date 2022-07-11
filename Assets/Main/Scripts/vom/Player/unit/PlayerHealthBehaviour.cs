@@ -61,7 +61,7 @@ namespace vom
         void Die()
         {
             dead = true;
-            host.animator.SetTrigger("Die");
+            host.animator.SetTrigger(PlayerAnimeParams.die);
             bar.Hide();
             host.attack.orbs.Clear();
             host.combat.UpdateState();

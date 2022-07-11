@@ -15,7 +15,7 @@ namespace vom
         void Start()
         {
             if (bar == null)
-                bar = HpBarSystem.instance.Create(transform, (host.size - 0.1f) * 400 + hpBarOffset, host.size * 1.3f + 0.38f);
+                bar = HpBarSystem.instance.Create(transform, (host.sizeValue - 0.1f) * 400 + hpBarOffset, host.sizeValue * 1.3f + 0.38f);
 
             ResetHealth();
         }

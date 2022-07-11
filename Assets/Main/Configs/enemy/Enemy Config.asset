@@ -17,3 +17,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5e3801c10490fb04ba1482ecac8d925a, type: 2}
   - {fileID: 11400000, guid: 4b767a034ded50b47b5fc2c180aba001, type: 2}
   - {fileID: 11400000, guid: d91dceadb3280794593cf05c823eb3b3, type: 2}
+  sizes:
+    tiny: 0.15
+    small: 0.2
+    mid: 0.25
+    big: 0.3
+    huge: 0.35

@@ -87,8 +87,9 @@ namespace vom
             if (_target != null)
             {
                 _attackIntervalTimer = attackInterval;
-                host.animator.SetBool("move", false);
-                host.animator.SetTrigger("attack");
+                if (host.animator.GetBool(PlayerAnimeParams.move))
+                    host.animator.SetBool(PlayerAnimeParams.move, false);
+                host.animator.SetTrigger(PlayerAnimeParams.attack);
             }
         }
 

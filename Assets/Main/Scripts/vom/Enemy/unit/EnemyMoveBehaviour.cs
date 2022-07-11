@@ -1,12 +1,10 @@
 ﻿using UnityEngine;
-using game;
 
 namespace vom
 {
     public class EnemyMoveBehaviour : VomEnemyComponent
     {
         private Vector3 _startPos;
-
         private Vector3 _moveDist;
 
         public float speed;
@@ -93,8 +91,8 @@ namespace vom
         void RepositionDone()
         {
             //Debug.Log("RepositionDone");
-            if (host.animator.GetBool("move"))
-                host.animator.SetBool("move", false);
+            if (host.animator.GetBool(EnemyAnimeParams.Move))
+                host.animator.SetBool(EnemyAnimeParams.Move, false);
 
             if (!host.cc.enabled)
             {
@@ -141,8 +139,8 @@ namespace vom
 
             //Debug.Log("rb" + dir);
             SetMoveTo(_startPos);
-            if (!host.animator.GetBool("move"))
-                host.animator.SetBool("move", true);
+            if (!host.animator.GetBool(EnemyAnimeParams.Move))
+                host.animator.SetBool(EnemyAnimeParams.Move, true);
 
             var s = dir.normalized * runSpeed * com.GameTime.deltaTime;
             if (s.magnitude > restDist)
@@ -156,15 +154,14 @@ namespace vom
         {
             if (_moveDist.magnitude == 0)
             {
-                if (host.animator.GetBool("move"))
-                    host.animator.SetBool("move", false);
+                if (!host.animator.GetBool(EnemyAnimeParams.Move))
+                    host.animator.SetBool(EnemyAnimeParams.Move, false);
                 Fall();
             }
             else
             {
-                if (!host.animator.GetBool("move"))
-                    host.animator.SetBool("move", true);
-
+                if (!host.animator.GetBool(EnemyAnimeParams.Move))
+                    host.animator.SetBool(EnemyAnimeParams.Move, true);
                 host.cc.SimpleMove(_moveDist * speed);
                 Rotate(_moveDist);
             }

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using game;
+using com;
 
 namespace vom
 {
@@ -21,7 +21,7 @@ namespace vom
         public float movingCamDist;
         public float stayCamDist;
 
-        public com.MmoCameraBehaviour mmoCamera;
+        public MmoCameraBehaviour mmoCamera;
         public KnockBackBehaviour knockBack { get; private set; }
 
         public override void ResetState()
@@ -81,8 +81,8 @@ namespace vom
         {
             if (_moveDist.magnitude == 0)
             {
-                if (host.animator.GetBool("move"))
-                    host.animator.SetBool("move", false);
+                if (host.animator.GetBool(PlayerAnimeParams.move))
+                    host.animator.SetBool(PlayerAnimeParams.move, false);
 
                 Fall();
                 host.combat.UpdateState();
@@ -90,8 +90,8 @@ namespace vom
             }
             else
             {
-                if (!host.animator.GetBool("move"))
-                    host.animator.SetBool("move", true);
+                if (!host.animator.GetBool(PlayerAnimeParams.move))
+                    host.animator.SetBool(PlayerAnimeParams.move, true);
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
                 host.cc.SimpleMove(deltaDist * speed);
                 Rotate(deltaDist);

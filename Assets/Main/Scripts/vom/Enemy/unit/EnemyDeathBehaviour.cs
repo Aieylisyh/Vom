@@ -50,7 +50,7 @@ namespace vom
         {
             dead = true;
             host.health.bar.Hide();
-            host.animator.SetTrigger("Die");
+            host.animator.SetTrigger(EnemyAnimeParams.Die);
             host.targetSearcher.ExitAlert();
 
             host.cc.enabled = false;

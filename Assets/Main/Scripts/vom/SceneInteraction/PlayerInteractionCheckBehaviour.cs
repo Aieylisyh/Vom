@@ -88,20 +88,20 @@ namespace vom
             _currentSi = si;
             _passedTimer = 0;
             Refresh();
-            host.animator.ResetTrigger("stopSlice");
+            host.animator.ResetTrigger(PlayerAnimeParams.stopSlice);
 
             switch (si.interaction)
             {
                 case ESceneInteraction.Chest:
-                    host.animator.SetTrigger("jump");
+                    host.animator.SetTrigger(PlayerAnimeParams.jump);
                     break;
 
                 case ESceneInteraction.Fruit:
-                    host.animator.SetTrigger("slice");
+                    host.animator.SetTrigger(PlayerAnimeParams.slice);
                     break;
 
                 case ESceneInteraction.Tree:
-                    host.animator.SetTrigger("slice");
+                    host.animator.SetTrigger(PlayerAnimeParams.slice);
                     break;
             }
         }
@@ -149,8 +149,7 @@ namespace vom
             var i = host.animator.GetCurrentAnimatorClipInfo(0);
             if (i.Length == 1 && i[0].clip.name == "slice")
             {
-                //Debug.Log("stopSlice");
-                host.animator.SetTrigger("stopSlice");
+                host.animator.SetTrigger(PlayerAnimeParams.stopSlice);
             }
         }
 

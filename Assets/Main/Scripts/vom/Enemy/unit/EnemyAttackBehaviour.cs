@@ -45,7 +45,7 @@ namespace vom
                 return;
 
             _attackIntervalTimer = attackInterval;
-            host.animator.SetTrigger("MeleeAttack");
+            host.animator.SetTrigger(EnemyAnimeParams.Attack);
         }
 
         public void Attacked()

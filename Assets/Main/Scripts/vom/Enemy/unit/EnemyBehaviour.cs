@@ -5,10 +5,12 @@ namespace vom
 {
     public class EnemyBehaviour : MonoBehaviour
     {
+        public EnemySize size;
         public Animator animator;
         public CharacterController cc;
         public Transform circleTrans;
-        public float size = 0.25f;
+
+        public float sizeValue { get; private set; }
 
         public EnemyHealthBehaviour health { get; private set; }
         public EnemyAttackBehaviour attack { get; private set; }
@@ -36,7 +38,8 @@ namespace vom
         {
             EnemySystem.instance.AddEnemy(this);
 
-            circleTrans.localScale = Vector3.one * size;
+            sizeValue = EnemyService.GetSize(size);
+            circleTrans.localScale = Vector3.one * sizeValue;
             attack.ResetState();
             move.ResetState();
             health.ResetState();
@@ -66,7 +69,7 @@ namespace vom
 
             health.ReceiveDamage(dmg);
             targetSearcher.OnAttacked();
-            animator.SetTrigger("Wound");
+            animator.SetTrigger(EnemyAnimeParams.Wound);
         }
 
         public void KnockBack(Vector3 orgin, float knockBackForce)
