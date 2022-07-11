@@ -20,15 +20,16 @@
 
         public static int GetLevelMaxExp(int level)
         {
-            return  GetCfg().experienceRequirement.GetIntValue(level);
+            return GetCfg().experienceRequirement.GetIntValue(level);
         }
 
         public static void SetDataByTotalExp(int totalExp, ref DailyLevelData data)
         {
+            //UnityEngine.Debug.Log("SetDataByTotalExp" + totalExp);
             for (var lv = 1; lv <= GetCfg().maxLevel; lv++)
             {
                 var exp = GetLevelMaxExp(lv);
-                if (totalExp>= exp)
+                if (totalExp >= exp)
                 {
                     totalExp -= exp;
                 }
@@ -36,7 +37,7 @@
                 {
                     data.level = lv;
                     data.exp = totalExp;
-                    break;
+                    return;
                 }
             }
 
