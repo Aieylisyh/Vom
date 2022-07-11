@@ -8,8 +8,7 @@ namespace vom
 
         protected override void Spawn()
         {
-            var ene = Instantiate(enemy.prefab, transform.position, transform.rotation, transform.parent);
-            ene.AssignAttibution(enemy);
+            Instantiate(enemy.prefab, transform.position, transform.rotation, transform.parent);
         }
     }
 }

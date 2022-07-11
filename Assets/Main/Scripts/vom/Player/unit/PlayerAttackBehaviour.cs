@@ -25,7 +25,8 @@ namespace vom
         public ParticleSystem psArcane;
         public ParticleSystem psArcaneExp;
         public ParticleSystem psFrostNove;
-        public GameObject arcaneBlastsOrb;
+        public ArcaneBlastOrbBehaviour arcaneBlastsOrb;
+        ArcaneBlastOrbBehaviour _arcaneBlastOrb;
 
         public override void ResetState()
         {
@@ -93,7 +94,7 @@ namespace vom
             }
         }
 
-        public bool isAttacking { get { return  _attackIntervalTimer > 0f; } }
+        public bool isAttacking { get { return _attackIntervalTimer > 0f; } }
 
         void AimEnemy()
         {
@@ -120,7 +121,7 @@ namespace vom
         public void SummorArcaneBlastsOrb()
         {
             psArcane.Play(true);
-            Instantiate(arcaneBlastsOrb, transform.position + Vector3.up*1.8f, Quaternion.identity, transform);
+            _arcaneBlastOrb = Instantiate(arcaneBlastsOrb, transform.position + Vector3.up * 1.8f, Quaternion.identity, transform);
         }
 
         public void Attacked()
@@ -140,6 +141,17 @@ namespace vom
 
                 var e = _target.GetComponent<EnemyBehaviour>();
                 return !e.death.dead;
+            }
+        }
+
+        public void OnDead()
+        {
+            orbs.Clear();
+
+            if (_arcaneBlastOrb != null && _arcaneBlastOrb.gameObject != null)
+            {
+                Destroy(_arcaneBlastOrb.gameObject);
+                _arcaneBlastOrb = null;
             }
         }
     }

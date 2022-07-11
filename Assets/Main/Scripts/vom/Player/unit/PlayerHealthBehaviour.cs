@@ -63,7 +63,7 @@ namespace vom
             dead = true;
             host.animator.SetTrigger(PlayerAnimeParams.die);
             bar.Hide();
-            host.attack.orbs.Clear();
+            host.attack.OnDead();
             host.combat.UpdateState();
         }
     }

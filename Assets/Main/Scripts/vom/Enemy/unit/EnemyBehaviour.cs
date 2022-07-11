@@ -18,7 +18,7 @@ namespace vom
         public EnemyTargetSearcherBehaviour targetSearcher { get; private set; }
         public EnemyDeathBehaviour death { get; private set; }
 
-        public EnemyPrototype proto { get; private set; }
+        public EnemyPrototype proto;
 
         private void Awake()
         {
@@ -29,14 +29,16 @@ namespace vom
             death = GetComponent<EnemyDeathBehaviour>();
         }
 
-        public void AssignAttibution(EnemyPrototype pProto)
+        public void AssignAttibution()
         {
-            proto = pProto;
+         
         }
 
         public void Start()
         {
             EnemySystem.instance.AddEnemy(this);
+
+            AssignAttibution();
 
             sizeValue = EnemyService.GetSize(size);
             circleTrans.localScale = Vector3.one * sizeValue;
