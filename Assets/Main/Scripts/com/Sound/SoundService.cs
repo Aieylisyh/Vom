@@ -49,11 +49,9 @@ namespace com
         private bool IsEnabled()
         {
             if (UxService.instance.settingsDataCache == null)
-            {
                 return true;
-            }
 
-            return UxService.instance.settingsDataCache.cache.sfxOn;
+            return !UxService.instance.settingsDataCache.cache.sfxOff;
         }
 
         public void Play(string soundName, float volume = 1)

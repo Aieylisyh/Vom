@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Settings Config
   m_EditorClassIdentifier: 
   languageDefault: 0
-  sfxOn: 0
-  musicOn: 0
-  vibrateOn: 0
+  sfxOff: 0
+  musicOff: 0
+  vibrateOff: 0
   ver_1: 0
   ver_2: 0
   ver_3: 0

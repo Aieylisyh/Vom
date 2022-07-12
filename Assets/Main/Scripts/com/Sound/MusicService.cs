@@ -186,6 +186,7 @@ namespace com
             set
             {
                 _isEnabled = combatAudioSource.enabled = bossAudioSource.enabled = menuAudioSource.enabled = value;
+                Debug.Log("_isEnabled"+ _isEnabled);
                 if (value)
                 {
                     PlayMusic();
@@ -199,6 +200,7 @@ namespace com
 
         private void PlayMusic()
         {
+            Debug.Log("PlayMusic");
             int i = (int)LastMusic;
             var source = _enumToSource[i];
             if (source != null)

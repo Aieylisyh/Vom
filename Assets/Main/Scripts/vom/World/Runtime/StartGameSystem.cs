@@ -34,6 +34,7 @@ namespace vom
                 // data.btnClose = false;
                 // data.btnBgClose = true;
                 // WindowService.instance.ShowConfirmBoxPopup(data);
+                UxService.instance.StartLogin();
             });
         }
     }

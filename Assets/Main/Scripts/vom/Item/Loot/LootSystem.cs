@@ -38,7 +38,7 @@ namespace vom
             _loots.Add(loot);
         }
 
-        public void Remove(LootBehaviour l, float delay = 0)
+        public void Remove(LootBehaviour l, float delay = 0.5f)
         {
             _loots.Remove(l);
             Destroy(l.gameObject, delay);

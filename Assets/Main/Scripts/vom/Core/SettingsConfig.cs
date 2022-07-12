@@ -8,9 +8,9 @@ namespace vom
     {
         public LocalizationService.Language languageDefault;
 
-        public bool sfxOn;
-        public bool musicOn;
-        public bool vibrateOn;
+        public bool sfxOff;
+        public bool musicOff;
+        public bool vibrateOff;
 
         public int ver_1;
         public int ver_2;

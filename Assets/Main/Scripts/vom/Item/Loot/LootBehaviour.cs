@@ -34,7 +34,7 @@ namespace vom
             if (player != null)
             {
                 ReceiveLoot(false);
-                LootSystem.instance.Remove(this, 0.3f);
+                LootSystem.instance.Remove(this);
             }
         }
 

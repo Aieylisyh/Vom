@@ -14,16 +14,16 @@ namespace vom
         public void Reset()
         {
             var cfg = ConfigSystem.instance.settingsConfig;
-            sfxOn = cfg.sfxOn;
-            musicOn = cfg.musicOn;
-            vibrateOn = cfg.vibrateOn;
+            sfxOff = cfg.sfxOff;
+            musicOff = cfg.musicOff;
+            vibrateOff = cfg.vibrateOff;
             language = cfg.languageDefault;
             langueHasSet = false;
         }
 
-        public bool sfxOn;
-        public bool musicOn;
-        public bool vibrateOn;
+        public bool sfxOff;
+        public bool musicOff;
+        public bool vibrateOff;
 
         public com.LocalizationService.Language language
         {

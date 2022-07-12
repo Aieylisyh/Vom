@@ -114,7 +114,7 @@ namespace vom
             settingsDataCache = new SettingsDataCache();
             InitDataCache(settingsDataCache, "u", true);
 
-            MusicService.instance.IsEnabled = settingsDataCache.cache.musicOn;
+            MusicService.instance.IsEnabled = !settingsDataCache.cache.musicOff;
             LocalizationService.instance.currentLanguage = settingsDataCache.cache.language;
             LocalizeLabel.OnLanguageChange();
         }

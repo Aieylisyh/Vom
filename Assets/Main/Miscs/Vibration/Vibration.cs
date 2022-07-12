@@ -11,7 +11,7 @@ public class Vibration
     public static bool IsEnabled()
     {
         var cache = vom.UxService.instance.settingsDataCache.cache;
-        var vibrateOn = cache.vibrateOn;
+        var vibrateOn = !cache.vibrateOff;
         return vibrateOn;
     }
 
