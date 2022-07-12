@@ -21,7 +21,7 @@ namespace vom
                 targetItem = gameObject;
 
             InitFruits();
-            tree.localEulerAngles = new Vector3(0, Random.Range(-30, 30), 0);
+            tree.localEulerAngles = new Vector3(0, Random.Range(-15, 15), 0);
         }
 
         void InitFruits()

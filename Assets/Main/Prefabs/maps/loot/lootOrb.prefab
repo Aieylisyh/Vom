@@ -4902,7 +4902,7 @@ MonoBehaviour:
   waitTimeRandomnizer: 0.2
   absorbAcc: 30
   absorbSpeedMax: 30
-  force: 110
+  force: 90
   torque: 0
 --- !u!54 &3005722648633176359
 Rigidbody:
