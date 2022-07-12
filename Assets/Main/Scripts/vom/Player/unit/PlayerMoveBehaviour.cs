@@ -50,7 +50,6 @@ namespace vom
 
         public void Moved()
         {
-            // com.SoundService.instance.Play("step");
             SoundService.instance.Play(new string[2] { "step1", "step2" });
         }
 

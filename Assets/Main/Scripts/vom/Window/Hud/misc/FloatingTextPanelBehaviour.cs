@@ -42,7 +42,7 @@ namespace vom
             ins.SetPos(target, offset);
             ins.StartMove();
             ins.rect.DOScale(1, 0.5f);
-            ins.speedX = Random.Range(-100, 100);
+            ins.speedX = Random.Range(-120, 120);
         }
     }
 }

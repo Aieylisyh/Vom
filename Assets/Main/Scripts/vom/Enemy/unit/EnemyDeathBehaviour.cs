@@ -73,6 +73,9 @@ namespace vom
             {
                 LootSystem.instance.SpawnLoot(transform.position, new ItemData(i == 0 ? host.proto.soul : 0, "Soul"));
             }
+
+            //var drop = host.proto.drops;
+            //TODO loot item
         }
     }
 }
