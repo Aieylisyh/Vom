@@ -13,9 +13,6 @@ namespace vom
         List<GameObject> _attachedFruits;
         public GameObject fruitPrefab;
 
-        public bool hasFruit { get; private set; }
-
-
         public Transform[] fruitTransList;
 
         private void Start()
@@ -29,24 +26,16 @@ namespace vom
 
         void InitFruits()
         {
-            if (interaction == ESceneInteraction.Tree && Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance)
+            ClearAttachedFruits();
+
+            bool hasAttachedFruit = Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance;
+            if (interaction == ESceneInteraction.Tree && hasAttachedFruit)
             {
                 interaction = ESceneInteraction.Fruit;
-                hasFruit = true;
-
-                ClearAttachedFruits();
-                bool hasAttachedFruit = Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance;
-                if (hasAttachedFruit)
+                for (var i = 0; i < fruitTransList.Length; i++)
                 {
-                    int count = Random.Range(1, 4);
-                    if (count > 3)
-                        count = 3;
-
-                    for (var i = 0; i < count; i++)
-                    {
-                        var go = Instantiate(fruitPrefab, fruitTransList[i].position, fruitTransList[i].rotation, transform);
-                        _attachedFruits.Add(go);
-                    }
+                    var go = Instantiate(fruitPrefab, fruitTransList[i].position, fruitTransList[i].rotation, transform);
+                    _attachedFruits.Add(go);
                 }
             }
         }
@@ -66,7 +55,7 @@ namespace vom
 
         void SpawnLootableFruits()
         {
-            SoundService.instance.Play(new string[3] { "vega1", "vega2", "vega3" });
+            SoundService.instance.Play(new string[3] { "vege1", "vege2", "vege3" });
 
             var count = _attachedFruits.Count;
             foreach (var f in _attachedFruits)
@@ -107,7 +96,6 @@ namespace vom
             go.SetActive(true);
 
             SpawnLootableFruits();
-            hasFruit = false;
             interaction = ESceneInteraction.Tree;
             triggered = false;
         }
