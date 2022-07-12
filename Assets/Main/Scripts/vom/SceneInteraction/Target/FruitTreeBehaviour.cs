@@ -10,8 +10,6 @@ namespace vom
     {
         public Transform tree;
 
-        public GameObject fruits;
-
         List<GameObject> _attachedFruits;
         public GameObject fruitPrefab;
 
@@ -26,33 +24,29 @@ namespace vom
                 targetItem = gameObject;
 
             InitFruits();
-            tree.localEulerAngles = new Vector3(0, Random.Range(0, 360), 0);
+            tree.localEulerAngles = new Vector3(0, Random.Range(-30, 30), 0);
         }
 
         void InitFruits()
         {
-            if (interaction == ESceneInteraction.Tree && fruits != null && Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance)
+            if (interaction == ESceneInteraction.Tree && Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance)
             {
                 interaction = ESceneInteraction.Fruit;
                 hasFruit = true;
-                fruits.SetActive(true);
-            }
 
-            return;
-
-            ClearAttachedFruits();
-            bool hasAttachedFruit = Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance;
-            if (hasAttachedFruit)
-            {
-                int count = Random.Range(1, 4);
-                if (count > 3)
-                    count = 3;
-
-                for (var i = 0; i < count; i++)
+                ClearAttachedFruits();
+                bool hasAttachedFruit = Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance;
+                if (hasAttachedFruit)
                 {
-                    var go = Instantiate(fruitPrefab, fruitTransList[i].position, fruitTransList[i].rotation, transform);
-                    // go.SetActive(true);
-                    _attachedFruits.Add(go);
+                    int count = Random.Range(1, 4);
+                    if (count > 3)
+                        count = 3;
+
+                    for (var i = 0; i < count; i++)
+                    {
+                        var go = Instantiate(fruitPrefab, fruitTransList[i].position, fruitTransList[i].rotation, transform);
+                        _attachedFruits.Add(go);
+                    }
                 }
             }
         }
@@ -72,6 +66,8 @@ namespace vom
 
         void SpawnLootableFruits()
         {
+            SoundService.instance.Play(new string[3] { "vega1", "vega2", "vega3" });
+
             var count = _attachedFruits.Count;
             foreach (var f in _attachedFruits)
             {
@@ -110,17 +106,9 @@ namespace vom
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             go.SetActive(true);
 
-            SoundService.instance.Play(new string[3] { "vega1", "vega2", "vega3" });
-
-            for (int i = 0; i < 2; i++)
-            {
-                LootSystem.instance.SpawnLoot(transform.position, new ItemData(3, "Apple"));
-            }
-            // SpawnLootableFruits();
+            SpawnLootableFruits();
             hasFruit = false;
-            fruits.SetActive(false);
             interaction = ESceneInteraction.Tree;
-
             triggered = false;
         }
     }

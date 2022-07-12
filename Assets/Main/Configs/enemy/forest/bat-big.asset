@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: bat-2
   prefab: {fileID: 2140459529026160387, guid: 2a2089d48cc78544da59e31c1e7433fc, type: 3}
+  normalAttackIsRanged: 1
   drops:
   - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 3000
@@ -21,6 +22,7 @@ MonoBehaviour:
   hp: 25
   attack: 4
   speed: 3
+  attackInterval: 1.4
   sightRange: 6
   bodyTime: 5
   bodyCanSink: 1
