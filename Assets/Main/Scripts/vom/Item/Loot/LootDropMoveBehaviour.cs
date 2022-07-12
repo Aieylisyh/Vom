@@ -11,7 +11,8 @@ namespace vom
         {
             base.Init(pos);
 
-            var radian = Mathf.PI * Random.value * 2;
+            //var radian = Mathf.PI * Random.value * 2;
+            var radian = Mathf.PI * Random.Range(0.7f, 1.3f);
             _tempDir = Vector3.up;
             _tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
             _tempDir.Normalize();

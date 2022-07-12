@@ -27,7 +27,8 @@ namespace vom
             if (trait != null)
                 trait.emitting = true;
 
-            var radian = Mathf.PI * Random.value * 2;
+            //var radian = Mathf.PI * Random.value * 2;
+            var radian = Mathf.PI * Random.Range(0.5f, 1.5f);
             _tempDir = Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian) + Vector3.up * 0.2f;
             _tempDir.Normalize();
             transform.position = pos + _tempDir * 1;
