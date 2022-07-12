@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using com;
 using DG.Tweening;
+using System.Collections.Generic;
 
 namespace vom
 {
@@ -11,13 +12,25 @@ namespace vom
 
         public GameObject fruits;
 
+        List<GameObject> _attachedFruits;
+        public GameObject fruitPrefab;
+
         public bool hasFruit { get; private set; }
+
+
+        public Transform[] fruitTransList;
 
         private void Start()
         {
             if (targetItem == null)
                 targetItem = gameObject;
 
+            InitFruits();
+            tree.localEulerAngles = new Vector3(0, Random.Range(0, 360), 0);
+        }
+
+        void InitFruits()
+        {
             if (interaction == ESceneInteraction.Tree && fruits != null && Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance)
             {
                 interaction = ESceneInteraction.Fruit;
@@ -25,7 +38,47 @@ namespace vom
                 fruits.SetActive(true);
             }
 
-            tree.localEulerAngles = new Vector3(0, Random.Range(0, 360), 0);
+            return;
+
+            ClearAttachedFruits();
+            bool hasAttachedFruit = Random.value < ConfigSystem.instance.sceneInteractionConfig.treeHasFruitChance;
+            if (hasAttachedFruit)
+            {
+                int count = Random.Range(1, 4);
+                if (count > 3)
+                    count = 3;
+
+                for (var i = 0; i < count; i++)
+                {
+                    var go = Instantiate(fruitPrefab, fruitTransList[i].position, fruitTransList[i].rotation, transform);
+                    // go.SetActive(true);
+                    _attachedFruits.Add(go);
+                }
+            }
+        }
+
+        void ClearAttachedFruits()
+        {
+            if (_attachedFruits != null)
+            {
+                foreach (var f in _attachedFruits)
+                {
+                    if (f != null)
+                        Destroy(f);
+                }
+            }
+            _attachedFruits = new List<GameObject>();
+        }
+
+        void SpawnLootableFruits()
+        {
+            var count = _attachedFruits.Count;
+            foreach (var f in _attachedFruits)
+            {
+                LootSystem.instance.SpawnLoot(f.transform.position, new ItemData(_attachedFruits.IndexOf(f) == 0 ? count : 0, "Apple"));
+            }
+
+            ClearAttachedFruits();
         }
 
         public void Chopped(bool weak = true)
@@ -57,13 +110,13 @@ namespace vom
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             go.SetActive(true);
 
-            SoundService.instance.Play("fruit");
+            SoundService.instance.Play(new string[3] { "vega1", "vega2", "vega3" });
 
             for (int i = 0; i < 2; i++)
             {
                 LootSystem.instance.SpawnLoot(transform.position, new ItemData(3, "Apple"));
             }
-
+            // SpawnLootableFruits();
             hasFruit = false;
             fruits.SetActive(false);
             interaction = ESceneInteraction.Tree;

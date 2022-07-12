@@ -11,6 +11,7 @@ namespace vom
         public virtual string desc { get { return id + "_desc"; } }
 
         public EnemyBehaviour prefab;
+        public bool normalAttackIsRanged;
 
         public List<DropPrototype> drops;
         public int exp;

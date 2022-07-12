@@ -353,7 +353,7 @@ MonoBehaviour:
   interaction: 3
   targetItem: {fileID: 0}
   vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
-  startSound: openChest
+  startSound: box
   chestLock: {fileID: 1800599037103400600}
   cover: {fileID: 860513292501769006}
   closedTrans: {fileID: 3242871070153970757}

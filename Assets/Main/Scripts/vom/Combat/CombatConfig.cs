@@ -11,6 +11,9 @@ namespace vom
         public enemyParam enemy;
 
         public int blockerLayerMask = 3;
+
+        [Range(0.5f,0.9f)]
+        public float meleeAttackRadioRangeRatio = 0.6f;
     }
 
     [System.Serializable]

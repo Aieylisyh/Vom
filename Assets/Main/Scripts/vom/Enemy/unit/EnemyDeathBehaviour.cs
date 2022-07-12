@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using com;
+using UnityEngine;
 
 namespace vom
 {
@@ -50,7 +51,7 @@ namespace vom
             host.health.bar.Hide();
             host.animator.SetTrigger(EnemyAnimeParams.Die);
             host.targetSearcher.ExitAlert();
-
+            SoundService.instance.Play(new string[2] { "mob die1", "mob die2" });
             host.cc.enabled = false;
 
             if (deathVfx != null)

@@ -22,3 +22,4 @@ MonoBehaviour:
     alertTime: 2
     sinkAcc: 0.4
   blockerLayerMask: 3
+  meleeAttackRadioRangeRatio: 0.56

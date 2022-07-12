@@ -12,6 +12,7 @@ namespace vom
         private float _attackIntervalTimer;
 
         public GameObject shootBullet;
+        public string attackSound;
 
         public Transform weaponPos;
 
@@ -49,12 +50,40 @@ namespace vom
                 return;
 
             _attackIntervalTimer = attackInterval;
+            if (!string.IsNullOrEmpty(attackSound))
+                SoundService.instance.Play(attackSound);
+            else if (!host.proto.normalAttackIsRanged)
+            {
+                SoundService.instance.Play(new string[2] { "melee1", "melee2" });
+            }
             host.animator.SetTrigger(EnemyAnimeParams.Attack);
         }
 
         public void Attacked()
         {
-            SpawnShoot(shootBullet, _targetPos);
+            if (host.proto.normalAttackIsRanged)
+            {
+                SpawnShoot(shootBullet, _targetPos);
+            }
+            else
+            {
+                MeleeAttack();
+            }
+        }
+
+        void MeleeAttack()
+        {
+            var radius = ConfigSystem.instance.combatConfig.meleeAttackRadioRangeRatio * _fRange;
+            var center = (_targetPos - transform.position).normalized * _fRange * 0.5f + transform.position;
+            var currentTarget = PlayerBehaviour.instance;
+            var targetCurrentPos = currentTarget.transform.position;
+            var dist = targetCurrentPos - center;
+            var targetInRange = dist.magnitude < radius;
+            if (targetInRange)
+            {
+                SoundService.instance.Play(new string[2] { "hit1", "hit2" });
+                currentTarget.OnHit(attack);
+            }
         }
 
         public bool isAttacking { get { return _attackIntervalTimer > 0f; } }
