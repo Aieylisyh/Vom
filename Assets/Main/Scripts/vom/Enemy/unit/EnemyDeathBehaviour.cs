@@ -16,7 +16,7 @@ namespace vom
         {
             dead = false;
             _sinkSpeed = 0;
-            _sinkAcc = ConfigSystem.instance.combatConfig.enemy.sinkAcc;
+            _sinkAcc = ConfigSystem.instance.enemyConfig.sinkAcc;
             _bodyTimer = host.proto.bodyTime;
             _sink = host.proto.bodyCanSink;
         }

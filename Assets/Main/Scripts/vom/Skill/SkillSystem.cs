@@ -173,7 +173,7 @@ namespace vom
                 case "FrostNova":
                     host.skill.CastSpellBigAnim();
                     host.attack.psFrostNove.Play(true);
-                    DealAoeDamage(3, host.transform.position, CombatSystem.GetRange(AttackRange.Short), 0.06f);
+                    DealAoeDamage(3, host.transform, CombatSystem.GetRange(AttackRange.Short), 0.06f);
                     if (displayRange)
                         ShowRangeView(5);
 
@@ -183,7 +183,7 @@ namespace vom
                 case "ArcaneExposion":
                     host.skill.CastSpellAnim();
                     host.attack.psArcaneExp.Play(true);
-                    DealAoeDamage(2, host.transform.position, CombatSystem.GetRange(AttackRange.Short), 0.1f);
+                    DealAoeDamage(2, host.transform, CombatSystem.GetRange(AttackRange.Short), 0.1f);
                     if (displayRange)
                         ShowRangeView(6);
 
@@ -211,16 +211,16 @@ namespace vom
             Invoke("HideRangeView", 0.2f);
         }
 
-        void DealAoeDamage(int dmg, Vector3 origin, float range, float knockBackForce = 0)
+        void DealAoeDamage(int dmg, Transform origin, float range, float knockBackForce = 0)
         {
             var enes = EnemySystem.instance.enemies;
             foreach (var e in enes)
             {
                 var pos = e.transform.position;
-                if (Vector3.Distance(pos, origin) < range)
+                if (Vector3.Distance(pos, origin.position) < range)
                 {
                     if (knockBackForce > 0)
-                        e.KnockBack(origin, knockBackForce);
+                        e.KnockBack(origin.position, knockBackForce);
                     e.OnHit(dmg, origin);
                 }
             }

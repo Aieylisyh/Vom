@@ -14,8 +14,9 @@ namespace vom
 
         public AttackRange stopRange = AttackRange.Melee;
         float _fRange;
-
+        float _acc;
         bool _groundFound;
+        float _crtSpeed;
 
         public KnockBackBehaviour knockBack { get; private set; }
 
@@ -23,6 +24,8 @@ namespace vom
         {
             speed = host.proto.speed;
             runSpeed = speed + 5f;
+            _acc = speed * 0.5f;
+            _crtSpeed = 0;
 
             knockBack = GetComponent<KnockBackBehaviour>();
             knockBack.setCc(host.cc);
@@ -77,7 +80,7 @@ namespace vom
                 {
                     if (!host.cc.enabled)
                         host.cc.enabled = true;
-                    SetMoveTo(host.targetSearcher.alertOrigin);
+                    SetMoveTo(host.targetSearcher.alertOrigin.position);
                 }
 
                 PerformMove();
@@ -91,21 +94,24 @@ namespace vom
 
         public bool isRunningBack { get { return !host.cc.enabled; } }
 
+        void Stop()
+        {
+            if (host.animator.GetBool(EnemyAnimeParams.Move))
+                host.animator.SetBool(EnemyAnimeParams.Move, false);
+            _crtSpeed = 0;
+        }
+
         void RepositionDone()
         {
             //Debug.Log("RepositionDone");
-            if (host.animator.GetBool(EnemyAnimeParams.Move))
-                host.animator.SetBool(EnemyAnimeParams.Move, false);
-
+            Stop();
             if (!host.cc.enabled)
             {
                 host.cc.enabled = true;
                 host.targetSearcher.RepositionDone();
 
-                if (host.health.hp < host.health.healthMax)
-                {
-                    host.health.ResetHealth();
-                }
+                if (host.health.hp < host.health.hpMax)
+                    host.health.ResetHp();
             }
 
             if (host.targetSearcher.IsInPlayerView())
@@ -157,15 +163,18 @@ namespace vom
         {
             if (_moveDist.magnitude == 0)
             {
-                if (!host.animator.GetBool(EnemyAnimeParams.Move))
-                    host.animator.SetBool(EnemyAnimeParams.Move, false);
+                Stop();
                 Fall();
             }
             else
             {
                 if (!host.animator.GetBool(EnemyAnimeParams.Move))
                     host.animator.SetBool(EnemyAnimeParams.Move, true);
-                host.cc.SimpleMove(_moveDist * speed);
+
+                _crtSpeed += _acc * com.GameTime.deltaTime;
+                if (_crtSpeed > speed)
+                    _crtSpeed = speed;
+                host.cc.SimpleMove(_moveDist * _crtSpeed);
                 Rotate(_moveDist);
             }
 

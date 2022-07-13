@@ -9,6 +9,12 @@ namespace vom
         public List<EnemyPrototype> enemies;
 
         public EnemySizes sizes;
+
+        public float angleSight = 45;
+
+        public float alertTickTime = 0.25f;
+        public int alertTurns = 10;
+        public float sinkAcc;
     }
 
     [System.Serializable]

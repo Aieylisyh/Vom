@@ -57,7 +57,7 @@ namespace vom
             }
         }
 
-        public void OnHit(int dmg, Vector3 origin)
+        public void OnHit(int dmg, Transform origin)
         {
             if (death.dead)
                 return;
@@ -77,7 +77,7 @@ namespace vom
             move.knockBack.KnockBack(dir.normalized, knockBackForce);
         }
 
-        public void OnHit(OrbBehaviour orb, Vector3 origin)
+        public void OnHit(OrbBehaviour orb, Transform origin)
         {
             OnHit(orb.dmg, origin);
         }

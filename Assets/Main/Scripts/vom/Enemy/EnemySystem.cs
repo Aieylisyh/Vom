@@ -52,5 +52,19 @@ namespace vom
 
             return p;
         }
+
+        public AlertBehaviour CreateAlertView(Transform host, float offset = 50f, float scale = 1f)
+        {
+            var newAlert = Instantiate(CombatSystem.instance.alertPrefab);
+            newAlert.gameObject.SetActive(true);
+            newAlert.transform.SetParent(host);
+            newAlert.transform.localPosition = Vector3.zero;
+
+            var ap = newAlert.rectTrans.anchoredPosition;
+            ap.y = offset;
+            newAlert.rectTrans.anchoredPosition = ap;
+            newAlert.rectTrans.localScale = Vector3.one * scale;
+            return newAlert;
+        }
     }
 }

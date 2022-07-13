@@ -51,7 +51,7 @@ namespace vom
         public int dmg = 1;//test only
         bool _triggered;
 
-        private Vector3 _origin;
+        private Transform _origin;
 
         private void Awake()
         {
@@ -114,11 +114,11 @@ namespace vom
             _startPositioningTimer = _startPositioningTime;
         }
 
-        public void SetOrigin(Vector3 pos, bool alsoSetPosition)
+        public void SetOrigin(Transform from, bool alsoSetPosition)
         {
-            _origin = pos;
+            _origin = from;
             if (alsoSetPosition)
-                transform.position = pos;
+                transform.position = from.position;
         }
 
         public void SetRelease(Vector3 target)

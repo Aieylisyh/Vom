@@ -4,7 +4,7 @@ namespace vom
 {
     public class EnemyHealthBehaviour : VomEnemyComponent
     {
-        public int healthMax { get; private set; }
+        public int hpMax { get; private set; }
         public int hp { get; private set; }
 
         [HideInInspector]
@@ -17,21 +17,21 @@ namespace vom
             if (bar == null)
                 bar = HpBarSystem.instance.Create(transform, (host.sizeValue - 0.1f) * 400 + hpBarOffset, host.sizeValue * 1.3f + 0.38f);
 
-            healthMax = host.proto.hp;
+            hpMax = host.proto.hp;
 
-            ResetHealth();
+            ResetHp();
         }
 
-        public void ResetHealth()
+        public void ResetHp()
         {
-            hp = healthMax;
+            hp = hpMax;
             SyncBar(true);
             bar.Hide();
         }
 
         public void SyncBar(bool instant)
         {
-            bar.Set((float)hp / healthMax, instant);
+            bar.Set((float)hp / hpMax, instant);
         }
 
         public void ReceiveDamage(int v)

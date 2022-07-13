@@ -37,7 +37,7 @@ namespace vom
             {
                 if (host.targetSearcher.targetDist < _fRange)
                 {
-                    _targetPos = host.targetSearcher.alertOrigin;
+                    _targetPos = host.targetSearcher.alertOrigin.position;
                     host.move.Rotate(_targetPos - transform.position);
                     PerformAttack();
                 }
@@ -96,7 +96,7 @@ namespace vom
             var shoot = shootGo.GetComponent<OrbBehaviour>();
             shoot.isEnemyShoot = true;
             shoot.dmg = attack;
-            shoot.SetOrigin(weaponPos.position, true);
+            shoot.SetOrigin(weaponPos, true);
             shoot.SetRelease(targetPos);
         }
     }

@@ -61,7 +61,7 @@ namespace vom
             shootGo.SetActive(true);
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
-            shoot.SetOrigin(transform.position, true);
+            shoot.SetOrigin(transform, true);
             shoot.SetRelease(targetPos);
         }
     }
