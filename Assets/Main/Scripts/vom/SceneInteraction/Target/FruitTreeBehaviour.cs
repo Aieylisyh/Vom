@@ -66,7 +66,7 @@ namespace vom
             ClearAttachedFruits();
         }
 
-        public void Chopped(bool weak = true)
+        public void SliceFeedback(bool weak = true)
         {
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             go.SetActive(true);
@@ -79,7 +79,7 @@ namespace vom
 
         public void FinishChop()
         {
-            Chopped();
+            SliceFeedback();
             SoundService.instance.Play("rockDestory");
             CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
             for (int i = 0; i < 2; i++)

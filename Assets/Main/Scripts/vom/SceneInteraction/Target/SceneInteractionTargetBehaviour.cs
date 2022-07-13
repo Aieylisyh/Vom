@@ -8,6 +8,10 @@ namespace vom
         Tree,
         Fruit,
         Chest,
+        Fish,
+        Herb,
+        Mine,
+        Dig,
     }
 
     public class SceneInteractionTargetBehaviour : MonoBehaviour
@@ -83,6 +87,22 @@ namespace vom
                 case ESceneInteraction.Chest:
                     (this as ChestBehaviour).Open();
                     return;
+
+                case ESceneInteraction.Dig:
+                    (this as DigHoleBehaviour).FinishDig();
+                    break;
+
+                case ESceneInteraction.Mine:
+                    (this as MineBehaviour).FinishMining();
+                    break;
+
+                case ESceneInteraction.Herb:
+                    (this as HerbBehaviour).FinishHerbing();
+                    break;
+
+                case ESceneInteraction.Fish:
+                    (this as FishingSpotBehaviour).FinishFishing();
+                    break;
             }
         }
     }

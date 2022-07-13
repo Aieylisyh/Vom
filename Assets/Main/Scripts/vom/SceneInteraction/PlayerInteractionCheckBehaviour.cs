@@ -68,11 +68,31 @@ namespace vom
 
         public void Sliced()
         {
+            SoundService.instance.Play("slice");
+            CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
             if (_currentSi != null)
             {
-                (_currentSi as FruitTreeBehaviour).Chopped();
-                SoundService.instance.Play("slice");
-                CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
+                switch (_currentSi.interaction)
+                {
+                    case ESceneInteraction.None:
+                    case ESceneInteraction.Fruit:
+                    case ESceneInteraction.Chest:
+                    case ESceneInteraction.Fish:
+                    case ESceneInteraction.Herb:
+                        return;
+
+                    case ESceneInteraction.Tree:
+                        (_currentSi as FruitTreeBehaviour).SliceFeedback();
+                        return;
+
+                    case ESceneInteraction.Mine:
+                        (_currentSi as MineBehaviour).SliceFeedback();
+                        break;
+
+                    case ESceneInteraction.Dig:
+                        (_currentSi as DigHoleBehaviour).SliceFeedback();
+                        break;
+                }
             }
         }
 
@@ -80,9 +100,7 @@ namespace vom
         {
             host.move.Rotate(si.transform.position - transform.position);
             if (!si.TestCanInteract())
-            {
                 return;
-            }
 
             _started = true;
             _currentSi = si;
@@ -102,6 +120,22 @@ namespace vom
 
                 case ESceneInteraction.Tree:
                     host.animator.SetTrigger(PlayerAnimeParams.slice);
+                    break;
+
+                case ESceneInteraction.Dig:
+                    host.animator.SetTrigger(PlayerAnimeParams.slice);
+                    break;
+
+                case ESceneInteraction.Mine:
+                    host.animator.SetTrigger(PlayerAnimeParams.slice);
+                    break;
+
+                case ESceneInteraction.Herb:
+                    host.animator.SetTrigger(PlayerAnimeParams.slice);
+                    break;
+
+                case ESceneInteraction.Fish:
+                    host.animator.SetTrigger(PlayerAnimeParams.jump);
                     break;
             }
         }
