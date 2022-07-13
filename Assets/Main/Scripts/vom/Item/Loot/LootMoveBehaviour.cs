@@ -70,6 +70,11 @@ namespace vom
         {
         }
 
+        public bool CanReceive()
+        {
+            return (_dropTimer <= 0 && _waitTimer <= 0);
+        }
+
         void Update()
         {
             if (_dropTimer > 0)

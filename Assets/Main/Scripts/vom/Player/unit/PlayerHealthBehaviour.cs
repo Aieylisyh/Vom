@@ -38,7 +38,7 @@ namespace vom
             var addHp = hp - oldHp;
             if (addHp > 0)
             {
-                FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#88FF00>+" + addHp + "</color>", transform, new Vector2(0, 35));
+                FloatingTextPanelBehaviour.instance.CreateHealValue("<color=#88FF00>+" + addHp + "</color>", transform, new Vector2(0, 10));
             }
 
             SyncBar(true);

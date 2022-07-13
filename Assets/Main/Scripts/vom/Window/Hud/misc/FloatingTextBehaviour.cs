@@ -14,6 +14,7 @@ namespace vom
         public Camera cam;
         public RectTransform rect;
         public float speedX;
+        public float acc;
 
         public void SetText(string s)
         {
@@ -67,6 +68,10 @@ namespace vom
                 return;
 
             var pos = rect.anchoredPosition;
+
+            if (acc != 0)
+                speed += acc * Time.deltaTime;
+
             var y = pos.y;
             y += speed * Time.deltaTime;
             if (speedX != 0)

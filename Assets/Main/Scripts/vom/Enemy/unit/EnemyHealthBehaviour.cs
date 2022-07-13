@@ -39,7 +39,7 @@ namespace vom
             hp -= v;
             bar.Show();
             SyncBar(false);
-            FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#FFFFFF>-" + v + "</color>", transform, new Vector2(0, 20));
+            FloatingTextPanelBehaviour.instance.CreateDamageValue("<color=#FF5544>-" + v + "</color>", transform, new Vector2(0, 35));
 
             if (hp <= 0 && !host.death.dead)
             {

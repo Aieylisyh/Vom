@@ -27,7 +27,7 @@ namespace vom
 
         public void OnTriggerEnter(Collider other)
         {
-            if (_triggered)
+            if (_triggered || !move.CanReceive())
                 return;
 
             var player = other.GetComponent<PlayerBehaviour>();
