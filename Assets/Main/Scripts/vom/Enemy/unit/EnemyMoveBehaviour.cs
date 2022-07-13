@@ -71,13 +71,13 @@ namespace vom
             if (host.attack.isAttacking)
                 return;
 
-            if (host.targetSearcher.alerted && host.targetSearcher.target != null)
+            if (host.targetSearcher.alerted && host.targetSearcher.alertOrigin != null)
             {
                 if (host.targetSearcher.targetDist >= _fRange)
                 {
                     if (!host.cc.enabled)
                         host.cc.enabled = true;
-                    SetMoveTo(host.targetSearcher.target.position);
+                    SetMoveTo(host.targetSearcher.alertOrigin);
                 }
 
                 PerformMove();

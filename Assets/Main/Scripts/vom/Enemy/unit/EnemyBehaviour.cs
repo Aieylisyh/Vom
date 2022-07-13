@@ -57,13 +57,13 @@ namespace vom
             }
         }
 
-        public void OnHit(int dmg)
+        public void OnHit(int dmg, Vector3 origin)
         {
             if (death.dead)
                 return;
 
             health.ReceiveDamage(dmg);
-            targetSearcher.OnAttacked();
+            targetSearcher.OnAttacked(origin);
             animator.SetTrigger(EnemyAnimeParams.Wound);
         }
 
@@ -77,9 +77,9 @@ namespace vom
             move.knockBack.KnockBack(dir.normalized, knockBackForce);
         }
 
-        public void OnHit(OrbBehaviour orb)
+        public void OnHit(OrbBehaviour orb, Vector3 origin)
         {
-            OnHit(orb.dmg);
+            OnHit(orb.dmg, origin);
         }
     }
 }

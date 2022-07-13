@@ -33,11 +33,11 @@ namespace vom
             if (_attackIntervalTimer > 0)
                 _attackIntervalTimer -= GameTime.deltaTime;
 
-            if (host.targetSearcher.alerted && host.targetSearcher.target != null)
+            if (host.targetSearcher.alerted && host.targetSearcher.alertOrigin != null)
             {
                 if (host.targetSearcher.targetDist < _fRange)
                 {
-                    _targetPos = host.targetSearcher.target.position;
+                    _targetPos = host.targetSearcher.alertOrigin;
                     host.move.Rotate(_targetPos - transform.position);
                     PerformAttack();
                 }
@@ -92,11 +92,11 @@ namespace vom
         {
             GameObject shootGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
             shootGo.SetActive(true);
-            shootGo.transform.position = weaponPos.position;
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
             shoot.isEnemyShoot = true;
             shoot.dmg = attack;
+            shoot.SetOrigin(weaponPos.position, true);
             shoot.SetRelease(targetPos);
         }
     }

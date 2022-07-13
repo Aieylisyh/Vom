@@ -10,7 +10,7 @@ namespace vom
         public GameObject poisonball;
 
         public GameObject arcaneBolt;
-       
+
 
         private List<OrbBehaviour> _orbs = new List<OrbBehaviour>();
         public Transform weaponPos;
@@ -57,9 +57,9 @@ namespace vom
         {
             GameObject shootGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
             shootGo.SetActive(true);
-            shootGo.transform.position = weaponPos.position;
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
+            shoot.SetOrigin(weaponPos.position, true);
             shoot.SetRelease(targetPos);
         }
 
@@ -85,6 +85,7 @@ namespace vom
                 var orb = _orbs[0];
                 if (orb.IsReadyInOrbital())
                 {
+                    orb.SetOrigin(orb.transform.position, false);
                     orb.SetRelease(target);
                     _orbs.Remove(orb);
                 }

@@ -51,6 +51,8 @@ namespace vom
         public int dmg = 1;//test only
         bool _triggered;
 
+        private Vector3 _origin;
+
         private void Awake()
         {
             _rotateAlignMove = GetComponent<RotateAlignMove>();
@@ -94,11 +96,10 @@ namespace vom
                     if (ene != null)
                     {
                         //Debug.Log("hit ene" + other.gameObject);
-                        ene.OnHit(this);
+                        ene.OnHit(this, _origin);
                         Die(false);
                     }
                 }
-
             }
         }
 
@@ -111,6 +112,13 @@ namespace vom
             _isOrbital = true;
 
             _startPositioningTimer = _startPositioningTime;
+        }
+
+        public void SetOrigin(Vector3 pos, bool alsoSetPosition)
+        {
+            _origin = pos;
+            if (alsoSetPosition)
+                transform.position = pos;
         }
 
         public void SetRelease(Vector3 target)

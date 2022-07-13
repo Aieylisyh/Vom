@@ -59,9 +59,9 @@ namespace vom
         {
             GameObject shootGo = Instantiate(prefab, CombatSystem.instance.projectileSpace);
             shootGo.SetActive(true);
-            shootGo.transform.position = transform.position;
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
+            shoot.SetOrigin(transform.position, true);
             shoot.SetRelease(targetPos);
         }
     }

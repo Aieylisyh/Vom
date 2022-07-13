@@ -21,9 +21,9 @@ MonoBehaviour:
   soul: 3000
   hp: 25
   attack: 4
-  speed: 3
+  speed: 3.25
   attackInterval: 1.4
-  sightRange: 6
+  sightRange: 4
   bodyTime: 5
   bodyCanSink: 1
   soulLootCount: 3

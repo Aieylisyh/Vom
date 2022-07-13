@@ -221,7 +221,7 @@ namespace vom
                 {
                     if (knockBackForce > 0)
                         e.KnockBack(origin, knockBackForce);
-                    e.OnHit(dmg);
+                    e.OnHit(dmg, origin);
                 }
             }
         }

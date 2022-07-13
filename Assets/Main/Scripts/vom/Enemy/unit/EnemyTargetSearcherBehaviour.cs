@@ -6,7 +6,9 @@ namespace vom
     public class EnemyTargetSearcherBehaviour : VomEnemyComponent
     {
         public bool alerted { get; private set; }
-        public Transform target { get; private set; }
+        public Vector3 alertOrigin { get; private set; }
+        public Transform alertTransform { get; private set; }
+
         float _alertTimer;
 
         float _fSight;
@@ -15,45 +17,53 @@ namespace vom
 
         public float targetDist { get; private set; }
 
+        bool _isInPlayerView;
+        int _checkedFrame;
+
         public override void ResetState()
         {
             _fSight = CombatSystem.GetRange(host.proto.sightRange);
             _alertTimer = 0;
-            target = null;
-            alerted = false;
+            ExitAlert();
         }
 
         public void RepositionDone()
         {
-            alerted = false;
+            ExitAlert();
         }
 
         void CheckSight()
         {
-            var player = PlayerBehaviour.instance;
-            if (player.health.dead)
-            {
-                ExitAlert();
-                return;
-            }
-            if (host.move.isRunningBack)
+            var players = EnemySystem.instance.GetValidPlayers();
+            if (players == null)
             {
                 ExitAlert();
                 return;
             }
 
-            var playerPos = player.transform.position;
-            _toPlayerDir = playerPos - transform.position;
-            targetDist = (_toPlayerDir).magnitude;
-            if (targetDist < _fSight)
+            foreach (var p in players)
             {
-                target = player.transform;
-                if (!alerted)
+                var targetPos = p.transform.position;
+                var selfPos = transform.position;
+                if (InSight(targetPos, selfPos))
                 {
-                    EnterAlert();
+                    var _toDir = targetPos - transform.position;
+                    targetDist = (_toDir).magnitude;
+                    if (targetDist < _fSight)
+                    {
+                        alertOrigin = targetPos;
+
+                        TryEnterAlert();
+                        return;
+                    }
                 }
-                return;
             }
+
+        }
+
+        public bool InSight(Vector3 targetPos, Vector3 selfPos)
+        {
+            return false;
         }
 
         public void OnUpdate()
@@ -70,14 +80,23 @@ namespace vom
             CheckSight();
         }
 
-        public void OnAttacked()
+        public void OnAttacked(Vector3 origin)
         {
-            target = PlayerBehaviour.instance.transform;
-            EnterAlert();
+            alertOrigin = origin;
+            TryEnterAlert();
         }
 
-        void EnterAlert()
+        void TryEnterAlert()
         {
+            if (alerted)
+                return;
+
+            if (host.move.isRunningBack)
+            {
+                ExitAlert();
+                return;
+            }
+
             _alertTimer = ConfigSystem.instance.combatConfig.enemy.alertTime;
             alerted = true;
         }
@@ -85,11 +104,8 @@ namespace vom
         public void ExitAlert()
         {
             alerted = false;
-            target = null;
+            alertTransform = null;
         }
-
-        bool _isInPlayerView;
-        int _checkedFrame;
 
         public bool IsInPlayerView()
         {
