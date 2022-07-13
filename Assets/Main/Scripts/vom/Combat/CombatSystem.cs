@@ -10,9 +10,10 @@ namespace vom
 
         public Transform projectileSpace;
 
-        public float r_Melee=1.75f;
+        public float r_Melee = 1.75f;
         public float r_MeleeBig = 2.5f;
         public float r_Short = 6.5f;
+        public float r_EneSight = 6.75f;
         public float r_Mid = 7.75f;
         public float r_MidLong = 9.25f;
         public float r_Long = 9.75f;
@@ -40,6 +41,9 @@ namespace vom
                 case AttackRange.Short:
                     return instance.r_Short;
 
+                case AttackRange.EneSight:
+                    return instance.r_EneSight;
+
                 case AttackRange.Mid:
                     return instance.r_Mid;
 
@@ -62,14 +66,15 @@ namespace vom
 
     public enum AttackRange
     {
-        None,
-        Melee,
-        MeleeBig,
-        Short,
-        Mid,
-        MidLong,
-        Long,
-        Sight,
-        VeryLong,
+        None = 0,
+        Melee = 10,
+        MeleeBig = 20,
+        Short = 30,
+        EneSight = 40,
+        Mid = 50,
+        MidLong = 60,
+        Long = 70,
+        Sight = 80,
+        VeryLong = 100,
     }
 }

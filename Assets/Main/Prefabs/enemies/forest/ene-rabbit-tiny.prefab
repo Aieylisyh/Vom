@@ -94,8 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6701fbf6b732be64eb12dd7e3c20f2f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 1
+  range: 10
   shootBullet: {fileID: 0}
+  attackSound: 
   weaponPos: {fileID: 5476136021404509666}
 --- !u!143 &8745235370282988360
 CharacterController:
@@ -128,7 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotatePart: {fileID: 6571864714241624231}
-  stopRange: 1
+  stopRange: 10
 --- !u!114 &8000250683438515965
 MonoBehaviour:
   m_ObjectHideFlags: 0

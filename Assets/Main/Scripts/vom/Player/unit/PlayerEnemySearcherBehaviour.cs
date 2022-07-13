@@ -5,7 +5,7 @@ namespace vom
 {
     public class PlayerEnemySearcherBehaviour : MonoBehaviour
     {
-        public AttackRange range = AttackRange.Melee;
+        public AttackRange range;
         float _fRange;
 
         public int maskToInclude;

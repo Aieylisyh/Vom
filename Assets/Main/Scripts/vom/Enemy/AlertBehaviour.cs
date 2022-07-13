@@ -16,7 +16,7 @@ namespace vom
         void Start()
         {
             _hiding = false;
-            cg.DOFade(1, 0.35f);
+            cg.alpha = 1;
             _hideTimestamp = GameTime.time + hideTime;
         }
 
@@ -36,7 +36,7 @@ namespace vom
 
             _hiding = true;
             cg.DOKill();
-            cg.DOFade(0, 0.35f).OnComplete(() => { Destroy(gameObject); });
+            cg.DOFade(0, 0.4f).OnComplete(() => { Destroy(gameObject); });
         }
     }
 }

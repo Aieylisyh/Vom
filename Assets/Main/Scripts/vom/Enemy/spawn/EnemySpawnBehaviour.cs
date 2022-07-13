@@ -8,7 +8,8 @@ namespace vom
 
         protected override void Spawn()
         {
-            Instantiate(enemy.prefab, transform.position, transform.rotation, transform.parent);
+           var e= Instantiate(enemy.prefab, transform.position, Quaternion.identity, transform.parent);
+            e.move.rotatePart.localEulerAngles = transform.localEulerAngles;
         }
     }
 }

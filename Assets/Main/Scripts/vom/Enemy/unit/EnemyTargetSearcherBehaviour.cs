@@ -79,7 +79,7 @@ namespace vom
 
             if (dist < CombatSystem.GetRange(AttackRange.Melee))
                 return true;
-            if (dist < _fSight && Vector3.Angle(_toDir, transform.forward) < EnemyService.GetCfg().angleSight)
+            if (dist < _fSight && Vector3.Angle(_toDir, host.move.rotatePart.forward) < EnemyService.GetCfg().angleSight)
                 return true;
 
             return false;
@@ -122,7 +122,7 @@ namespace vom
             if (alertView != null)
                 Debug.LogWarning("alert is continued after duration!");
             else
-                alertView = EnemySystem.instance.CreateAlertView(transform, (host.sizeValue - 0.1f) * 400 + 60, host.sizeValue * 1.3f + 0.38f);
+                alertView = EnemySystem.instance.CreateAlertView(transform, (host.sizeValue) * 520 - 20, host.sizeValue * 0.9f + 0.3f);
         }
 
         public void ExitAlert()
