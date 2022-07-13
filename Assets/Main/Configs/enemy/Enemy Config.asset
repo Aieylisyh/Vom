@@ -25,5 +25,5 @@ MonoBehaviour:
     huge: 0.35
   angleSight: 45
   alertTickTime: 0.25
-  alertTurns: 10
+  alertTurns: 14
   sinkAcc: 1.5

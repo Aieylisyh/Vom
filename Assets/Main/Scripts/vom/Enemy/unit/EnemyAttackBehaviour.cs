@@ -35,6 +35,7 @@ namespace vom
 
             if (host.targetSearcher.alerted && host.targetSearcher.alertOrigin != null)
             {
+                //Debug.Log(host.targetSearcher.targetDist + "  " + _fRange);
                 if (host.targetSearcher.targetDist < _fRange)
                 {
                     _targetPos = host.targetSearcher.alertOrigin.position;
@@ -75,14 +76,16 @@ namespace vom
         {
             var radius = ConfigSystem.instance.combatConfig.meleeAttackRadioRangeRatio * _fRange;
             var center = (_targetPos - transform.position).normalized * _fRange * 0.5f + transform.position;
-            var currentTarget = PlayerBehaviour.instance;
-            var targetCurrentPos = currentTarget.transform.position;
-            var dist = targetCurrentPos - center;
-            var targetInRange = dist.magnitude < radius;
-            if (targetInRange)
+            foreach (var p in EnemySystem.instance.players)
             {
-                SoundService.instance.Play(new string[2] { "hit1", "hit2" });
-                currentTarget.OnHit(attack);
+                var targetCurrentPos = p.transform.position;
+                var dist = targetCurrentPos - center;
+                var targetInRange = dist.magnitude < radius;
+                if (targetInRange)
+                {
+                    SoundService.instance.Play(new string[2] { "hit1", "hit2" });
+                    p.OnHit(attack);
+                }
             }
         }
 
@@ -96,7 +99,8 @@ namespace vom
             var shoot = shootGo.GetComponent<OrbBehaviour>();
             shoot.isEnemyShoot = true;
             shoot.dmg = attack;
-            shoot.SetOrigin(weaponPos, true);
+            shoot.SetOrigin(transform, false);
+            shoot.transform.position = weaponPos.position;
             shoot.SetRelease(targetPos);
         }
     }

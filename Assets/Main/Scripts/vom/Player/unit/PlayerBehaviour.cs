@@ -29,6 +29,9 @@ namespace vom
             combat.ResetState();
             interaction.ResetState();
             skill.ResetState();
+
+            if (EnemySystem.instance.players.IndexOf(this) < 0)
+                EnemySystem.instance.players.Add(this);
         }
 
         void Update()

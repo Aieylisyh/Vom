@@ -22,10 +22,13 @@ namespace vom
 
         public AlertBehaviour alertView { get; private set; }
 
+        static float _ticktime;
+
         public override void ResetState()
         {
+            _ticktime = ConfigSystem.instance.enemyConfig.alertTickTime;
             _fSight = CombatSystem.GetRange(host.proto.sightRange);
-            _alertTimestamp = GameTime.time;
+            _alertTimestamp = GameTime.time + _ticktime;
             ExitAlert();
         }
 
@@ -38,7 +41,7 @@ namespace vom
         {
             if (alerted)
             {
-                Debug.Log("alerted " + _alertTurns);
+                // Debug.Log("alerted " + _alertTurns);
                 _alertTurns -= 1;
                 if (_alertTurns <= 0 || alertOrigin == null)
                 {
@@ -63,8 +66,7 @@ namespace vom
                 var selfPos = transform.position;
                 if (InSight(targetPos, selfPos))
                 {
-                    alertOrigin = p.transform;
-                    TryEnterAlert();
+                    TryEnterAlert(p.transform);
                     break;
                 }
             }
@@ -73,11 +75,11 @@ namespace vom
         public bool InSight(Vector3 targetPos, Vector3 selfPos)
         {
             var _toDir = targetPos - transform.position;
-            targetDist = (_toDir).magnitude;
+            var dist = (_toDir).magnitude;
 
-            if (targetDist < CombatSystem.GetRange(AttackRange.Melee))
+            if (dist < CombatSystem.GetRange(AttackRange.Melee))
                 return true;
-            if (targetDist < _fSight && Vector3.Angle(_toDir, transform.forward) < EnemyService.GetCfg().angleSight)
+            if (dist < _fSight && Vector3.Angle(_toDir, transform.forward) < EnemyService.GetCfg().angleSight)
                 return true;
 
             return false;
@@ -85,9 +87,9 @@ namespace vom
 
         public void OnUpdate()
         {
-            if (GameTime.deltaTime > _alertTimestamp)
+            if (GameTime.time > _alertTimestamp)
             {
-                _alertTimestamp += ConfigSystem.instance.enemyConfig.alertTickTime;
+                _alertTimestamp += _ticktime;
                 CheckAlert();
                 CheckSight();
             }
@@ -95,28 +97,32 @@ namespace vom
 
         public void OnAttacked(Transform origin)
         {
-            alertOrigin = origin;
-            TryEnterAlert();
+            if (origin != null)
+                TryEnterAlert(origin);
         }
 
-        void TryEnterAlert()
+        void TryEnterAlert(Transform origin)
         {
-            if (alerted)
-                return;
-
             if (host.move.isRunningBack)
             {
                 ExitAlert();
                 return;
             }
 
+            alertOrigin = origin;
+            targetDist = (origin.position - transform.position).magnitude;
             _alertTurns = ConfigSystem.instance.enemyConfig.alertTurns;
-            alerted = true;
 
+            if (alerted)
+            {
+                return;
+            }
+
+            alerted = true;
             if (alertView != null)
                 Debug.LogWarning("alert is continued after duration!");
             else
-                alertView = EnemySystem.instance.CreateAlertView(transform, (host.sizeValue - 0.1f) * 250, host.sizeValue * 1.3f + 0.38f);
+                alertView = EnemySystem.instance.CreateAlertView(transform, (host.sizeValue - 0.1f) * 400 + 60, host.sizeValue * 1.3f + 0.38f);
         }
 
         public void ExitAlert()

@@ -17,11 +17,6 @@ namespace vom
             players = new List<PlayerBehaviour>();
         }
 
-        private void Start()
-        {
-            players.Add(PlayerBehaviour.instance);
-        }
-
         public void AddEnemy(EnemyBehaviour e)
         {
             enemies.Add(e);
@@ -46,6 +41,8 @@ namespace vom
         public PlayerBehaviour[] GetValidPlayers()
         {
             //TODO
+            if (players.Count < 1)
+                return null;
             if (players[0].health.dead)
                 return null;
             var p = new PlayerBehaviour[] { players[0] };

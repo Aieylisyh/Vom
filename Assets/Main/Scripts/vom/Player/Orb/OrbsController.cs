@@ -59,7 +59,8 @@ namespace vom
             shootGo.SetActive(true);
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
-            shoot.SetOrigin(weaponPos, true);
+            shoot.SetOrigin(host.transform, false);
+            shoot.transform.position = weaponPos.position;
             shoot.SetRelease(targetPos);
         }
 
@@ -85,7 +86,7 @@ namespace vom
                 var orb = _orbs[0];
                 if (orb.IsReadyInOrbital())
                 {
-                    orb.SetOrigin(orb.transform, false);
+                    orb.SetOrigin(host.transform, false);
                     orb.SetRelease(target);
                     _orbs.Remove(orb);
                 }

@@ -10,6 +10,7 @@ namespace vom
         public SkillPrototype skl;
 
         public GameObject arcaneBlast;
+        public PlayerBehaviour host;
 
         void Start()
         {
@@ -50,7 +51,7 @@ namespace vom
             }
         }
 
-        public void LaunchArcaneBlast(Vector3 targetPos)
+        void LaunchArcaneBlast(Vector3 targetPos)
         {
             SpawnShoot(arcaneBlast, targetPos);
         }
@@ -61,7 +62,8 @@ namespace vom
             shootGo.SetActive(true);
 
             var shoot = shootGo.GetComponent<OrbBehaviour>();
-            shoot.SetOrigin(transform, true);
+            shoot.SetOrigin(host.transform, true);
+            shoot.transform.position = transform.position;
             shoot.SetRelease(targetPos);
         }
     }

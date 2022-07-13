@@ -121,7 +121,8 @@ namespace vom
         public void SummorArcaneBlastsOrb()
         {
             psArcane.Play(true);
-            _arcaneBlastOrb = Instantiate(arcaneBlastsOrb, transform.position + Vector3.up * 1.8f, Quaternion.identity, transform);
+            _arcaneBlastOrb = Instantiate(arcaneBlastsOrb, transform.position + Vector3.up * 1.9f, Quaternion.identity, transform);
+            _arcaneBlastOrb.GetComponent<ArcaneBlastOrbBehaviour>().host = host;
         }
 
         public void Attacked()

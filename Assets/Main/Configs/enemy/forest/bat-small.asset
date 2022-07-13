@@ -21,10 +21,11 @@ MonoBehaviour:
   soul: 333
   hp: 11
   attack: 2
-  speed: 3.25
+  speed: 3.5
   attackInterval: 1.4
   sightRange: 4
   bodyTime: 5
   bodyCanSink: 1
   soulLootCount: 1
   expLootCount: 1
+  noAlert: 0
