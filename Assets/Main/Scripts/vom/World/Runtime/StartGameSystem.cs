@@ -11,7 +11,8 @@ namespace vom
         public CurvedWorld_Controller c;
 
         public static StartGameSystem instance { get; private set; }
-
+        public float curvedX = -10;
+        public float curvedZ = -10;
         private void Awake()
         {
             instance = this;
@@ -23,8 +24,8 @@ namespace vom
         void Start()
         {
             //RenderSettings.fog = true;
-            c._V_CW_Bend_X = -12;
-            c._V_CW_Bend_Z = -12;
+            c._V_CW_Bend_X = curvedX;
+            c._V_CW_Bend_Z = curvedZ;
 
             TransitionBehaviour.instance.Opening(() =>
             {
