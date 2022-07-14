@@ -4938,10 +4938,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19c3068c5e6c3714cb130bbe7d3af941, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 
-  amount: 0
   psb: {fileID: 7422985918881663693}
   move: {fileID: 5864864511979811176}
+  lootModelSwitcher: {fileID: 0}
+  removeTime: 0.8
 --- !u!54 &3005722648633176359
 Rigidbody:
   m_ObjectHideFlags: 0

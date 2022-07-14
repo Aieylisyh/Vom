@@ -43,6 +43,9 @@ namespace vom
             {
                 // Debug.Log("alerted " + _alertTurns);
                 _alertTurns -= 1;
+                if (alertOrigin != null)
+                    targetDist = (alertOrigin.position - transform.position).magnitude;
+
                 if (_alertTurns <= 0 || alertOrigin == null)
                 {
                     _alertTurns = 0;

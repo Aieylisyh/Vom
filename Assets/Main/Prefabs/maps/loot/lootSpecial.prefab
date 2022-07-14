@@ -323,6 +323,7 @@ MonoBehaviour:
   psb: {fileID: 7422985918881663693}
   move: {fileID: 7422985918881663683}
   lootModelSwitcher: {fileID: 953213780672458327}
+  removeTime: 0.1
 --- !u!114 &7422985918881663683
 MonoBehaviour:
   m_ObjectHideFlags: 0

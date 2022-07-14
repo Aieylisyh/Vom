@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: circle_AB 2
-  m_Shader: {fileID: 10720, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: a7449e7b39dac0f428766725e13a7d8a, type: 3}
   m_ShaderKeywords: _ALPHABLEND_ON _EMISSION _FADING_ON
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
@@ -105,3 +105,4 @@ Material:
     - _SoftParticleFadeParams: {r: 0, g: 3.3333333, b: 0, a: 0}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _TintColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0.5529412}
+  m_BuildTextureStacks: []

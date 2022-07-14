@@ -13,7 +13,7 @@ namespace vom
         public LootBehaviour prefabSoul;
         public LootBehaviour prefabExp;
         public LootBehaviour prefabLightOrb;
-
+        public LootBehaviour prefabLightOrbBig;
         public Transform lootParent;
 
         private void Awake()
@@ -22,17 +22,28 @@ namespace vom
             _loots = new List<LootBehaviour>();
         }
 
-        public void SpawnLoot(Vector3 pos, ItemData item)
+        LootBehaviour GetLootPrefab(string id)
         {
             var prefab = prefabLightOrb;
-            if (item.id == "Gold" || item.id == "Fish" || item.id == "Apple")
+            if (id == "Gold" || id == "Fish" || id == "Apple")
                 prefab = prefabItem;
-            else if (item.id == "Soul")
+            else if (id == "Soul")
                 prefab = prefabSoul;
-            else if (item.id == "Exp")
+            else if (id == "Exp")
                 prefab = prefabExp;
+            else
+            {
+                var rarity = ItemService.GetPrototype(id).rarity;
+                if (rarity == ItemPrototype.Rarity.Epic || rarity == ItemPrototype.Rarity.Legendary)
+                    prefab = prefabLightOrbBig;
+            }
 
-            var loot = Instantiate(prefab, lootParent);
+            return prefab;
+        }
+
+        public void SpawnLoot(Vector3 pos, ItemData item)
+        {
+            var loot = Instantiate(GetLootPrefab(item.id), lootParent);
             loot.Init(item);
             loot.SetPos(pos);
             _loots.Add(loot);

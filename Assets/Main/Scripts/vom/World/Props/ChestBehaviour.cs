@@ -22,6 +22,7 @@ namespace vom
         {
             if (ConfigSystem.instance == null)
                 return;
+
             Init(false, Random.value > 0.9f);
         }
 

@@ -9,23 +9,29 @@ namespace vom
     {
         public List<ItemData> rewards;
 
-        public bool opened { get; private set; }
-        public bool locked { get; private set; }
+        public ParticleSystem ps;
 
         private void Start()
         {
             if (ConfigSystem.instance == null)
                 return;
+
+            if (Random.value > ConfigSystem.instance.sceneInteractionConfig.mineBaseChance)
+            {
+                Destroy(gameObject);
+                return;
+            }
         }
 
         public void SliceFeedback()
         {
-            //play ps
+            ps.Play();
+            SoundService.instance.Play("rockDestory");
         }
 
         public void FinishMining()
         {
-            SoundService.instance.Play("rockDestory");
+            SoundService.instance.Play("stone");
             CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
             var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
             go.SetActive(true);
@@ -33,6 +39,7 @@ namespace vom
             //  tree.DOShakeRotation(0.5f, new Vector3(amplitude, 0, amplitude), 8);
 
             SpawnLoot();
+            Destroy(gameObject);
         }
 
         void SpawnLoot()

@@ -10,7 +10,7 @@ namespace vom
         public PlaySoundBehaviour psb;
         public LootMoveBehaviour move;
         public LootModelSwitcherBehaviour lootModelSwitcher;
-
+        public float removeTime = 0.5f;
         bool _triggered;
 
         public void Init(ItemData item)
@@ -31,14 +31,14 @@ namespace vom
 
         public void OnTriggerEnter(Collider other)
         {
-            if (_triggered || !move.CanReceive())
+            if (_triggered || (move != null && !move.CanReceive()))
                 return;
 
             var player = other.GetComponent<PlayerBehaviour>();
             if (player != null)
             {
                 ReceiveLoot(false);
-                LootSystem.instance.Remove(this);
+                LootSystem.instance.Remove(this, removeTime);
             }
         }
 
