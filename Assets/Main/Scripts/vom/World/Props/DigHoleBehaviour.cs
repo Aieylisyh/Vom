@@ -7,12 +7,6 @@ namespace vom
 {
     public class DigHoleBehaviour : SceneInteractionTargetBehaviour
     {
-        public GameObject chestLock;
-        public GameObject cover;
-        public Transform closedTrans;
-        public Transform openTrans;
-        public float openDuration;
-
         public List<ItemData> rewards;
 
         public bool opened { get; private set; }
@@ -29,29 +23,10 @@ namespace vom
             opened = pOpened;
             locked = pLocked;
 
-            if (opened)
-            {
-                SetStateOpened();
-            }
-            else
-            {
-                SetStateClosed();
-                chestLock.SetActive(locked);
-            }
         }
         public void SliceFeedback()
         {
             //play ps
-        }
-        public void SetStateOpened()
-        {
-            chestLock.SetActive(false);
-            cover.transform.SetPositionAndRotation(openTrans.position, openTrans.rotation);
-        }
-
-        public void SetStateClosed()
-        {
-            cover.transform.SetPositionAndRotation(closedTrans.position, closedTrans.rotation);
         }
 
         public void FinishDig()
@@ -62,9 +37,6 @@ namespace vom
             go.SetActive(true);
             //  var amplitude = 30f;
             //  tree.DOShakeRotation(0.5f, new Vector3(amplitude, 0, amplitude), 8);
-
-            cover.transform.DORotateQuaternion(openTrans.rotation, openDuration).SetEase(Ease.OutCubic);
-            cover.transform.DOMove(openTrans.position, openDuration).SetEase(Ease.OutCubic);
             SpawnLoot();
         }
 
