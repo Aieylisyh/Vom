@@ -11,8 +11,6 @@ namespace vom
 
         public Animator animator;
         public static string key = "jump";
-
-        public ParticleSystem psOutWater;
         public ParticleSystem psSuc;
 
         public float intervalMin;
@@ -39,8 +37,6 @@ namespace vom
             {
                 SetInterval();
                 animator.SetTrigger(key);
-                psOutWater.Play(true);
-                SoundService.instance.Play("water small");
             }
         }
 
@@ -55,9 +51,15 @@ namespace vom
 
         void SpawnLoot()
         {
+            if (Random.value > ConfigSystem.instance.sceneInteractionConfig.fishBaseChance)
+            {
+                ToastSystem.instance.Add("The fish has left...");
+                return;
+            }
+
             foreach (var r in rewards)
             {
-                LootSystem.instance.SpawnLoot(transform.position+Vector3.up, r);
+                LootSystem.instance.SpawnLoot(transform.position + Vector3.up * 1.5f, r);
             }
         }
     }
