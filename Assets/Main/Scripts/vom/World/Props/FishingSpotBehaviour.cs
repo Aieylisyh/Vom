@@ -9,38 +9,55 @@ namespace vom
     {
         public List<ItemData> rewards;
 
-        public bool opened { get; private set; }
-        public bool locked { get; private set; }
+        public Animator animator;
+        public static string key = "jump";
+
+        public ParticleSystem psOutWater;
+        public ParticleSystem psSuc;
+
+        public float intervalMin;
+        public float intervalMax;
+
+        float _intervalTimer;
 
         private void Start()
         {
-            //debug
-            Init(false, Random.value > 0.9f);
+            if (ConfigSystem.instance == null)
+                return;
+
+            SetInterval();
         }
 
-        public void Init(bool pOpened, bool pLocked)
+        void SetInterval()
         {
-            opened = pOpened;
-            locked = pLocked;
+            _intervalTimer = GameTime.time + Random.Range(intervalMin, intervalMax);
+        }
 
+        private void Update()
+        {
+            if (GameTime.time > _intervalTimer)
+            {
+                SetInterval();
+                animator.SetTrigger(key);
+                psOutWater.Play(true);
+                SoundService.instance.Play("water small");
+            }
         }
 
         public void FinishFishing()
         {
-            SoundService.instance.Play("rockDestory");
-            CameraShake.instance.Shake(CameraShake.ShakeLevel.VeryWeak);
-            var go = Instantiate(vfx, transform.position, Quaternion.identity, MapSystem.instance.mapParent);
-            go.SetActive(true);
-            //  var amplitude = 30f;
-            //  tree.DOShakeRotation(0.5f, new Vector3(amplitude, 0, amplitude), 8);
+            SoundService.instance.Play("water big");
+            psSuc.Play(true);
             SpawnLoot();
+
+            triggered = false;
         }
 
         void SpawnLoot()
         {
             foreach (var r in rewards)
             {
-                LootSystem.instance.SpawnLoot(transform.position, r);
+                LootSystem.instance.SpawnLoot(transform.position+Vector3.up, r);
             }
         }
     }

@@ -10,13 +10,12 @@ namespace vom
         public List<VolumeObstacleDefinition> obstacleDefinitions;
 
         public GameObject nullTile;
-        public float waterLower = 0.3f;
+        public float waterLower = 0.15f;
 
         public GameObject GetGround(VolumeSetter vs, Biome biome)
         {
             var groundType = vs.ground;
-            if (vs.terrain == VolumeTerrainType.Wall ||
-                0.01f * vs.groundPercentage < Random.value)
+            if (vs.terrain == VolumeTerrainType.Wall || 0.01f * vs.groundPercentage < Random.value)
                 groundType = VolumeGroundType.Normal;
 
             foreach (var g in groundDefinitions)
@@ -30,6 +29,7 @@ namespace vom
                 }
             }
 
+            Debug.LogWarning("!nullTile");
             return nullTile;
         }
 

@@ -17,6 +17,9 @@ namespace vom
 
         private void Start()
         {
+            if (ConfigSystem.instance == null)
+                return;
+
             if (targetItem == null)
                 targetItem = gameObject;
 

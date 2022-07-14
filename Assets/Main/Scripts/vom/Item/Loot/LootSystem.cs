@@ -9,7 +9,7 @@ namespace vom
 
         List<LootBehaviour> _loots;
 
-        public LootBehaviour prefabGold;
+        public LootBehaviour prefabItem;
         public LootBehaviour prefabSoul;
         public LootBehaviour prefabExp;
         public LootBehaviour prefabLightOrb;
@@ -25,8 +25,8 @@ namespace vom
         public void SpawnLoot(Vector3 pos, ItemData item)
         {
             var prefab = prefabLightOrb;
-            if (item.id == "Gold")
-                prefab = prefabGold;
+            if (item.id == "Gold" || item.id == "Fish" || item.id == "Apple")
+                prefab = prefabItem;
             else if (item.id == "Soul")
                 prefab = prefabSoul;
             else if (item.id == "Exp")

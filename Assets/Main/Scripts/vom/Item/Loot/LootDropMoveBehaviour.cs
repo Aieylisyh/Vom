@@ -7,16 +7,16 @@ namespace vom
         public float force;
         public float torque = 200;
 
-        public override void Init(Vector3 pos)
+        public override void Init(Vector3 pos, LootModelSwitcherBehaviour switcher)
         {
-            base.Init(pos);
+            base.Init(pos, switcher);
 
             //var radian = Mathf.PI * Random.value * 2;
             var radian = Mathf.PI * Random.Range(0.7f, 1.3f);
             _tempDir = Vector3.up;
             _tempDir += Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian);
             _tempDir.Normalize();
-            transform.position = pos + _tempDir * 1;
+            trans.position = pos + _tempDir * 1;
 
             _rb.useGravity = true;
             _rb.isKinematic = false;
@@ -42,8 +42,8 @@ namespace vom
             if (_absorbSpeed < absorbSpeedMax)
                 _absorbSpeed += absorbAcc * dt;
 
-            var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.5f;
-            var absorbDir = targetPos - transform.position;
+            var targetPos = TargetTrans.position + Vector3.up * 0.5f;
+            var absorbDir = targetPos - trans.position;
 
             var dist = absorbDir.normalized;
             if (_absorbSpeed * dt > absorbDir.magnitude)
@@ -55,7 +55,7 @@ namespace vom
                 dist *= _absorbSpeed * dt;
             }
 
-            transform.position += dist;
+            trans.position += dist;
         }
     }
 }

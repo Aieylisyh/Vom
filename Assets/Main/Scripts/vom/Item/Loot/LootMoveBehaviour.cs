@@ -20,11 +20,22 @@ namespace vom
 
         protected Collider _col;
         protected Vector3 _tempDir;
+        protected Transform trans;
 
-        public virtual void Init(Vector3 pos)
+        public virtual void Init(Vector3 pos, LootModelSwitcherBehaviour switcher)
         {
-            _rb = GetComponent<Rigidbody>();
-            _col = GetComponent<Collider>();
+            if (switcher == null)
+            {
+                _rb = GetComponent<Rigidbody>();
+                _col = GetComponent<Collider>();
+                trans = transform;
+            }
+            else
+            {
+                _rb = switcher.crt.GetComponent<Rigidbody>();
+                _col = switcher.crt.GetComponent<Collider>();
+                trans = switcher.crt.transform;
+            }
 
             _dropTimer = dropTime + Random.Range(0, dropTimeRandomnizer); ;
             _waitTimer = 0;
@@ -84,5 +95,7 @@ namespace vom
             else
                 Absorb();
         }
+
+        protected Transform TargetTrans { get { return PlayerBehaviour.instance.transform; } }
     }
 }

@@ -20,7 +20,8 @@ namespace vom
 
         private void Start()
         {
-            //debug
+            if (ConfigSystem.instance == null)
+                return;
             Init(false, Random.value > 0.9f);
         }
 

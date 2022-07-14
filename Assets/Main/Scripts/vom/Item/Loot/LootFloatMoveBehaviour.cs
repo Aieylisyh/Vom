@@ -17,9 +17,9 @@ namespace vom
 
         public TrailRenderer trait;
 
-        public override void Init(Vector3 pos)
+        public override void Init(Vector3 pos, LootModelSwitcherBehaviour switcher)
         {
-            base.Init(pos);
+            base.Init(pos, switcher);
 
             _rb.useGravity = false;
             _rb.isKinematic = true;
@@ -31,9 +31,9 @@ namespace vom
             var radian = Mathf.PI * Random.Range(0.5f, 1.5f);
             _tempDir = Vector3.right * Mathf.Sin(radian) + Vector3.forward * Mathf.Cos(radian) + Vector3.up * 0.2f;
             _tempDir.Normalize();
-            transform.position = pos + _tempDir * 1;
+            trans.position = pos + _tempDir * 1;
 
-            _releaseTempPos = transform.position;
+            _releaseTempPos = trans.position;
 
             var offset1 = Vector3.Cross(Vector3.up, _tempDir).normalized;
             var r = Random.Range(-1f, 1f);
@@ -47,8 +47,8 @@ namespace vom
             if (_absorbSpeed < absorbSpeedMax)
                 _absorbSpeed += absorbAcc * dt;
 
-            var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.4f;
-            var absorbDir = targetPos - transform.position;
+            var targetPos = TargetTrans.position + Vector3.up * 0.4f;
+            var absorbDir = targetPos - trans.position;
 
             var dist = absorbDir.normalized;
             if (_absorbSpeed * dt > absorbDir.magnitude)
@@ -60,7 +60,7 @@ namespace vom
                 dist *= _absorbSpeed * dt;
             }
 
-            transform.position += dist;
+            trans.position += dist;
         }
 
         protected override void Drop()
@@ -71,12 +71,12 @@ namespace vom
 
             var acv = releaseCurveAc.Evaluate(1 - _dropTimer / dropTime);
             var newPos = _releaseTempPos + acv * releaseOffset * _releaseOffsetDir;
-            transform.position = newPos;
+            trans.position = newPos;
         }
 
         protected override void StartWait()
         {
-            _releaseTempPos = transform.position;
+            _releaseTempPos = trans.position;
         }
 
         protected override void StartAbsorb()
@@ -89,12 +89,12 @@ namespace vom
         {
             base.Wait();
 
-            var targetPos = PlayerBehaviour.instance.transform.position + Vector3.up * 0.4f;
-            var absorbDir = targetPos - transform.position;
+            var targetPos = TargetTrans.position + Vector3.up * 0.4f;
+            var absorbDir = targetPos - trans.position;
             _releaseTempPos += absorbDir.normalized * speed * GameTime.deltaTime;
             var acv = releaseCurveAc.Evaluate(1 - _waitTimer / waitTime);
             var newPos = _releaseTempPos + acv * 0.5f * Vector3.up;
-            transform.position = newPos;
+            trans.position = newPos;
         }
     }
 }

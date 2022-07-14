@@ -14,16 +14,10 @@ namespace vom
 
         private void Start()
         {
-            //debug
-            Init(false, Random.value > 0.9f);
+            if (ConfigSystem.instance == null)
+                return;
         }
 
-        public void Init(bool pOpened, bool pLocked)
-        {
-            opened = pOpened;
-            locked = pLocked;
-
-        }
         public void SliceFeedback()
         {
             //play ps

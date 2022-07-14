@@ -5,24 +5,28 @@ namespace vom
 {
     public class LootBehaviour : MonoBehaviour
     {
-        public string itemId;
-        public int amount;
+        string _itemId;
+        int _amount;
         public PlaySoundBehaviour psb;
         public LootMoveBehaviour move;
+        public LootModelSwitcherBehaviour lootModelSwitcher;
 
         bool _triggered;
 
         public void Init(ItemData item)
         {
-            itemId = item.id;
-            amount = item.n;
+            _itemId = item.id;
+            _amount = item.n;
             _triggered = false;
+
+            if (lootModelSwitcher != null)
+                lootModelSwitcher.Setup(_itemId, this);
         }
 
         public void SetPos(Vector3 pos)
         {
             transform.position = pos;
-            move.Init(pos);
+            move.Init(pos, this.lootModelSwitcher);
         }
 
         public void OnTriggerEnter(Collider other)
@@ -41,7 +45,7 @@ namespace vom
         public void ReceiveLoot(bool silent)
         {
             _triggered = true;
-            InventorySystem.instance.AddItem(new ItemData(amount, itemId));
+            InventorySystem.instance.AddItem(new ItemData(_amount, _itemId));
 
             if (!silent)
                 psb.Play();
