@@ -20,9 +20,19 @@ namespace vom
 
         }
 
-       public HeroData GetCurrentHeroData()
+        public HeroData GetCurrentHeroData()
         {
             return debugHeroData;
+        }
+
+        public AttributeLayerData GetCurrentHeroAttributes()
+        {
+            return GetCurrentHeroPrototype().attributes;
+        }
+
+        public HeroPrototype GetCurrentHeroPrototype()
+        {
+            return HeroService.GetPrototype(GetCurrentHeroData().id);
         }
     }
 }

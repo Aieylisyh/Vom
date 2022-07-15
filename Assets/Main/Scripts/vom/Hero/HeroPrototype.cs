@@ -12,5 +12,7 @@ namespace vom
         public virtual string subDesc { get { return id + "_subDesc"; } }
 
         public List<SkillPrototype> skills;
+
+        public AttributeLayerData attributes;
     }
 }

@@ -3,8 +3,8 @@ using com;
 
 namespace vom
 {
-    [CreateAssetMenu]
-    public class SettingsConfig : ScriptableObject
+    [System.Serializable]
+    public class SettingsConfig 
     {
         public LocalizationService.Language languageDefault;
 

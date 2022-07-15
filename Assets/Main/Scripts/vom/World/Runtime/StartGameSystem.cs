@@ -13,6 +13,7 @@ namespace vom
         public static StartGameSystem instance { get; private set; }
         public float curvedX = -10;
         public float curvedZ = -10;
+
         private void Awake()
         {
             instance = this;

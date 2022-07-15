@@ -3,11 +3,14 @@ namespace vom
 {
     public enum DamageType
     {
-        None,
-        Torpedo,
-        Bomb,
-        Laser,
-        Ghost,
+        None = 0,
+        Physical = 10,
+        Fire = 12,
+        Ice = 13,
+        Poison = 14,
+        Magical = 20,
+        Mental = 25,
+        Absolute = 30,
     }
 
     public enum VfxType

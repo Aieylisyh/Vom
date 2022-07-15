@@ -29,6 +29,7 @@ namespace vom
         public SettingsConfig settingsConfig;
         public ShopsConfig shopsConfig;
         public TalentConfig talentConfig;
+        public AttributesConfig attributesConfig;
 
         void Awake()
         {

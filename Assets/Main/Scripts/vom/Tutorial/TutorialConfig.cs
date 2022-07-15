@@ -7,15 +7,6 @@ namespace vom
     {
         public MinLevelIndexEnableFunctionsData minLevelIndexEnableFunctionsData;
 
-        public MinRftIndexEnableFunctionsData minRftIndexEnableFunctionsData;
-
-        [System.Serializable]
-        public struct MinRftIndexEnableFunctionsData
-        {
-            public int levelup;
-            public int fab;
-        }
-
         [System.Serializable]
         public struct MinLevelIndexEnableFunctionsData
         {
