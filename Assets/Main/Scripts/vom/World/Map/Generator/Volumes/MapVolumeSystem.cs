@@ -20,12 +20,18 @@ namespace vom
 
             foreach (var g in groundDefinitions)
             {
-                if (g.biome == biome && g.type == groundType)
+                if (g.biome == biome)
                 {
-                    if (g.grounds != null && g.grounds.Count > 0)
-                        return g.grounds[Random.Range(0, g.grounds.Count)];
+                    foreach (var d in g.defs)
+                    {
+                        if (d.type == groundType)
+                        {
+                            if (d.grounds != null && d.grounds.Count > 0)
+                                return d.grounds[Random.Range(0, d.grounds.Count)];
 
-                    break;
+                            break;
+                        }
+                    }
                 }
             }
 

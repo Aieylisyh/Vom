@@ -93,7 +93,7 @@ namespace vom
                 if (!host.animator.GetBool(PlayerAnimeParams.move))
                     host.animator.SetBool(PlayerAnimeParams.move, true);
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
-                host.cc.SimpleMove(deltaDist * speed);
+                host.cc.Move(deltaDist * speed*GameTime.deltaTime);
                 Rotate(deltaDist);
 
                 host.interaction.HideAll();

@@ -23,7 +23,6 @@ namespace vom
         Normal = 0,
         Better = 10,
         Special = 20,
-        VerySpecial = 30,
         Water = 40,//lower
     }
 
@@ -59,6 +58,12 @@ namespace vom
     public struct VolumeGroundDefinition
     {
         public Biome biome;
+        public List<VolumeGroundBiomeDefinition> defs;
+    }
+
+    [System.Serializable]
+    public struct VolumeGroundBiomeDefinition
+    {
         public VolumeGroundType type;
         public List<GameObject> grounds;
     }
