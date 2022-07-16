@@ -14,5 +14,14 @@ namespace vom
         public List<SkillPrototype> skills;
 
         public AttributeLayerData attributes;
+
+        [System.Serializable]
+        public struct AtbItem
+        {
+            public string id;
+            public int v;
+        }
+
+        public List<AtbItem> attributesList;
     }
 }

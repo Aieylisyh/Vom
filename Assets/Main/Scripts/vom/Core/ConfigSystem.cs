@@ -8,8 +8,6 @@ namespace vom
         public static ConfigSystem instance { get; private set; }
 
         public AdConfig adConfig;
-        public EcsConfig ecsConfig;
-        public InputConfig inputConfig;
         public NetworkConfig networkConfig;
         public PayConfig payConfig;
         public EnemyConfig enemyConfig;

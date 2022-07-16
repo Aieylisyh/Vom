@@ -24,6 +24,8 @@ namespace vom
         public static AttributeLayerData Merge(AttributeLayerData a, AttributeLayerData b)
         {
             var res = new AttributeLayerData();
+            res.Init();
+
             foreach (var kv in a.atbs)
             {
                 if (res.atbs.ContainsKey(kv.Key))

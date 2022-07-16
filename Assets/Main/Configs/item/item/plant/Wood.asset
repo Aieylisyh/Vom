@@ -21,7 +21,7 @@ MonoBehaviour:
     id: 
   intValue: 0
   floatValue: 0
-  sortWeight1: 0
+  sortWeight1: 3
   sortWeight2: 0
   sellConfirm: 0
   rarity: 1

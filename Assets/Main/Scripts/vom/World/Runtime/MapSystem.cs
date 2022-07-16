@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using com;
-using game;
 using System.Linq;
 
 namespace vom

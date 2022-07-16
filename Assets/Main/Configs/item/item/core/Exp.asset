@@ -22,7 +22,7 @@ MonoBehaviour:
   intValue: 0
   floatValue: 0
   sortWeight1: 0
-  sortWeight2: 0
+  sortWeight2: 2
   sellConfirm: 0
   rarity: 0
   usage: 0
