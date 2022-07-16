@@ -69,10 +69,12 @@ namespace vom
         {
             var map = Instantiate<MapItem>(mapItem, mapParent);
             var playerPos = player.transform.position;
+            Debug.Log(playerPos);
             var mapPos = map.transform.position;
 
             //PlacePlayer on the right pos;
             var playerStartPos = map.playerStart.position;
+            Debug.Log(playerStartPos);
             mapPos += playerPos - playerStartPos;
             mapPos.y = 0;
             map.transform.position = mapPos;
@@ -117,7 +119,7 @@ namespace vom
 
         Vector2Int GetPlayerRelativeIntPos()
         {
-            var pos = PlayerBehaviour.instance.transform.position;
+            var pos = player.transform.position;
             return new Vector2Int(Mathf.FloorToInt(pos.x - _globalOffsetX), Mathf.FloorToInt(pos.z - _globalOffsetZ));
         }
 
