@@ -1,7 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEditor;
-using System.Linq;
 
 namespace vom
 {
@@ -35,21 +33,6 @@ namespace vom
             }
 
             return 0;
-        }
-    }
-
-    [CustomEditor(typeof(ItemsConfig))]
-    public class ItemsConfigEditor : Editor
-    {
-
-        public override void OnInspectorGUI()
-        {
-            base.OnInspectorGUI();
-            if (GUILayout.Button("Sort items"))
-            {
-                var cfg = (ItemsConfig)target;
-                cfg.Sort();
-            }
         }
     }
 }
