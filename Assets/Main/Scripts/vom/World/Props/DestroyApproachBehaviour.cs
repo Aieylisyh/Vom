@@ -24,7 +24,7 @@ namespace vom
                 go.SetActive(true);
 
                 SoundService.instance.Play("rockDestory");
-                CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
+                //CameraShake.instance.Shake(CameraShake.ShakeLevel.Weak);
                 SpawnLoot();
                 Destroy(targetItem);
             }

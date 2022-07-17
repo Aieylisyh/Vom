@@ -15383,7 +15383,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.21984902, y: 0.289941, z: 0.225992}
 --- !u!114 &5955852089385142386
 MonoBehaviour:
@@ -16458,7 +16458,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.282376
+  m_Radius: 0.4
   m_Center: {x: 0.24506399, y: 0.27359802, z: 0.012057006}
 --- !u!114 &3032738978717970389
 MonoBehaviour:
@@ -16588,7 +16588,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.14055401, y: 0.289941, z: -0.27356648}
 --- !u!114 &8382906521700344329
 MonoBehaviour:
@@ -27545,7 +27545,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.282376
+  m_Radius: 0.4
   m_Center: {x: 0.24506399, y: 0.27359802, z: 0.012057006}
 --- !u!114 &5696102253757116797
 MonoBehaviour:
@@ -28020,7 +28020,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.21984902, y: 0.289941, z: 0.225992}
 --- !u!114 &601892545382275408
 MonoBehaviour:
@@ -93016,7 +93016,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.21984902, y: 0.289941, z: 0.225992}
 --- !u!114 &4295969466724282960
 MonoBehaviour:
@@ -113310,7 +113310,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.14055401, y: 0.289941, z: -0.27356648}
 --- !u!114 &4518487951088493078
 MonoBehaviour:
@@ -138897,7 +138897,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.21984902, y: 0.289941, z: 0.225992}
 --- !u!114 &588420144721506844
 MonoBehaviour:
@@ -139109,7 +139109,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.298719
+  m_Radius: 0.4
   m_Center: {x: -0.14055401, y: 0.289941, z: -0.27356648}
 --- !u!114 &392236795835455693
 MonoBehaviour:
