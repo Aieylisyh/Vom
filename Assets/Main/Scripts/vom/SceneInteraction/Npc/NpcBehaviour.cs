@@ -9,8 +9,10 @@ namespace vom
         public NpcPrototype npc;
         public Animator animator;
         public ParticleSystem ps;
+        public Transform rotatePart;
 
         bool _interacted;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
@@ -32,6 +34,16 @@ namespace vom
         {
             animator.SetTrigger(PlayerAnimeParams.jump);
             ps.Play();
+        }
+
+        public void Rotate(Vector3 to)
+        {
+            to.y = 0;
+            if (to.magnitude <= 0)
+                return;
+
+            //Debug.Log(to);
+            rotatePart.rotation = Quaternion.LookRotation(to);
         }
     }
 }

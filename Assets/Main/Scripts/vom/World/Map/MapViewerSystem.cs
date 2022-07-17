@@ -35,13 +35,13 @@ namespace vom
         void CreateObstacleView(TileCacheBehaviour.OutputTileData tileData)
         {
             var obstacleView = Instantiate(tileData.obstacle, tilesParent);
-            obstacleView.transform.localPosition = new Vector3(tileData.x, tileData.height, tileData.z);
+            obstacleView.transform.localPosition = new Vector3(tileData.x, tileData.h * 0.01f, tileData.z);
         }
 
         void CreateGroundView(TileCacheBehaviour.OutputTileData tileData)
         {
             var groundView = Instantiate(tileData.tile, tilesParent);
-            groundView.transform.localPosition = new Vector3(tileData.x, tileData.height, tileData.z);
+            groundView.transform.localPosition = new Vector3(tileData.x, tileData.h*0.01f, tileData.z);
         }
     }
 }

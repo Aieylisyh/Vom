@@ -27,24 +27,5 @@ namespace vom
         public int offsetX;
         [HideInInspector]
         public int offsetZ;
-
-        void Awake()
-        {
-            if (tiles.Count>0)
-            {
-                Init();
-            }
-        }
-
-        public void Init()
-        {
-            foreach (var c in connectors)
-            {
-                c.fromId = mapId;
-            }
-
-            sizeX = tiles[tiles.Count - 1].x + 1;
-            sizeZ = tiles[tiles.Count - 1].z + 1;
-        }
     }
 }

@@ -94,11 +94,13 @@ namespace vom
 
         public bool isRunningBack { get { return !host.cc.enabled; } }
 
-        public void Stop()
+        public void Stop(bool alsoClearCrtSpeed = true)
         {
             if (host.animator.GetBool(EnemyAnimeParams.Move))
                 host.animator.SetBool(EnemyAnimeParams.Move, false);
-            _crtSpeed = 0;
+
+            if (alsoClearCrtSpeed)
+                _crtSpeed = 0;
         }
 
         void RepositionDone()

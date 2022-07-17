@@ -118,6 +118,7 @@ namespace com
                 DisablePlayerCamera();
                 DisablePlayerControl();
                 PlayerBehaviour.instance.move.Rotate(other.transform.position - player.position);
+                other.Rotate(player.position - other.transform.position);
             };
 
             CinematicEventPrototype e2 = new CinematicEventPrototype();

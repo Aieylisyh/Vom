@@ -348,7 +348,7 @@ namespace vom
 
         public Vector3 GetTilePos(TileCacheBehaviour.OutputTileData tileData, Vector3 offset)
         {
-            var pos = new Vector3(tileData.x + offset.x, tileData.height, tileData.z + offset.y);
+            var pos = new Vector3(tileData.x + offset.x, tileData.h*0.01f, tileData.z + offset.y);
             return pos;
         }
 

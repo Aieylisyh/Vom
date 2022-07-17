@@ -13,11 +13,6 @@ namespace vom
         public MapItem map;
         public Vector2 offset;
 
-        public void SyncPos()
-        {
-            transform.position = new Vector3(tileData.x + offset.x, tileData.height, tileData.z + offset.y);
-        }
-
         public void Visualize()
         {
             bool hasGround = (tileData.tile != null);

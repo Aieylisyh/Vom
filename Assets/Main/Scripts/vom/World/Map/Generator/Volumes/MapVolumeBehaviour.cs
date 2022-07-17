@@ -18,7 +18,7 @@ namespace vom
                 {
                     tile.tileData.tile = tileData.tile;
                     tile.tileData.obstacle = tileData.obstacle;
-                    tile.tileData.height = tileData.height;
+                    tile.tileData.h = tileData.h;
                 }
             }
         }

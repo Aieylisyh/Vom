@@ -24,7 +24,8 @@ namespace vom
             public GameObject obstacle;
             public int x;
             public int z;
-            public float height;
+            //public float height;
+            public short h;
         }
 
         public void Init(int x, int z, MapPrototype p)
@@ -50,7 +51,7 @@ namespace vom
             {
                 tileData.tile = null;
                 tileData.obstacle = null;
-                tileData.height = 0;
+                tileData.h = 0;
                 return;
             }
 
@@ -59,7 +60,7 @@ namespace vom
                 return;
             }
 
-            tileData.height = MapVolumeService.GetHeight(this);
+            tileData.h = MapVolumeService.GetHeight(this);
             tileData.tile = MapGeneratorSystem.instance.mapVolumeSystem.GetGround(this.volume, mapPrototype.biome);
 
             if (volume.ground != VolumeGroundType.Water)
@@ -119,13 +120,13 @@ namespace vom
         void CreateObstacleView()
         {
             obstacleView = Instantiate(tileData.obstacle, transform);
-            obstacleView.transform.localPosition = new Vector3(0, tileData.height, 0);
+            obstacleView.transform.localPosition = new Vector3(0, tileData.h * 0.01f, 0);
         }
 
         void CreateGroundView()
         {
             groundView = Instantiate(tileData.tile, transform);
-            groundView.transform.localPosition = new Vector3(0, tileData.height, 0);
+            groundView.transform.localPosition = new Vector3(0, tileData.h * 0.01f, 0);
         }
 
         private void Update()

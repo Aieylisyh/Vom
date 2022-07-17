@@ -5031,7 +5031,7 @@ MonoBehaviour:
     - {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
     - {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
   nullTile: {fileID: 1475098247}
-  waterLower: 0.15
+  waterLower: 0.25
 --- !u!4 &821001319
 Transform:
   m_ObjectHideFlags: 0

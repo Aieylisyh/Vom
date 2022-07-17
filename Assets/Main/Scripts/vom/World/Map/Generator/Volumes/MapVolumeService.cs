@@ -13,7 +13,7 @@ namespace vom
             }
         }
 
-        public static float GetHeight(TileCacheBehaviour t)
+        public static short GetHeight(TileCacheBehaviour t)
         {
             var terrainType = t.volume.terrain;
             float height = GetBaseHeight(t.volume.terrain, t.volume.ground);
@@ -43,7 +43,7 @@ namespace vom
                 }
             }
 
-            return height;
+            return (short)(height * 100);
         }
 
         public static float GetBaseHeight(VolumeTerrainType terrainType, VolumeGroundType groundType = VolumeGroundType.Normal)
