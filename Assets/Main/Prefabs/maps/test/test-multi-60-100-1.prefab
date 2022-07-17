@@ -30883,6 +30883,11 @@ MonoBehaviour:
     posPercentage: 0.5
     posOffset: 0
     fromId: 
+  - type: 3
+    toId: griffithForest
+    posPercentage: 0.5
+    posOffset: 0
+    fromId: 
   sizeX: 0
   sizeZ: 0
   offsetX: 0

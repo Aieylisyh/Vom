@@ -20,9 +20,11 @@ namespace vom
             nolit.SetActive(true);
         }
 
-        public void DoLit()
+        public void DoLit(Vector3 camPos)
         {
-            HeartDistortSystem.instance.Create(this.transform, 32, 5.5f);
+            var dir = camPos - transform.position;
+            var pos = transform.position + dir.normalized * 1.6f;
+            HeartDistortSystem.instance.Create(pos, 32, 5.5f);
             SetLit();
             PlayerBehaviour.instance.health.ResetHealth();
         }

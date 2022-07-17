@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 3000
   soul: 3000
-  hp: 39
+  hp: 43
   attack: 5
   speed: 3.7
   attackInterval: 1.3

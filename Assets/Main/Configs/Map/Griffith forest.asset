@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Griffith forest
   m_EditorClassIdentifier: 
   id: Griffith Forest
-  bgColor: {r: 0.4198113, g: 0.77166706, b: 1, a: 1}
+  bgColor: {r: 0.5613208, g: 0.8009036, b: 1, a: 1}
   biome: 0
