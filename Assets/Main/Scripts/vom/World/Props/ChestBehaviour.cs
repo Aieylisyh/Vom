@@ -23,7 +23,7 @@ namespace vom
             if (ConfigSystem.instance == null)
                 return;
 
-            Init(false, Random.value > 0.9f);
+            Init(false, Random.value < ConfigSystem.instance.sceneInteractionConfig.chestLockedChance);
         }
 
         public void Init(bool pOpened, bool pLocked)

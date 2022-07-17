@@ -15301,6 +15301,7 @@ GameObject:
   - component: {fileID: 5307265079918376409}
   - component: {fileID: 2175343138035951322}
   - component: {fileID: 5955852089385142386}
+  - component: {fileID: 8712011053116848877}
   m_Layer: 0
   m_Name: Vase1 (1)
   m_TagString: Untagged
@@ -15379,7 +15380,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1088701083151910826}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -15398,6 +15399,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &8712011053116848877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088701083151910826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &1128182710035324093
 GameObject:
   m_ObjectHideFlags: 0
@@ -16356,6 +16376,7 @@ GameObject:
   - component: {fileID: 4110320967286603567}
   - component: {fileID: 5268612113535530218}
   - component: {fileID: 3032738978717970389}
+  - component: {fileID: 2210776902093683509}
   m_Layer: 0
   m_Name: Vase4
   m_TagString: Untagged
@@ -16434,7 +16455,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2253502021664332696}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.282376
@@ -16453,6 +16474,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &2210776902093683509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253502021664332696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &2311049482178973654
 GameObject:
   m_ObjectHideFlags: 0
@@ -16466,6 +16506,7 @@ GameObject:
   - component: {fileID: 9047199234508987832}
   - component: {fileID: 982091633677524318}
   - component: {fileID: 8382906521700344329}
+  - component: {fileID: 264728541583649577}
   m_Layer: 0
   m_Name: Vase2
   m_TagString: Untagged
@@ -16544,7 +16585,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2311049482178973654}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -16563,6 +16604,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &264728541583649577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2311049482178973654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &2325901205737813095
 GameObject:
   m_ObjectHideFlags: 0
@@ -16653,7 +16713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2459060319119744094}
   m_LocalRotation: {x: -0, y: 0.47514978, z: -0, w: 0.8799049}
-  m_LocalPosition: {x: 24.697, y: 0.22593302, z: 67.356}
+  m_LocalPosition: {x: 24.697, y: -0.01, z: 67.356}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2055037755376947552}
@@ -27403,6 +27463,7 @@ GameObject:
   - component: {fileID: 4395759844700660333}
   - component: {fileID: 2456060865468234354}
   - component: {fileID: 5696102253757116797}
+  - component: {fileID: 7873162067256499499}
   m_Layer: 0
   m_Name: Vase4 (1)
   m_TagString: Untagged
@@ -27481,7 +27542,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3904422564357715428}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.282376
@@ -27500,6 +27561,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &7873162067256499499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3904422564357715428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &4093601222965685684
 GameObject:
   m_ObjectHideFlags: 0
@@ -27858,6 +27938,7 @@ GameObject:
   - component: {fileID: 5955232107029811471}
   - component: {fileID: 4520012328131403215}
   - component: {fileID: 601892545382275408}
+  - component: {fileID: 5605347667116960352}
   m_Layer: 0
   m_Name: Vase1 (2)
   m_TagString: Untagged
@@ -27936,7 +28017,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4254190117287525179}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -27955,6 +28036,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &5605347667116960352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4254190117287525179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &4271945148988326003
 GameObject:
   m_ObjectHideFlags: 0
@@ -92834,6 +92934,7 @@ GameObject:
   - component: {fileID: 1389597157762291997}
   - component: {fileID: 6669652461869416880}
   - component: {fileID: 4295969466724282960}
+  - component: {fileID: 3227973516249043719}
   m_Layer: 0
   m_Name: Vase1
   m_TagString: Untagged
@@ -92912,7 +93013,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6083715687393987569}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -92931,6 +93032,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &3227973516249043719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6083715687393987569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &6120915462964664829
 GameObject:
   m_ObjectHideFlags: 0
@@ -113108,6 +113228,7 @@ GameObject:
   - component: {fileID: 3759274285038126824}
   - component: {fileID: 2495293093696642396}
   - component: {fileID: 4518487951088493078}
+  - component: {fileID: 1956278155589530032}
   m_Layer: 0
   m_Name: Vase2
   m_TagString: Untagged
@@ -113186,7 +113307,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7166348749838688464}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -113205,6 +113326,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &1956278155589530032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7166348749838688464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &7309002060291092126
 GameObject:
   m_ObjectHideFlags: 0
@@ -138675,6 +138815,7 @@ GameObject:
   - component: {fileID: 4538042975448411108}
   - component: {fileID: 7264583081262859524}
   - component: {fileID: 588420144721506844}
+  - component: {fileID: 9189764673818730054}
   m_Layer: 0
   m_Name: Vase1
   m_TagString: Untagged
@@ -138753,7 +138894,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8759225042521922351}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -138772,6 +138913,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &9189764673818730054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759225042521922351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &8764129807283962107
 GameObject:
   m_ObjectHideFlags: 0
@@ -138867,6 +139027,7 @@ GameObject:
   - component: {fileID: 4314231464989811807}
   - component: {fileID: 840048844232538507}
   - component: {fileID: 392236795835455693}
+  - component: {fileID: 1450299206421780159}
   m_Layer: 0
   m_Name: Vase2 (1)
   m_TagString: Untagged
@@ -138945,7 +139106,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8808078190329379640}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.298719
@@ -138964,6 +139125,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   toSync: 0
   offset: 0
+--- !u!114 &1450299206421780159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8808078190329379640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2739bcee8e73f784790ec486435009ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rewards:
+  - n: 2
+    id: Gold
+  - n: 0
+    id: Gold
+  vfx: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
+  targetItem: {fileID: 0}
 --- !u!1 &8897960470331885942
 GameObject:
   m_ObjectHideFlags: 0
