@@ -19,8 +19,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 222
   soul: 222
-  hp: 7
-  attack: 1
+  hp: 6
+  attack: 2
   speed: 3.5
   attackInterval: 0.9
   sightRange: 40

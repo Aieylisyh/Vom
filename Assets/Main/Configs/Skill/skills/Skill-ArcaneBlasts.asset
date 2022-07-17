@@ -20,7 +20,7 @@ MonoBehaviour:
   interval: 0.35
   sound: acc
   perks: []
-  attri1: 2
+  attri1: 1
   attri2: 0
   attri3: 0
   fixedAttri1: 0
