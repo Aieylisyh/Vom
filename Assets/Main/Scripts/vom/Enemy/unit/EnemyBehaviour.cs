@@ -64,6 +64,7 @@ namespace vom
 
             health.ReceiveDamage(dmg);
             targetSearcher.OnAttacked(origin);
+            move.Stop();
             animator.SetTrigger(EnemyAnimeParams.Wound);
         }
 

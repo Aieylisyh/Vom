@@ -54,9 +54,8 @@ namespace vom
             if (!string.IsNullOrEmpty(attackSound))
                 SoundService.instance.Play(attackSound);
             else if (!host.proto.normalAttackIsRanged)
-            {
                 SoundService.instance.Play(new string[2] { "melee1", "melee2" });
-            }
+
             host.animator.SetTrigger(EnemyAnimeParams.Attack);
         }
 

@@ -21,7 +21,7 @@ MonoBehaviour:
   soul: 333
   hp: 14
   attack: 3
-  speed: 3.7
+  speed: 3.6
   attackInterval: 1.3
   sightRange: 40
   bodyTime: 5

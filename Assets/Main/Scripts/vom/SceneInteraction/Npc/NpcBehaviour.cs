@@ -10,12 +10,14 @@ namespace vom
         public Animator animator;
         public ParticleSystem ps;
 
+        bool _interacted;
         private void OnTriggerEnter(Collider other)
         {
             if (other.tag == "Player")
             {
                 if (CanInteract())
                 {
+                    _interacted = true;
                     MmoCameraCinematicSystem.instance.NpcView(other.transform, this);
                 }
             }
@@ -23,10 +25,10 @@ namespace vom
 
         bool CanInteract()
         {
-            return true;
+            return !_interacted;
         }
 
-        public void Interact()
+        public void OnInteract()
         {
             animator.SetTrigger(PlayerAnimeParams.jump);
             ps.Play();

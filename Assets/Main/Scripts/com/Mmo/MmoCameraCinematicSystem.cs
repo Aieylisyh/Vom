@@ -130,11 +130,11 @@ namespace com
             var offset = camPos - player.position;
             var centerPos = (player.position + other.transform.position) * 0.5f;
             offset.x = offset.x * 0.4f;
-            offset.y = offset.y * 0.2f;
+            offset.y = offset.y * 0.25f;
             offset.z = offset.z * 0.4f;
             var pendDir = Vector3.Cross(Vector3.up, other.transform.position - player.position);
 
-            var goodPos = centerPos + offset + pendDir.normalized * ((other.transform.position.x - player.position.x > 0) ? 0.2f : -0.2f);
+            var goodPos = centerPos + offset + pendDir.normalized * ((other.transform.position.x - player.position.x > 0) ? 0.3f : -0.3f);
             e2.position = goodPos + Vector3.up * 0.3f;
             e2.rotation = Quaternion.LookRotation(centerPos - goodPos);
 
@@ -144,7 +144,7 @@ namespace com
             e3.action = () =>
             {
                 //PlayerBehaviour.instance.LitMovement();
-                other.Interact();
+                other.OnInteract();
             };
 
             CinematicEventPrototype e4 = new CinematicEventPrototype();

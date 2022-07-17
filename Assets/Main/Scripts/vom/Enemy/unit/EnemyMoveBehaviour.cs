@@ -94,7 +94,7 @@ namespace vom
 
         public bool isRunningBack { get { return !host.cc.enabled; } }
 
-        void Stop()
+        public void Stop()
         {
             if (host.animator.GetBool(EnemyAnimeParams.Move))
                 host.animator.SetBool(EnemyAnimeParams.Move, false);
