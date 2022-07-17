@@ -15,7 +15,8 @@ namespace vom
         public GameObject GetGround(VolumeSetter vs, Biome biome)
         {
             var groundType = vs.ground;
-            if (vs.terrain == VolumeTerrainType.Wall || 0.01f * vs.groundPercentage < Random.value)
+            if ((vs.terrain == VolumeTerrainType.Wall && groundType == VolumeGroundType.Water)
+                || 0.01f * vs.groundPercentage < Random.value)
                 groundType = VolumeGroundType.Normal;
 
             foreach (var g in groundDefinitions)
