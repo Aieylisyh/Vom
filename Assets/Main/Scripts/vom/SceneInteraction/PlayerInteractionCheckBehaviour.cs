@@ -145,7 +145,7 @@ namespace vom
             var si = other.GetComponent<SceneInteractionTargetBehaviour>();
             if (si != null && !si.triggered)
             {
-                Debug.Log("enter " + si.interaction);
+                //Debug.Log("enter " + si.interaction);
                 interactionTargets.Add(si);
                 Refresh();
             }

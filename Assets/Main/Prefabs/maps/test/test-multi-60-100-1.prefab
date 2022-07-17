@@ -30874,7 +30874,7 @@ MonoBehaviour:
     x: 59
     z: 99
     height: 2.409919
-  prototype: {fileID: 11400000, guid: 21c739eafa4ad4247ac87028d4bc315f, type: 2}
+  prototype: {fileID: 11400000, guid: 768f79b7338b1be489aa9c1814877c09, type: 2}
   playerStart: {fileID: 2450477462788901008}
   blessing: {fileID: 2793333509076537230}
   connectors:

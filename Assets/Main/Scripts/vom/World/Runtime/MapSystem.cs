@@ -69,12 +69,10 @@ namespace vom
         {
             var map = Instantiate<MapItem>(mapItem, mapParent);
             var playerPos = player.transform.position;
-            Debug.Log(playerPos);
             var mapPos = map.transform.position;
 
             //PlacePlayer on the right pos;
             var playerStartPos = map.playerStart.position;
-            Debug.Log(playerStartPos);
             mapPos += playerPos - playerStartPos;
             mapPos.y = 0;
             map.transform.position = mapPos;
@@ -288,7 +286,14 @@ namespace vom
                     {
                         var mapTileData = GetMapTileData(x, y);
 
-                        var tile = Instantiate<MapTileBehaviour>(prefabTile, tilesParent);
+                        var pos = new Vector3(0, 20, 0);
+                        if (mapTileData.map != null)
+                        {
+                            var offset = new Vector2(mapTileData.map.transform.position.x, mapTileData.map.transform.position.z);
+                            pos = GetTilePos(mapTileData.tileData, offset);
+                        }
+
+                        var tile = Instantiate<MapTileBehaviour>(prefabTile, pos, Quaternion.identity, tilesParent);
                         tile.gameObject.SetActive(true);
                         tile.gen = gen;
                         if (mapTileData.map != null)
@@ -324,7 +329,7 @@ namespace vom
                 }
                 else
                 {
-                    tile.Value.SyncPos();
+                    // tile.Value.SyncPos();
                 }
             }
 
@@ -339,6 +344,12 @@ namespace vom
                     TryUnloadMaps();
                 }
             }
+        }
+
+        public Vector3 GetTilePos(TileCacheBehaviour.OutputTileData tileData, Vector3 offset)
+        {
+            var pos = new Vector3(tileData.x + offset.x, tileData.height, tileData.z + offset.y);
+            return pos;
         }
 
         void TryUnloadMaps()

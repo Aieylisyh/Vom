@@ -104,17 +104,16 @@ namespace vom
             _moveDist = Vector2.zero;
         }
 
-
-        void OnControllerColliderHit(ControllerColliderHit hit)
-        {
-            Debug.Log("OnControllerColliderHit");
-            Debug.Log(hit.gameObject);
-        }
+        //void OnControllerColliderHit(ControllerColliderHit hit)
+        //{
+        //    Debug.Log("OnControllerColliderHit");
+        //    Debug.Log(hit.gameObject);
+        //}
 
         void Fall()
         {
             if (!host.cc.isGrounded)
-                host.cc.Move(-8f * Vector3.up*GameTime.deltaTime);
+                host.cc.Move(-8f * Vector3.up * GameTime.deltaTime);
         }
 
         public void Rotate(Vector3 to)
