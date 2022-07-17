@@ -24,6 +24,9 @@ namespace vom
 
         public bool IsInPlayerView()
         {
+            if (PlayerBehaviour.instance == null)
+                return false;
+
             var playerPos = PlayerBehaviour.instance.transform.position;
             var toPlayerDir = playerPos - transform.position;
 

@@ -13,13 +13,7 @@ MonoBehaviour:
   m_Name: Map Config
   m_EditorClassIdentifier: 
   tiles:
-    tileMeshes:
-    - {fileID: 4300002, guid: daf68f95b375fef44b9e5d9d08db4f57, type: 3}
-    - {fileID: 4300004, guid: daf68f95b375fef44b9e5d9d08db4f57, type: 3}
-    - {fileID: 4300006, guid: daf68f95b375fef44b9e5d9d08db4f57, type: 3}
-    - {fileID: 4300008, guid: daf68f95b375fef44b9e5d9d08db4f57, type: 3}
-    - {fileID: 4300010, guid: daf68f95b375fef44b9e5d9d08db4f57, type: 3}
-    - {fileID: 4300012, guid: daf68f95b375fef44b9e5d9d08db4f57, type: 3}
+    tileMeshes: []
   maps:
   - {fileID: 4337162701255080883, guid: 8d2fcc7818db71e44bc95d1d25b5e1de, type: 3}
   - {fileID: 3041789110480825214, guid: 45fb4268236757448a2910dca1d44f9c, type: 3}
@@ -28,4 +22,4 @@ MonoBehaviour:
   - {fileID: 4843752554040936763, guid: e608b176210438d45bf97ec7ca19fe43, type: 3}
   - {fileID: 5201292667935545966, guid: 3bda35f52569e444e8647be9e267acf5, type: 3}
   - {fileID: 5201292667935545966, guid: 385aa971cafd11048b23c36381a265d5, type: 3}
-  - {fileID: 4349157873372699068, guid: 2f7421dc42bee4c46b2d9576d3ebe3ca, type: 3}
+  - {fileID: 5121015351071933430, guid: bf96f2b41af2b0e45b639aecdf008684, type: 3}

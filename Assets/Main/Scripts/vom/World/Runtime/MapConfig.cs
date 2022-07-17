@@ -6,7 +6,7 @@ namespace vom
     [CreateAssetMenu]
     public class MapConfig : ScriptableObject
     {
-        public TilesParam tiles;
+        //public TilesParam tiles;
 
         public List<MapItem> maps;
     }
