@@ -34,7 +34,7 @@ MonoBehaviour:
   - type: 7
     duration: 1.62
     sp: {fileID: 21300000, guid: a0fc31324184cdc4085afcea82d491b1, type: 3}
-  treeHasFruitChance: 0.03
+  treeHasFruitChance: 0.015
   herbBaseChance: 1
   mineBaseChance: 1
   fishBaseChance: 1
