@@ -54,6 +54,30 @@ namespace vom
             }
         }
         */
+
+        public bool BlockedByTile(EnemyBehaviour e, float range)
+        {
+            var pos = transform.position;
+            var dir = e.transform.position - pos;
+
+            RaycastHit[] hitInfos = Physics.RaycastAll(pos, dir, range, 1 << maskToInclude);
+            if (hitInfos != null && hitInfos.Length > 0)
+            {
+                foreach (var hitInfo in hitInfos)
+                {
+                    var hitObj = hitInfo.collider.gameObject;
+                    //Debug.Log("ene " + e.gameObject + " blocked by " + hitObj);
+                    if (hitObj != null && hitObj.tag == "Ground")
+                    {
+                        Debug.Log(e.gameObject + " blocked tile " + hitObj);
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+        }
+
         public EnemyBehaviour GetTargetEnemy()
         {
             var enemies = EnemySystem.instance.enemies;
@@ -69,9 +93,15 @@ namespace vom
                     continue;
                 }
                 var dir = e.transform.position - pos;
-                if (dir.magnitude > _fRange)
+                if (dir.magnitude >= _fRange)
                 {
                     //Debug.Log("ene " + e.gameObject + " too far");
+                    continue;
+                }
+
+                if (BlockedByTile(e, _fRange))
+                {
+                    Debug.Log("ene " + e.gameObject + " BlockedByTile");
                     continue;
                 }
 

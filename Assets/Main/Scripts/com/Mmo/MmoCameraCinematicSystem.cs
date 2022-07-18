@@ -43,14 +43,22 @@ namespace com
             var startingRot = Quaternion.identity;
 
             cinematic.ResetEvents();
+            CinematicEventPrototype e0 = new CinematicEventPrototype();
+            e0.TimeToNext = 0.15f;
+            e0.type = CinematicActionTypes.CallFunc;
+            e0.action = () =>
+            {
+                DisablePlayerCamera();
+                DisablePlayerControl();
+                MainHudBehaviour.instance.Hide();
+            };
+
             CinematicEventPrototype e1 = new CinematicEventPrototype();
             e1.TimeToNext = 0;
             e1.type = CinematicActionTypes.CallFunc;
             e1.action = () =>
             {
-                DisablePlayerCamera();
-                DisablePlayerControl();
-                MainHudBehaviour.instance.Hide();
+                PlayerBehaviour.instance.move.Rotate(other.position - player.position);
             };
 
             CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -66,8 +74,6 @@ namespace com
             offset.y = offset.y * 0.2f;
             offset.z = offset.z * 0.4f;
             var pendDir = Vector3.Cross(Vector3.up, other.position - player.position);
-
-
             var goodPos = centerPos + offset + pendDir.normalized * ((other.position.x - player.position.x > 0) ? 3.1f : -3.1f);
             e2.position = goodPos + Vector3.up * 0.3f;
             e2.rotation = Quaternion.LookRotation(centerPos - goodPos);
@@ -78,7 +84,6 @@ namespace com
             e3.TimeToNext = 0.2f;
             e3.action = () =>
             {
-                PlayerBehaviour.instance.move.Rotate(other.position - player.position);
                 PlayerBehaviour.instance.LitMovement();
                 bb.DoLit(cinematic.target.position);
 
@@ -116,6 +121,7 @@ namespace com
                 //just to make cinematic not stop
             };
 
+            cinematic.AddEvents(e0);
             cinematic.AddEvents(e1);
             cinematic.AddEvents(e2);
             cinematic.AddEvents(e3);

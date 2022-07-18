@@ -36,6 +36,7 @@ namespace vom
             SyncGold();
             SyncSoul();
             SyncExp();
+            Show();
         }
 
         public void SyncGold()
