@@ -10,6 +10,7 @@ namespace vom
         {
             var go = Instantiate(prefab, transform.position, Quaternion.identity, transform.parent);
             var npcComp = go.GetComponent<NpcBehaviour>();
+
             npcComp.npc = this.npc;
             npcComp.Rotate(transform.forward);
         }

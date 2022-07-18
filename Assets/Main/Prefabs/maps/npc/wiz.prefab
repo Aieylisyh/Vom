@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2348634176326185654}
   - component: {fileID: 1537130357608472382}
   m_Layer: 8
-  m_Name: wiz (1)
+  m_Name: wiz
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27,12 +27,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209541783205729558}
-  m_LocalRotation: {x: -0, y: 0.9533116, z: -0, w: -0.3019884}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 30.592, y: 0.5, z: 9.603}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3916918016611599204}
-  - {fileID: 6134536069412509278}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 215.154, z: 0}
@@ -10300,11 +10299,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7396909590622198245}
-  m_LocalRotation: {x: 0, y: 0.9968277, z: 0, w: -0.07959003}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9044379492588031261}
+  - {fileID: 6134536069412509278}
   m_Father: {fileID: 5127440431285088324}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10331,12 +10331,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7503206968315309370}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1199961630023591106}
-  m_Father: {fileID: 5127440431285088324}
+  m_Father: {fileID: 3916918016611599204}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7626682127211545174
