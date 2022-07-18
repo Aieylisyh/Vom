@@ -57,6 +57,9 @@ namespace vom
 
         public bool BlockedByTile(EnemyBehaviour e, float range)
         {
+            if (range < 1)
+                return false;
+
             var pos = transform.position;
             var dir = e.transform.position - pos;
 
@@ -69,7 +72,8 @@ namespace vom
                     //Debug.Log("ene " + e.gameObject + " blocked by " + hitObj);
                     if (hitObj != null && hitObj.tag == "Ground")
                     {
-                        Debug.Log(e.gameObject + " blocked tile " + hitObj);
+                        //Debug.Log(e.gameObject + " blocked tile " + hitObj);
+                        //Debug.Log(hitObj.transform.parent.localPosition);
                         return true;
                     }
                 }
@@ -99,11 +103,8 @@ namespace vom
                     continue;
                 }
 
-                if (BlockedByTile(e, _fRange))
-                {
-                    Debug.Log("ene " + e.gameObject + " BlockedByTile");
+                if (BlockedByTile(e, dir.magnitude))
                     continue;
-                }
 
                 var dist = dir.magnitude;
                 if (dist < minDist)

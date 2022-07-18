@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 702025050317947315}
   - component: {fileID: 702025050317947314}
   - component: {fileID: 702025050317947312}
+  - component: {fileID: -5111440143261168573}
   m_Layer: 3
   m_Name: tile-icy-water-6
   m_TagString: Ground
@@ -95,3 +96,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.8356, z: 1}
   m_Center: {x: 0, y: -0.91887003, z: 0}
+--- !u!114 &-5111440143261168573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 702025050317947341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c3472b4ed9d6da46a969e77a12c5da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

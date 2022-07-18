@@ -82,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bar: {fileID: 0}
   hpBarOffset: 140
+  woundTime: 0.35
 --- !u!114 &3476611265631080286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 50
-  shootBullet: {fileID: 3307667407526838801, guid: b7340ac5dd2be9145bdf5ebf62caceeb, type: 3}
+  shootBullet: {fileID: 8490995160174162748, guid: 2689947a1eceb434998ff6d1f05481de, type: 3}
   attackSound: 
   weaponPos: {fileID: 5476136021404509666}
 --- !u!143 &8745235370282988360
