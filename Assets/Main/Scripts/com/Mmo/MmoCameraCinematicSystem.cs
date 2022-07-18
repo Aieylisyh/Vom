@@ -109,16 +109,26 @@ namespace com
         {
             var cinematic = CinematicCameraService.instance;
 
+            var startingPos = Vector3.zero;
+            var startingRot = Quaternion.identity;
+
             cinematic.ResetEvents();
-            CinematicEventPrototype e1 = new CinematicEventPrototype();
-            e1.TimeToNext = 0;
-            e1.type = CinematicActionTypes.CallFunc;
-            e1.action = () =>
+            CinematicEventPrototype e0 = new CinematicEventPrototype();
+            e0.TimeToNext = 0.2f;
+            e0.type = CinematicActionTypes.CallFunc;
+            e0.action = () =>
             {
                 DisablePlayerCamera();
                 DisablePlayerControl();
-                PlayerBehaviour.instance.move.Rotate(other.transform.position - player.position);
                 other.Rotate(player.position - other.transform.position);
+            };
+
+            CinematicEventPrototype e1 = new CinematicEventPrototype();
+            e1.TimeToNext = 0.0f;
+            e1.type = CinematicActionTypes.CallFunc;
+            e1.action = () =>
+            {
+                PlayerBehaviour.instance.move.Rotate(other.transform.position - player.position);
             };
 
             CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -130,9 +140,9 @@ namespace com
             var camPos = cinematic.target.position;
             var offset = camPos - player.position;
             var centerPos = (player.position + other.transform.position) * 0.5f;
-            offset.x = offset.x * 0.4f;
-            offset.y = offset.y * 0.25f;
-            offset.z = offset.z * 0.4f;
+            offset.x = offset.x * 0.75f;
+            offset.y = offset.y * 0.6f;
+            offset.z = offset.z * 0.75f;
             var pendDir = Vector3.Cross(Vector3.up, other.transform.position - player.position);
 
             var goodPos = centerPos + offset + pendDir.normalized * ((other.transform.position.x - player.position.x > 0) ? 0.3f : -0.3f);
@@ -140,38 +150,49 @@ namespace com
             e2.rotation = Quaternion.LookRotation(centerPos - goodPos);
 
             CinematicEventPrototype e3 = new CinematicEventPrototype();
-            e3.TimeToNext = 0;
+            e3.TimeToNext = 1.5f;
             e3.type = CinematicActionTypes.CallFunc;
             e3.action = () =>
             {
-                //PlayerBehaviour.instance.LitMovement();
                 other.OnInteract();
+
+                CinematicEventPrototype e5 = new CinematicEventPrototype();
+                e5.TimeToNext = 1.5f;
+                e5.duration = 1.5f;
+                e5.ease = DG.Tweening.Ease.InOutCubic;
+                e5.type = CinematicActionTypes.TweenPositionAndRotation;
+                e5.usePositionAndRotation = true;
+                cam.SetPosAndRot(ref startingPos, ref startingRot);
+                e5.position = startingPos;
+                e5.rotation = startingRot;
+
+                CinematicEventPrototype e6 = new CinematicEventPrototype();
+                e6.TimeToNext = 0;
+                e6.type = CinematicActionTypes.CallFunc;
+                e6.action = () =>
+                {
+                    EnablePlayerCamera();
+                    EnablePlayerControl();
+                };
+
+                cinematic.AddEvents(e5);
+                cinematic.AddEvents(e6);
             };
 
             CinematicEventPrototype e4 = new CinematicEventPrototype();
-            e4.TimeToNext = 3.5f;
-            e4.duration = 1.5f;
-            e4.ease = DG.Tweening.Ease.InOutCubic;
-            e4.type = CinematicActionTypes.TweenPositionAndRotation;
-            e4.usePositionAndRotation = true;
-
-            e4.position = e2.position + Vector3.up * 1.0f + offset * 0.2f;
-            e4.rotation = Quaternion.LookRotation(centerPos - e2.position);
-
-            CinematicEventPrototype e5 = new CinematicEventPrototype();
-            e5.TimeToNext = 0;
-            e5.type = CinematicActionTypes.CallFunc;
-            e5.action = () =>
+            e4.TimeToNext = 0.0f;
+            e4.type = CinematicActionTypes.CallFunc;
+            e4.action = () =>
             {
-                EnablePlayerCamera();
-                EnablePlayerControl();
+                //just to make cinematic not stop
             };
 
+            cinematic.AddEvents(e0);
             cinematic.AddEvents(e1);
             cinematic.AddEvents(e2);
             cinematic.AddEvents(e3);
             cinematic.AddEvents(e4);
-            cinematic.AddEvents(e5);
+
             cinematic.StartService();
         }
     }

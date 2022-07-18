@@ -30,6 +30,9 @@ namespace vom
 
         public void Attack()
         {
+            if (host.health.isWounding)
+                return;
+
             if (_attackIntervalTimer > 0)
                 _attackIntervalTimer -= GameTime.deltaTime;
 

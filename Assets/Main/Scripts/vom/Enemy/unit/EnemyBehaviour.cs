@@ -54,6 +54,7 @@ namespace vom
                 targetSearcher.OnUpdate();
                 attack.Attack();
                 move.Move();
+                health.OnUpdate();
             }
         }
 
@@ -64,8 +65,12 @@ namespace vom
 
             health.ReceiveDamage(dmg);
             targetSearcher.OnAttacked(origin);
-            move.Stop(false);
-            animator.SetTrigger(EnemyAnimeParams.Wound);
+            move.WoundStop();
+        }
+
+        public void OnHit(OrbBehaviour orb, Transform origin)
+        {
+            OnHit(orb.dmg, origin);
         }
 
         public void KnockBack(Vector3 orgin, float knockBackForce)
@@ -76,11 +81,6 @@ namespace vom
             var dir = transform.position - orgin;
             dir.y = 0;
             move.knockBack.KnockBack(dir.normalized, knockBackForce);
-        }
-
-        public void OnHit(OrbBehaviour orb, Transform origin)
-        {
-            OnHit(orb.dmg, origin);
         }
     }
 }

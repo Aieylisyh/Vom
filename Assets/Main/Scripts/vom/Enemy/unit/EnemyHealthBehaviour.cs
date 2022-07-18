@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using com;
 
 namespace vom
 {
@@ -11,6 +12,8 @@ namespace vom
         public HpBarBehaviour bar;
 
         public float hpBarOffset = 0;
+        float _woundTimer;
+        public float woundTime = 0.35f;
 
         public override void ResetState()
         {
@@ -29,6 +32,20 @@ namespace vom
             bar.Hide();
         }
 
+        public bool isWounding { get { return _woundTimer > 0f; } }
+
+        void Wound()
+        {
+            _woundTimer = woundTime;
+            host.animator.SetTrigger(EnemyAnimeParams.Wound);
+        }
+
+        public void OnUpdate()
+        {
+            if (_woundTimer > 0)
+                _woundTimer -= GameTime.deltaTime;
+        }
+
         public void SyncBar(bool instant)
         {
             bar.Set((float)hp / hpMax, instant);
@@ -37,6 +54,17 @@ namespace vom
         public void ReceiveDamage(int v)
         {
             hp -= v;
+
+            if ((float)v / hpMax > 0.15f)
+            {
+                Wound();
+            }
+            else if ((float)v / hpMax > 0.06f && Random.value > 0.7f)
+            {
+                Wound();
+            }
+
+
             bar.Show();
             SyncBar(false);
             FloatingTextPanelBehaviour.instance.CreateDamageValue("<color=#FF5544>-" + v + "</color>", transform, new Vector2(0, 35));

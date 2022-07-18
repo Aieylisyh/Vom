@@ -4833,6 +4833,7 @@ MonoBehaviour:
   releaseOffsetRatioByDistance: 1.2
   isEnemyShoot: 0
   dmg: 2
+  knockBackForce: 0.02
 --- !u!114 &3307667407526838804
 MonoBehaviour:
   m_ObjectHideFlags: 0

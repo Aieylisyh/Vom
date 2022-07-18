@@ -33,6 +33,7 @@ namespace game
         {
             _disabledInput = false;
         }
+
         protected override void Awake()
         {
             base.Awake();

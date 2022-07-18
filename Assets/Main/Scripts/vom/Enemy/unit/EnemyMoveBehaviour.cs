@@ -74,6 +74,9 @@ namespace vom
             if (host.attack.isAttacking)
                 return;
 
+            if (host.health.isWounding)
+                return;
+
             if (host.targetSearcher.alerted && host.targetSearcher.alertOrigin != null)
             {
                 if (host.targetSearcher.targetDist >= _fRange)
@@ -94,13 +97,20 @@ namespace vom
 
         public bool isRunningBack { get { return !host.cc.enabled; } }
 
-        public void Stop(bool alsoClearCrtSpeed = true)
+        public void Stop()
         {
             if (host.animator.GetBool(EnemyAnimeParams.Move))
                 host.animator.SetBool(EnemyAnimeParams.Move, false);
 
-            if (alsoClearCrtSpeed)
-                _crtSpeed = 0;
+            _crtSpeed = 0;
+        }
+
+        public void WoundStop()
+        {
+            if (host.animator.GetBool(EnemyAnimeParams.Move))
+                host.animator.SetBool(EnemyAnimeParams.Move, false);
+
+            _crtSpeed *= 0.5f;
         }
 
         void RepositionDone()

@@ -52,6 +52,7 @@ namespace vom
         bool _triggered;
 
         private Transform _origin;
+        public float knockBackForce;
 
         private void Awake()
         {
@@ -97,6 +98,7 @@ namespace vom
                     {
                         //Debug.Log("hit ene" + other.gameObject);
                         ene.OnHit(this, _origin);
+                        ene.KnockBack(transform.position, knockBackForce);
                         Die(false);
                     }
                 }
