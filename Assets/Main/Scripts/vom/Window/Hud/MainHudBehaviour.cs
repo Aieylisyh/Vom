@@ -22,6 +22,7 @@ namespace vom
         //public Text expMaxTxt;
 
         public float duration = 1f;
+        CanvasGroup _cg;
 
         private void Awake()
         {
@@ -30,6 +31,7 @@ namespace vom
 
         private void Start()
         {
+            _cg = GetComponent<CanvasGroup>();
             SyncGold();
             SyncSoul();
             SyncExp();
@@ -90,6 +92,7 @@ namespace vom
             float r = ((float)exp / maxExp);
             if (r > 1)
                 r = 1f;
+
             float endValue = minBarValue + r * (maxBarValue - minBarValue);
             expBar.DOKill();
             if (levelChanged)
@@ -100,6 +103,20 @@ namespace vom
             {
                 expBar.DOFillAmount(endValue, duration);
             }
+        }
+
+        public void Show()
+        {
+            _cg.alpha = 1;
+            _cg.blocksRaycasts = true;
+            _cg.interactable = true;
+        }
+
+        public void Hide()
+        {
+            _cg.alpha = 0;
+            _cg.blocksRaycasts = false;
+            _cg.interactable = false;
         }
     }
 }

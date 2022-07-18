@@ -39,6 +39,9 @@ namespace com
         {
             var cinematic = CinematicCameraService.instance;
 
+            var startingPos = Vector3.zero;
+            var startingRot = Quaternion.identity;
+
             cinematic.ResetEvents();
             CinematicEventPrototype e1 = new CinematicEventPrototype();
             e1.TimeToNext = 0;
@@ -47,7 +50,7 @@ namespace com
             {
                 DisablePlayerCamera();
                 DisablePlayerControl();
-                PlayerBehaviour.instance.move.Rotate(other.position - player.position);
+                MainHudBehaviour.instance.Hide();
             };
 
             CinematicEventPrototype e2 = new CinematicEventPrototype();
@@ -74,34 +77,48 @@ namespace com
             e3.type = CinematicActionTypes.CallFunc;
             e3.action = () =>
             {
+                PlayerBehaviour.instance.move.Rotate(other.position - player.position);
                 PlayerBehaviour.instance.LitMovement();
                 bb.DoLit(cinematic.target.position);
+
+                CinematicEventPrototype e5 = new CinematicEventPrototype();
+                e5.TimeToNext = 5.7f;
+                e5.duration = 5.5f;
+                e5.ease = DG.Tweening.Ease.InOutCubic;
+                e5.type = CinematicActionTypes.TweenPositionAndRotation;
+                e5.usePositionAndRotation = true;
+
+                cam.SetPosAndRot(ref startingPos, ref startingRot);
+                e5.position = startingPos;
+                e5.rotation = startingRot;
+
+
+                CinematicEventPrototype e6 = new CinematicEventPrototype();
+                e6.TimeToNext = 0;
+                e6.type = CinematicActionTypes.CallFunc;
+                e6.action = () =>
+                {
+                    EnablePlayerCamera();
+                    EnablePlayerControl();
+                    MainHudBehaviour.instance.Show();
+                };
+
+                cinematic.AddEvents(e5);
+                cinematic.AddEvents(e6);
             };
 
             CinematicEventPrototype e4 = new CinematicEventPrototype();
-            e4.TimeToNext = 5.7f;
-            e4.duration = 5.5f;
-            e4.ease = DG.Tweening.Ease.InOutCubic;
-            e4.type = CinematicActionTypes.TweenPositionAndRotation;
-            e4.usePositionAndRotation = true;
-
-            e4.position = e2.position + Vector3.up * 1.2f + offset * 0.2f;
-            e4.rotation = Quaternion.LookRotation(centerPos - e2.position);
-
-            CinematicEventPrototype e5 = new CinematicEventPrototype();
-            e5.TimeToNext = 0;
-            e5.type = CinematicActionTypes.CallFunc;
-            e5.action = () =>
+            e4.TimeToNext = 0.0f;
+            e4.type = CinematicActionTypes.CallFunc;
+            e4.action = () =>
             {
-                EnablePlayerCamera();
-                EnablePlayerControl();
+                //just to make cinematic not stop
             };
 
             cinematic.AddEvents(e1);
             cinematic.AddEvents(e2);
             cinematic.AddEvents(e3);
             cinematic.AddEvents(e4);
-            cinematic.AddEvents(e5);
             cinematic.StartService();
         }
 
@@ -120,6 +137,7 @@ namespace com
             {
                 DisablePlayerCamera();
                 DisablePlayerControl();
+                MainHudBehaviour.instance.Hide();
                 other.Rotate(player.position - other.transform.position);
             };
 
@@ -173,6 +191,7 @@ namespace com
                 {
                     EnablePlayerCamera();
                     EnablePlayerControl();
+                    MainHudBehaviour.instance.Show();
                 };
 
                 cinematic.AddEvents(e5);
