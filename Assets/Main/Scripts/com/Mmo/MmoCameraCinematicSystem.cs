@@ -54,8 +54,8 @@ namespace com
             };
 
             CinematicEventPrototype e2 = new CinematicEventPrototype();
-            e2.TimeToNext = 2.2f;
-            e2.duration = 2.2f;
+            e2.TimeToNext = 2.5f;
+            e2.duration = 2.5f;
             e2.ease = DG.Tweening.Ease.InOutCubic;
             e2.type = CinematicActionTypes.TweenPositionAndRotation;
             e2.usePositionAndRotation = true;
@@ -75,6 +75,7 @@ namespace com
             CinematicEventPrototype e3 = new CinematicEventPrototype();
             e3.TimeToNext = 0;
             e3.type = CinematicActionTypes.CallFunc;
+            e3.TimeToNext = 0.2f;
             e3.action = () =>
             {
                 PlayerBehaviour.instance.move.Rotate(other.position - player.position);
@@ -82,8 +83,8 @@ namespace com
                 bb.DoLit(cinematic.target.position);
 
                 CinematicEventPrototype e5 = new CinematicEventPrototype();
-                e5.TimeToNext = 5.7f;
-                e5.duration = 5.5f;
+                e5.TimeToNext = 3.0f;
+                e5.duration = 3.0f;
                 e5.ease = DG.Tweening.Ease.InOutCubic;
                 e5.type = CinematicActionTypes.TweenPositionAndRotation;
                 e5.usePositionAndRotation = true;
@@ -175,8 +176,8 @@ namespace com
                 other.OnInteract();
 
                 CinematicEventPrototype e5 = new CinematicEventPrototype();
-                e5.TimeToNext = 1.5f;
-                e5.duration = 1.5f;
+                e5.TimeToNext = 1.7f;
+                e5.duration = 1.7f;
                 e5.ease = DG.Tweening.Ease.InOutCubic;
                 e5.type = CinematicActionTypes.TweenPositionAndRotation;
                 e5.usePositionAndRotation = true;
