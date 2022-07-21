@@ -7,7 +7,6 @@ namespace vom
         public MapItem item;
         public Transform tilesParent;
         public SimpleTileCacheBehaviour tileViewerCache;
-
         public static MapViewerSystem instance;
 
         void Start()

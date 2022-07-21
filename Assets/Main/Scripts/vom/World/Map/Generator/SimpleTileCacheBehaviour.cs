@@ -14,7 +14,8 @@ namespace vom
         public GameObject obstacleView;
 
         public bool toggleSave;
-
+        public bool toggleRemoveObs;
+        public bool toggleFlatTile;
         public void Init(int x, int z, MapPrototype p)
         {
             tileData.x = x;
@@ -84,6 +85,19 @@ namespace vom
                 toggleSave = false;
                 Visualize();
                 MapViewerSystem.instance.SyncMapItem(this);
+            }
+
+            if (toggleRemoveObs)
+            {
+                tileData.obstacle = null;
+                toggleRemoveObs = false;
+                toggleSave = true;
+            }
+            if (toggleFlatTile)
+            {
+                tileData.h = 0;
+                toggleFlatTile = false;
+                toggleSave = true;
             }
         }
     }
