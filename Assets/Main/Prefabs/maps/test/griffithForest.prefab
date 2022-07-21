@@ -40367,7 +40367,7 @@ MonoBehaviour:
     z: 39
     h: 0
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 15
     z: 40
     h: 0
@@ -40876,7 +40876,7 @@ MonoBehaviour:
     x: 16
     z: 41
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 42
@@ -40886,47 +40886,47 @@ MonoBehaviour:
     x: 16
     z: 43
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 44
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 45
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 46
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 47
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 48
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 49
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 50
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 51
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 16
     z: 52
@@ -41860,7 +41860,7 @@ MonoBehaviour:
     obstacle: {fileID: 0}
     x: 18
     z: 38
-    h: 110
+    h: 0
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
     obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
     x: 18
@@ -42041,62 +42041,62 @@ MonoBehaviour:
     x: 18
     z: 74
     h: 0
-  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 75
     h: 118
-  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 76
     h: 109
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 77
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 78
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 79
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 80
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 81
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 82
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 83
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 84
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 85
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 86
@@ -42106,7 +42106,7 @@ MonoBehaviour:
     x: 18
     z: 87
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 18
     z: 88
@@ -42352,7 +42352,7 @@ MonoBehaviour:
     z: 36
     h: 0
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 19
     z: 37
     h: 0
@@ -43492,7 +43492,7 @@ MonoBehaviour:
     z: 64
     h: 0
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 21
     z: 65
     h: 0
@@ -44487,7 +44487,7 @@ MonoBehaviour:
     z: 63
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 23
     z: 64
     h: 0
@@ -45996,7 +45996,7 @@ MonoBehaviour:
     x: 26
     z: 65
     h: 0
-  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
+  - tile: {fileID: 8903441931600361900, guid: 00550c5595786d94fb406bb0e27a4046, type: 3}
     obstacle: {fileID: 0}
     x: 26
     z: 66
@@ -46817,47 +46817,47 @@ MonoBehaviour:
     z: 29
     h: 232
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 30
     h: 225
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 31
     h: 234
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 32
     h: 234
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 33
     h: 228
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 34
     h: 224
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 35
     h: 237
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 36
     h: 221
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 37
     h: 224
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 38
     h: 226
@@ -46882,7 +46882,7 @@ MonoBehaviour:
     z: 42
     h: 224
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 43
     h: 227
@@ -46892,7 +46892,7 @@ MonoBehaviour:
     z: 44
     h: 213
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 45
     h: 236
@@ -46902,17 +46902,17 @@ MonoBehaviour:
     z: 46
     h: 220
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 47
     h: 232
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 48
     h: 227
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 28
     z: 49
     h: 227
@@ -47812,27 +47812,27 @@ MonoBehaviour:
     z: 28
     h: 0
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 29
     h: 0
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 30
     h: 0
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 31
     h: 114
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 32
     h: 113
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 33
     h: 217
@@ -47842,22 +47842,22 @@ MonoBehaviour:
     z: 34
     h: 226
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 35
     h: 227
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 36
     h: 224
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 37
     h: 245
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 38
     h: 230
@@ -47872,52 +47872,52 @@ MonoBehaviour:
     z: 40
     h: 236
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 41
     h: 220
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 42
     h: 229
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 43
     h: 227
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 44
     h: 241
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 45
     h: 241
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 46
     h: 235
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 47
     h: 222
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 48
     h: 221
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 49
     h: 223
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 30
     z: 50
     h: 233
@@ -48936,12 +48936,12 @@ MonoBehaviour:
     x: 32
     z: 53
     h: 0
-  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 32
     z: 54
     h: 0
-  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 32
     z: 55
@@ -48961,7 +48961,7 @@ MonoBehaviour:
     x: 32
     z: 58
     h: 0
-  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 32
     z: 59
@@ -48971,12 +48971,12 @@ MonoBehaviour:
     x: 32
     z: 60
     h: 0
-  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 32
     z: 61
     h: 0
-  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 32
     z: 62
@@ -50697,7 +50697,7 @@ MonoBehaviour:
     z: 5
     h: 224
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 0}
+    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 36
     z: 6
     h: 112
@@ -50987,7 +50987,7 @@ MonoBehaviour:
     z: 63
     h: 0
   - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 36
     z: 64
     h: 0
@@ -53307,27 +53307,27 @@ MonoBehaviour:
     z: 27
     h: 226
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 28
     h: 236
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 29
     h: 239
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 30
     h: 233
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 31
     h: 229
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 32
     h: 219
@@ -53372,7 +53372,7 @@ MonoBehaviour:
     z: 40
     h: 244
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 41
     h: 244
@@ -53382,7 +53382,7 @@ MonoBehaviour:
     z: 42
     h: 239
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 41
     z: 43
     h: 241
@@ -54207,7 +54207,7 @@ MonoBehaviour:
     z: 7
     h: 223
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 8
     h: 222
@@ -54217,22 +54217,22 @@ MonoBehaviour:
     z: 9
     h: 223
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 10
     h: 231
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 11
     h: 230
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 12
     h: 235
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 13
     h: 228
@@ -54252,12 +54252,12 @@ MonoBehaviour:
     z: 16
     h: 231
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 17
     h: 221
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 18
     h: 230
@@ -54312,17 +54312,17 @@ MonoBehaviour:
     z: 28
     h: 230
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 29
     h: 220
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 30
     h: 228
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 31
     h: 236
@@ -54332,22 +54332,22 @@ MonoBehaviour:
     z: 32
     h: 221
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 33
     h: 233
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 34
     h: 223
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 35
     h: 226
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 43
     z: 36
     h: 224
@@ -54511,7 +54511,7 @@ MonoBehaviour:
     x: 43
     z: 68
     h: 106
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 43
     z: 69
@@ -54521,17 +54521,17 @@ MonoBehaviour:
     x: 43
     z: 70
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 43
     z: 71
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 43
     z: 72
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 43
     z: 73
@@ -54541,7 +54541,7 @@ MonoBehaviour:
     x: 43
     z: 74
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 43
     z: 75
@@ -54556,7 +54556,7 @@ MonoBehaviour:
     x: 43
     z: 77
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
     obstacle: {fileID: 0}
     x: 43
     z: 78
@@ -55006,57 +55006,57 @@ MonoBehaviour:
     x: 44
     z: 67
     h: 229
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 68
     h: 120
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 69
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
     x: 44
     z: 70
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 71
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
     x: 44
     z: 72
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 73
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+    obstacle: {fileID: 0}
     x: 44
     z: 74
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 75
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 76
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 77
     h: 0
-  - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
     obstacle: {fileID: 0}
     x: 44
     z: 78
@@ -59482,7 +59482,7 @@ MonoBehaviour:
     z: 62
     h: 222
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 63
     h: 226
@@ -59497,12 +59497,12 @@ MonoBehaviour:
     z: 65
     h: 243
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 66
     h: 235
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 67
     h: 224
@@ -59517,12 +59517,12 @@ MonoBehaviour:
     z: 69
     h: 220
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 70
     h: 232
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 71
     h: 231
@@ -59532,7 +59532,7 @@ MonoBehaviour:
     z: 72
     h: 243
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 73
     h: 217
@@ -59547,12 +59547,12 @@ MonoBehaviour:
     z: 75
     h: 218
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 76
     h: 230
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 77
     h: 237
@@ -59562,12 +59562,12 @@ MonoBehaviour:
     z: 78
     h: 222
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 79
     h: 240
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 53
     z: 80
     h: 217
@@ -59987,7 +59987,7 @@ MonoBehaviour:
     z: 63
     h: 239
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 64
     h: 213
@@ -60007,7 +60007,7 @@ MonoBehaviour:
     z: 67
     h: 211
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 68
     h: 233
@@ -60032,7 +60032,7 @@ MonoBehaviour:
     z: 72
     h: 227
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 73
     h: 225
@@ -60042,7 +60042,7 @@ MonoBehaviour:
     z: 74
     h: 222
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 75
     h: 233
@@ -60057,12 +60057,12 @@ MonoBehaviour:
     z: 77
     h: 232
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 78
     h: 219
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 79
     h: 231
@@ -60072,42 +60072,42 @@ MonoBehaviour:
     z: 80
     h: 217
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 81
     h: 210
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 82
     h: 240
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 83
     h: 234
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 84
     h: 215
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 85
     h: 229
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 86
     h: 220
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 87
     h: 240
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 54
     z: 88
     h: 246
@@ -60992,7 +60992,7 @@ MonoBehaviour:
     z: 64
     h: 234
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 65
     h: 230
@@ -61007,7 +61007,7 @@ MonoBehaviour:
     z: 67
     h: 224
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 68
     h: 238
@@ -61017,7 +61017,7 @@ MonoBehaviour:
     z: 69
     h: 213
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 70
     h: 225
@@ -61047,7 +61047,7 @@ MonoBehaviour:
     z: 75
     h: 217
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 76
     h: 230
@@ -61077,47 +61077,47 @@ MonoBehaviour:
     z: 81
     h: 227
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 82
     h: 224
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 83
     h: 224
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 84
     h: 216
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 85
     h: 236
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 86
     h: 242
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 87
     h: 234
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 88
     h: 226
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 89
     h: 229
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 56
     z: 90
     h: 238
@@ -61497,7 +61497,7 @@ MonoBehaviour:
     z: 65
     h: 220
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 66
     h: 218
@@ -61512,7 +61512,7 @@ MonoBehaviour:
     z: 68
     h: 219
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 69
     h: 227
@@ -61522,17 +61522,17 @@ MonoBehaviour:
     z: 70
     h: 227
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 71
     h: 230
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 72
     h: 239
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 8219149214185789574, guid: a0539f01a8fcd8c48ba6b5730b126941, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 73
     h: 246
@@ -61542,7 +61542,7 @@ MonoBehaviour:
     z: 74
     h: 226
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 75
     h: 220
@@ -61577,32 +61577,32 @@ MonoBehaviour:
     z: 81
     h: 226
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 82
     h: 221
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 83
     h: 230
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 84
     h: 216
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 85
     h: 222
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 86
     h: 221
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 0}
     x: 57
     z: 87
     h: 233
