@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.5
+      scalar: 0.6
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 0.3
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -847,7 +847,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 6
+      scalar: 4
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -964,19 +964,19 @@ ParticleSystem:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 0.07771301
-          inSlope: 0.922287
-          outSlope: 0.922287
-          tangentMode: 34
+          value: 0.23332977
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 0.922287
-          outSlope: 0.922287
-          tangentMode: 34
+          inSlope: 0
+          outSlope: 0
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0.33333334
           outWeight: 0.33333334
@@ -1293,8 +1293,8 @@ ParticleSystem:
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 0
-        ctime1: 50257
+        ctime0: 20046
+        ctime1: 41249
         ctime2: 65535
         ctime3: 0
         ctime4: 0
@@ -1343,7 +1343,7 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 1
+    enabled: 0
     mode: 0
     timeMode: 0
     fps: 30
@@ -4734,7 +4734,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9991708de0e9fac438dc04d0161723ec, type: 2}
+  - {fileID: 2100000, guid: 14fab0de6c54324468738e7b38a88207, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4797,12 +4797,12 @@ GameObject:
   - component: {fileID: 3307667407526838806}
   - component: {fileID: 3307667407526838805}
   m_Layer: 0
-  m_Name: arcane
+  m_Name: arcane bolt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3307667407526689043
 Transform:
   m_ObjectHideFlags: 0
@@ -4902,7 +4902,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.4
+      scalar: 0.35
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -4990,8 +4990,8 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.5707547, b: 0.833862, a: 1}
-      maxColor: {r: 0.5056218, g: 0.3537736, b: 1, a: 1}
+      minColor: {r: 0.89362967, g: 0.15686274, b: 1, a: 1}
+      maxColor: {r: 0.23809528, g: 0, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -6053,7 +6053,7 @@ ParticleSystem:
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 35466
+        atime1: 32382
         atime2: 65535
         atime3: 0
         atime4: 0
@@ -7356,7 +7356,7 @@ ParticleSystem:
     inWorldSpace: 0
     multiplyDragByParticleSize: 1
     multiplyDragByParticleVelocity: 1
-    dampen: 0.2
+    dampen: 0.3
     drag:
       serializedVersion: 2
       minMaxState: 0
@@ -9579,8 +9579,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.082796015
     - serializedVersion: 3
-      time: 0.24465305
-      value: 0.04583527
+      time: 0.21421176
+      value: 0.10561921
       inSlope: 0.04092956
       outSlope: 0.04092956
       tangentMode: 0
@@ -9588,8 +9588,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.2173384
     - serializedVersion: 3
-      time: 0.5440489
-      value: 0.005589485
+      time: 0.31806624
+      value: 0.027806282
       inSlope: 0.25077716
       outSlope: 0.25077716
       tangentMode: 0
@@ -9597,8 +9597,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.507697
     - serializedVersion: 3
-      time: 0.78421533
-      value: 0.18943918
+      time: 0.43645316
+      value: 0.06474961
       inSlope: -0.4567557
       outSlope: -0.4567557
       tangentMode: 0
@@ -9754,7 +9754,7 @@ TrailRenderer:
   m_Time: 0.35
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 0.3
+    widthMultiplier: 0.25
     widthCurve:
       serializedVersion: 2
       m_Curve:

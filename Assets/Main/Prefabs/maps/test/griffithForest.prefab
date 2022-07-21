@@ -45501,7 +45501,7 @@ MonoBehaviour:
     x: 25
     z: 66
     h: 0
-  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
+  - tile: {fileID: 8903441931600361900, guid: 00550c5595786d94fb406bb0e27a4046, type: 3}
     obstacle: {fileID: 0}
     x: 25
     z: 67
