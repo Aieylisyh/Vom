@@ -452,6 +452,7 @@ Transform:
   - {fileID: 8930496446360686814}
   - {fileID: 4047580535617598742}
   - {fileID: 3540992492771581643}
+  - {fileID: 7534931551121342078}
   m_Father: {fileID: 1019157579135351444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -32383,7 +32384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4592341969920371689}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 17.6, y: 1, z: 57.66}
+  m_LocalPosition: {x: 29.59, y: 1, z: 57.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8567762831203806467}
@@ -63918,7 +63919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6637135114982461368}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 16.61, y: 1, z: 55.21}
+  m_LocalPosition: {x: 32.05, y: 1, z: 54.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8567762831203806467}
@@ -64902,6 +64903,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TickTime: 0.25
   prefab: {fileID: 4828544588611718765, guid: 30c681c867a3d4c49937b983a2bf127a, type: 3}
+--- !u!1 &7613318459707252981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7534931551121342078}
+  - component: {fileID: 4111745523829818584}
+  m_Layer: 0
+  m_Name: ene tiny (11)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7534931551121342078
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7613318459707252981}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 33.82, y: 1, z: 58.52}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8567762831203806467}
+  m_RootOrder: 20
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &4111745523829818584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7613318459707252981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3770c66b1f43f83428dd957270471303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TickTime: 0.25
+  prefab: {fileID: 0}
+  enemy: {fileID: 11400000, guid: 3672faf9860faa748bb67c4e7f45eff3, type: 2}
 --- !u!1 &7706218955136060923
 GameObject:
   m_ObjectHideFlags: 0

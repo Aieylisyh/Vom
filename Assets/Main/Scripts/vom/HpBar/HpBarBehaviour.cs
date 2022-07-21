@@ -13,6 +13,7 @@ namespace vom
         public RectTransform rectTrans;
         public CanvasGroup cg;
         public bool hideIfFull;
+        public float powerScaleValue = 1;
 
         public void Hide()
         {
@@ -32,18 +33,18 @@ namespace vom
                 return;
             }
 
-            bar.fillAmount = percentage;
+            var endValue = percentage;
+            if (powerScaleValue != 1)
+                endValue = Mathf.Pow(percentage, powerScaleValue);
+            bar.fillAmount = endValue;
             Show();
+
             if (bar_shadow != null)
             {
                 if (!instant && duration > 0)
-                {
-                    bar_shadow.DOFillAmount(percentage, duration).SetEase(Ease.OutCubic);
-                }
+                    bar_shadow.DOFillAmount(endValue, duration).SetEase(Ease.OutCubic);
                 else
-                {
-                    bar_shadow.fillAmount = percentage;
-                }
+                    bar_shadow.fillAmount = endValue;
             }
         }
     }

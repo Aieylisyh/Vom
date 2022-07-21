@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   item: {fileID: 5121015351071933430, guid: bf96f2b41af2b0e45b639aecdf008684, type: 3}
   tilesParent: {fileID: 110761112}
+  tileViewerCache: {fileID: 1591921402}
 --- !u!4 &110761112
 Transform:
   m_ObjectHideFlags: 0
@@ -261,6 +262,61 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &1591921401
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1591921403}
+  - component: {fileID: 1591921402}
+  m_Layer: 0
+  m_Name: tile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1591921402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591921401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a55ec0a001182474f8100561a6163699, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tileData:
+    tile: {fileID: 0}
+    obstacle: {fileID: 0}
+    x: 0
+    z: 0
+    h: 0
+  indexOfMapitem: 0
+  mapPrototype: {fileID: 0}
+  groundView: {fileID: 0}
+  obstacleView: {fileID: 0}
+  toggleShow: 0
+  toggleSave: 0
+--- !u!4 &1591921403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1591921401}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2110592365
 GameObject:
   m_ObjectHideFlags: 0

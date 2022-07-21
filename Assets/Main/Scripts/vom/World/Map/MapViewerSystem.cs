@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 namespace vom
 {
@@ -7,41 +6,27 @@ namespace vom
     {
         public MapItem item;
         public Transform tilesParent;
+        public SimpleTileCacheBehaviour tileViewerCache;
+
+        public static MapViewerSystem instance;
 
         void Start()
         {
+            instance = this;
+
             foreach (var tile in item.tiles)
             {
-                Visualize(tile);
+                var tileCache = Instantiate(tileViewerCache, new Vector3(tile.x, 0, tile.z), Quaternion.identity, tilesParent);
+                tileCache.tileData = tile;
+                tileCache.mapPrototype = item.prototype;
+                tileCache.Visualize();
+                tileCache.indexOfMapitem = item.tiles.IndexOf(tile);//will not return duplicate index!
             }
         }
 
-
-        public void Visualize(TileCacheBehaviour.OutputTileData tileData)
+        public void SyncMapItem(SimpleTileCacheBehaviour cache)
         {
-            bool hasGround = (tileData.tile != null);
-            if (hasGround)
-            {
-                CreateGroundView(tileData);
-            }
-
-            bool hasObstacle = (tileData.obstacle != null);
-            if (hasObstacle)
-            {
-                CreateObstacleView(tileData);
-            }
-        }
-
-        void CreateObstacleView(TileCacheBehaviour.OutputTileData tileData)
-        {
-            var obstacleView = Instantiate(tileData.obstacle, tilesParent);
-            obstacleView.transform.localPosition = new Vector3(tileData.x, tileData.h * 0.01f, tileData.z);
-        }
-
-        void CreateGroundView(TileCacheBehaviour.OutputTileData tileData)
-        {
-            var groundView = Instantiate(tileData.tile, tilesParent);
-            groundView.transform.localPosition = new Vector3(tileData.x, tileData.h*0.01f, tileData.z);
+            item.tiles[cache.indexOfMapitem] = cache.tileData;
         }
     }
 }

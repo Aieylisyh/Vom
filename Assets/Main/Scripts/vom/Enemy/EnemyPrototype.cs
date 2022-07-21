@@ -22,11 +22,23 @@ namespace vom
         public float speed;
         public float attackInterval = 1.4f;
         public AttackRange sightRange = AttackRange.MidLong;
+        public EnemyTier tier = EnemyTier.Normal;
+
         public float bodyTime = 5;
         public bool bodyCanSink = true;
         public int soulLootCount = 1;//how many soul view
         public int expLootCount = 1;//how many exp view
 
         public bool noAlert;
+
+
+    }
+
+    public enum EnemyTier
+    {
+        Normal = 1,
+        Minion = 4,
+        Elite = 7,
+        Boss = 10,
     }
 }

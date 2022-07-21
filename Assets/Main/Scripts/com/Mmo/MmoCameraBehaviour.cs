@@ -7,7 +7,7 @@ namespace com
         public Transform target;
         public MmoCameraParameters parameters;
 
-        void Update()
+        void LateUpdate()
         {
             Sync();
         }

@@ -20,8 +20,12 @@ namespace vom
             if (bar == null)
                 bar = HpBarSystem.instance.Create(transform, (host.sizeValue - 0.1f) * 400 + hpBarOffset, host.sizeValue * 1.3f + 0.38f);
 
-            hpMax = host.proto.hp;
+            if (host.proto.tier == EnemyTier.Elite)
+                bar.powerScaleValue = 1.4f;//give better visual effect feeback
+            else if (host.proto.tier == EnemyTier.Boss)
+                bar.powerScaleValue = 2.0f;//give better visual effect feeback
 
+            hpMax = host.proto.hp;
             ResetHp();
         }
 
@@ -56,13 +60,9 @@ namespace vom
             hp -= v;
 
             if ((float)v / hpMax > 0.15f)
-            {
                 Wound();
-            }
             else if ((float)v / hpMax > 0.06f && Random.value > 0.7f)
-            {
                 Wound();
-            }
 
 
             bar.Show();

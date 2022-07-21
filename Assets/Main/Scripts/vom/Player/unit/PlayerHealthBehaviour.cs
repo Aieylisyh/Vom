@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using game;
 
 namespace vom
 {
@@ -11,10 +10,14 @@ namespace vom
         public HpBarBehaviour bar;
         public bool dead { get; private set; }
 
+        int _lifeSpanEvideDeathChances;
+
         public override void ResetState()
         {
             bar = HpBarSystem.instance.Create(transform, 140, 0.75f);
+            bar.powerScaleValue = 1.6f;//give better visual effect feeback
             ResetHealth();
+            _lifeSpanEvideDeathChances = 2;
         }
 
         public void ResetHealth()
@@ -37,9 +40,7 @@ namespace vom
 
             var addHp = hp - oldHp;
             if (addHp > 0)
-            {
                 FloatingTextPanelBehaviour.instance.CreateHealValue("<color=#88FF00>+" + addHp + "</color>", transform, new Vector2(0, 10));
-            }
 
             SyncBar(true);
         }
@@ -55,11 +56,14 @@ namespace vom
             SyncBar(false);
 
             //FloatingTextPanelBehaviour.instance.CreateCombatValue("<color=#FF0000>-" + v + "</color>", transform, new Vector2(0, 35));
+            if (hp <= 0 && hp > -10 && _lifeSpanEvideDeathChances > 0)
+            {
+                hp = 1;
+                _lifeSpanEvideDeathChances--;
+            }
 
             if (hp <= 0 && !dead)
-            {
                 Die();
-            }
         }
 
         void Die()
