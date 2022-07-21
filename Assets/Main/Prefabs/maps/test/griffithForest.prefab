@@ -43890,12 +43890,12 @@ MonoBehaviour:
     obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 22
     z: 44
-    h: 229
+    h: 111
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
     obstacle: {fileID: 0}
     x: 22
     z: 45
-    h: 219
+    h: 111
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
     obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
     x: 22
@@ -44390,12 +44390,12 @@ MonoBehaviour:
     obstacle: {fileID: 0}
     x: 23
     z: 44
-    h: 119
+    h: 0
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
     obstacle: {fileID: 0}
     x: 23
     z: 45
-    h: 241
+    h: 111
   - tile: {fileID: 2372805481672210672, guid: 012429e1b243d4d4d9e95ad1c6bb9405, type: 3}
     obstacle: {fileID: 0}
     x: 23
@@ -44890,12 +44890,12 @@ MonoBehaviour:
     obstacle: {fileID: 0}
     x: 24
     z: 44
-    h: 109
+    h: 0
   - tile: {fileID: 1508009541039878153, guid: 586a44645adb795498b90671a5bab3c9, type: 3}
     obstacle: {fileID: 0}
     x: 24
     z: 45
-    h: 230
+    h: 111
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
     obstacle: {fileID: 0}
     x: 24
@@ -45390,12 +45390,12 @@ MonoBehaviour:
     obstacle: {fileID: 0}
     x: 25
     z: 44
-    h: 117
+    h: 0
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
     obstacle: {fileID: 0}
     x: 25
     z: 45
-    h: 234
+    h: 111
   - tile: {fileID: 9167236770795643474, guid: b3f1e13ed21196e4a8a1dfe1af44f416, type: 3}
     obstacle: {fileID: 0}
     x: 25
