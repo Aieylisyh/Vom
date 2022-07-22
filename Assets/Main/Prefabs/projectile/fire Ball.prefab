@@ -38632,7 +38632,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitShakeLevel: 4
-  releaseSpeed: 9
+  releaseSpeed: 8.5
   orbitalOffset: {x: 0, y: 0.4, z: 0}
   releaseTrait: {fileID: 9007439764730834439}
   releasingPs: {fileID: 1037567758556846230}

@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using com;
 using Text = TMPro.TextMeshProUGUI;
 using System.Collections.Generic;
 
@@ -53,11 +52,12 @@ namespace vom
 
         public void Sync()
         {
-            Debug.Log("Sync");
+            //Debug.Log("Sync");
+            InventorySystem.instance.SortItems();
             var slotCount = InventorySystem.instance.slotCount;
             RemoveUneceSlots(slotCount);
             AddNeceSlots(slotCount);
-            Debug.Log(_slots.Count);
+            //Debug.Log(_slots.Count);
             var items = InventorySystem.instance.items;
             int itemIndex = -1;
             for (int i = 0; i < slotCount; i++)
@@ -70,7 +70,7 @@ namespace vom
                 }
 
                 var item = items[itemIndex];
-                Debug.Log(item.id + " " + item.n);
+                // Debug.Log(item.id + " " + item.n);
                 var p = ItemService.GetPrototype(item.id);
                 if (p.invHide)
                 {
