@@ -15,8 +15,9 @@ MonoBehaviour:
   id: IceOrb
   draft: 
   sp: {fileID: 21300000, guid: 870d9c098cf47004b920dab9569ebc7a, type: 3}
-  cd: 2
+  cd: 8
   duration: 0
+  interval: 0
   sound: heal pick
   perks: []
   attri1: 2

@@ -177,7 +177,7 @@ namespace vom
                     if (displayRange)
                         ShowRangeView(5);
 
-                    PlayerBehaviour.instance.health.Heal(5);
+                    PlayerBehaviour.instance.health.Heal(10);
                     break;
 
                 case "ArcaneExposion":
@@ -187,7 +187,7 @@ namespace vom
                     if (displayRange)
                         ShowRangeView(6);
 
-                    PlayerBehaviour.instance.health.Heal(5);
+                    PlayerBehaviour.instance.health.Heal(10);
                     break;
 
                 case "ArcaneBlasts":

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: test
   skills:
+  - {fileID: 11400000, guid: 6263b0941fac90f44ad8b872531efc6e, type: 2}
   - {fileID: 11400000, guid: bb0f51a0e8a1ae143b8a77661d92568c, type: 2}
-  - {fileID: 11400000, guid: 0a169d9ff11fd2a4c8875a7c62f96e57, type: 2}
   - {fileID: 11400000, guid: 0a4e7714d62984b47989323d6962c9e4, type: 2}
+  attributesList: []

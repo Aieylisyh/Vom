@@ -15,8 +15,9 @@ MonoBehaviour:
   id: PoisonOrb
   draft: 
   sp: {fileID: 21300000, guid: c7ac44e3060fb6b4b92fbd75b2fffcd1, type: 3}
-  cd: 2
+  cd: 8
   duration: 0
+  interval: 0
   sound: invincible
   perks: []
   attri1: 2

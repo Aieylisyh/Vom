@@ -15,7 +15,7 @@ MonoBehaviour:
   id: ArcaneExposion
   draft: 
   sp: {fileID: 21300000, guid: 44df53987f9626546a63fccbb50539ae, type: 3}
-  cd: 1
+  cd: 3
   duration: 0
   interval: 0
   sound: invincible
