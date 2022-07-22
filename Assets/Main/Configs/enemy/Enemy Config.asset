@@ -26,4 +26,6 @@ MonoBehaviour:
   angleSight: 45
   alertTickTime: 0.25
   alertTurns: 14
+  alertSpreadTurn: 12
   sinkAcc: 2.4
+  alertSpreadRange: 2.3

@@ -14,7 +14,10 @@ namespace vom
 
         public float alertTickTime = 0.25f;
         public int alertTurns = 10;
+        public int alertSpreadTurn = 9;
+        
         public float sinkAcc;
+        public float alertSpreadRange = 2;
     }
 
     [System.Serializable]

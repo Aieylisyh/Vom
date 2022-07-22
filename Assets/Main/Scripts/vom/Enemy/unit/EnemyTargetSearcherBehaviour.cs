@@ -43,6 +43,9 @@ namespace vom
             {
                 // Debug.Log("alerted " + _alertTurns);
                 _alertTurns -= 1;
+                if (_alertTurns == ConfigSystem.instance.enemyConfig.alertSpreadTurn)
+                    SpreadAlert();
+
                 if (alertOrigin != null)
                     targetDist = (alertOrigin.position - transform.position).magnitude;
 
@@ -50,6 +53,19 @@ namespace vom
                 {
                     _alertTurns = 0;
                     alerted = false;
+                }
+            }
+        }
+
+        void SpreadAlert()
+        {
+            var dist = ConfigSystem.instance.enemyConfig.alertSpreadRange;
+
+            foreach (var e in EnemySystem.instance.enemies)
+            {
+                if (!e.death.dead && Vector3.Distance(e.transform.position, transform.position) < dist)
+                {
+                    e.targetSearcher.TryEnterAlert(this.alertOrigin);
                 }
             }
         }
