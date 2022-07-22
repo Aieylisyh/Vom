@@ -7,7 +7,8 @@ namespace vom
     {
         public static InventorySystem instance { get; private set; }
 
-        List<ItemData> _items = new List<ItemData>();
+        public List<ItemData> items { get; private set; }
+        public int slotCount { get; private set; }
 
         private void Awake()
         {
@@ -16,13 +17,15 @@ namespace vom
 
         private void Start()
         {
+            items = new List<ItemData>();
             InitData();
+            slotCount = 10;
         }
 
         void InitData()
         {
-            _items = new List<ItemData>();
-            _items.Add(new ItemData(33, "Exp"));
+            items = new List<ItemData>();
+            items.Add(new ItemData(33, "Exp"));
 
             MainHudBehaviour.instance.SyncGold();
             MainHudBehaviour.instance.SyncSoul();
@@ -36,16 +39,16 @@ namespace vom
             if (data.n == 0)
                 return;
 
-            foreach (var item in _items)
+            foreach (var item in items)
             {
                 if (item.id == data.id)
                 {
                     item.n += data.n;
-                    break;
+                    return;
                 }
             }
 
-            _items.Add(data);
+            items.Add(data);
             AddItemFeedback(data);
         }
 
@@ -55,7 +58,7 @@ namespace vom
 
         public int GetItemCount(string id)
         {
-            foreach (var item in _items)
+            foreach (var item in items)
             {
                 if (item.id == id)
                     return item.n;
@@ -86,7 +89,12 @@ namespace vom
 
         public void SortItems()
         {
-            _items.Sort(InventoryService.CompareItem);
+            items.Sort(InventoryService.CompareItem);
+        }
+
+        public void OnClickInvItem(ItemData data)
+        {
+
         }
     }
 }

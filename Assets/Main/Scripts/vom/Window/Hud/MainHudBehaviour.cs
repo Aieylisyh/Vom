@@ -32,11 +32,6 @@ namespace vom
         private void Start()
         {
             _cg = GetComponent<CanvasGroup>();
-
-            SyncGold();
-            SyncSoul();
-            SyncExp();
-            Show();
         }
 
         public void SyncGold()

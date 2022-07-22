@@ -104,6 +104,10 @@ namespace vom
 
             LoadSettingsAndStartMusic();
 
+            MainHudBehaviour.instance.SyncGold();
+            MainHudBehaviour.instance.SyncSoul();
+            MainHudBehaviour.instance.SyncExp();
+            MainHudBehaviour.instance.Show();
             // then show account view;
             //WindowService.instance.ShowLogin();
         }

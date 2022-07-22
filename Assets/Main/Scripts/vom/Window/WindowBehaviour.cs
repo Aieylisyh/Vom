@@ -7,7 +7,7 @@ namespace vom
 {
     public class WindowBehaviour : MonoBehaviour
     {
-        public CanvasGroup cg;
+        CanvasGroup _cg;
         public RectTransform mainWindow;
 
         public static List<WindowBehaviour> instances = new List<WindowBehaviour>();
@@ -15,25 +15,24 @@ namespace vom
         protected virtual void Awake()
         {
             instances.Add(this);
+
+            _cg = GetComponent<CanvasGroup>();
             Hide();
         }
 
         public virtual void Show()
         {
             Setup();
-            //mainWindow.gameObject.SetActive(true);
-            cg.alpha = 1;
-            cg.blocksRaycasts = true;
-            cg.interactable = true;
-            //Debug.Log("Show");
+            mainWindow.gameObject.SetActive(true);
+            _cg.alpha = 1;
+            _cg.blocksRaycasts = true;
+            _cg.interactable = true;
         }
 
         public void ReOpen()
         {
-            if (cg.alpha==1)
-            {
+            if (_cg.alpha == 1)
                 Setup();
-            }
         }
 
         public virtual void Setup()
@@ -43,11 +42,10 @@ namespace vom
 
         public virtual void Hide()
         {
-            //Debug.Log("Hide");
-            cg.alpha = 0;
-            cg.blocksRaycasts = false;
-            cg.interactable = false;
-            //mainWindow.gameObject.SetActive(false);
+            _cg.alpha = 0;
+            _cg.blocksRaycasts = false;
+            _cg.interactable = false;
+            mainWindow.gameObject.SetActive(false);
         }
 
         public virtual void OnClickBtnClose()

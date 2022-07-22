@@ -32,7 +32,7 @@ namespace vom
         //public WindowBehaviour ship;
         //public WindowBehaviour fishing;
         //public WindowBehaviour workshop;
-        //public WindowBehaviour inventory;
+        public WindowBehaviour inventory;
         //public WindowBehaviour login;
         //public RoundEndWindowBehaviour roundEnd;
 
@@ -50,7 +50,7 @@ namespace vom
             //  ship?.Hide();
             //  fishing?.Hide();
             //  workshop?.Hide();
-            //  inventory?.Hide();
+            inventory?.Hide();
             //  roundEnd?.Hide();
         }
 
@@ -206,10 +206,7 @@ namespace vom
             ship.Show();
         }
 
-        public void ShowInventory()
-        {
-            inventory.Show();
-        }
+     
 
         public void ShowLogin()
         {
@@ -221,5 +218,10 @@ namespace vom
             roundEnd.ShowRoundEnd(winOrLoose);
         }
         */
+
+        public void ShowInventory()
+        {
+            inventory.Show();
+        }
     }
 }

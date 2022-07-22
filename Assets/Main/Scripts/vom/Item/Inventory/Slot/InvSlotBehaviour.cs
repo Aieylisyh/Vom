@@ -1,20 +1,40 @@
 ﻿using UnityEngine;
+using Text = TMPro.TextMeshProUGUI;
+using UnityEngine.UI;
 
 namespace vom
 {
     public class InvSlotBehaviour : MonoBehaviour
     {
+        public Image icon;
+        public Text num;
 
-        // Use this for initialization
-        void Start()
+        ItemData _data;
+
+        public void Sync(ItemData data = null)
         {
+            _data = data;
 
+            if (_data == null)
+            {
+                SetEmpty();
+                return;
+            }
+
+            num.text = data.n + "";
+            icon.sprite = ItemService.GetPrototype(_data.id).sp;
+            icon.enabled = true;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void SetEmpty()
         {
+            num.text = "";
+            icon.enabled = false;
+        }
 
+        public void OnClick()
+        {
+            InventorySystem.instance.OnClickInvItem(_data);
         }
     }
 }

@@ -186,7 +186,7 @@ namespace com
             set
             {
                 _isEnabled = combatAudioSource.enabled = bossAudioSource.enabled = menuAudioSource.enabled = value;
-                Debug.Log("_isEnabled"+ _isEnabled);
+                //Debug.Log("_isEnabled"+ _isEnabled);
                 if (value)
                 {
                     PlayMusic();
