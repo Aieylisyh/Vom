@@ -16,6 +16,11 @@ namespace vom
         public bool toggleSave;
         public bool toggleRemoveObs;
         public bool toggleFlatTile;
+
+        public int duplicateOffsetX;
+        public int duplicateOffsetZ;
+        public bool toggleDuplicate;
+
         public void Init(int x, int z, MapPrototype p)
         {
             tileData.x = x;
@@ -98,6 +103,11 @@ namespace vom
                 tileData.h = 0;
                 toggleFlatTile = false;
                 toggleSave = true;
+            }
+            if (toggleDuplicate)
+            {
+                toggleDuplicate = false;
+                MapViewerSystem.instance.Duplicate(this);
             }
         }
     }
