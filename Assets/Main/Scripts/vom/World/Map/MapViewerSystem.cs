@@ -37,7 +37,9 @@ namespace vom
             int indexTarget = index + cache.duplicateOffsetX * item.sizeZ + cache.duplicateOffsetZ;
             //item.tiles[indexTarget] = cache.tileData;
 
-            list[indexTarget].tileData = cache.tileData;
+            list[indexTarget].tileData.h = cache.tileData.h;
+            list[indexTarget].tileData.obstacle = cache.tileData.obstacle;
+            list[indexTarget].tileData.tile = cache.tileData.tile;
             list[indexTarget].toggleSave = true;
         }
     }
