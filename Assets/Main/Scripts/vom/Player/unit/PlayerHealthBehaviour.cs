@@ -15,8 +15,9 @@ namespace vom
         public override void ResetState()
         {
             bar = HpBarSystem.instance.Create(transform, 140, 0.75f);
-            bar.powerScaleValue = 1.6f;//give better visual effect feeback
+            bar.powerScaleValue = 1.5f;//give better visual effect feeback
             ResetHealth();
+
             _lifeSpanEvideDeathChances = 2;
         }
 
