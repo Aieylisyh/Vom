@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Shit
   invHide: 0
+  stack: 18
   sp: {fileID: 21300000, guid: cf242c4f79a1bf64c9832a05c86086bd, type: 3}
   data: []
   itemOutPut:

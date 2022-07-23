@@ -12,7 +12,7 @@ namespace vom
         public virtual string subDesc { get { return id + "_subDesc"; } }
 
         public bool invHide;
-
+        public int stack = 10;
         public Sprite sp;
         public List<ItemData> data;
 

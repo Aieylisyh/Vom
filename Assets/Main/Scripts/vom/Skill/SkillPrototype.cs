@@ -25,11 +25,8 @@ namespace vom
 
         public int attri1;
         public int attri2;
-        public int attri3;
 
         public int fixedAttri1;
         public int fixedAttri2;
-        public int fixedAttri3;
-        public int fixedAttri4;
     }
 }

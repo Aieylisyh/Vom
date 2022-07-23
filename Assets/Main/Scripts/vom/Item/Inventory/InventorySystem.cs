@@ -19,13 +19,17 @@ namespace vom
         {
             items = new List<ItemData>();
             InitData();
-            slotCount = 10;
+            slotCount = 15;
         }
 
         void InitData()
         {
             items = new List<ItemData>();
-            items.Add(new ItemData(33, "Exp"));
+            AddItem(new ItemData(33, "Exp"), false);
+            AddItem(new ItemData(33, "Apple"), false);
+            AddItem(new ItemData(33, "Wood"), false);
+            AddItem(new ItemData(33, "Fish"), false);
+            AddItem(new ItemData(33, "Shit"), false);
 
             MainHudBehaviour.instance.SyncGold();
             MainHudBehaviour.instance.SyncSoul();
@@ -34,22 +38,48 @@ namespace vom
 
         //AddItem(new ItemData(num, id));
         //this is the final step to add an item, check feedbacks here
-        public void AddItem(ItemData data)
+        public void AddItem(ItemData data, bool feedback = true)
         {
             if (data.n == 0)
                 return;
+
+            var p = ItemService.GetPrototype(data.id);
+            if (feedback)
+                AddItemFeedback(data);
 
             foreach (var item in items)
             {
                 if (item.id == data.id)
                 {
-                    item.n += data.n;
-                    return;
+
+                    var canAddN = p.stack - item.n;
+                    if (canAddN >= data.n)
+                    {
+                        item.n += data.n;
+                        return;
+                    }
+                    else
+                    {
+                        item.n = p.stack;
+                        data.n = data.n - canAddN;
+                        break;
+                    }
                 }
             }
 
+            while (data.n > p.stack)
+            {
+                items.Add(new ItemData(p.stack, data.id));
+                data.n = data.n - p.stack;
+            }
+
             items.Add(data);
-            AddItemFeedback(data);
+        }
+
+        public bool TryRemoveItem(bool validateRemove = true)
+        {
+            var enough = false;
+            return enough;
         }
 
         public int GoldCount { get { return GetItemCount("Gold"); } }
@@ -94,7 +124,7 @@ namespace vom
 
         public void OnClickInvItem(ItemData data)
         {
-
+            Debug.Log(data.id + " " + data.n);
         }
     }
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: Wood
   invHide: 0
+  stack: 20
   sp: {fileID: 21300000, guid: 59bd7cefe5a7f594b9dd1dc086cff750, type: 3}
   data: []
   itemOutPut:

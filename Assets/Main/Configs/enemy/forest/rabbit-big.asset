@@ -19,12 +19,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 6feec583afbc565448f8a9ca7dd0328c, type: 2}
   exp: 2222
   soul: 2222
-  hp: 30
+  hp: 50
   attack: 4
   speed: 4.3
   attackInterval: 1.1
   sightRange: 40
-  bodyTime: 5
+  tier: 1
+  bodyTime: 1.2
   bodyCanSink: 1
   soulLootCount: 2
   expLootCount: 2

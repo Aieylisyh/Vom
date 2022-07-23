@@ -27,6 +27,8 @@ namespace vom
         public Color bgColor;
 
         public Biome biome;
+
+        public MapItem item;
     }
 
     public enum Biome

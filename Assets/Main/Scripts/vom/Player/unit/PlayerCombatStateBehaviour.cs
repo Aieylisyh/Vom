@@ -29,7 +29,7 @@ namespace vom
 
         public void ShowHud(bool show)
         {
-            //Debug.Log("ShowHud " + show);
+            Debug.Log("ShowHud " + show);
             _showHud = show;
             if (show)
             {

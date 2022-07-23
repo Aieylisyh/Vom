@@ -32,6 +32,8 @@ namespace vom
 
             if (EnemySystem.instance.players.IndexOf(this) < 0)
                 EnemySystem.instance.players.Add(this);
+
+            combat.UpdateState();
         }
 
         void Update()

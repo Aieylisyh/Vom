@@ -24,7 +24,8 @@ MonoBehaviour:
   speed: 4.3
   attackInterval: 0.9
   sightRange: 40
-  bodyTime: 5
+  tier: 1
+  bodyTime: 1.2
   bodyCanSink: 1
   soulLootCount: 1
   expLootCount: 1
