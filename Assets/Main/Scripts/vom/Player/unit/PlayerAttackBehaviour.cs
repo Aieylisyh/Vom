@@ -92,6 +92,8 @@ namespace vom
                     host.animator.SetBool(PlayerAnimeParams.move, false);
                 host.animator.SetTrigger(PlayerAnimeParams.attack);
             }
+
+            host.combat.UpdateState();
         }
 
         public bool isAttacking { get { return _attackIntervalTimer > 0f; } }
@@ -101,7 +103,6 @@ namespace vom
             var e = searcher.GetTargetEnemy();
             if (e != null)
             {
-                host.combat.UpdateState();
                 _target = e.transform;
                 _targetPos = _target.position;
                 var delta = _targetPos - transform.position;

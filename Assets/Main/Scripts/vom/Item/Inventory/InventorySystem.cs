@@ -19,17 +19,12 @@ namespace vom
         {
             items = new List<ItemData>();
             InitData();
-            slotCount = 15;
+            slotCount = 20;
         }
 
         void InitData()
         {
             items = new List<ItemData>();
-            AddItem(new ItemData(33, "Exp"), false);
-            AddItem(new ItemData(33, "Apple"), false);
-            AddItem(new ItemData(33, "Wood"), false);
-            AddItem(new ItemData(33, "Fish"), false);
-            AddItem(new ItemData(33, "Shit"), false);
 
             MainHudBehaviour.instance.SyncGold();
             MainHudBehaviour.instance.SyncSoul();
@@ -37,7 +32,7 @@ namespace vom
         }
 
         //AddItem(new ItemData(num, id));
-        //this is the final step to add an item, check feedbacks here
+        //this is the ONLY step to add an item, check feedbacks here
         public void AddItem(ItemData data, bool feedback = true)
         {
             if (data.n == 0)
