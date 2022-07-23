@@ -8,6 +8,8 @@ namespace vom
         CanvasGroup _cg;
         public float duration = 1.0f;
         public float alpha = 0.7f;
+        Tween _tween;
+        bool _show;
 
         private void Awake()
         {
@@ -16,14 +18,32 @@ namespace vom
 
         public void Hide()
         {
-            _cg.DOKill();
+            if (!_show)
+                return;
+
+            _show = false;
+            if (_tween != null)
+            {
+                _tween.Kill();
+                _tween = null;
+            }
+
             _cg.alpha = 0;
         }
 
         public void Show()
         {
-            _cg.DOKill();
-            _cg.DOFade(alpha, duration);
+            if (_show)
+                return;
+
+            _show = true;
+            if (_tween != null)
+            {
+                _tween.Kill();
+                _tween = null;
+            }
+
+            _tween = DOTween.To(() => { return _cg.alpha; }, x => _cg.alpha = x, alpha, duration).SetDelay(0.5f).Play();
         }
     }
 }

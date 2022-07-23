@@ -453,6 +453,7 @@ Transform:
   - {fileID: 4047580535617598742}
   - {fileID: 3540992492771581643}
   - {fileID: 7534931551121342078}
+  - {fileID: 4431067398341586343}
   m_Father: {fileID: 1019157579135351444}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5486,6 +5487,52 @@ MonoBehaviour:
   duration: 2.3
   buildTrans: {fileID: 5035686691254268340}
   unBuildTrans: {fileID: 1935461007039168120}
+--- !u!1 &807431676275848042
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4431067398341586343}
+  - component: {fileID: 4790546869851427193}
+  m_Layer: 0
+  m_Name: ene tiny (12)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4431067398341586343
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807431676275848042}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 33.96, y: 1, z: 47.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8567762831203806467}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &4790546869851427193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807431676275848042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3770c66b1f43f83428dd957270471303, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TickTime: 0.25
+  prefab: {fileID: 0}
+  enemy: {fileID: 11400000, guid: 3672faf9860faa748bb67c4e7f45eff3, type: 2}
 --- !u!1 &894765638815848175
 GameObject:
   m_ObjectHideFlags: 0
@@ -49882,7 +49929,7 @@ MonoBehaviour:
     z: 42
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 34
     z: 43
     h: 0
@@ -50407,12 +50454,12 @@ MonoBehaviour:
     z: 47
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
+    obstacle: {fileID: 0}
     x: 35
     z: 48
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
+    obstacle: {fileID: 7622032807441753544, guid: 65b6a63a5ca12174aa440cee632c2609, type: 3}
     x: 35
     z: 49
     h: 0
@@ -50887,12 +50934,12 @@ MonoBehaviour:
     z: 43
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 0}
+    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 36
     z: 44
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 0}
+    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 36
     z: 45
     h: 0
@@ -51381,18 +51428,18 @@ MonoBehaviour:
     x: 37
     z: 42
     h: 0
-  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
-    obstacle: {fileID: 0}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 37
     z: 43
     h: 0
   - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
-    obstacle: {fileID: 0}
+    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 37
     z: 44
     h: 0
-  - tile: {fileID: 3003720163679363890, guid: 731bd3e4bdd41fc4687743d84106842a, type: 3}
-    obstacle: {fileID: 0}
+  - tile: {fileID: 4099386547000568505, guid: f4626842aef926a4d835c18ad48f75d4, type: 3}
+    obstacle: {fileID: 1671192214151816968, guid: 109ae98b08127ae4cb72f3fe86adcb06, type: 3}
     x: 37
     z: 45
     h: 0
