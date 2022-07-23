@@ -11,6 +11,7 @@ namespace vom
         public float ignoreThreshold = 10;
 
         private Vector2 _moveDist;
+        private bool _lastUpdateMoved;
 
         public float speed;
         public Transform rotatePart;
@@ -23,11 +24,13 @@ namespace vom
 
         public MmoCameraBehaviour mmoCamera;
         public KnockBackBehaviour knockBack { get; private set; }
+        public DragIndicatorBehaviour dragIndicator;
 
         public override void ResetState()
         {
             knockBack = GetComponent<KnockBackBehaviour>();
             knockBack.setCc(host.cc);
+            _lastUpdateMoved = false;
         }
 
         public void StartDrag(Vector2 pos)
@@ -35,6 +38,7 @@ namespace vom
             _draging = true;
             _startPos = pos;
             _lastPos = pos;
+            host.combat.ShowHud(false);
         }
 
         public void UpdateDrag(Vector2 pos)
@@ -46,6 +50,8 @@ namespace vom
         {
             _draging = false;
             touchView.Hide();
+            dragIndicator.Hide();
+            host.combat.UpdateState();
         }
 
         public void Moved()
@@ -61,7 +67,14 @@ namespace vom
             {
                 var delta = _lastPos - _startPos;
                 if (delta.magnitude > ignoreThreshold)
-                    ReceiveMoveInput(delta);
+                {
+                    _moveDist = delta.normalized;
+                    dragIndicator.Hide();
+                }
+                else
+                {
+                    dragIndicator.Show();
+                }
 
                 touchView.Show(delta);
 
@@ -81,24 +94,32 @@ namespace vom
         {
             if (_moveDist.magnitude == 0)
             {
-                if (host.animator.GetBool(PlayerAnimeParams.move))
-                    host.animator.SetBool(PlayerAnimeParams.move, false);
+                if (_lastUpdateMoved)
+                {
+                    if (host.animator.GetBool(PlayerAnimeParams.move))
+                        host.animator.SetBool(PlayerAnimeParams.move, false);
+                    host.combat.UpdateState();
+                    _lastUpdateMoved = false;
+                }
 
                 Fall();
-                host.combat.UpdateState();
-                //host.combat.ShowHud(true);
+                _lastUpdateMoved = false;
             }
             else
             {
+                if (!_lastUpdateMoved)
+                {
+                    host.interaction.HideAll();
+                    host.combat.ShowHud(false);
+                    _lastUpdateMoved = true;
+                }
+
                 if (!host.animator.GetBool(PlayerAnimeParams.move))
                     host.animator.SetBool(PlayerAnimeParams.move, true);
                 var deltaDist = Vector3.right * _moveDist.x + Vector3.forward * _moveDist.y;
                 //host.cc.SimpleMove(deltaDist * speed);
                 host.cc.Move((deltaDist * speed - 8f * Vector3.up) * GameTime.deltaTime);
                 Rotate(deltaDist);
-
-                host.interaction.HideAll();
-                host.combat.ShowHud(false);
             }
 
             _moveDist = Vector2.zero;
@@ -123,11 +144,6 @@ namespace vom
                 return;
 
             rotatePart.rotation = Quaternion.LookRotation(to);
-        }
-
-        public void ReceiveMoveInput(Vector2 dir)
-        {
-            _moveDist = dir.normalized;
         }
     }
 }

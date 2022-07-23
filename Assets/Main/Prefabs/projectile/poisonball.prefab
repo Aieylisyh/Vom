@@ -38759,12 +38759,12 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 1.7762654
-      outSlope: 1.7762654
-      tangentMode: 34
+      inSlope: 2.5432398
+      outSlope: 2.5432398
+      tangentMode: 0
       weightedMode: 0
       inWeight: 0
-      outWeight: 0.33333334
+      outWeight: 0.15877578
     - serializedVersion: 3
       time: 0.14012367
       value: 0.24889682
@@ -38775,19 +38775,19 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.13250434
     - serializedVersion: 3
-      time: 0.555752
-      value: 0.016906738
-      inSlope: -0.29811206
-      outSlope: -0.29811206
-      tangentMode: 34
+      time: 0.28410682
+      value: 0.02253649
+      inSlope: -0.18545654
+      outSlope: -0.18545654
+      tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
+      inWeight: 0.5842418
       outWeight: 0.33333334
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: -0.03805698
-      outSlope: -0.03805698
+      inSlope: -0.03148024
+      outSlope: -0.03148024
       tangentMode: 34
       weightedMode: 0
       inWeight: 0.33333334
@@ -38800,7 +38800,7 @@ MonoBehaviour:
   dieVFX: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
   releaseOffsetRatioByDistance: 0.4
   isEnemyShoot: 0
-  dmg: 2
+  dmg: 3
   knockBackForce: 0.06
 --- !u!114 &8490995160174162747
 MonoBehaviour:

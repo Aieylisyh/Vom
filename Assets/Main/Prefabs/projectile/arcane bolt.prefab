@@ -9613,7 +9613,7 @@ MonoBehaviour:
   dieVFX: {fileID: 5614751868699644846, guid: af0c211ee33c62646aedcd616c71c725, type: 3}
   releaseOffsetRatioByDistance: 0.55
   isEnemyShoot: 0
-  dmg: 1
+  dmg: 2
   knockBackForce: 0.04
 --- !u!114 &3307667407526838804
 MonoBehaviour:

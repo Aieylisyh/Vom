@@ -14,9 +14,7 @@ namespace vom
             get
             {
                 if (host.health.dead)
-                {
                     return false;
-                }
                 return host.attack.HasAliveTarget || IsTargeted;
             }
         }
@@ -31,6 +29,7 @@ namespace vom
 
         public void ShowHud(bool show)
         {
+            Debug.Log("ShowHud " + show);
             _showHud = show;
             if (show)
             {
@@ -70,6 +69,7 @@ namespace vom
                 ShowHud(true);
             }
         }
+
         protected override void Update()
         {
             foreach (var cg in cgs)
