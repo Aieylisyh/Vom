@@ -31,7 +31,5 @@ namespace vom
         public int fixedAttri2;
         public int fixedAttri3;
         public int fixedAttri4;
-
-
     }
 }

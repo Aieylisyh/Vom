@@ -43,7 +43,7 @@ namespace vom
                 _tween = null;
             }
 
-            _tween = DOTween.To(() => { return _cg.alpha; }, x => _cg.alpha = x, alpha, duration).SetDelay(0.5f).Play();
+            _tween = DOTween.To(() => { return _cg.alpha; }, x => _cg.alpha = x, alpha, duration).SetDelay(0.35f).Play();
         }
     }
 }

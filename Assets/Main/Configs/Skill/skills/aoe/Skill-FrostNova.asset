@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: FrostNova
   draft: 
-  sp: {fileID: 21300000, guid: a94a5cdde5a17c84381ac7f9106f6c87, type: 3}
+  sp: {fileID: 21300000, guid: 870d9c098cf47004b920dab9569ebc7a, type: 3}
   cd: 6
   duration: 0
   interval: 0
